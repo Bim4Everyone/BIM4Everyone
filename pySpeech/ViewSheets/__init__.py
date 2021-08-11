@@ -110,6 +110,7 @@ class ViewSheetModel(object):
         return self.__viewSheet.GetParamValueOrDefault(BuiltInParameter.SHEET_NUMBER)
 
     def UpdateName(self):
+        self.__viewSheet.SetParamValue("Ш.НомерЛиста", str(self.__index))
         self.__viewSheet.SetParamValue(BuiltInParameter.SHEET_NUMBER, self.SheetName)
 
     def UpdateUniqueName(self):
@@ -286,18 +287,19 @@ def renumber(step, direction, count, transactionName):
 
     # кладем листы в нужном порядке первым значением из пары, второе значение это номера с неизменным порядком
     for i in range(n - count, n):
-        element = [SheetsCurrentAlbumList[i][1], SheetsCurrentAlbumList[i - (n - count)][2]]
+        element = [SheetsCurrentAlbumList[i - (n - count)][0], SheetsCurrentAlbumList[i][1], SheetsCurrentAlbumList[i - (n - count)][2]]
         SheetsComposeAlbumList.append(element)
     for i in range(n - count):
-        element = [SheetsCurrentAlbumList[i][1], SheetsCurrentAlbumList[i + count][2]]
+        element = [SheetsCurrentAlbumList[i + count][0], SheetsCurrentAlbumList[i][1], SheetsCurrentAlbumList[i + count][2]]
         SheetsComposeAlbumList.append(element)
 
     with Transaction(doc, transactionName) as transaction:
         transaction.Start()
 
         for idx, sheet in enumerate(SheetsComposeAlbumList):
-            sheet[0].SetParamValue(BuiltInParameter.SHEET_NUMBER, str(idx) + "+Temp")
+            sheet[1].SetParamValue(BuiltInParameter.SHEET_NUMBER, str(idx) + "+Temp")
         for sheet in SheetsComposeAlbumList:
-            sheet[0].SetParamValue(BuiltInParameter.SHEET_NUMBER, sheet[1])
+            sheet[1].SetParamValue("Ш.НомерЛиста", str(int(sheet[0])))
+            sheet[1].SetParamValue(BuiltInParameter.SHEET_NUMBER, sheet[2])
 
         transaction.Commit()
