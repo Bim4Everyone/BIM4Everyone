@@ -208,11 +208,8 @@ def ClearString(msg):
 
 # Получаем число для сравнения из строки вида "str-num.num"
 def GetNumber(list):
-    first = ClearString(list[0])
-    first = float(first)
-    if len(list) > 1:
-        first += 1 - 0.5 / float(list[1]) if list[1] > 0 else 0.6
-    return first
+    return float(list.pop())
+
 
 def CheckSheets(selections):
     if not selections:
@@ -224,35 +221,47 @@ def CheckSheets(selections):
 
     return selections
 
+
 doc = __revit__.ActiveUIDocument.Document
 uidoc = __revit__.ActiveUIDocument
 selection = list(__revit__.ActiveUIDocument.GetSelectedElements())
 
+
 def renumber(step, direction, count, transactionName):
     CheckSheets(selection)
+
     # список из листов учавствующих в перестановке
     SheetsCurrentAlbumList = []
+
     # список, на основе кторого будет сортировка
     SortingList = []
+
     # список, на основе которого будет происходить перенумерование листов
     SheetsComposeAlbumList = []
+
     # пара значений, будет хранить в себе номер крайнего листа среди рабочих
     prop = [GetNumber(selection[0].GetParamValueOrDefault(BuiltInParameter.SHEET_NUMBER).split("-")), ""]
+
     # название альбома
     album = selection[0].GetParamValueOrDefault("ADSK_Комплект чертежей")
+
     # все листы проекта
     SheetsBaseList = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Sheets).ToElements()
+
     # составляем список из троек значений, [пригодный для сортировки номер, сам лист, номер листа в строковой форме]
     for sheet in SheetsBaseList:
         if AlbumFilter(sheet, album):
             NumberString = sheet.GetParamValueOrDefault(BuiltInParameter.SHEET_NUMBER)
             NumberList = GetNumber(NumberString.split("-"))
             SortingList.append([NumberList, sheet, NumberString])
+
     # сортируем список
-    SheetsCurrentAlbumList = sorted(SortingList, key=itemgetter(0))
+    SheetsCurrentAlbumList = sorted(SortingList, cmp=ViewSheetComparer().Compare, key=lambda x: x[1])
+
     # если перемещаем вниз, то нужно перевернуть список
     if direction < 0:
         SheetsCurrentAlbumList = SheetsCurrentAlbumList[::-1]
+
     # находим опорное значение из выбранных листов, при уменьшении номера ищем большее, иначе - меньшее
     for sheet in selection:
         NumberString = sheet.GetParamValueOrDefault(BuiltInParameter.SHEET_NUMBER)
@@ -260,17 +269,21 @@ def renumber(step, direction, count, transactionName):
         if direction * prop[0] < direction * NumberInt:
             prop[0] = NumberInt
             prop[1] = NumberString
+
     # идем с конца списка, удаляя все листы стоящие после наших выбранных
     for sheet in SheetsCurrentAlbumList[::-1]:
         if direction * prop[0] < direction * sheet[0]:
             SheetsCurrentAlbumList.pop()
         else:
             break
+
     # удаляем листы стоящие перед выбранными плюс step листов
     while len(SheetsCurrentAlbumList) > count + step:
         SheetsCurrentAlbumList.pop(0)
+
     # теперь размер списка постоянный, запишем его длину
     n = len(SheetsCurrentAlbumList)
+
     # кладем листы в нужном порядке первым значением из пары, второе значение это номера с неизменным порядком
     for i in range(n - count, n):
         element = [SheetsCurrentAlbumList[i][1], SheetsCurrentAlbumList[i - (n - count)][2]]
@@ -278,6 +291,7 @@ def renumber(step, direction, count, transactionName):
     for i in range(n - count):
         element = [SheetsCurrentAlbumList[i][1], SheetsCurrentAlbumList[i + count][2]]
         SheetsComposeAlbumList.append(element)
+
     with Transaction(doc, transactionName) as transaction:
         transaction.Start()
 
