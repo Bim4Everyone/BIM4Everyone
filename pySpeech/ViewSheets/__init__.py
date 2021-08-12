@@ -2,21 +2,24 @@
 
 import clr
 clr.AddReference("dosymep.Revit.dll")
+clr.AddReference("dosymep.Bim4Everyone.dll")
 
 import dosymep
 clr.ImportExtensions(dosymep.Revit)
+clr.ImportExtensions(dosymep.Bim4Everyone)
 
 from System import Guid
 from System.Collections.Generic import *
+
 from Autodesk.Revit.DB import *
+
 from dosymep.Revit.Comparators import *
+from dosymep.Bim4Everyone.Templates import ProjectParameters
+from dosymep.Bim4Everyone.SharedParams import SharedParamsConfig
+from dosymep.Bim4Everyone.ProjectParams import ProjectParamsConfig
 
 from operator import itemgetter
 from pyrevit import script
-
-output = script.get_output()
-output.set_title("Автоматическое переименование видов (dosymep)")
-output.center()
 
 def alert(msg, exit_script=True):
     if msg:
@@ -30,23 +33,27 @@ def get_table_columns():
     return ["SheetId", "SheetName"]
 
 
-def get_row_section(element):
+def get_row_section(output, element):
     return [output.linkify(element.Id), element.Name]
 
 
-def get_table_data(sheets):
-    return [get_row_section(sheets) for sheets in sheets]
+def get_table_data(output, sheets):
+    return [get_row_section(output, sheets) for sheets in sheets]
 
 
-def show_error_sheets(sheets):
+def show_error_sheets(title, sheets):
     if sheets:
+        output = script.get_output()
+        output.set_title(title)
+        output.center()
+
         table_columns = get_table_columns()
-        table_data = get_table_data(sheets)
-        show_table("Виды к которых сопадает атрибут \"Номер листа\".", table_columns, table_data)
+        table_data = get_table_data(output, sheets)
+        show_table(output, title, "Виды к которых сопадает атрибут \"Номер листа\".", table_columns, table_data)
 
 
-def show_table(title, table_columns, table_data, exit_script=True):
-    output.print_table(title=title, columns=table_columns, table_data=table_data)
+def show_table(output, title, table_title, table_columns, table_data, exit_script=True):
+    output.print_table(title=table_title, columns=table_columns, table_data=table_data)
 
     if exit_script:
         script.exit()
@@ -110,7 +117,7 @@ class ViewSheetModel(object):
         return self.__viewSheet.GetParamValueOrDefault(BuiltInParameter.SHEET_NUMBER)
 
     def UpdateName(self):
-        self.__viewSheet.SetParamValue("Ш.НомерЛиста", str(self.__index))
+        self.__viewSheet.SetParamValue(SharedParamsConfig.Instance.StampSheetNumber, str(self.__index))
         self.__viewSheet.SetParamValue(BuiltInParameter.SHEET_NUMBER, self.SheetName)
 
     def UpdateUniqueName(self):
@@ -118,7 +125,7 @@ class ViewSheetModel(object):
 
     @staticmethod
     def GetSheetAlbum(view_sheet):
-        complect_blueprints = view_sheet.GetParamValueOrDefault("ADSK_Комплект чертежей")
+        complect_blueprints = view_sheet.GetParamValueOrDefault(SharedParamsConfig.Instance.AlbumBlueprints)
         return complect_blueprints if complect_blueprints else "???"
 
 
@@ -128,6 +135,10 @@ class OrderViewSheetModel(object):
         self.StartIndex = start_index
 
     def OrderViewSheets(self):
+        project_parameters = ProjectParameters.Create(self.DocumentRepository.Application)
+        project_parameters.SetupRevitParams(self.DocumentRepository.Document, SharedParamsConfig.Instance.AlbumBlueprints,
+                                            SharedParamsConfig.Instance.StampSheetNumber)
+
         with Transaction(self.DocumentRepository.Document) as transaction:
             transaction.Start("Перенумерация листов")
 
@@ -147,7 +158,7 @@ class OrderViewSheetModel(object):
         sheet_names = [sheet.SheetName for sheet in self.ViewSheets]
         error_sheets = filter(lambda x: x.SheetNumber in sheet_names, sheets)
 
-        show_error_sheets(error_sheets)
+        show_error_sheets("Ошибка", error_sheets)
 
     def UpdateNames(self):
         for view_sheet in self.ViewSheets:
@@ -192,7 +203,7 @@ class OrderViewSheetModel(object):
 
 # Проверка на соответствие выбранному альбому
 def AlbumFilter(x, album):
-    if x.GetParamValueOrDefault("ADSK_Комплект чертежей") == album:
+    if x.GetParamValueOrDefault(SharedParamsConfig.Instance.AlbumBlueprints) == album:
         return 1
     else:
         return 0
@@ -229,7 +240,13 @@ selection = list(__revit__.ActiveUIDocument.GetSelectedElements())
 
 
 def renumber(step, direction, count, transactionName):
+    # проверка выделенных элементов
     CheckSheets(selection)
+
+    # настройка атрибутов
+    project_parameters = ProjectParameters.Create(__revit__.Application)
+    project_parameters.SetupRevitParams(doc, SharedParamsConfig.Instance.AlbumBlueprints,
+                                        SharedParamsConfig.Instance.StampSheetNumber)
 
     # список из листов учавствующих в перестановке
     SheetsCurrentAlbumList = []
@@ -244,7 +261,7 @@ def renumber(step, direction, count, transactionName):
     prop = [GetNumber(selection[0].GetParamValueOrDefault(BuiltInParameter.SHEET_NUMBER).split("-")), ""]
 
     # название альбома
-    album = selection[0].GetParamValueOrDefault("ADSK_Комплект чертежей")
+    album = selection[0].GetParamValueOrDefault(SharedParamsConfig.Instance.AlbumBlueprints)
 
     # все листы проекта
     SheetsBaseList = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Sheets).ToElements()
@@ -299,7 +316,7 @@ def renumber(step, direction, count, transactionName):
         for idx, sheet in enumerate(SheetsComposeAlbumList):
             sheet[1].SetParamValue(BuiltInParameter.SHEET_NUMBER, str(idx) + "+Temp")
         for sheet in SheetsComposeAlbumList:
-            sheet[1].SetParamValue("Ш.НомерЛиста", str(int(sheet[0])))
             sheet[1].SetParamValue(BuiltInParameter.SHEET_NUMBER, sheet[2])
+            sheet[1].SetParamValue(SharedParamsConfig.Instance.StampSheetNumber, str(int(sheet[0])))
 
         transaction.Commit()
