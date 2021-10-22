@@ -1,0 +1,792 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dosymep.Bim4Everyone</name>
+    </assembly>
+    <members>
+        <member name="T:dosymep.Bim4Everyone.DocumentExtensions">
+            <summary>
+            Класс расширения документа.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.DocumentExtensions.IsExistsParam(Autodesk.Revit.DB.Document,dosymep.Bim4Everyone.ProjectParams.ProjectParam)">
+            <summary>
+            Проверяет на существование параметра проекта.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="revitParam">Параметр проекта.</param>
+            <returns></returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.DocumentExtensions.IsExistsParam(Autodesk.Revit.DB.Document,dosymep.Bim4Everyone.SharedParams.SharedParam)">
+            <summary>
+            Проверяет на существование общего параметра.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="revitParam">Параметр проекта.</param>
+            <returns></returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.ElementExtensions">
+            <summary>
+            Класс расширения элемента
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParamValueOrDefault(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.SharedParams.SharedParam,System.Object)">
+            <summary>
+            Возвращает значение параметра либо значение по умолчанию.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="sharedParam">Общий параметр.</param>
+            <param name="default">Значение по умолчанию.</param>
+            <returns>Возвращает значение параметра либо значение по умолчанию.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.SharedParams.SharedParam)">
+            <summary>
+            Возвращает значение параметра элемента.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="sharedParam">Общий параметр.</param>
+            <returns>Возвращает значение параметра элемента.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.SharedParams.SharedParam,System.Double)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="sharedParam">Общий параметр.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.SharedParams.SharedParam,System.Int32)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="sharedParam">Общий параметр.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.SharedParams.SharedParam,System.String)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="sharedParam">Общий параметр.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.SharedParams.SharedParam,Autodesk.Revit.DB.ElementId)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="sharedParam">Общий параметр.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParam(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.SharedParams.SharedParam)">
+            <summary>
+            Возвращает параметр.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="sharedParam">Общий параметр.</param>
+            <returns>Возвращает параметр.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParamValueOrDefault(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.ProjectParams.ProjectParam,System.Object)">
+            <summary>
+            Возвращает значение параметра либо значение по умолчанию.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="projectParam">Параметр проекта.</param>
+            <param name="default">Значение по умолчанию.</param>
+            <returns>Возвращает значение параметра либо значение по умолчанию.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.ProjectParams.ProjectParam)">
+            <summary>
+            Возвращает значение параметра элемента.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="projectParam">Параметр проекта.</param>
+            <returns>Возвращает значение параметра элемента.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.ProjectParams.ProjectParam,System.Double)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="projectParam">Параметр проекта.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.ProjectParams.ProjectParam,System.Int32)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="projectParam">Параметр проекта.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.ProjectParams.ProjectParam,System.String)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="projectParam">Параметр проекта.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.ProjectParams.ProjectParam,Autodesk.Revit.DB.ElementId)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="projectParam">Параметр проекта.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParam(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.ProjectParams.ProjectParam)">
+            <summary>
+            Возвращает параметр.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="projectParam">Параметр проекта.</param>
+            <returns>Возвращает параметр.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.ModuleEnvironment">
+            <summary>
+            Класс окружения модуля Bim4Everyone
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ModuleEnvironment.#cctor">
+            <summary>
+            Статический конструктор
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ModuleEnvironment.CurrentLibraryPath">
+            <summary>
+            Путь до текущей библиотеки
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ModuleEnvironment.TemplatesPath">
+            <summary>
+            Путь до папки с шаблонами
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ModuleEnvironment.EmptyTemplatePath">
+            <summary>
+            Путь до пустого шаблона документа
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ModuleEnvironment.ParametersTemplatePath">
+            <summary>
+            Путь до шаблона параметров
+            </summary>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.ProjectParams.ProjectParam">
+            <summary>
+            Класс параметров проекта Revit.
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.ProjectParams.ProjectParam._description">
+            <summary>
+            Содержит все описания параметров проекта.
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.ProjectParams.ProjectParam._projectParamTypes">
+            <summary>
+            Содержит все типы параметров проекта.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParam.#ctor">
+            <summary>
+            Конструктор класса параметра проекта.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParam.Description">
+            <inheritdoc/>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParam.SharedParamType">
+            <inheritdoc/>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig">
+            <summary>
+            Конфигурация параметров проекта.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.Instance">
+            <summary>
+            Текущее состояние конфигурации.
+            </summary>
+            <remarks>Перед использованием нужно вызвать <see cref="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.Load(System.String)"/></remarks>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ViewNumberOnSheet">
+            <summary>
+            _Номер Вида на Листе
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.WithFullSheetNumber">
+            <summary>
+            _Полный Номер Листа
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.WithSheetNumber">
+            <summary>
+            _Номера Листа Наличие
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ViewGroup">
+            <summary>
+            _Группа Видов
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ProjectStage">
+            <summary>
+            _Стадия Проекта
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.CheckIsNormalGrid">
+            <summary>
+            Пров_Ортогональность Осям
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.CheckCorrectDistanceGrid">
+            <summary>
+            Пров_Ровно от Оси
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomAreaRatio">
+            <summary>
+            КВГ_Коэффициент площади
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ApartmentGroupName">
+            <summary>
+            КВГ_Доп. сортировка групп
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomGroupName">
+            <summary>
+            КВГ_Группа
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomGroupShortName">
+            <summary>
+            КВГ_ПМЩ_Группа короткое
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.FireCompartmentName">
+            <summary>
+            КВГ_Пожарный отсек
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.FireCompartmentShortName">
+            <summary>
+            КВГ_Пожарный отсек короткое
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomSectionName">
+            <summary>
+            КВГ_Секция
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomSectionShortName">
+            <summary>
+            КВГ_Секция короткое
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomTypeGroupName">
+            <summary>
+            КВГ_Тип группы помещений
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomTypeGroupShortName">
+            <summary>
+            КВГ_Тип группы помещений короткий
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ApartmentAreaSpec">
+            <summary>
+            КВГ_КВР_Площадь по ТЗ
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ApartmentAreaMinSpec">
+            <summary>
+            КВГ_КВР_Площадь по ТЗ мин
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ApartmentAreaMaxSpec">
+            <summary>
+            КВГ_КВР_Площадь по ТЗ макс
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomTypeCountGroup">
+            <summary>
+            КВГ_Тип нумерации групп
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomName">
+            <summary>
+            КВГ_Наименование
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ApartmentTypeNumsInSection">
+            <summary>
+            КВГ_Тип нумерации квартир в секции
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomBalcony">
+            <summary>
+            КВГ_Летнее
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomLiving">
+            <summary>
+            КВГ_Жилое
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomNumberFix">
+            <summary>
+            КВГ_ПМЩ_Фиксация номера
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.LoadInstance(System.String)">
+            <summary>
+            Загрузка текущей конфигурации.
+            </summary>
+            <param name="configPath">Путь до конфигурации.</param>
+            <remarks>Возвращает конфигурацию по умолчанию если был найден переданный файл.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.Load(System.String)">
+            <summary>
+            Загрузка текущей конфигурации.
+            </summary>
+            <param name="configPath">Путь до конфигурации.</param>
+            <remarks>Возвращает конфигурацию по умолчанию если был найден переданный файл.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.GetDefaultConfg">
+            <summary>
+            Возвращает конфигурацию по умолчанию.
+            </summary>
+            <returns>Возвращает конфигурацию по умолчанию.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.RevitParam">
+            <summary>
+            Абстрактный класс параметра Revit.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.RevitParam.Name">
+            <summary>
+            Наименование параметра.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.RevitParam.PropertyName">
+            <summary>
+            Наименование свойства параметра.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.RevitParam.Description">
+            <summary>
+            Описание параметра.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.RevitParam.SharedParamType">
+            <summary>
+            Тип параметра.
+            </summary>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.RevitParamsConfig">
+            <summary>
+            Класс по работе с параметрами Revit.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.RevitParamsConfig.Save(System.String)">
+            <summary>
+            Сохранение текущей конфигурации.
+            </summary>
+            <param name="configPath">Путь до конфигурации.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.RevitParamsConfig.GetSharedParams">
+            <summary>
+            Возвращает весь список настроек параметров.
+            </summary>
+            <returns>Возвращает весь список настроек параметров.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.SharedParams.SharedParam">
+            <summary>
+            Класс общего параметра
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.SharedParams.SharedParam._description">
+            <summary>
+            Содержит все описания общих параметров
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.SharedParams.SharedParam._sharedParamTypes">
+            <summary>
+            Содержит все типы общих параметров
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParam.#ctor">
+            <summary>
+            Конструктор класса общего параметра
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParam.Description">
+            <inheritdoc/>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParam.SharedParamType">
+            <inheritdoc/>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig">
+            <summary>
+            Конфигурация общих параметров.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.Instance">
+            <summary>
+            Текущее состояние конфигурации.
+            </summary>
+            <remarks>Перед использованием нужно вызвать <see cref="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.Load(System.String)"/></remarks>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeWidth">
+            <summary>
+            Размер-ширина
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeDepth">
+            <summary>
+            Размер-глубина
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BulkheadExists">
+            <summary>
+            Перемычка-существование
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BulkheadLength">
+            <summary>
+            Перемычка-длина
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BulkheadDepth">
+            <summary>
+            Перемычка-глубина
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BulkheadClass">
+            <summary>
+            Перемычка-класс
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.AlbumBlueprints">
+            <summary>
+            ADSK_Комплект чертежей
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.MechanicalSystemName">
+            <summary>
+            ADSK_Имя системы
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.StampSheetNumber">
+            <summary>
+            Ш.НомерЛиста
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomArea">
+            <summary>
+            ФОП_ПМЩ_Площадь
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomAreaWithRatio">
+            <summary>
+            ФОП_ПМЩ_Площадь с коэф.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomAreaRatio">
+            <summary>
+            ФОП_Коэффициент площади
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaRatio">
+            <summary>
+            ФОП_КВР_Площадь с коэф.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaNoBalcony">
+            <summary>
+            ФОП_КВР_Площадь без ЛП
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentLivingArea">
+            <summary>
+            ФОП_КВР_Площадь жилая
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentArea">
+            <summary>
+            ФОП_КВР_Площадь без коэф.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentFullArea">
+            <summary>
+            ФОП_КВР_Площадь по пятну
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomGroupShortName">
+            <summary>
+            ФОП_ПМЩ_Группа
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentGroupName">
+            <summary>
+            ФОП_Доп. сортировка групп
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FireCompartmentShortName">
+            <summary>
+            ФОП_Пожарный отсек
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomSectionShortName">
+            <summary>
+            ФОП_ПМЩ_Секция
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomTypeGroupShortName">
+            <summary>
+            ФОП_Тип группы помещений
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaSpec">
+            <summary>
+            ФОП_КВР_Площадь по ТЗ
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaMinSpec">
+            <summary>
+            ФОП_КВР_Площадь по ТЗ мин
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaMaxSpec">
+            <summary>
+            ФОП_КВР_Площадь по ТЗ макс
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentNumber">
+            <summary>
+            ФОП_Номер квартиры
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentNumberExtra">
+            <summary>
+            ФОП_Доп. номер помещения
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaRatioFix">
+            <summary>
+            ФОП_ФИКС_КВР_Площадь с коэф.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaNoBalconyFix">
+            <summary>
+            ФОП_ФИКС_КВР_Площадь без ЛП
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentLivingAreaFix">
+            <summary>
+            ФОП_ФИКС_КВР_Площадь жилая
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaFix">
+            <summary>
+            ФОП_ФИКС_КВР_Площадь без коэф.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomAreaFix">
+            <summary>
+            ФОП_ФИКС_ПМЩ_Площадь
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomAreaWithRatioFix">
+            <summary>
+            ФОП_ФИКС_ПМЩ_Площадь с коэф.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentFullAreaFix">
+            <summary>
+            ФОП_ФИКС_КВР_Площадь по пятну
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.Level">
+            <summary>
+            ФОП_Этаж
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.LoadInstance(System.String)">
+            <summary>
+            Загрузка текущей конфигурации.
+            </summary>
+            <param name="configPath">Путь до конфигурации.</param>
+            <remarks>Возвращает конфигурацию по умолчанию если был найден переданный файл.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.Load(System.String)">
+            <summary>
+            Загрузка текущей конфигурации.
+            </summary>
+            <param name="configPath">Путь до конфигурации.</param>
+            <remarks>Возвращает конфигурацию по умолчанию если был найден переданный файл.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.GetDefaultConfg">
+            <summary>
+            Возвращает конфигурацию по умолчанию.
+            </summary>
+            <returns>Возвращает конфигурацию по умолчанию.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.Save(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.GetSharedParams">
+            <summary>
+            Возвращает весь список настроек параметров.
+            </summary>
+            <returns>Возвращает весь список настроек параметров.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.Templates.EmptyProject">
+            <summary>
+            Класс шаблона пустого проекта.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.EmptyProject.Create(Autodesk.Revit.ApplicationServices.Application)">
+            <summary>
+            Создает экземпляр класса пустого проекта.
+            </summary>
+            <param name="application">Приложение Revit.</param>
+            <returns>Возвращает экземпляр класса пустого проекта.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.EmptyProject.#ctor">
+            <summary>
+            Конструктор класса.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Templates.EmptyProject.Application">
+            <summary>
+            Приложение Revit.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.EmptyProject.CreateEmptyProject(System.String)">
+            <summary>
+            Создает пустой проект.
+            </summary>
+            <param name="documentPath">Место сохранения пустого проекта.</param>
+            <returns>Возвращает сохраненный документ.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.EmptyProject.CreateEmptyProject(System.String,Autodesk.Revit.DB.SaveAsOptions)">
+            <summary>
+            Создает пустой проект.
+            </summary>
+            <param name="documentPath">Место сохранения пустого проекта.</param>
+            <param name="saveAsOptions">Настройки сохранения пустого проекта.</param>
+            <returns>Возвращает сохраненный документ.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.Templates.ProjectParameters">
+            <summary>
+            Класс по копирование параметров проекта.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.Create(Autodesk.Revit.ApplicationServices.Application)">
+            <summary>
+            Создает экземпляр класса параметров проекта.
+            </summary>
+            <param name="application">Приложение Revit.</param>
+            <returns>Возвращает экземпляр класса параметров проекта.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.#ctor">
+            <summary>
+            Конструктор класса.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Templates.ProjectParameters.Application">
+            <summary>
+            Приложение Revit.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupRevitParam(Autodesk.Revit.DB.Document,dosymep.Bim4Everyone.RevitParam)">
+            <summary>
+            Настройка параметра.
+            </summary>
+            <param name="target">Документ, в котором требуется настроить параметр.</param>
+            <param name="revitParam">Параметр, который требуется настроить.</param>
+            <remarks>Метод открывает транзакцию при настройке параметра.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupRevitParams(Autodesk.Revit.DB.Document,System.Collections.Generic.IEnumerable{dosymep.Bim4Everyone.RevitParam})">
+            <summary>
+            Настройка параметров.
+            </summary>
+            <param name="target">Документ, в котором требуется настроить параметры.</param>
+            <param name="revitParams">Параметры, которые требуется настроить.</param>
+            <remarks>Метод открывает транзакцию при настройке параметров.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupRevitParam(Autodesk.Revit.DB.Document,dosymep.Bim4Everyone.ProjectParams.ProjectParam)">
+            <summary>
+            Настройка параметра проекта.
+            </summary>
+            <param name="target">Документ, в котором требуется настроить параметр проекта.</param>
+            <param name="revitParam">Параметр проекта, который требуется настроить.</param>
+            <remarks>Метод открывает транзакцию при настройке параметра проекта.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupRevitParams(Autodesk.Revit.DB.Document,dosymep.Bim4Everyone.ProjectParams.ProjectParam[])">
+            <summary>
+            Настройка параметров проекта.
+            </summary>
+            <param name="target">Документ, в котором требуется настроить параметры проекта.</param>
+            <param name="revitParams">Параметры проекта, которые требуется настроить.</param>
+            <remarks>Метод открывает транзакцию при настройке параметров проекта.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupRevitParams(Autodesk.Revit.DB.Document,System.Collections.Generic.IEnumerable{dosymep.Bim4Everyone.ProjectParams.ProjectParam})">
+            <summary>
+            Настройка параметров проекта.
+            </summary>
+            <param name="target">Документ, в котором требуется настроить параметры проекта.</param>
+            <param name="revitParams">Параметры проекта, которые требуется настроить.</param>
+            <remarks>Метод открывает транзакцию при настройке параметров проекта.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupRevitParam(Autodesk.Revit.DB.Document,dosymep.Bim4Everyone.SharedParams.SharedParam)">
+            <summary>
+            Настройка общий параметр.
+            </summary>
+            <param name="target">Документ, в котором требуется настроить общий параметр.</param>
+            <param name="revitParam">Общий параметр, который требуется настроить.</param>
+            <remarks>Метод открывает транзакцию при настройке общего параметра.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupRevitParams(Autodesk.Revit.DB.Document,dosymep.Bim4Everyone.SharedParams.SharedParam[])">
+            <summary>
+            Настройка общих параметров.
+            </summary>
+            <param name="target">Документ, в котором требуется настроить общие параметры.</param>
+            <param name="revitParams">Общие параметры, которые требуется настроить.</param>
+            <remarks>Метод открывает транзакцию при настройке общих параметров.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupRevitParams(Autodesk.Revit.DB.Document,System.Collections.Generic.IEnumerable{dosymep.Bim4Everyone.SharedParams.SharedParam})">
+            <summary>
+            Настройка общих параметров.
+            </summary>
+            <param name="target">Документ, в котором требуется настроить общие параметры.</param>
+            <param name="revitParams">Общие параметры, которые требуется настроить.</param>
+            <remarks>Метод открывает транзакцию при настройке общих параметров.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupNumerateSheets(Autodesk.Revit.DB.Document)">
+            <summary>
+            Настраивает атрибуты нумерации листов.
+            </summary>
+            <param name="target">Документ, в котором требуется настроить атрибуты нумерации листов.</param>
+            <remarks>Метод открывает транзакцию при настройке атрибутов нумерации листов.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupNumerateViewsOnSheet(Autodesk.Revit.DB.Document)">
+            <summary>
+            Настраивает атрибуты нумерации видов на листе.
+            </summary>
+            <param name="target">Документ, в котором требуется настроить атрибуты нумерации видов на листах.</param>
+            <remarks>Метод открывает транзакцию при настройки нумерации видов на листе.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupBrowserOrganization(Autodesk.Revit.DB.Document)">
+            <summary>
+            Настраивает диспетчер видов.
+            </summary>
+            <param name="target">Документ, в котором требуется настроить диспетчер видов.</param>
+            <remarks>Метод открывает транзакцию при настройке диспетчера видов.</remarks>
+        </member>
+    </members>
+</doc>

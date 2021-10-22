@@ -1,0 +1,1082 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dosymep.Revit</name>
+    </assembly>
+    <members>
+        <member name="T:dosymep.Revit.Comparators.ElementComparer">
+            <summary>
+            Компаратор для элемента.
+            </summary>
+            <remarks>Используется умное сравнение <see cref="T:dosymep.Revit.Comparators.LogicalStringComparer"/>. Сравнивает по свойству <see cref="P:Autodesk.Revit.DB.Element.Name"/>.</remarks>
+        </member>
+        <member name="M:dosymep.Revit.Comparators.ElementComparer.Compare(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.Element)">
+            <inheritdoc/>
+        </member>
+        <member name="T:dosymep.Revit.Comparators.LogicalStringComparer">
+            <summary>
+            Умное сравнение строк.
+            </summary>
+            <remarks>Для сравнения используется метод WinApi <see cref="M:dosymep.Revit.Comparators.LogicalStringComparer.StrCmpLogicalW(System.String,System.String)"/></remarks>
+        </member>
+        <member name="M:dosymep.Revit.Comparators.LogicalStringComparer.Compare(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:dosymep.Revit.Comparators.ViewSheetComparer">
+            <summary>
+            Компаратор для листов.
+            </summary>
+            <remarks>Используется умное сравнение <see cref="T:dosymep.Revit.Comparators.LogicalStringComparer"/>. Сравнивает по свойству <see cref="P:Autodesk.Revit.DB.ViewSheet.SheetNumber"/>.</remarks>
+        </member>
+        <member name="M:dosymep.Revit.Comparators.ViewSheetComparer.Compare(Autodesk.Revit.DB.ViewSheet,Autodesk.Revit.DB.ViewSheet)">
+            <inheritdoc/>
+        </member>
+        <member name="T:dosymep.Revit.DocumentExtensions">
+            <summary>
+            Расширения для документа Revit.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinks(System.String[])">
+            <summary>
+            Выгружает все связанные файлы для переданных документов Revit.
+            </summary>
+            <param name="rvtFileNames">Документы Revit.</param>
+            <remarks>Работает без использования API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinks(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Выгружает все связанные файлы для переданных документов Revit.
+            </summary>
+            <param name="rvtFileNames">Документы Revit.</param>
+            <remarks>Работает без использования API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinks(System.String)">
+            <summary>
+            Выгружает все связанные файлы для переданного документа Revit.
+            </summary>
+            <param name="rvtFileName">Документ Revit.</param>
+            <remarks>Работает без использования API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinksApi(System.String[])">
+            <summary>
+            Выгружает все связанные файлы для переданных документов Revit.
+            </summary>
+            <param name="rvtFileNames">Документы Revit.</param>
+            <remarks>Работает c использованием API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinksApi(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Выгружает все связанные файлы для переданных документов Revit.
+            </summary>
+            <param name="rvtFileNames">Документы Revit.</param>
+            <remarks>Работает c использованием API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinksApi(System.String)">
+            <summary>
+            Выгружает все связанные файлы для переданного документа Revit.
+            </summary>
+            <param name="rvtFileName">Документ Revit.</param>
+            <remarks>Работает c использованием API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.IsExistsParam(Autodesk.Revit.DB.Document,System.String)">
+            <summary>
+            Проверяет на наличие параметра документа.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <returns>Возвращает true если параметр был добавлен в Revit, иначе false.</returns>
+            <exception cref="T:System.ArgumentException">Наименование параметра не может быть null или пустым.</exception>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.IsExistsProjectParam(Autodesk.Revit.DB.Document,System.String)">
+            <summary>
+            Проверяет на наличие параметра проекта.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <param name="paramName">Наименование параметра проекта.</param>
+            <returns>Возвращает true если параметр проекта был добавлен в Revit, иначе false.</returns>
+            <exception cref="T:System.ArgumentException">Наименование параметра проекта не может быть null или пустым.</exception>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.IsExistsSharedParam(Autodesk.Revit.DB.Document,System.String)">
+            <summary>
+            Проверяет на наличие общего параметра проекта.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <param name="paramName">Наименование общего параметра проекта.</param>
+            <returns>Возвращает true если общий параметр проекта был добавлен в Revit, иначе false.</returns>
+            <exception cref="T:System.ArgumentException">Наименование общего параметра не может быть null или пустым.</exception>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.GetProjectParams(Autodesk.Revit.DB.Document)">
+            <summary>
+            Возвращает список параметров проекта.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <returns>Возвращает список параметров проекта.</returns>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.GetSharedParams(Autodesk.Revit.DB.Document)">
+            <summary>
+            Возвращает список общих параметров.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <returns>Возвращает список общих параметров.</returns>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.GetProjectParamElements(Autodesk.Revit.DB.Document)">
+            <summary>
+            Возвращает все параметры проекта.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <returns>Возвращает все параметры проекта.</returns>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.GetParameterBindings(Autodesk.Revit.DB.Document)">
+            <summary>
+            Возвращает связку определения параметра с привязкой.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <returns>Возвращает связку определения параметра с привязкой.</returns>
+        </member>
+        <member name="T:dosymep.Revit.ElementExtensions">
+            <summary>
+            Расширения для элемента Revit.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.GetParamValueOrDefault(Autodesk.Revit.DB.Element,System.String,System.Object)">
+            <summary>
+            Возвращает значение параметра либо значение по умолчанию.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <param name="default">Значение по умолчанию.</param>
+            <returns>Возвращает значение параметра либо значение по умолчанию.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.GetParamValue(Autodesk.Revit.DB.Element,System.String)">
+            <summary>
+            Возвращает значение параметра элемента.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <returns>Возвращает значение параметра элемента.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,System.String,System.Double)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,System.String,System.Int32)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,System.String,System.String)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,System.String,Autodesk.Revit.DB.ElementId)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.GetParamValueOrDefault(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInParameter,System.Object)">
+            <summary>
+            Возвращает значение параметра либо значение по умолчанию.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="builtInParameter">Встроенный тип параметра.</param>
+            <param name="default">Значение по умолчанию.</param>
+            <returns>Возвращает значение параметра либо значение по умолчанию.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.GetParamValue(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+            Возвращает значение параметра элемента.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="builtInParameter">Встроенный тип параметра.</param>
+            <returns>Возвращает значение параметра элемента.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="builtInParameter">Встроенный тип параметра.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="builtInParameter">Встроенный тип параметра.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="builtInParameter">Встроенный тип параметра.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+            <summary>
+            Устанавливает значение параметра.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="builtInParameter">Встроенный тип параметра.</param>
+            <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.GetParam(Autodesk.Revit.DB.Element,System.String)">
+            <summary>
+            Возвращает параметр.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <returns>Возвращает параметр.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.GetParam(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+            Возвращает параметр.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="builtInParameter">Встроенный тип параметра.</param>
+            <returns>Возвращает параметр.</returns>
+        </member>
+        <member name="T:dosymep.Revit.ParamExtensions">
+            <summary>
+            Расширения класса параметров.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.ParamExtensions.AsObject(Autodesk.Revit.DB.Parameter)">
+            <summary>
+            Возвращает значение параметра.
+            </summary>
+            <param name="parameter">Параметр.</param>
+            <returns>Возвращает значение параметра.</returns>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.DirectoryInfo">
+            <summary>
+            Информация об элементе.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.DirectoryInfo.Path">
+            <summary>
+            Полный путь до элемента.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.DirectoryInfo.Size">
+            <summary>
+            Размер элемента (измеряется в байтах).
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.DirectoryInfo.ModelSize">
+            <summary>
+            Размер модели (измеряется в байтах).
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.DirectoryInfo.ModelCount">
+            <summary>
+            Количество моделей в папке.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.DirectoryInfo.FolderCount">
+            <summary>
+            Количество папок в папке.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.DirectoryInfo.Exists">
+            <summary>
+            Признак существования папки.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.DirectoryInfo.IsFolder">
+            <summary>
+            Признак папки.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.DirectoryInfo.LastModifiedBy">
+            <summary>
+            Имя пользователя последнего изменившего элемент.
+            </summary>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.IRevitHttpClient">
+            <summary>
+            Интерфейс HTTP соединения с Revit сервером.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.IRevitHttpClient.ServerName">
+            <summary>
+            Наименование Revit сервера
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.IRevitHttpClient.ServerVersion">
+            <summary>
+            Версия Revit сервера
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.IRevitHttpClient.Get(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Формирует GET запрос к серверу.
+            </summary>
+            <param name="requestUri">Ссылка запроса.</param>
+            <param name="cancellationToken">Токен отмены запроса.</param>
+            <returns>Возвращает результат запроса к серверу.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.IRevitHttpClient.Put(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Формирует PUT запрос к серверу.
+            </summary>
+            <param name="requestUri">Ссылка запроса.</param>
+            <param name="cancellationToken">Токен отмены запроса.</param>
+            <returns>Возвращает результат запроса к серверу.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.IRevitHttpClient.Post(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Формирует POST запрос к серверу.
+            </summary>
+            <param name="requestUri">Ссылка запроса.</param>
+            <param name="cancellationToken">Токен отмены запроса.</param>
+            <returns>Возвращает результат запроса к серверу.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.IRevitHttpClient.Delete(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Формирует DELETE запрос к серверу.
+            </summary>
+            <param name="requestUri">Ссылка запроса.</param>
+            <param name="cancellationToken">Токен отмены запроса.</param>
+            <returns>Возвращает результат запроса к серверу.</returns>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.IRevitServerClient">
+            <summary>
+            Интерфейс взаимодействия с Revit сервером.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.IRevitServerClient.ServerName">
+            <summary>
+            Наименование Revit сервера
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.IRevitServerClient.ServerVersion">
+            <summary>
+            Версия Revit сервера
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.IRevitServerClient.GetServerPropertiesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Возвращает информацию о Revit сервере.
+            </summary>
+            <param name="cancellationToken">Токен отмены.</param>
+            <returns>Возвращает информацию о Revit сервере.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.IRevitServerClient.GetRootContentsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Возвращает список родительских элементов.
+            </summary>
+            <param name="cancellationToken">Токен отмены.</param>
+            <returns>Возвращает список родительских элементов.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.IRevitServerClient.GetContentsAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Возвращает список дочерних элементов переданной папки.
+            </summary>
+            <param name="folderPath">Путь до запрашиваемой папки.</param>
+            <param name="cancellationToken">Токен отмены.</param>
+            <returns>Возвращает список дочерних элементов переданной папки.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.IRevitServerClient.GetAllRevitContentsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Возвращает всю структуру Revit сервера.
+            </summary>
+            <param name="cancellationToken">Токен отмены.</param>
+            <returns>Возвращает всю структуру Revit сервера по переданной папке.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.IRevitServerClient.GetAllRevitContentsAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Возвращает всю структуру Revit сервера по переданной папке.
+            </summary>
+            <param name="parentPath">Путь до родительской папке.</param>
+            <param name="cancellationToken">Токен отмены.</param>
+            <returns>Возвращает всю структуру Revit сервера по переданной папке.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.IRevitServerClient.GetRootDirectoryInfoAsync(System.Threading.CancellationToken)">
+            <summary>
+            Возвращает информацию о родительском элементе.
+            </summary>
+            <param name="cancellationToken">Токен отмены.</param>
+            <returns>Возвращает информацию о родительском элементе.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.IRevitServerClient.GetDirectoryInfoAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Возвращает информацию о переданном элементе.
+            </summary>
+            <param name="path">Путь до запрашиваемой элемента.</param>
+            <param name="cancellationToken">Токен отмены.</param>
+            <returns>Возвращает информацию о переданном элементе.</returns>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.ISerializer">
+            <summary>
+            Интерфейс сериализатора
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.ISerializer.Deserialize``1(System.String)">
+            <summary>
+            Десериализует строку в объект.
+            </summary>
+            <typeparam name="T">Тип результата десериализации.</typeparam>
+            <param name="text">Строка десериализуемого объекта.</param>
+            <returns></returns>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.ModelLockTypes">
+            <summary>
+            Типы блокировок модели.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.ServerClient.ModelLockTypes.Data">
+            <summary>
+            Блокировка файла.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.ServerClient.ModelLockTypes.Permissions">
+            <summary>
+            Блокировка разрешений.
+            </summary>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.ModelLockOptions">
+            <summary>
+            Опции блокировки модели.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.ServerClient.ModelLockOptions.Read">
+            <summary>
+            Только чтение.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.ServerClient.ModelLockOptions.Write">
+            <summary>
+            Чтение-запись.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.ServerClient.ModelLockOptions.NonExclusiveReadOrWrite">
+            <summary>
+            Чтение или запись.
+            </summary>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.ModelLockInfo">
+            <summary>
+            Информация о блокировки модели.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.ModelLockInfo.Age">
+            <summary>
+            Время блокировки.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.ModelLockInfo.TimeStamp">
+            <summary>
+            Время начала блокировки.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.ModelLockInfo.UserName">
+            <summary>
+            Имя пользователя заблокировавшего модель.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.ModelLockInfo.ModelPath">
+            <summary>
+            Путь до модели.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.ModelLockInfo.ModelLockType">
+            <summary>
+            Тип блокировки.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.ModelLockInfo.ModelLockOptions">
+            <summary>
+            Опции блокировки.
+            </summary>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.RevitContents">
+            <summary>
+            Папка с информацией о дочерних моделях и папках.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitContents.Path">
+            <summary>
+            Полный путь до папки.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitContents.DriveSpace">
+            <summary>
+            Общий размер диска (измеряется в байтах).
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitContents.DriveFreeSpace">
+            <summary>
+            Не занятый объем диска (измеряется в байтах).
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitContents.Models">
+            <summary>
+            Список моделей находящихся в текущей папке.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitContents.Folders">
+            <summary>
+            Список папок находящихся в текущей папке.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitContents.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitContents.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitContents.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitContents.Equals(dosymep.Revit.ServerClient.RevitContents)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitContents.CompareTo(dosymep.Revit.ServerClient.RevitContents)">
+            <inheritdoc/>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.RevitFolder">
+            <summary>
+            Папка Revit.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitFolder.Size">
+            <summary>
+            Размер папки (измеряется в байтах)
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitFolder.Name">
+            <summary>
+            Наименование папки.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitFolder.HasContents">
+            <summary>
+            Признак содержания информации в папке.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitFolder.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.RevitHttpClient">
+            <summary>
+            Вспомогательный класс соединения с Revit сервером.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitHttpClient.#ctor(System.String,System.String)">
+            <summary>
+            Создает экземпляр клиента с Revit сервером.
+            </summary>
+            <param name="serverName">Наименование Revit сервера.</param>
+            <param name="serverVersion">Версия Revit сервера.</param>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitHttpClient.ServerName">
+            <inheritdoc/>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitHttpClient.ServerVersion">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitHttpClient.Get(System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitHttpClient.Put(System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitHttpClient.Post(System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitHttpClient.Delete(System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.RevitModel">
+            <summary>
+            Модель Revit (.rvt файл)
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitModel.ModelSize">
+            <summary>
+            Размер модели (измеряется в байтах).
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitModel.SupportSize">
+            <summary>
+            Размер вспомогательных данных (измеряется в байтах)
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitModel.Name">
+            <summary>
+            Наименование файла.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitModel.ProductVersion">
+            <summary>
+            Номер версии файла Revit, в которую была внесена последняя модификация модели.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitModel.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.LockState">
+            <summary>
+            Типы блокировки объектов Revit сервера.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.ServerClient.LockState.Unlocked">
+            <summary>
+            Не блокирован.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.ServerClient.LockState.Locked">
+            <summary>
+            Заблокирован.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.ServerClient.LockState.LockedParent">
+            <summary>
+            Блокировка родителя.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.ServerClient.LockState.LockedChildren">
+            <summary>
+            Блокировка дочернего объекта.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.ServerClient.LockState.BeingUnlocked">
+            <summary>
+            Был разблокирован.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.ServerClient.LockState.BeingLocked">
+            <summary>
+            Был заблокирован.
+            </summary>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.RevitResponse">
+            <summary>
+            Базовый класс ответа Revit сервера.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitResponse.LockContext">
+            <summary>
+            Контекст блокировки папки или модели администратором.
+            </summary>
+            <remarks>Описание использования административной блокировки, такой как копирование или перемещение папок.</remarks>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitResponse.LockState">
+            <summary>
+            Состояние блокировки.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitResponse.ModelLockInfo">
+            <summary>
+            Информация о текущей блокировки модели клиентами сервера.
+            </summary>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.RevitServerClient">
+            <summary>
+            Клиент доступа к Revit сервер.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitServerClient.#ctor(System.String,System.String,dosymep.Revit.ServerClient.ISerializer)">
+            <summary>
+            Создает экземпляр класса клиента Revit сервера.
+            </summary>
+            <param name="serverName">Наименование Revit сервера.</param>
+            <param name="serverVersion">Версия Revit сервера.</param>
+            <param name="serializer">Сериализатор.</param>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitServerClient.ServerName">
+            <inheritdoc/>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.RevitServerClient.ServerVersion">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitServerClient.GetServerPropertiesAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitServerClient.GetRootContentsAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitServerClient.GetContentsAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitServerClient.GetAllRevitContentsAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitServerClient.GetAllRevitContentsAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitServerClient.GetRootDirectoryInfoAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitServerClient.GetDirectoryInfoAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.RevitServerClientBuilder">
+            <summary>
+            Класс для создания клиента Revit сервера.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitServerClientBuilder.SetServerName(System.String)">
+            <summary>
+            Устанавливает наименование сервера.
+            </summary>
+            <param name="serverName">Наименование сервера.</param>
+            <returns>Возвращает текущий builder.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitServerClientBuilder.SetServerVersion(System.String)">
+            <summary>
+            Устанавливает версию сервера.
+            </summary>
+            <param name="serverVersion">Версия сервера.</param>
+            <returns>Возвращает текущий builder.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitServerClientBuilder.SetJsonSerializer(dosymep.Revit.ServerClient.ISerializer)">
+            <summary>
+            Устанавливает JsonSerializer.
+            </summary>
+            <param name="serializer">Json сериализация.</param>
+            <returns>Возвращает текущий builder.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ServerClient.RevitServerClientBuilder.Build">
+            <summary>
+            Создает соединение с Revit сервером.
+            </summary>
+            <returns>Возвращает соединение с Revit сервером.</returns>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.ServerRoles">
+            <summary>
+            Типы серверных ролей.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.ServerClient.ServerRoles.Host">
+            <summary>
+            Host.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.ServerClient.ServerRoles.Accelerator">
+            <summary>
+            Accelerator.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.ServerClient.ServerRoles.Admin">
+            <summary>
+            Администратор.
+            </summary>
+        </member>
+        <member name="T:dosymep.Revit.ServerClient.ServerInformations">
+            <summary>
+            Информация о Revit сервере.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.ServerInformations.MaximumModelNameLength">
+            <summary>
+            Максимальная длина имени модели.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.ServerInformations.MaximumFolderPathLength">
+            <summary>
+            Максимальная длина имени папки.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.ServerInformations.Servers">
+            <summary>
+            Список имен серверов сети Revit.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ServerClient.ServerInformations.ServerRoles">
+            <summary>
+            Список ролей сервера.
+            </summary>
+        </member>
+        <member name="T:dosymep.Revit.Transmissions.ExternalFileReference">
+            <summary>
+            Класс содержащий информацию о связанном файле.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Transmissions.ExternalFileReference.ElementId">
+            <summary>
+            Идентификатор связанного файла.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Transmissions.ExternalFileReference.ExternalFileReferenceType">
+            <summary>
+            Тип связанного файла.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Transmissions.ExternalFileReference.LastSavedPath">
+            <summary>
+            Путь последнего сохранения связанного файла.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Transmissions.ExternalFileReference.LastSavedAbsolutePath">
+            <summary>
+            Абсолютный путь последнего сохранения связанного файла.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Transmissions.ExternalFileReference.LastSavedCentralServerLocation">
+            <summary>
+            Путь последнего сохранения связанного файла на сервере. 
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Transmissions.ExternalFileReference.LastSavedPathType">
+            <summary>
+            Тип пути последнего сохранения связанного файла.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Transmissions.ExternalFileReference.LastSavedLoadState">
+            <summary>
+            Состояние загрузки последнего сохранения связанного файла.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Transmissions.ExternalFileReference.DesiredPath">
+            <summary>
+            Предпочтительный путь до связанного файла.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Transmissions.ExternalFileReference.DesiredCentralServerLocation">
+            <summary>
+            Предпочтительный путь до связанного файла.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Transmissions.ExternalFileReference.DesiredPathType">
+            <summary>
+            Предпочтительный тип пути до связанного файла.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Transmissions.ExternalFileReference.DesiredLoadState">
+            <summary>
+            Предпочтительное состояние загрузки связанного файла.
+            </summary>
+        </member>
+        <member name="T:dosymep.Revit.Transmissions.ExternalFileReferenceType">
+            <summary>
+            Типы связанных файлов.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Transmissions.ExternalFileReferenceType.Decal">
+            <summary>
+            Decal.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Transmissions.ExternalFileReferenceType.CADLink">
+            <summary>
+            CAD связь.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Transmissions.ExternalFileReferenceType.RevitLink">
+            <summary>
+            Revit связь.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Transmissions.ExternalFileReferenceType.KeynoteTable">
+            <summary>
+            KeynoteTable.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Transmissions.ExternalFileReferenceType.AssemblyCodeTable">
+            <summary>
+            AssemblyCodeTable
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Transmissions.ExternalFileReferenceType.DWFMarkup">
+            <summary>
+            DWFMarkup
+            </summary>
+        </member>
+        <member name="T:dosymep.Revit.Transmissions.LoadState">
+            <summary>
+            Типы загрузок связанных файлов.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Transmissions.LoadState.Loaded">
+            <summary>
+            Загружено.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Transmissions.LoadState.Unloaded">
+            <summary>
+            Выгружено.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Transmissions.LoadState.NotFound">
+            <summary>
+            Не найдено.
+            </summary>
+        </member>
+        <member name="T:dosymep.Revit.Transmissions.PathType">
+            <summary>
+            Типы путей.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Transmissions.PathType.Absolute">
+            <summary>
+            Абсолютный путь.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Transmissions.PathType.Relative">
+            <summary>
+            Относительный путь.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Transmissions.PathType.ServerLocation">
+            <summary>
+            Путь с Revit Server или BIM360.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Transmissions.PathType.RelativeCentralModel">
+            <summary>
+            Relative to Central Model.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Transmissions.PathType.RelativeLibraryLocations">
+            <summary>
+            Relative to Library Locations.
+            </summary>
+        </member>
+        <member name="T:dosymep.Revit.Transmissions.TransmissionData">
+            <summary>
+            Данные передачи Revit модели.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Transmissions.TransmissionData.TransmissionDataFileName">
+            <summary>
+            Наименование файла содержащего данные передачи.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Transmissions.TransmissionData.IsTransmitted">
+            <summary>
+            Признак передачи модели (true - если модель была передана).
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Transmissions.TransmissionData.UserData">
+            <summary>
+            Пользовательские данные.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Transmissions.TransmissionData.Version">
+            <summary>
+            Версия.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Transmissions.TransmissionData.ExternalFileReferences">
+            <summary>
+            Связанные файлы Revit.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.Transmissions.TransmissionData.ReadTransmissionData(System.String)">
+            <summary>
+            Чтение данных передачи.
+            </summary>
+            <param name="revitFileName">Путь до файла Revit.</param>
+            <returns>Возвращает данные передачи.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Transmissions.TransmissionData.WriteTransmissionData(System.String,dosymep.Revit.Transmissions.TransmissionData)">
+            <summary>
+            Записывает данные передачи Revit.
+            </summary>
+            <param name="revitFileName">Путь до файла Revit.</param>
+            <param name="transmissionData">Данные передачи Revit модели.</param>
+        </member>
+        <member name="M:dosymep.Revit.Transmissions.TransmissionData.IsNotTransmittedDocument(System.String)">
+            <summary>
+            Документ модели не является переданным.
+            </summary>
+            <param name="revitFileName">Путь до файла Revit.</param>
+            <returns>Возвращает true - если документ модели не был передан.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Transmissions.TransmissionData.IsTransmittedDocument(System.String)">
+            <summary>
+            Документ модели является переданным.
+            </summary>
+            <param name="revitFileName">Путь до файла Revit.</param>
+            <returns>Возвращает true - если документ модели был передан.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Transmissions.TransmissionData.GetXmlTransmissionData(System.Byte[])">
+            <summary>
+            Десериализация байтов в данные передачи модели.
+            </summary>
+            <param name="bytes">Байтовый массив файла передачи модели.</param>
+            <returns>Возвращает данные передачи модели.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Transmissions.TransmissionData.GetByteArray(System.String)">
+            <summary>
+            Конвертирует строку в байтовый массив данных передачи модели.
+            </summary>
+            <param name="textTransmissionData">XML данные передачи модели.</param>
+            <returns>Возвращает сконвертированную строку в байтовый массив данных передачи модели.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Transmissions.TransmissionData.Serialize``1(``0)">
+            <summary>
+            Сериализует объект в XML строку без отступов и пространств имен.
+            </summary>
+            <typeparam name="T">Тип сериализуемого объект.</typeparam>
+            <param name="object">Сериализуемый объект.</param>
+            <returns>Возвращает XML строку переданного объекта.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Transmissions.TransmissionData.Deserialize``1(System.IO.TextReader)">
+            <summary>
+            Десериализует переданный текст в объект.
+            </summary>
+            <typeparam name="T">Тип десериализуемого объекта.</typeparam>
+            <param name="textReader">Текст десериализуемого объекта.</param>
+            <returns>Возвращает десериализованный объект.</returns>
+        </member>
+        <member name="T:dosymep.Revit.UIDocumentExtensions">
+            <summary>
+            Класс расширения UIDocument
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.UIDocumentExtensions.GetSelectedElements(Autodesk.Revit.UI.UIDocument)">
+            <summary>
+            Возвращает выделенные элементы в документе.
+            </summary>
+            <param name="document">Документ.</param>
+            <returns>Возвращает выделенные элементы в документе.</returns>
+        </member>
+        <member name="M:dosymep.Revit.UIDocumentExtensions.SetSelectedElements(Autodesk.Revit.UI.UIDocument,Autodesk.Revit.DB.Element[])">
+            <summary>
+            Выделяет переданные элементы.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="elements">Выделяемые элементы.</param>
+        </member>
+        <member name="M:dosymep.Revit.UIDocumentExtensions.SetSelectedElements(Autodesk.Revit.UI.UIDocument,System.Collections.Generic.IEnumerable{Autodesk.Revit.DB.Element})">
+            <summary>
+            Выделяет переданные элементы.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="elements">Выделяемые элементы.</param>
+        </member>
+        <member name="M:dosymep.Revit.UIDocumentExtensions.SetSelectedElements(Autodesk.Revit.UI.UIDocument,Autodesk.Revit.DB.ElementId[])">
+            <summary>
+            Выделяет переданные элементы.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="elementIds">Идентификаторы выделяемых элементов.</param>
+        </member>
+        <member name="M:dosymep.Revit.UIDocumentExtensions.SetSelectedElements(Autodesk.Revit.UI.UIDocument,System.Collections.Generic.IEnumerable{Autodesk.Revit.DB.ElementId})">
+            <summary>
+            Выделяет переданные элементы.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="elementIds">Идентификаторы выделяемых элементов.</param>
+        </member>
+    </members>
+</doc>
