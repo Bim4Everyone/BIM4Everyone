@@ -138,6 +138,14 @@
             Расширения для элемента Revit.
             </summary>
         </member>
+        <member name="M:dosymep.Revit.ElementExtensions.IsExistsParam(Autodesk.Revit.DB.Element,System.String)">
+            <summary>
+            Проверяет на существование параметра в элементе.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <returns>Возвращает true - если параметр существует, иначе false.</returns>
+        </member>
         <member name="M:dosymep.Revit.ElementExtensions.GetParamValueOrDefault(Autodesk.Revit.DB.Element,System.String,System.Object)">
             <summary>
             Возвращает значение параметра либо значение по умолчанию.
@@ -186,6 +194,22 @@
             <param name="element">Элемент.</param>
             <param name="paramName">Наименование параметра.</param>
             <param name="paramValue">Значение общего параметра.</param>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.GetParam(Autodesk.Revit.DB.Element,System.String)">
+            <summary>
+            Возвращает параметр.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <returns>Возвращает параметр.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.IsExistsParam(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+            Проверяет на существование параметра в элементе.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="builtInParameter">Встроенный тип параметра.</param>
+            <returns>Возвращает true - если параметр существует, иначе false.</returns>
         </member>
         <member name="M:dosymep.Revit.ElementExtensions.GetParamValueOrDefault(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInParameter,System.Object)">
             <summary>
@@ -236,14 +260,6 @@
             <param name="builtInParameter">Встроенный тип параметра.</param>
             <param name="paramValue">Значение общего параметра.</param>
         </member>
-        <member name="M:dosymep.Revit.ElementExtensions.GetParam(Autodesk.Revit.DB.Element,System.String)">
-            <summary>
-            Возвращает параметр.
-            </summary>
-            <param name="element">Элемент.</param>
-            <param name="paramName">Наименование параметра.</param>
-            <returns>Возвращает параметр.</returns>
-        </member>
         <member name="M:dosymep.Revit.ElementExtensions.GetParam(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInParameter)">
             <summary>
             Возвращает параметр.
@@ -263,6 +279,13 @@
             </summary>
             <param name="parameter">Параметр.</param>
             <returns>Возвращает значение параметра.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ParamExtensions.Set(Autodesk.Revit.DB.Parameter,Autodesk.Revit.DB.Parameter)">
+            <summary>
+            Присваивает значение параметра по значению другого параметра.
+            </summary>
+            <param name="leftParameter">Параметр в который присваивается значение.</param>
+            <param name="rightParameter">Параметр значение которого присваивается.</param>
         </member>
         <member name="T:dosymep.Revit.ServerClient.DirectoryInfo">
             <summary>
