@@ -893,6 +893,19 @@
             Список ролей сервера.
             </summary>
         </member>
+        <member name="T:dosymep.Revit.TransactionExtensions">
+            <summary>
+            Расширения класса <see cref="T:Autodesk.Revit.DB.Transaction"/>
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.TransactionExtensions.BIMStart(Autodesk.Revit.DB.Transaction,System.String)">
+            <summary>
+            Добавляет в название транзакции текст BIM.
+            </summary>
+            <param name="transaction">Транзакция.</param>
+            <param name="transactionName">Название транзакции.</param>
+            <returns>Возвращает статус запуска транзакции.</returns>
+        </member>
         <member name="T:dosymep.Revit.Transmissions.ExternalFileReference">
             <summary>
             Класс содержащий информацию о связанном файле.
