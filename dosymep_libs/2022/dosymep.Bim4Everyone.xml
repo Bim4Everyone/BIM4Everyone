@@ -120,6 +120,14 @@
             <param name="leftRevitParam">Параметр в который присваивается значение.</param>
             <param name="rightRevitParam">Параметр значение которого присваивается.</param>
         </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.RemoveParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.RevitParam)">
+            <summary>
+            Удаляет параметр.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="revitParam">Параметр Revit.</param>
+            <returns>Возвращает признак удаления параметра true - если был удален, иначе false.</returns>
+        </member>
         <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParam(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.RevitParam)">
             <summary>
             Возвращает параметр.
@@ -599,19 +607,9 @@
             КВГ_Тип группы помещений
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomTypeCountGroup">
-            <summary>
-            КВГ_Тип нумерации групп
-            </summary>
-        </member>
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomName">
             <summary>
             КВГ_Наименование
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ApartmentTypeNumsInSection">
-            <summary>
-            КВГ_Тип нумерации квартир в секции
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomBalcony">
@@ -627,6 +625,11 @@
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomNumberFix">
             <summary>
             КВГ_ПМЩ_Фиксация номера
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.NumberingOrder">
+            <summary>
+            КВГ_Приоритет нумерации
             </summary>
         </member>
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.LoadInstance(System.String)">
