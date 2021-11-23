@@ -260,11 +260,6 @@
             Создает экземпляр настроек проверки ключевых спецификаций.
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.KeySchedules.KeyScheduleRule.ScheduleName">
-            <summary>
-            Наименование спецификации.
-            </summary>
-        </member>
         <member name="P:dosymep.Bim4Everyone.KeySchedules.KeyScheduleRule.KeyRevitParamName">
             <summary>
             Ключевой параметр спецификации.
@@ -373,12 +368,6 @@
             <summary>
             КВГ_(Ключ.) - Тип группы
             </summary>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.KeySchedules.KeySchedulesConfig.GetKeyScheduleRules">
-            <summary>
-            Возвращает весь список правил ключевых спецификаций.
-            </summary>
-            <returns>Возвращает список правил ключевых спецификаций.</returns>
         </member>
         <member name="M:dosymep.Bim4Everyone.KeySchedules.KeySchedulesConfig.LoadInstance(System.String)">
             <summary>
@@ -720,6 +709,119 @@
             Возвращает весь список настроек параметров.
             </summary>
             <returns>Возвращает весь список настроек параметров.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.RevitScheduleRule">
+            <summary>
+            Настройки спецификаций.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.RevitScheduleRule.ScheduleName">
+            <summary>
+            Наименование спецификации.
+            </summary>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.RevitSchedulesConfig">
+            <summary>
+            Абстрактный класс конфигурации спецификаций.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.RevitSchedulesConfig.Save(System.String)">
+            <summary>
+            Сохранение текущей конфигурации.
+            </summary>
+            <param name="configPath">Путь до конфигурации.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.RevitSchedulesConfig.GetScheduleRules">
+            <summary>
+            Возвращает весь список правил спецификаций.
+            </summary>
+            <returns>Возвращает список правил спецификаций.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.Schedules.ScheduleRule">
+            <summary>
+            Настройки спецификаций.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Schedules.ScheduleRule.#ctor">
+            <summary>
+            Создает экземпляр настроек спецификаций.
+            </summary>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.Schedules.SchedulesConfig">
+            <summary>
+            Класс конфигурации спецификаций.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.Instance">
+            <summary>
+            Текущее состояние конфигурации.
+            </summary>
+            <remarks>Перед использованием нужно вызвать <see cref="M:dosymep.Bim4Everyone.Schedules.SchedulesConfig.Load(System.String)"/></remarks>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsCheckGroup">
+            <summary>
+            КВГ_(Проверка) Без группы
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsCheckName">
+            <summary>
+            КВГ_(Проверка) Без наименования
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsCheckSection">
+            <summary>
+            КВГ_(Проверка) Без секции
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsCheck">
+            <summary>
+            КВГ_(Проверка) Не прошедшие Квартирографию
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsCheckInvalidArea">
+            <summary>
+            КВГ_(Проверка) Неокружённые и избыточные
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsCheckAreas">
+            <summary>
+            КВГ_(Проверка) Несовпадение Площадей
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsCheckHeights">
+            <summary>
+            КВГ_(Проверка) Высота помещений
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsCheckParams">
+            <summary>
+            КВГ_Все помещения и параметры
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsCheckRemoves">
+            <summary>
+            КВГ_Удаление помещений по этажам
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Schedules.SchedulesConfig.LoadInstance(System.String)">
+            <summary>
+            Загрузка текущей конфигурации.
+            </summary>
+            <param name="configPath">Путь до конфигурации.</param>
+            <remarks>Возвращает конфигурацию по умолчанию если был найден переданный файл.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Schedules.SchedulesConfig.Load(System.String)">
+            <summary>
+            Загрузка текущей конфигурации.
+            </summary>
+            <param name="configPath">Путь до конфигурации.</param>
+            <remarks>Возвращает конфигурацию по умолчанию если был найден переданный файл.</remarks>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Schedules.SchedulesConfig.GetDefaultConfg">
+            <summary>
+            Возвращает конфигурацию по умолчанию.
+            </summary>
+            <returns>Возвращает конфигурацию по умолчанию.</returns>
         </member>
         <member name="T:dosymep.Bim4Everyone.SharedParams.SharedParam">
             <summary>
@@ -1177,29 +1279,29 @@
             <param name="revitParams">Общие параметры, которые требуется настроить.</param>
             <remarks>Метод открывает транзакцию при настройке общих параметров.</remarks>
         </member>
-        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupKeySchedule(Autodesk.Revit.DB.Document,System.Boolean,dosymep.Bim4Everyone.KeySchedules.KeyScheduleRule)">
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupSchedule(Autodesk.Revit.DB.Document,System.Boolean,dosymep.Bim4Everyone.RevitScheduleRule)">
             <summary>
-            Настройка ключевой спецификации.
+            Настройка спецификации.
             </summary>
-            <param name="target">Документ, в котором требуется настроить ключевую спецификацию.</param>
+            <param name="target">Документ, в котором требуется настроить спецификацию.</param>
             <param name="replaceSchedule">true - если требуется заменить спецификацию, иначе false.</param>
-            <param name="keyScheduleRule">Правила ключевой спецификации.</param>
+            <param name="revitScheduleRule">Правило спецификации.</param>
         </member>
-        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupKeySchedules(Autodesk.Revit.DB.Document,System.Boolean,dosymep.Bim4Everyone.KeySchedules.KeyScheduleRule[])">
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupSchedules(Autodesk.Revit.DB.Document,System.Boolean,dosymep.Bim4Everyone.RevitScheduleRule[])">
             <summary>
-            Настройка ключевой спецификации.
+            Настройка спецификации.
             </summary>
-            <param name="target">Документ, в котором требуется настроить ключевую спецификацию.</param>
+            <param name="target">Документ, в котором требуется настроить спецификацию.</param>
             <param name="replaceSchedule">true - если требуется заменить спецификацию, иначе false.</param>
-            <param name="keyScheduleRules">Правила ключевой спецификации.</param>
+            <param name="revitScheduleRule">Правила спецификации.</param>
         </member>
-        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupKeySchedules(Autodesk.Revit.DB.Document,System.Boolean,System.Collections.Generic.IEnumerable{dosymep.Bim4Everyone.KeySchedules.KeyScheduleRule})">
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupSchedules(Autodesk.Revit.DB.Document,System.Boolean,System.Collections.Generic.IEnumerable{dosymep.Bim4Everyone.RevitScheduleRule})">
             <summary>
-            Настройка ключевых спецификаций.
+            Настройка спецификаций.
             </summary>
-            <param name="target">Документ, в котором требуется настроить ключевую спецификацию.</param>
+            <param name="target">Документ, в котором требуется настроить спецификацию.</param>
             <param name="replaceSchedule">true - если требуется заменить спецификацию, иначе false.</param>
-            <param name="keyScheduleRules">Правила ключевой спецификации.</param>
+            <param name="revitScheduleRule">Правила спецификации.</param>
         </member>
         <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupNumerateSheets(Autodesk.Revit.DB.Document)">
             <summary>
