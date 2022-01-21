@@ -49,7 +49,7 @@ def show_error_sheets(title, sheets):
 
         table_columns = get_table_columns()
         table_data = get_table_data(output, sheets)
-        show_table(output, title, "Виды к которых сопадает атрибут \"Номер листа\".", table_columns, table_data)
+        show_table(output, title, "Виды к которых совпадает атрибут \"Номер листа\".", table_columns, table_data)
 
 
 def show_table(output, title, table_title, table_columns, table_data, exit_script=True):
@@ -106,7 +106,10 @@ class ViewSheetModel(object):
 
     @property
     def SheetName(self):
-        return "{}-{}".format(self.SheetAlbum, self.__index)
+        if self.SheetAlbum:
+            return "{}-{}".format(self.SheetAlbum, self.__index)
+
+        return str(self.__index)
 
     @property
     def OriginalSheetIndex(self):
@@ -126,7 +129,7 @@ class ViewSheetModel(object):
     @staticmethod
     def GetSheetAlbum(view_sheet):
         complect_blueprints = view_sheet.GetParamValueOrDefault(SharedParamsConfig.Instance.AlbumBlueprints)
-        return complect_blueprints if complect_blueprints else "???"
+        return complect_blueprints if complect_blueprints else ""
 
 
 class OrderViewSheetModel(object):
@@ -139,17 +142,15 @@ class OrderViewSheetModel(object):
         project_parameters.SetupRevitParams(self.DocumentRepository.Document, SharedParamsConfig.Instance.AlbumBlueprints,
                                             SharedParamsConfig.Instance.StampSheetNumber)
 
-        with Transaction(self.DocumentRepository.Document) as transaction:
+        with TransactionGroup(self.DocumentRepository.Document) as transaction:
             transaction.Start("Перенумерация листов")
 
             # переименовываем листы на случайные имена
             # чтобы случайно не пересеклись новые имена со старыми
             self.UpdateUniqueNames()
-
-            self.DocumentRepository.Document.Regenerate()
             self.UpdateNames()
 
-            transaction.Commit()
+            transaction.Assimilate()
 
     def CheckUniquesNames(self):
         sheet_ids = [sheet.Id for sheet in self.ViewSheets]
@@ -161,12 +162,22 @@ class OrderViewSheetModel(object):
         show_error_sheets("Ошибка", error_sheets)
 
     def UpdateNames(self):
-        for view_sheet in self.ViewSheets:
-            view_sheet.UpdateName()
+        with Transaction(self.DocumentRepository.Document) as transaction:
+            transaction.Start("Нумерация")
+
+            for view_sheet in self.ViewSheets:
+                view_sheet.UpdateName()
+
+            transaction.Commit()
 
     def UpdateUniqueNames(self):
-        for view_sheet in self.ViewSheets:
-            view_sheet.UpdateUniqueName()
+        with Transaction(self.DocumentRepository.Document) as transaction:
+            transaction.Start("Нумерация")
+
+            for view_sheet in self.ViewSheets:
+                view_sheet.UpdateUniqueName()
+
+            transaction.Commit()
 
     def GetViewSheets(self):
         return self.DocumentRepository.GetViewSheets()
