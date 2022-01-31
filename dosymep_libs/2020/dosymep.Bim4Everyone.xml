@@ -527,6 +527,14 @@
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParam.IsExistsParam(Autodesk.Revit.DB.Document)">
             <inheritdoc/>
         </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParam.IsRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.Definition)">
+            <summary>
+            Проверяет является ли определение параметра параметром проекта.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="definition">Определение параметра.</param>
+            <returns>Возвращает true - если определение параметра является параметром проекта, иначе false.</returns>
+        </member>
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParam.GetParam(Autodesk.Revit.DB.Element)">
             <inheritdoc/>
         </member>
@@ -732,6 +740,14 @@
             <param name="element">Элемент.</param>
             <returns>Возвращает true - если параметр существует, иначе false.</returns>
         </member>
+        <member name="M:dosymep.Bim4Everyone.RevitParam.IsRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.Definition)">
+            <summary>
+            Проверяет является ли определение параметра параметром Revit.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="definition">Определение параметра.</param>
+            <returns>Возвращает true - если определение параметра является параметром Revit, иначе false.</returns>
+        </member>
         <member name="M:dosymep.Bim4Everyone.RevitParam.AsRevitParam">
             <summary>
             Возвращает параметр Revit.
@@ -896,6 +912,14 @@
         </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParam.IsExistsParam(Autodesk.Revit.DB.Document)">
             <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParam.IsRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.Definition)">
+            <summary>
+            Проверяет является ли определение параметра общим параметром.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="definition">Определение параметра.</param>
+            <returns>Возвращает true - если определение параметра является общим параметром, иначе false.</returns>
         </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParam.GetParam(Autodesk.Revit.DB.Element)">
             <inheritdoc/>
@@ -1091,6 +1115,21 @@
             ФОП_Этаж
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SectionNumber">
+            <summary>
+            ФОП_Номер секции
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingWorksBlock">
+            <summary>
+            ФОП_Блок СМР
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.EconomicFunction">
+            <summary>
+            ФОП_Экономическая функция
+            </summary>
+        </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.LoadInstance(System.String)">
             <summary>
             Загрузка текущей конфигурации.
@@ -1136,6 +1175,14 @@
         </member>
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParam.IsExistsParam(Autodesk.Revit.DB.Document)">
             <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParam.IsRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.Definition)">
+            <summary>
+            Проверяет является ли определение параметра внутренним параметром.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="definition">Определение параметра.</param>
+            <returns>Возвращает true - если определение параметра является внутренним параметром, иначе false.</returns>
         </member>
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParam.GetParam(Autodesk.Revit.DB.Element)">
             <inheritdoc/>

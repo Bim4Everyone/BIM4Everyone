@@ -133,6 +133,38 @@
             <param name="document">Документ Revit.</param>
             <returns>Возвращает связку определения параметра с привязкой.</returns>
         </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.IsSystemParamDefinition(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.Definition)">
+            <summary>
+            Проверяет является ли определение параметра внутренним.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <param name="definition">Определение параметра.</param>
+            <returns>Возвращает true - если определение параметра является внутренним, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.IsSharedParamDefinition(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.Definition)">
+            <summary>
+            Проверяет является ли определение параметра общим.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <param name="definition">Определение параметра.</param>
+            <returns>Возвращает true - если определение параметра является общим, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.IsProjectParamDefinition(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.Definition)">
+            <summary>
+            Проверяет является ли определение параметра проекта.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <param name="definition">Определение параметра.</param>
+            <returns>Возвращает true - если определение параметра является проекта, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.StartTransaction(Autodesk.Revit.DB.Document,System.String)">
+            <summary>
+            Запускает транзакцию на изменение документа.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <param name="transactionName">Название транзакции.</param>
+            <returns>Возвращает запущенную транзакцию на изменение документа.</returns>
+        </member>
         <member name="T:dosymep.Revit.ElementExtensions">
             <summary>
             Расширения для элемента Revit.
@@ -381,6 +413,27 @@
             </summary>
             <param name="leftParameter">Параметр в который присваивается значение.</param>
             <param name="rightParameter">Параметр значение которого присваивается.</param>
+        </member>
+        <member name="M:dosymep.Revit.ParamExtensions.IsTypeBinding(Autodesk.Revit.DB.Binding)">
+            <summary>
+            Проверяет является ли привязка параметра для типа элемента.
+            </summary>
+            <param name="binding">Привязка параметра.</param>
+            <returns>Возвращает true - если привязка параметра является типом элемента.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ParamExtensions.IsInstanceBinding(Autodesk.Revit.DB.Binding)">
+            <summary>
+            Проверяет является ли привязка параметра для экземпляром элемента.
+            </summary>
+            <param name="binding">Привязка параметра.</param>
+            <returns>Возвращает true - если привязка параметра является экземпляром элемента.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ParamExtensions.GetCategories(Autodesk.Revit.DB.Binding)">
+            <summary>
+            Возвращает нумератор категорий.
+            </summary>
+            <param name="binding">Привязка параметра.</param>
+            <returns>Возвращает нумератор категорий.</returns>
         </member>
         <member name="T:dosymep.Revit.ServerClient.DirectoryInfo">
             <summary>
