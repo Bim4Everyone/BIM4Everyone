@@ -478,6 +478,11 @@
             Статический конструктор
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.ModuleEnvironment.RevitVersion">
+            <summary>
+            Текущая версия Revit.
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.ModuleEnvironment.CurrentLibraryPath">
             <summary>
             Путь до текущей библиотеки
@@ -496,6 +501,176 @@
         <member name="P:dosymep.Bim4Everyone.ModuleEnvironment.ParametersTemplatePath">
             <summary>
             Путь до шаблона параметров
+            </summary>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.ProjectConfigs.IConfigSerializer">
+            <summary>
+            Интерфейс сериализатора для конфигурации проекта.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectConfigs.IConfigSerializer.Serialize``1(``0)">
+            <summary>
+            Сериализует объект в строку.
+            </summary>
+            <typeparam name="T">Тип объекта сериализации.</typeparam>
+            <param name="object">Экземпляр объекта сериализации.</param>
+            <returns>Возвращает строковое значение сериализованного объекта.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectConfigs.IConfigSerializer.Deserialize``1(System.String)">
+            <summary>
+            Десериализует строку в объект.
+            </summary>
+            <typeparam name="T">Тип результата десериализации.</typeparam>
+            <param name="text">Строка десериализуемого объекта.</param>
+            <returns>Возвращает экземпляр десериализованного объекта.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfig">
+            <summary>
+            Абстрактный класс конфигурации проектов.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfig.ProjectConfigPath">
+            <summary>
+            Путь до конфигурации проекта
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfig.Serializer">
+            <summary>
+            Сериализатор.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfig.SaveProjectConfig">
+            <summary>
+            Сохраняет текущую конфигурацию проекта.
+            </summary>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfig`1">
+            <summary>
+            Абстрактный класс конфигурации проектов.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfig`1.MaxSettingsCount">
+            <summary>
+            Максимальное количество настроек проекта.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfig`1.Settings">
+            <summary>
+            Список настроек проекта
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfig`1.AddSettings(Autodesk.Revit.DB.Document)">
+            <summary>
+            Добавить настройки проекта.
+            </summary>
+            <param name="document">Документ.</param>
+            <returns>Возвращает настройки проекта.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfig`1.AddSettings(System.String)">
+            <summary>
+            Добавить настройки проекта по наименованию документа.
+            </summary>
+            <param name="documentName">Наименование документа.</param>
+            <returns>Возвращает настройки проекта.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfig`1.GetSettings(Autodesk.Revit.DB.Document)">
+            <summary>
+            Возвращает настройки проекта по документу.
+            </summary>
+            <param name="document">Документ.</param>
+            <returns>Возвращает настройки проекта по документу. Если настройки проекта не были найдены, возвращает null.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfig`1.GetSettings(System.String)">
+            <summary>
+            Возвращает настройки проекта по наименованию документа.
+            </summary>
+            <param name="documentName">Наименование документа.</param>
+            <returns>Возвращает настройки проекта по наименованию документа. Если настройки проекта не были найдены, возвращает null.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfig`1.GetProjectName(System.String)">
+            <summary>
+            Возвращает наименование проекта по наименованию документа.
+            </summary>
+            <param name="documentName">Наименование документа.</param>
+            <returns>Возвращает наименование проекта по наименованию документа.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfigBuilder">
+            <summary>
+            Билдер конфигурации проекта.
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfigBuilder._pluginName">
+            <summary>
+            Наименование плагина.
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfigBuilder._projectConfigName">
+            <summary>
+            Наименование файла конфигурации проекта.
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfigBuilder._serializer">
+            <summary>
+            Интерфейс сериализатора.
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfigBuilder._revitVersion">
+            <summary>
+            Версия Revit.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfigBuilder.SetPluginName(System.String)">
+            <summary>
+            Устанавливает наименование плагина.
+            </summary>
+            <param name="pluginName">Наименование плагина.</param>
+            <returns>Возвращает текущий билдер.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfigBuilder.SetProjectConfigName(System.String)">
+            <summary>
+            Устанавливает наименование файла конфигурации проекта.
+            </summary>
+            <param name="projectConfigName">Наименование файла конфигурации проекта.</param>
+            <returns>Возвращает текущий билдер.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfigBuilder.SetSerializer(dosymep.Bim4Everyone.ProjectConfigs.IConfigSerializer)">
+            <summary>
+            Устанавливает сериализатор.
+            </summary>
+            <param name="serializer">Сериализатор.</param>
+            <returns>Возвращает текущий билдер.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfigBuilder.SetRevitVersion(System.String)">
+            <summary>
+            Устанавливает версию Revit.
+            </summary>
+            <param name="revitVersion">Версия Revit.</param>
+            <returns>Возвращает текущий билдер.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfigBuilder.Build``1">
+            <summary>
+            Конструирует конфигурацию проекта.
+            </summary>
+            <typeparam name="T">Тип конфигурации проекта.</typeparam>
+            <returns>Возвращает десериализованную конфигурацию проекта, либо если не был найден файл конфигурацию по умолчанию.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfigBuilder.GetConfigPath(System.String,System.String,System.String)">
+            <summary>
+            Возвращает путь до конфигурации проекта.
+            </summary>
+            <param name="pluginName">Наименование плагина.</param>
+            <param name="projectConfigName">Наименование файла конфигурации проекта.</param>
+            <param name="revitVersion">Версия Revit.</param>
+            <returns>Возвращает путь до конфигурации проекта.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.ProjectConfigs.ProjectSettings">
+            <summary>
+            Настройки проекта.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectConfigs.ProjectSettings.ProjectName">
+            <summary>
+            Наименование проекта.
             </summary>
         </member>
         <member name="T:dosymep.Bim4Everyone.ProjectParams.ProjectParam">
