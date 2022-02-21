@@ -105,6 +105,22 @@
             <returns>Возвращает true если общий параметр проекта был добавлен в Revit, иначе false.</returns>
             <exception cref="T:System.ArgumentException">Наименование общего параметра не может быть null или пустым.</exception>
         </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.GetProjectParam(Autodesk.Revit.DB.Document,System.String)">
+            <summary>
+            Возвращает параметр проекта по имени.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <returns>Возвращает параметр проекта по имени. Если не параметр не был найден, то возвращается null.</returns>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.GetSharedParam(Autodesk.Revit.DB.Document,System.String)">
+            <summary>
+            Возвращает общий параметр по имени.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <returns>Возвращает общий параметр по имени. Если не параметр не был найден, то возвращается null.</returns>
+        </member>
         <member name="M:dosymep.Revit.DocumentExtensions.GetProjectParams(Autodesk.Revit.DB.Document)">
             <summary>
             Возвращает список параметров проекта.
@@ -132,6 +148,30 @@
             </summary>
             <param name="document">Документ Revit.</param>
             <returns>Возвращает связку определения параметра с привязкой.</returns>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.GetSystemParamBinding(Autodesk.Revit.DB.Document,System.String)">
+            <summary>
+            Возвращает настройки привязки для системного параметра.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <returns>Возвращает настройки привязки для системного параметра. Если параметр не был найден возвращает null.</returns>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.GetSharedParamBinding(Autodesk.Revit.DB.Document,System.String)">
+            <summary>
+            Возвращает настройки привязки для общего параметра.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <returns>Возвращает настройки привязки для общего параметра. Если параметр не был найден возвращает null.</returns>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.GetProjectParamBinding(Autodesk.Revit.DB.Document,System.String)">
+            <summary>
+            Возвращает настройки привязки для параметра проекта.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <returns>Возвращает настройки привязки для параметра проекта. Если параметр не был найден возвращает null.</returns>
         </member>
         <member name="M:dosymep.Revit.DocumentExtensions.IsSystemParamDefinition(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.Definition)">
             <summary>
@@ -164,6 +204,14 @@
             <param name="document">Документ Revit.</param>
             <param name="transactionName">Название транзакции.</param>
             <returns>Возвращает запущенную транзакцию на изменение документа.</returns>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.StartTransactionGroup(Autodesk.Revit.DB.Document,System.String)">
+            <summary>
+            Запускает групповую транзакцию на изменение документа.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <param name="transactionName">Название транзакции.</param>
+            <returns>Возвращает запущенную групповую транзакцию на изменение документа.</returns>
         </member>
         <member name="T:dosymep.Revit.ElementExtensions">
             <summary>
@@ -909,6 +957,14 @@
             </summary>
         </member>
         <member name="M:dosymep.Revit.TransactionExtensions.BIMStart(Autodesk.Revit.DB.Transaction,System.String)">
+            <summary>
+            Добавляет в название транзакции текст BIM.
+            </summary>
+            <param name="transaction">Транзакция.</param>
+            <param name="transactionName">Название транзакции.</param>
+            <returns>Возвращает статус запуска транзакции.</returns>
+        </member>
+        <member name="M:dosymep.Revit.TransactionExtensions.BIMStart(Autodesk.Revit.DB.TransactionGroup,System.String)">
             <summary>
             Добавляет в название транзакции текст BIM.
             </summary>
