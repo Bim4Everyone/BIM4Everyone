@@ -46,6 +46,15 @@
             <param name="revitParam">Параметр Revit.</param>
             <returns>Возвращает true - если параметр существует, иначе false.</returns>
         </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParamValueOrDefault``1(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.RevitParam,``0)">
+            <summary>
+            Возвращает значение параметра либо значение по умолчанию.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="revitParam">Встроенный тип параметра.</param>
+            <param name="default">Значение по умолчанию.</param>
+            <returns>Возвращает значение параметра либо значение по умолчанию.</returns>
+        </member>
         <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParamValueOrDefault(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.RevitParam,System.Object)">
             <summary>
             Возвращает значение параметра либо значение по умолчанию.
@@ -63,6 +72,14 @@
             <param name="revitParam">Параметр Revit.</param>
             <param name="default">Значение по умолчанию.</param>
             <returns>Возвращает значение параметра с единицой измерения либо значение по умолчанию.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParamValue``1(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.RevitParam)">
+            <summary>
+            Возвращает значение параметра элемента.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="revitParam">Параметр Revit.</param>
+            <returns>Возвращает значение параметра элемента.</returns>
         </member>
         <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.RevitParam)">
             <summary>
@@ -1324,6 +1341,28 @@
         </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.Save(System.String)">
             <inheritdoc/>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.ServicesProvider">
+            <summary>
+            Класс предоставляющий доступ к внутренним сервисам платформы
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.ServicesProvider.Instance">
+            <summary>
+            Контейнер сервисов платформы.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ServicesProvider.LoadInstance(Autodesk.Revit.UI.UIApplication)">
+            <summary>
+            Загружает сервисы платформы.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ServicesProvider.GetPlatformService``1">
+            <summary>
+            Возвращает сервис из контейнера.
+            </summary>
+            <typeparam name="T">Запрашиваемый сервис.</typeparam>
+            <returns>Возвращает сервис из контейнера.</returns>
         </member>
         <member name="T:dosymep.Bim4Everyone.SystemParams.SystemParam">
             <summary>

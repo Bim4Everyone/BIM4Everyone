@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dosymep.SimpleServices</name>
+    </assembly>
+    <members>
+        <member name="T:dosymep.SimpleServices.IDispatcherService">
+            <summary>
+            Предоставляет доступ к <see cref="!:Dispatcher"/> 
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.IDispatcherService.BeginInvoke(System.Action)">
+            <summary>
+            Запускает асинхронно указанный делегат.
+            </summary>
+            <param name="action">Выполняемый делегат.</param>
+            <returns></returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.IDispatcherService.Invoke(System.Action)">
+            <summary>
+            Запускает указанный делегат.
+            </summary>
+            <param name="action">Выполняемый делегат.</param>
+        </member>
+        <member name="T:dosymep.SimpleServices.IFileDialogServiceBase">
+            <summary>
+            Предоставляет методы и свойства для конфигурации стандартного диалога.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IFileDialogServiceBase.AddExtension">
+            <summary>
+            Возвращает или устанавливает значение признака автоматической установки расширения к имени файла.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IFileDialogServiceBase.AutoUpgradeEnabled">
+            <summary>
+            Возвращает или устанавливает значение признака автоматической смены внешнего вида и поведения.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IFileDialogServiceBase.CheckFileExists">
+            <summary>
+            Возвращает или устанавливает признак отображения предупреждения, когда пользователь указывает не существующее имя файла.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IFileDialogServiceBase.CheckPathExists">
+            <summary>
+            Возвращает или устанавливает признак отображения предупреждения, когда пользователь указывает не существующий путь.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IFileDialogServiceBase.ValidateNames">
+            <summary>
+            Возвращает или устанавливает признак принятия только допустимых имен файлов Win32.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IFileDialogServiceBase.DereferenceLinks">
+            <summary>
+            Возвращает или устанавливает признак возвращения расположения файла, на который ссылается ярлык или возвращает расположения ярлыка.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IFileDialogServiceBase.RestoreDirectory">
+            <summary>
+            Возвращает или устанавливает признак запоминания предыдущего каталога при повторном отображении. 
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IFileDialogServiceBase.ShowHelp">
+            <summary>
+            Возвращает или устанавливает признак отображения кнопки "Справка".
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IFileDialogServiceBase.SupportMultiDottedExtensions">
+            <summary>
+            Возвращает или устанавливает признак отображения и сохранения файлов с несколькими расширениями.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IFileDialogServiceBase.FilterIndex">
+            <summary>
+            Возвращает или устанавливает индекс параметра фильтрации.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IFileDialogServiceBase.Title">
+            <summary>
+            Возвращает или устанавливает отображаемый заголовок.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IFileDialogServiceBase.Filter">
+            <summary>
+            Возвращает или устанавливает строку фильтра, указывающую на параметры доступные в поле "Тип файлов".
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IFileDialogServiceBase.InitialDirectory">
+            <summary>
+            Возвращает или устанавливает исходную папку. 
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.IFileDialogServiceBase.Reset">
+            <summary>
+            Сбрасывает все свойства до значений по умолчанию.
+            </summary>
+        </member>
+        <member name="T:dosymep.SimpleServices.IMessageBoxService">
+            <summary>
+            Предоставляет методы для показа окна сообщений.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.IMessageBoxService.Show(System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage,System.Windows.MessageBoxResult)">
+            <summary>
+            Показывает сообщение с указанными параметрами.
+            </summary>
+            <param name="messageBoxText">Текст отображаемый в окне сообщения.</param>
+            <param name="caption">Заголовок окна сообщения.</param>
+            <param name="button">Кнопки отображаемые в окне сообщения.</param>
+            <param name="icon">Иконка отображаемая в окне сообщения.</param>
+            <param name="defaultResult">Выбираемая кнопка по умолчанию при показе окна сообщения.</param>
+            <returns>Возвращает кнопку, на которую кликнул пользователь.</returns>
+        </member>
+        <member name="T:dosymep.SimpleServices.INotificationService">
+            <summary>
+            Предоставляет методы для показа уведомлений.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.INotificationService.CreateNotification(System.String,System.String,System.String,System.Windows.Media.ImageSource)">
+            <summary>
+            Создает и возвращает предустановленное уведомление.
+            </summary>
+            <param name="title">Заголовок уведомления.</param>
+            <param name="body">Текст отображаемый в уведомлении.</param>
+            <param name="footer">Отображаемый текст снизу уведомления.</param>
+            <param name="imageSource">Изображение отображаемое в уведомлении.</param>
+            <returns>Возвращает созданное уведомление.</returns>
+        </member>
+        <member name="T:dosymep.SimpleServices.INotification">
+            <summary>
+            Интерфейс уведомления.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.INotification.Hide">
+            <summary>
+            Скрыть уведомление.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.INotification.ShowAsync">
+            <summary>
+            Показать уведомление.
+            </summary>
+            <returns>Возвращает результат показа уведомления.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.INotification.ShowAsync(System.Int32)">
+            <summary>
+            Показать уведомление.
+            </summary>
+            <param name="millisecond">Время отображения уведомления, указывается в миллисекундах.</param>
+            <returns>Возвращает результат показа уведомления.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.INotification.ShowAsync(System.TimeSpan)">
+            <summary>
+            Показать уведомление.
+            </summary>
+            <param name="interval">Время отображения уведомления.</param>
+            <returns>Возвращает результат показа уведомления.</returns>
+        </member>
+        <member name="T:dosymep.SimpleServices.IOpenDialogServiceBase">
+            <summary>
+            Предоставляет общие члены <see cref="T:dosymep.SimpleServices.IOpenFileDialogService"/> и <see cref="T:dosymep.SimpleServices.IOpenFolderDialogService"/>.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IOpenDialogServiceBase.Multiselect">
+            <summary>
+            Возвращает или устанавливает признак выбора нескольких файлов.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.IOpenDialogServiceBase.ShowDialog(System.String)">
+            <summary>
+            Показывает диалог выбора.
+            </summary>
+            <param name="directoryName">Устанавливает исходную папку.</param>
+            <returns>Возвращает результат true - если пользователь кликнул OK, иначе возвращает false.</returns>
+        </member>
+        <member name="T:dosymep.SimpleServices.IOpenFileDialogService">
+            <summary>
+            Предоставляет методы для просмотра и открытия файлов.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IOpenFileDialogService.File">
+            <summary>
+            Возвращает объект определяющий файл выбранный в диалоговом окне.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IOpenFileDialogService.Files">
+            <summary>
+            Возвращает коллекцию указывающую на все файлы выбранные в диалоговом окне.
+            </summary>
+        </member>
+        <member name="T:dosymep.SimpleServices.IOpenFolderDialogService">
+            <summary>
+            Предоставляет методы для открытия папок.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IOpenFolderDialogService.Folder">
+            <summary>
+            Возвращает объект определяющий папку выбранную в диалоговом окне.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IOpenFolderDialogService.Folders">
+            <summary>
+            Возвращает коллекцию указывающую на все папки выбранные в диалоговом окне.
+            </summary>
+        </member>
+        <member name="T:dosymep.SimpleServices.ISaveFileDialogService">
+            <summary>
+            Предоставляет методы для сохранения данных в файл.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.ISaveFileDialogService.DefaultExt">
+            <summary>
+            Расширение сохраняемого файла по умолчанию.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.ISaveFileDialogService.DefaultFileName">
+            <summary>
+            Наименование сохраняемого файла по умолчанию.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.ISaveFileDialogService.File">
+            <summary>
+            Возвращает объект определяющий файл выбранный в диалоговом окне.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.ISaveFileDialogService.ShowDialog(System.String,System.String)">
+            <summary>
+            Показывает диалог сохранения файла.
+            </summary>
+            <param name="directoryName">Устанавливает исходную папку.</param>
+            <param name="fileName">Наименование файла.</param>
+            <returns>Возвращает результат true - если пользователь кликнул OK, иначе возвращает false.</returns>
+        </member>
+        <member name="T:dosymep.SimpleServices.IUIThemeService">
+            <summary>
+            Предоставляет доступ к теме инттерфейса
+            </summary>
+        </member>
+        <member name="E:dosymep.SimpleServices.IUIThemeService.UIThemeChanged">
+            <summary>
+            Событие возникающее при изменении темы.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IUIThemeService.HostTheme">
+            <summary>
+            Текущая используемая тема.
+            </summary>
+        </member>
+        <member name="T:dosymep.SimpleServices.UIThemes">
+            <summary>
+            Используемые темы.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.UIThemes.Dark">
+            <summary>
+            Темная.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.UIThemes.Light">
+            <summary>
+            Светлая тема.
+            </summary>
+        </member>
+    </members>
+</doc>
