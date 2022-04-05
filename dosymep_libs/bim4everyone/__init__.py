@@ -13,6 +13,9 @@ def log_plugin(plugin_name):
             try:
                 func(plugin_logger_service, *args, **kwargs)
                 plugin_logger_service.Information("Выход из команды расширения.")
+            except SystemExit:
+                plugin_logger_service.Information("Выход из команды расширения.")
+                raise
             except Exception as ex:
                 plugin_logger_service.Warning("IronPython Traceback.\r\n" + traceback.format_exc().strip())
                 raise
