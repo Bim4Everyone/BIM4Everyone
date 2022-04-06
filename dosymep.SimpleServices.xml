@@ -97,6 +97,101 @@
             Сбрасывает все свойства до значений по умолчанию.
             </summary>
         </member>
+        <member name="T:dosymep.SimpleServices.ILanguageService">
+            <summary>
+            Предоставляет доступ к языку интерфейса.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.ILanguageService.HostLanguage">
+            <summary>
+            Используемый язык.
+            </summary>
+        </member>
+        <member name="T:dosymep.SimpleServices.Language">
+            <summary>
+            Используемые языки.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.EnglishUSA">
+            <summary>
+            Английский США.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.Russian">
+            <summary>
+            Русский.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.German">
+            <summary>
+            Немецкий.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.Spanish">
+            <summary>
+            Испанский.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.French">
+            <summary>
+            Французский.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.Italian">
+            <summary>
+            Итальянский.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.Dutch">
+            <summary>
+            Голландский.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.ChineseSimplified">
+            <summary>
+            Упрощенный китайский.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.ChineseTraditional">
+            <summary>
+            Традиционный китайский.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.Japanese">
+            <summary>
+            Японский.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.Korean">
+            <summary>
+            Корейский.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.Czech">
+            <summary>
+            Чешский.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.Polish">
+            <summary>
+            Польский.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.Hungarian">
+            <summary>
+            Венгерский.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.BrazilianPortuguese">
+            <summary>
+            Португальский.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.Language.EnglishGB">
+            <summary>
+            Английский Великобритания.
+            </summary>
+        </member>
         <member name="T:dosymep.SimpleServices.IMessageBoxService">
             <summary>
             Предоставляет методы для показа окна сообщений.

@@ -4,5 +4,13 @@
         <name>dosymep.Xpf.Core</name>
     </assembly>
     <members>
+        <member name="T:dosymep.Xpf.Core.SimpleServices.XtraWindowsLanguageService">
+            <summary>
+            Предоставляет доступ к языку Windows.
+            </summary>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraWindowsLanguageService.HostLanguage">
+            <inheritdoc/>
+        </member>
     </members>
 </doc>
