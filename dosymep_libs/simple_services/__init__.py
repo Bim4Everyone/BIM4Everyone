@@ -48,6 +48,6 @@ def show_script_notification(body):
 
     image_source = None
     if os.path.isfile(image_path):
-        image_source = BitmapImage(Uri())
+        image_source = BitmapImage(Uri(image_path))
 
     show_notification_service(script.get_button().ui_title, body, image_source=image_source)
