@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import os.path
+
 import clr
 clr.AddReference('dosymep.Revit.dll')
 clr.AddReference('dosymep.Bim4Everyone.dll')
@@ -42,5 +44,10 @@ def show_executed_script_notification():
 
 
 def show_script_notification(body):
-    show_notification_service(script.get_button().ui_title, body,
-                              image_source=BitmapImage(Uri(EXEC_PARAMS.command_path + "\icon.png")))
+    image_path = EXEC_PARAMS.command_path + "\icon.png"
+
+    image_source = None
+    if os.path.isfile(image_path):
+        image_source = BitmapImage(Uri())
+
+    show_notification_service(script.get_button().ui_title, body, image_source=image_source)
