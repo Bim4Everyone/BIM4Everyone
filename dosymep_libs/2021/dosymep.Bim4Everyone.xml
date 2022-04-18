@@ -1364,6 +1364,41 @@
             ФОП_Экономическая функция
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISGrouping">
+            <summary>
+            ФОП_ВИС_Группирование
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISMass">
+            <summary>
+            ФОП_ВИС_Масса
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISUnit">
+            <summary>
+            ФОП_ВИС_Единица измерения
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISMinimumDuctThickness">
+            <summary>
+            ФОП_ВИС_Минимальная толщина воздуховода
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISCombinedName">
+            <summary>
+            ФОП_ВИС_Наименование комбинированное
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISSpecNumbers">
+            <summary>
+            ФОП_ВИС_Число
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISEconomicFunction">
+            <summary>
+            ФОП_ВИС_Экономическая функция
+            </summary>
+        </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.LoadInstance(System.String)">
             <summary>
             Загрузка текущей конфигурации.
