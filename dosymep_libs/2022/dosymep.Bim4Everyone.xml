@@ -1334,7 +1334,7 @@
             ФОП_ВИС_Единица измерения
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISMinimumDuctThickness">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISMinDuctThickness">
             <summary>
             ФОП_ВИС_Минимальная толщина воздуховода
             </summary>
