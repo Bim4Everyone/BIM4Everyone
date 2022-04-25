@@ -1422,6 +1422,128 @@
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.Save(System.String)">
             <inheritdoc/>
         </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow">
+            <summary>
+            Интерфейс неблокирующего окна вывода сообщений.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.Title">
+            <summary>
+            Заголовок окна.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.IconPath">
+            <summary>
+            Путь до иконки окна.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.Center">
+            <summary>
+            Ставит окно по центру монитора.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.SetSize(System.Double,System.Double)">
+            <summary>
+            Устанавливает размер окна.
+            </summary>
+            <param name="width">Ширина окна.</param>
+            <param name="height">Высота окна.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.Show">
+            <summary>
+            Показывает окно.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.Hide">
+            <summary>
+            Скрывает окно.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.Close">
+            <summary>
+            Закрывает окно.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.PrintText(System.String)">
+            <summary>
+            Печатает содержимое текста.
+            </summary>
+            <param name="text">Текстовое содержимое.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.PrintHTML(System.String)">
+            <summary>
+            Печатает HTML содержимое.
+            </summary>
+            <param name="html">HTML содержимое.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.PrintCode(System.String)">
+            <summary>
+            Печатает содержимое кода.
+            </summary>
+            <param name="code">Содержимое кода.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.PrintMarkdown(System.String)">
+            <summary>
+            Печатает содержимое markdown документа.
+            </summary>
+            <param name="markdown">Содержимое markdown.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.PrintImage(System.String)">
+            <summary>
+            Печатает изображение.
+            </summary>
+            <param name="imagePath">Путь до печатаемого изображения.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.PrintTable(System.Collections.Generic.List{System.String[]},System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Печатает таблицу.
+            </summary>
+            <param name="rows">Список строк.</param>
+            <param name="title">Наименование таблицы.</param>
+            <param name="columns">Список наименований колонок.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.GetElementLinks(Autodesk.Revit.DB.ElementId)">
+            <summary>
+            Возвращает ссылку на элемент.
+            </summary>
+            <param name="elementId">Идентификатор элемента.</param>
+            <returns>Возвращает ссылку на элемент.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.GetElementLinks(Autodesk.Revit.DB.ElementId[])">
+            <summary>
+            Возвращает ссылки на элементы.
+            </summary>
+            <param name="elementIds">Массив идентификаторов элементов.</param>
+            <returns>Возвращает ссылки на элементы.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.GetElementLinks(System.Collections.Generic.IEnumerable{Autodesk.Revit.DB.ElementId})">
+            <summary>
+            Возвращает ссылки на элементы.
+            </summary>
+            <param name="elementIds">Перечисление идентификаторов элементов.</param>
+            <returns>Возвращает ссылки на элементы.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.GetElementLinks(Autodesk.Revit.DB.Element)">
+            <summary>
+            Возвращает ссылку на элемент.
+            </summary>
+            <param name="element">Элемент.</param>
+            <returns>Возвращает ссылку на элемент.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.GetElementLinks(Autodesk.Revit.DB.Element[])">
+            <summary>
+            Возвращает ссылки на элементы.
+            </summary>
+            <param name="elements">Массив элементов.</param>
+            <returns>Возвращает ссылки на элементы.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow.GetElementLinks(System.Collections.Generic.IEnumerable{Autodesk.Revit.DB.Element})">
+            <summary>
+            Возвращает ссылки на элементы.
+            </summary>
+            <param name="elements">Перечисление элементов.</param>
+            <returns>Возвращает ссылки на элементы.</returns>
+        </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.ServicesProvider">
             <summary>
             Класс предоставляющий доступ к внутренним сервисам платформы
