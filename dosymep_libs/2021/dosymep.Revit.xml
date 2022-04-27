@@ -228,6 +228,14 @@
             <param name="transactionName">Название транзакции.</param>
             <returns>Возвращает запущенную групповую транзакцию на изменение документа.</returns>
         </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.GetStorageType(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+            Возвращает тип системного параметра.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <param name="builtInParameter">Системный параметр документа.</param>
+            <returns>Возвращает тип системного параметра.</returns>
+        </member>
         <member name="T:dosymep.Revit.ElementExtensions">
             <summary>
             Расширения для элемента Revit.
