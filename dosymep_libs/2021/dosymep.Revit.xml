@@ -105,6 +105,15 @@
             <returns>Возвращает true если общий параметр проекта был добавлен в Revit, иначе false.</returns>
             <exception cref="T:System.ArgumentException">Наименование общего параметра не может быть null или пустым.</exception>
         </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.IsExistsSharedParam(Autodesk.Revit.DB.Document,System.Guid)">
+            <summary>
+            Проверяет на наличие общего параметра проекта.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <param name="paramGuid">Guid общего параметра проекта.</param>
+            <returns>Возвращает true если общий параметр проекта был добавлен в Revit, иначе false.</returns>
+            <exception cref="T:System.ArgumentException">Наименование общего параметра не может быть null или пустым.</exception>
+        </member>
         <member name="M:dosymep.Revit.DocumentExtensions.GetProjectParam(Autodesk.Revit.DB.Document,System.String)">
             <summary>
             Возвращает параметр проекта по имени.
@@ -118,7 +127,15 @@
             Возвращает общий параметр по имени.
             </summary>
             <param name="document">Документ.</param>
-            <param name="paramName">Наименование параметра.</param>
+            <param name="paramName">Наименование общего параметра.</param>
+            <returns>Возвращает общий параметр по имени. Если не параметр не был найден, то возвращается null.</returns>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.GetSharedParam(Autodesk.Revit.DB.Document,System.Guid)">
+            <summary>
+            Возвращает общий параметр по имени.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="paramGuid">Guid общего параметра.</param>
             <returns>Возвращает общий параметр по имени. Если не параметр не был найден, то возвращается null.</returns>
         </member>
         <member name="M:dosymep.Revit.DocumentExtensions.GetGlobalParam(Autodesk.Revit.DB.Document,System.String)">
@@ -419,6 +436,14 @@
             </summary>
             <param name="element">Элемент.</param>
             <param name="paramName">Наименование общего параметра.</param>
+            <returns>Возвращает общий параметр.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.GetSharedParam(Autodesk.Revit.DB.Element,System.Guid)">
+            <summary>
+            Возвращает общий параметр.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramGuid">Guid общего параметра.</param>
             <returns>Возвращает общий параметр.</returns>
         </member>
         <member name="M:dosymep.Revit.ElementExtensions.IsExistsProjectParam(Autodesk.Revit.DB.Element,System.String)">

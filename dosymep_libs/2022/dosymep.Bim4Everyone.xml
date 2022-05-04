@@ -735,7 +735,7 @@
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParam.Description">
             <inheritdoc/>
         </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParam.SharedParamType">
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParam.StorageType">
             <inheritdoc/>
         </member>
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParam.IsExistsParam(Autodesk.Revit.DB.Document)">
@@ -861,6 +861,9 @@
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.GetRevitParam(Autodesk.Revit.DB.Document,System.String,Autodesk.Revit.DB.ParameterElement)">
             <inheritdoc />
         </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.dosymep#Bim4Everyone#SimpleServices#IProjectParamsService#Item(System.String)">
+            <inheritdoc/>
+        </member>
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.dosymep#Bim4Everyone#SimpleServices#IProjectParamsService#GetRevitParams">
             <inheritdoc />
         </member>
@@ -889,14 +892,14 @@
             Абстрактный класс параметра Revit.
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.RevitParam.Id">
+            <summary>
+            Идентификатор параметра.
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.RevitParam.Name">
             <summary>
             Наименование параметра.
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.RevitParam.PropertyName">
-            <summary>
-            Наименование свойства параметра.
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.RevitParam.Description">
@@ -904,7 +907,7 @@
             Описание параметра.
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.RevitParam.SharedParamType">
+        <member name="P:dosymep.Bim4Everyone.RevitParam.StorageType">
             <summary>
             Тип параметра.
             </summary>
@@ -968,6 +971,9 @@
             Сохранение текущей конфигурации.
             </summary>
             <param name="configPath">Путь до конфигурации.</param>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.RevitParamsConfig.Item(System.String)">
+            <inheritdoc />
         </member>
         <member name="M:dosymep.Bim4Everyone.RevitParamsConfig.GetRevitParams">
             <inheritdoc />
@@ -1105,16 +1111,22 @@
             Конструктор класса общего параметра
             </summary>
         </member>
-        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParam.#ctor(Autodesk.Revit.DB.StorageType)">
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParam.#ctor(System.Guid,Autodesk.Revit.DB.StorageType)">
             <summary>
             Конструктор класса общего параметра проекта.
             </summary>
+            <param name="paramGuid">Guid общего параметра.</param>
             <param name="storageType">Тип параметра проекта.</param>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParam.Guid">
+            <summary>
+            Guid общего параметра.
+            </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParam.Description">
             <inheritdoc/>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParam.SharedParamType">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParam.StorageType">
             <inheritdoc/>
         </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParam.IsExistsParam(Autodesk.Revit.DB.Document)">
@@ -1147,36 +1159,6 @@
             Текущее состояние конфигурации.
             </summary>
             <remarks>Перед использованием нужно вызвать <see cref="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.LoadInstance(System.String)"/></remarks>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeWidth">
-            <summary>
-            Размер-ширина
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeDepth">
-            <summary>
-            Размер-глубина
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BulkheadExists">
-            <summary>
-            Перемычка-существование
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BulkheadLength">
-            <summary>
-            Перемычка-длина
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BulkheadDepth">
-            <summary>
-            Перемычка-глубина
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BulkheadClass">
-            <summary>
-            Перемычка-класс
-            </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.AlbumBlueprints">
             <summary>
@@ -1390,6 +1372,9 @@
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.GetRevitParam(Autodesk.Revit.DB.Document,System.String,Autodesk.Revit.DB.ParameterElement)">
             <inheritdoc />
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#ISharedParamsService#Item(System.String)">
+            <inheritdoc/>
+        </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#ISharedParamsService#GetRevitParams">
             <inheritdoc />
         </member>
@@ -1451,6 +1436,12 @@
             <param name="propertyName">Уникальное название параметра.</param>
             <param name="revitParamElement">Элемент параметра проекта.</param>
             <returns></returns>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.IProjectParamsService.Item(System.String)">
+            <summary>
+            Возвращает параметр проекта по его имени (идентификатору).
+            </summary>
+            <param name="paramId">Идентификатор параметра Revit.</param>
         </member>
         <member name="M:dosymep.Bim4Everyone.SimpleServices.IProjectParamsService.GetRevitParams">
             <summary>
@@ -1591,6 +1582,12 @@
             </summary>
             <param name="configPath">Путь до файла конфигурации.</param>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.IRevitParamsService.Item(System.String)">
+            <summary>
+            Возвращает параметр Revit по его имени (идентификатору).
+            </summary>
+            <param name="paramId">Идентификатор параметра Revit.</param>
+        </member>
         <member name="M:dosymep.Bim4Everyone.SimpleServices.IRevitParamsService.GetRevitParams">
             <summary>
             Возвращает весь список настроек параметров.
@@ -1636,6 +1633,12 @@
             <param name="revitParamElement">Элемент общего параметра.</param>
             <returns>Возвращает общий параметр.</returns>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.ISharedParamsService.Item(System.String)">
+            <summary>
+            Возвращает общий параметр по его имени (идентификатору).
+            </summary>
+            <param name="paramId">Идентификатор параметра Revit.</param>
+        </member>
         <member name="M:dosymep.Bim4Everyone.SimpleServices.ISharedParamsService.GetRevitParams">
             <summary>
             Возвращает весь список общих параметров.
@@ -1678,6 +1681,12 @@
             <param name="systemParamId">Системный параметр.</param>
             /// <param name="languageType">Язык возвращаемого параметра.</param>
             <returns>Возвращает системный параметр.</returns>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.Item(System.String)">
+            <summary>
+            Возвращает системный параметр по его имени (идентификатору).
+            </summary>
+            <param name="paramId">Идентификатор параметра Revit.</param>
         </member>
         <member name="M:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.GetRevitParams">
             <summary>
@@ -1727,10 +1736,10 @@
         <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParam.Name">
             <inheritdoc/>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParam.PropertyName">
+        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParam.Id">
             <inheritdoc/>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParam.SharedParamType">
+        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParam.StorageType">
             <inheritdoc/>
         </member>
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParam.IsExistsParam(Autodesk.Revit.DB.Document)">
@@ -1787,7 +1796,13 @@
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.GetRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.ForgeTypeId,Autodesk.Revit.ApplicationServices.LanguageType)">
             <inheritdoc/>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.Item(System.String)">
+            <inheritdoc/>
+        </member>
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.GetRevitParams">
+            <inheritdoc/>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.dosymep#Bim4Everyone#SimpleServices#ISystemParamsService#Item(System.String)">
             <inheritdoc/>
         </member>
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.Save(System.String)">
