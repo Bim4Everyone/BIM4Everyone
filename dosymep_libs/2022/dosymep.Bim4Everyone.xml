@@ -66,12 +66,12 @@
         </member>
         <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParamValueStringOrDefault(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.RevitParam,System.String)">
             <summary>
-            Возвращает значение параметра с единицой измерения либо значение по умолчанию.
+            Возвращает значение параметра с единицей измерения либо значение по умолчанию.
             </summary>
             <param name="element">Элемент.</param>
             <param name="revitParam">Параметр Revit.</param>
             <param name="default">Значение по умолчанию.</param>
-            <returns>Возвращает значение параметра с единицой измерения либо значение по умолчанию.</returns>
+            <returns>Возвращает значение параметра с единицей измерения либо значение по умолчанию.</returns>
         </member>
         <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParamValue``1(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.RevitParam)">
             <summary>
@@ -103,7 +103,7 @@
             </summary>
             <param name="element">Элемент.</param>
             <param name="revitParam">Параметр Revit.</param>
-            <param name="paramValue">Значение общего параметра.</param>
+            <param name="paramValue">Значение параметра Revit.</param>
         </member>
         <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.RevitParam,System.Int32)">
             <summary>
@@ -111,7 +111,7 @@
             </summary>
             <param name="element">Элемент.</param>
             <param name="revitParam">Параметр Revit.</param>
-            <param name="paramValue">Значение общего параметра.</param>
+            <param name="paramValue">Значение параметра Revit.</param>
         </member>
         <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.RevitParam,System.String)">
             <summary>
@@ -119,7 +119,7 @@
             </summary>
             <param name="element">Элемент.</param>
             <param name="revitParam">Параметр Revit.</param>
-            <param name="paramValue">Значение общего параметра.</param>
+            <param name="paramValue">Значение параметра Revit.</param>
         </member>
         <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.RevitParam,Autodesk.Revit.DB.ElementId)">
             <summary>
@@ -127,7 +127,7 @@
             </summary>
             <param name="element">Элемент.</param>
             <param name="revitParam">Параметр Revit.</param>
-            <param name="paramValue">Значение общего параметра.</param>
+            <param name="paramValue">Значение параметра Revit.</param>
         </member>
         <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.RevitParam,Autodesk.Revit.DB.Element)">
             <summary>
@@ -1719,14 +1719,6 @@
             <param name="languageType">Язык системы.</param>
             <param name="forgeTypeId">Системный параметр.</param>
         </member>
-        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParam.#ctor(System.Nullable{Autodesk.Revit.ApplicationServices.LanguageType},Autodesk.Revit.DB.StorageType,Autodesk.Revit.DB.ForgeTypeId)">
-            <summary>
-            Создает экземпляр класса системного параметра.
-            </summary>
-            <param name="languageType">Язык системы.</param>
-            <param name="storageType">Тип параметра.</param>
-            <param name="systemParamId">Системный параметр.</param>
-        </member>
         <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParam.SystemParamId">
             <summary>
             Системное наименование параметра.
@@ -1760,11 +1752,6 @@
         </member>
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParam.GetParam(Autodesk.Revit.DB.Element)">
             <inheritdoc/>
-        </member>
-        <member name="F:dosymep.Bim4Everyone.SystemParams.SystemParam._paramTypes">
-            <summary>
-            Содержит все типы общих параметров
-            </summary>
         </member>
         <member name="T:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig">
             <summary>
