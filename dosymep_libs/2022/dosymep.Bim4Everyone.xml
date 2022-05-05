@@ -849,6 +849,18 @@
             КВГ_Приоритет нумерации
             </summary>
         </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#GetRevitParam(Autodesk.Revit.DB.Document,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#GetRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.ParameterElement)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#GetRevitParam(Autodesk.Revit.DB.Document,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#GetRevitParam(Autodesk.Revit.DB.Document,System.String,Autodesk.Revit.DB.ParameterElement)">
+            <inheritdoc />
+        </member>
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.GetRevitParam(Autodesk.Revit.DB.Document,System.String)">
             <inheritdoc />
         </member>
@@ -1360,6 +1372,18 @@
             ФОП_ВИС_Экономическая функция
             </summary>
         </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#GetRevitParam(Autodesk.Revit.DB.Document,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#GetRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.ParameterElement)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#GetRevitParam(Autodesk.Revit.DB.Document,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#GetRevitParam(Autodesk.Revit.DB.Document,System.String,Autodesk.Revit.DB.ParameterElement)">
+            <inheritdoc />
+        </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.GetRevitParam(Autodesk.Revit.DB.Document,System.String)">
             <inheritdoc />
         </member>
@@ -1397,6 +1421,45 @@
             Возвращает конфигурацию по умолчанию.
             </summary>
             <returns>Возвращает конфигурацию по умолчанию.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.IParamElementService">
+            <summary>
+            Интерфейс по получению параметров Revit.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IParamElementService.GetRevitParam(Autodesk.Revit.DB.Document,System.String)">
+            <summary>
+            Возвращает параметр проекта.
+            </summary>
+            <param name="document">Документ параметра проекта.</param>
+            <param name="revitParamName">Наименование параметра проекта.</param>
+            <returns></returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IParamElementService.GetRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.ParameterElement)">
+            <summary>
+            Возвращает параметр проекта.
+            </summary>
+            <param name="document">Документ параметра проекта.</param>
+            <param name="revitParamElement">Элемент параметра проекта.</param>
+            <returns></returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IParamElementService.GetRevitParam(Autodesk.Revit.DB.Document,System.String,System.String)">
+            <summary>
+            Возвращает параметр проекта.
+            </summary>
+            <param name="document">Документ параметра проекта.</param>
+            <param name="propertyName">Уникальное название параметра.</param>
+            <param name="revitParamName">Наименование параметра проекта.</param>
+            <returns></returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IParamElementService.GetRevitParam(Autodesk.Revit.DB.Document,System.String,Autodesk.Revit.DB.ParameterElement)">
+            <summary>
+            Возвращает параметр проекта.
+            </summary>
+            <param name="document">Документ параметра проекта.</param>
+            <param name="propertyName">Уникальное название параметра.</param>
+            <param name="revitParamElement">Элемент параметра проекта.</param>
+            <returns></returns>
         </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.IProjectParamsService">
             <summary>
