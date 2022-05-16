@@ -36,48 +36,6 @@
             Расширения для документа Revit.
             </summary>
         </member>
-        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinks(System.String[])">
-            <summary>
-            Выгружает все связанные файлы для переданных документов Revit.
-            </summary>
-            <param name="rvtFileNames">Документы Revit.</param>
-            <remarks>Работает без использования API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
-        </member>
-        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinks(System.Collections.Generic.IEnumerable{System.String})">
-            <summary>
-            Выгружает все связанные файлы для переданных документов Revit.
-            </summary>
-            <param name="rvtFileNames">Документы Revit.</param>
-            <remarks>Работает без использования API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
-        </member>
-        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinks(System.String)">
-            <summary>
-            Выгружает все связанные файлы для переданного документа Revit.
-            </summary>
-            <param name="rvtFileName">Документ Revit.</param>
-            <remarks>Работает без использования API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
-        </member>
-        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinksApi(System.String[])">
-            <summary>
-            Выгружает все связанные файлы для переданных документов Revit.
-            </summary>
-            <param name="rvtFileNames">Документы Revit.</param>
-            <remarks>Работает c использованием API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
-        </member>
-        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinksApi(System.Collections.Generic.IEnumerable{System.String})">
-            <summary>
-            Выгружает все связанные файлы для переданных документов Revit.
-            </summary>
-            <param name="rvtFileNames">Документы Revit.</param>
-            <remarks>Работает c использованием API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
-        </member>
-        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinksApi(System.String)">
-            <summary>
-            Выгружает все связанные файлы для переданного документа Revit.
-            </summary>
-            <param name="rvtFileName">Документ Revit.</param>
-            <remarks>Работает c использованием API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
-        </member>
         <member name="M:dosymep.Revit.DocumentExtensions.IsExistsParam(Autodesk.Revit.DB.Document,System.String)">
             <summary>
             Проверяет на наличие параметра документа.
@@ -221,6 +179,14 @@
             <param name="definition">Определение параметра.</param>
             <returns>Возвращает true - если определение параметра является общим, иначе false.</returns>
         </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.IsGlobalParamDefinition(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.Definition)">
+            <summary>
+            Проверяет является ли определение глобальным параметром.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <param name="definition">Определение параметра.</param>
+            <returns>Возвращает true - если определение является глобальным параметром, иначе false.</returns>
+        </member>
         <member name="M:dosymep.Revit.DocumentExtensions.IsProjectParamDefinition(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.Definition)">
             <summary>
             Проверяет является ли определение параметра проекта.
@@ -260,6 +226,48 @@
             <param name="document">Документ Revit.</param>
             <param name="forgeTypeId">Системный параметр документа.</param>
             <returns>Возвращает тип системного параметра.</returns>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinks(System.String[])">
+            <summary>
+            Выгружает все связанные файлы для переданных документов Revit.
+            </summary>
+            <param name="rvtFileNames">Документы Revit.</param>
+            <remarks>Работает без использования API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinks(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Выгружает все связанные файлы для переданных документов Revit.
+            </summary>
+            <param name="rvtFileNames">Документы Revit.</param>
+            <remarks>Работает без использования API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinks(System.String)">
+            <summary>
+            Выгружает все связанные файлы для переданного документа Revit.
+            </summary>
+            <param name="rvtFileName">Документ Revit.</param>
+            <remarks>Работает без использования API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinksApi(System.String[])">
+            <summary>
+            Выгружает все связанные файлы для переданных документов Revit.
+            </summary>
+            <param name="rvtFileNames">Документы Revit.</param>
+            <remarks>Работает c использованием API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinksApi(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Выгружает все связанные файлы для переданных документов Revit.
+            </summary>
+            <param name="rvtFileNames">Документы Revit.</param>
+            <remarks>Работает c использованием API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinksApi(System.String)">
+            <summary>
+            Выгружает все связанные файлы для переданного документа Revit.
+            </summary>
+            <param name="rvtFileName">Документ Revit.</param>
+            <remarks>Работает c использованием API <see cref="T:Autodesk.Revit.DB.TransmissionData"/></remarks>
         </member>
         <member name="T:dosymep.Revit.ElementExtensions">
             <summary>
@@ -724,6 +732,32 @@
             <param name="forgeTypeId">Встроенный тип параметра.</param>
             <returns>Возвращает признак удаления параметра true - если был удален, иначе false.</returns>
         </member>
+        <member name="T:dosymep.Revit.ElementIdExtensions">
+            <summary>
+            Расширения для идентификатора элемента.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.ElementIdExtensions.IsNull(Autodesk.Revit.DB.ElementId)">
+            <summary>
+            Проверяет идентификатор на null.
+            </summary>
+            <param name="elementId">Идентификатор элемента.</param>
+            <returns>Возвращает true - если идентификатор элемента null или <see cref="P:Autodesk.Revit.DB.ElementId.InvalidElementId"/>, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementIdExtensions.IsSystemId(Autodesk.Revit.DB.ElementId)">
+            <summary>
+            Проверяет идентификатор, является ли он системным.
+            </summary>
+            <param name="elementId">Идентификатор элемента.</param>
+            <returns>Возвращает true - если идентификатор элемента является системным, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementIdExtensions.IsNotSystemId(Autodesk.Revit.DB.ElementId)">
+            <summary>
+            Проверяет идентификатор, является ли он не системным.
+            </summary>
+            <param name="elementId">Идентификатор элемента.</param>
+            <returns>Возвращает true - если идентификатор элемента является не системным, иначе false.</returns>
+        </member>
         <member name="T:dosymep.Revit.ParamElementExtensions">
             <summary>
             Класс расширений элементов параметров
@@ -802,6 +836,13 @@
             </summary>
             <param name="binding">Привязка параметра.</param>
             <returns>Возвращает нумератор категорий.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ParamExtensions.GetElementId(Autodesk.Revit.DB.Definition)">
+            <summary>
+            Возвращает идентификатор определения параметра.
+            </summary>
+            <param name="definition">Определение параметра.</param>
+            <returns>Возвращает идентификатор определения параметра.</returns>
         </member>
         <member name="M:dosymep.Revit.ParamExtensions.GetStorageType(Autodesk.Revit.DB.BuiltInParameter)">
             <summary>
