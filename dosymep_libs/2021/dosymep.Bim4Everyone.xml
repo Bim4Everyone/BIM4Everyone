@@ -1790,6 +1790,12 @@
             /// <param name="languageType">Язык возвращаемого параметра.</param>
             <returns>Возвращает системный параметр.</returns>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.Item(Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+            Возвращает системный параметр по его имени (идентификатору).
+            </summary>
+            <param name="paramId">Идентификатор параметра Revit.</param>
+        </member>
         <member name="P:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.Item(System.String)">
             <summary>
             Возвращает системный параметр по его имени (идентификатору).
@@ -1910,6 +1916,9 @@
             <inheritdoc/>
         </member>
         <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.Item(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.Item(Autodesk.Revit.DB.BuiltInParameter)">
             <inheritdoc/>
         </member>
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.dosymep#Bim4Everyone#SimpleServices#ISystemParamsService#GetRevitParams">

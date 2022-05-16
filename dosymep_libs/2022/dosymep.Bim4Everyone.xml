@@ -1713,6 +1713,38 @@
             Сервис предоставляет доступ к системным параметрам.
             </summary>
         </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.CreateRevitParam(Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+            Возвращает системный параметр.
+            </summary>
+            <param name="systemParamId">Системный параметр.</param>
+            <returns>Возвращает системный параметр.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.CreateRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+            Возвращает системный параметр.
+            </summary>
+            <param name="document">Документ системного параметра.</param>
+            <param name="systemParamId">Системный параметр.</param>
+            <returns>Возвращает системный параметр.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.CreateRevitParam(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.ApplicationServices.LanguageType)">
+            <summary>
+            Возвращает системный параметр.
+            </summary>
+            <param name="systemParamId">Системный параметр.</param>
+            <param name="languageType">Язык возвращаемого параметра.</param>
+            <returns>Возвращает системный параметр.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.CreateRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.ApplicationServices.LanguageType)">
+            <summary>
+            Возвращает системный параметр.
+            </summary>
+            <param name="document">Документ системного параметра.</param>
+            <param name="systemParamId">Системный параметр.</param>
+            /// <param name="languageType">Язык возвращаемого параметра.</param>
+            <returns>Возвращает системный параметр.</returns>
+        </member>
         <member name="M:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.CreateRevitParam(Autodesk.Revit.DB.ForgeTypeId)">
             <summary>
             Возвращает системный параметр.
@@ -1744,6 +1776,18 @@
             <param name="systemParamId">Системный параметр.</param>
             /// <param name="languageType">Язык возвращаемого параметра.</param>
             <returns>Возвращает системный параметр.</returns>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.Item(Autodesk.Revit.DB.ForgeTypeId)">
+            <summary>
+            Возвращает системный параметр по его имени (идентификатору).
+            </summary>
+            <param name="paramId">Идентификатор параметра Revit.</param>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.Item(Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+            Возвращает системный параметр по его имени (идентификатору).
+            </summary>
+            <param name="paramId">Идентификатор параметра Revit.</param>
         </member>
         <member name="P:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.Item(System.String)">
             <summary>
@@ -1852,6 +1896,33 @@
             </summary>
             <remarks>Перед использованием нужно вызвать <see cref="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.LoadInstance(System.Nullable{Autodesk.Revit.ApplicationServices.LanguageType})"/></remarks>
         </member>
+        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.CreateRevitParam(Autodesk.Revit.DB.BuiltInParameter)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.CreateRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.BuiltInParameter)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.CreateRevitParam(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.ApplicationServices.LanguageType)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.CreateRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.ApplicationServices.LanguageType)">
+            <inheritdoc/>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.Item(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.Item(Autodesk.Revit.DB.BuiltInParameter)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.dosymep#Bim4Everyone#SimpleServices#ISystemParamsService#GetRevitParams">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.GetRevitParams">
+            <inheritdoc/>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.Item(Autodesk.Revit.DB.ForgeTypeId)">
+            <inheritdoc/>
+        </member>
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.CreateRevitParam(Autodesk.Revit.DB.ForgeTypeId)">
             <inheritdoc/>
         </member>
@@ -1862,12 +1933,6 @@
             <inheritdoc/>
         </member>
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.CreateRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.ForgeTypeId,Autodesk.Revit.ApplicationServices.LanguageType)">
-            <inheritdoc/>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.Item(System.String)">
-            <inheritdoc/>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.GetRevitParams">
             <inheritdoc/>
         </member>
         <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.dosymep#Bim4Everyone#SimpleServices#ISystemParamsService#Item(System.String)">
