@@ -4,6 +4,19 @@
         <name>dosymep.Revit</name>
     </assembly>
     <members>
+        <member name="T:dosymep.Revit.CategoryExtensions">
+            <summary>
+            Класс расширений категории.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.CategoryExtensions.IsId(Autodesk.Revit.DB.Category,Autodesk.Revit.DB.BuiltInCategory)">
+            <summary>
+            Проверяет <see cref="T:BuiltInCategory"/> ли является она идентификатором категории.
+            </summary>
+            <param name="self">Категория.</param>
+            <param name="builtInCategory">Встроенная категория.</param>
+            <returns>Возвращает true - если <see cref="T:BuiltInCategory"/> является идентификатором категории, иначе false.</returns>
+        </member>
         <member name="T:dosymep.Revit.Comparators.ElementComparer">
             <summary>
             Компаратор для элемента.
