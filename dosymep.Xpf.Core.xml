@@ -4,13 +4,426 @@
         <name>dosymep.Xpf.Core</name>
     </assembly>
     <members>
+        <member name="T:dosymep.Xpf.Core.SimpleServices.XtraBaseWindowService`1">
+            <summary>
+            Абстрактный класс сервиса окна.
+            </summary>
+        </member>
+        <member name="F:dosymep.Xpf.Core.SimpleServices.XtraBaseWindowService`1._window">
+            <summary>
+            Родительское окно сервиса
+            </summary>
+        </member>
+        <member name="F:dosymep.Xpf.Core.SimpleServices.XtraBaseWindowService`1._serviceBase">
+            <summary>
+            Привязанный сервис к окну.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraBaseWindowService`1.#ctor(System.Windows.Window,`0)">
+            <summary>
+            Создает экземпляр сервиса окна.
+            </summary>
+            <param name="window">Родительское окно для сервиса.</param>
+            <param name="serviceBase">Привязываемый сервис к окну.</param>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraBaseWindowService`1.Dispose(System.Boolean)">
+            <summary>
+            Очищает привязку к окну.
+            </summary>
+            <param name="disposing">Указывает на очистку ресурсов.</param>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraBaseWindowService`1.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.Xpf.Core.SimpleServices.XtraDispatcherService">
+            <summary>
+            Класс сервиса диспетчера окна.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraDispatcherService.#ctor(System.Windows.Window)">
+            <summary>
+            Создает экземпляр сервиса диспетчера окна.
+            </summary>
+            <param name="window">Родительское окно сервиса.</param>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraDispatcherService.Invoke(System.Action)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraDispatcherService.BeginInvoke(System.Action)">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.Xpf.Core.SimpleServices.XtraMessageBoxService">
+            <summary>
+            Класс сервиса окна сообщений.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraMessageBoxService.#ctor(System.Windows.Window)">
+            <summary>
+            Создает экземпляр класса сервиса окна сообщений.
+            </summary>
+            <param name="window">Родительское окно сервиса.</param>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraMessageBoxService.Show(System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage,System.Windows.MessageBoxResult)">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.Xpf.Core.SimpleServices.XtraNotificationService">
+            <summary>
+            Класс сервиса уведомлений
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraNotificationService.#ctor(System.Windows.Window)">
+            <summary>
+            Создает экземпляр сервиса уведомлений.
+            </summary>
+            <param name="window">Родительское окно сервиса.</param>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraNotificationService.UIThemeService">
+            <summary>
+            Устанавливает и получает сервис тем.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraNotificationService.#ctor(System.Windows.Window,System.String)">
+            <summary>
+            Создает экземпляр сервиса уведомлений.
+            </summary>
+            <param name="window">Родительское окно сервиса.</param>
+            <param name="applicationId">Идентификатор приложения.</param>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraNotificationService.CreateNotification(System.String,System.String,System.String,System.String,System.Windows.Media.ImageSource)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraNotificationService.CreateFatalNotification(System.String,System.String,System.String,System.Windows.Media.ImageSource)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraNotificationService.CreateWarningNotification(System.String,System.String,System.String,System.Windows.Media.ImageSource)">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService">
+            <summary>
+            Класс сервиса открытия диалога выбора файла.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.#ctor(System.Windows.Window)">
+            <summary>
+            Создает экземпляр сервиса открытия диалога выбора файла.
+            </summary>
+            <param name="window">Родительское окно сервиса.</param>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.Multiselect">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.CheckFileExists">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.AddExtension">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.AutoUpgradeEnabled">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.CheckPathExists">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.DereferenceLinks">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.RestoreDirectory">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.ShowHelp">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.SupportMultiDottedExtensions">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.ValidateNames">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.FilterIndex">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.Title">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.Filter">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.InitialDirectory">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.Reset">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.ShowDialog(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.File">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.Files">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService">
+            <summary>
+            Класс сервиса открытия диалога выбора папки.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.#ctor(System.Windows.Window)">
+            <summary>
+            Создает экземпляр сервиса открытия диалога выбора папки.
+            </summary>
+            <param name="window">Родительское окно сервиса.</param>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.Multiselect">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.CheckFileExists">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.AddExtension">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.AutoUpgradeEnabled">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.CheckPathExists">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.DereferenceLinks">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.RestoreDirectory">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.ShowHelp">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.SupportMultiDottedExtensions">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.ValidateNames">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.FilterIndex">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.Title">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.Filter">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.InitialDirectory">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.Reset">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.ShowDialog(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.Folders">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService">
+            <summary>
+            Класс сервиса прогресс диалога.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.#ctor(System.Windows.Window)">
+            <summary>
+            Создает экземпляр класса сервиса прогресс диалога.
+            </summary>
+            <param name="window">Родительское окно.</param>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.UIThemeService">
+            <summary>
+            Сервис по получению тем.
+            </summary>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.UIThemeUpdaterService">
+            <summary>
+            Сервис по установке тем.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.MaxValue">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.StepValue">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.DisplayTitleFormat">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.CreateProgress">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.CreateAsyncProgress">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.CreateCancellationToken">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.Close">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.Show">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.ShowDialog">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService">
+            <summary>
+            Класс сервиса открытия диалога сохранения файла.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.#ctor(System.Windows.Window)">
+            <summary>
+            Создает экземпляр сервиса открытия диалога сохранения файла.
+            </summary>
+            <param name="window">Родительское окно сервиса.</param>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.CheckFileExists">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.AddExtension">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.AutoUpgradeEnabled">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.CheckPathExists">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.DereferenceLinks">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.RestoreDirectory">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.ShowHelp">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.SupportMultiDottedExtensions">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.ValidateNames">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.FilterIndex">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.DefaultExt">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.DefaultFileName">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.Title">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.Filter">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.InitialDirectory">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.Reset">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.ShowDialog(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.File">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.Xpf.Core.SimpleServices.XtraThemeUpdaterService">
+            <summary>
+            Класс по обновлению тем окон.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraThemeUpdaterService.SetTheme(System.Windows.Window,dosymep.SimpleServices.UIThemes)">
+            <inheritdoc />
+        </member>
         <member name="T:dosymep.Xpf.Core.SimpleServices.XtraWindowsLanguageService">
             <summary>
-            Предоставляет доступ к языку Windows.
+            Класс сервиса доступа к языку Windows.
             </summary>
         </member>
         <member name="P:dosymep.Xpf.Core.SimpleServices.XtraWindowsLanguageService.HostLanguage">
             <inheritdoc/>
+        </member>
+        <member name="T:dosymep.Xpf.Core.SimpleServices.XtraWindowsThemeService">
+            <summary>
+            Класс сервиса тем для окон.
+            </summary>
+        </member>
+        <member name="E:dosymep.Xpf.Core.SimpleServices.XtraWindowsThemeService.UIThemeChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraWindowsThemeService.#ctor">
+            <summary>
+            Создает экземпляр сервиса для окон.
+            </summary>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraWindowsThemeService.HostTheme">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraWindowsThemeService.Dispose(System.Boolean)">
+            <summary>
+            Очищает подписку на событие.
+            </summary>
+            <param name="disposing">Указывает на очистку ресурсов.</param>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraWindowsThemeService.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.Xpf.Core.Windows.XtraProgressWindow">
+            <summary>
+            Класс окна прогресса.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.Windows.XtraProgressWindow.#ctor">
+            <summary>
+            Инициализирует окно прогресс бара.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.Windows.XtraProgressWindow.CreateCancellationToken">
+            <summary>
+            Возвращает токен отмены.
+            </summary>
+            <returns>Возвращает токен отмены.</returns>
+        </member>
+        <member name="M:dosymep.Xpf.Core.Windows.XtraProgressWindow.DispatcherUpdateWindow(System.Int32)">
+            <summary>
+            Обновляет окно.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.Windows.XtraProgressWindow.UpdateWindow(System.Int32)">
+            <summary>
+            Обновляет окно.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.Windows.XtraProgressWindow.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.Windows.XtraProgressWindow.Dispose(System.Boolean)">
+            <summary>
+            Очищает подписку на событие.
+            </summary>
+            <param name="disposing">Указывает на очистку ресурсов.</param>
+        </member>
+        <member name="M:dosymep.Xpf.Core.Windows.XtraProgressWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
         </member>
     </members>
 </doc>

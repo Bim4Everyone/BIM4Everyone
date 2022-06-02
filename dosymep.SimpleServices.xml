@@ -6,8 +6,14 @@
     <members>
         <member name="T:dosymep.SimpleServices.IDispatcherService">
             <summary>
-            Предоставляет доступ к <see cref="!:Dispatcher"/> 
+            Предоставляет доступ к <see cref="T:System.Windows.Threading.Dispatcher"/> 
             </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.IDispatcherService.Invoke(System.Action)">
+            <summary>
+            Запускает указанный делегат.
+            </summary>
+            <param name="action">Выполняемый делегат.</param>
         </member>
         <member name="M:dosymep.SimpleServices.IDispatcherService.BeginInvoke(System.Action)">
             <summary>
@@ -15,12 +21,6 @@
             </summary>
             <param name="action">Выполняемый делегат.</param>
             <returns></returns>
-        </member>
-        <member name="M:dosymep.SimpleServices.IDispatcherService.Invoke(System.Action)">
-            <summary>
-            Запускает указанный делегат.
-            </summary>
-            <param name="action">Выполняемый делегат.</param>
         </member>
         <member name="T:dosymep.SimpleServices.IFileDialogServiceBase">
             <summary>
@@ -213,13 +213,34 @@
             Предоставляет методы для показа уведомлений.
             </summary>
         </member>
-        <member name="M:dosymep.SimpleServices.INotificationService.CreateNotification(System.String,System.String,System.String,System.Windows.Media.ImageSource)">
+        <member name="M:dosymep.SimpleServices.INotificationService.CreateNotification(System.String,System.String,System.String,System.String,System.Windows.Media.ImageSource)">
             <summary>
             Создает и возвращает предустановленное уведомление.
             </summary>
             <param name="title">Заголовок уведомления.</param>
             <param name="body">Текст отображаемый в уведомлении.</param>
             <param name="footer">Отображаемый текст снизу уведомления.</param>
+            <param name="author">Автор плагина.</param>
+            <param name="imageSource">Изображение отображаемое в уведомлении.</param>
+            <returns>Возвращает созданное уведомление.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.INotificationService.CreateFatalNotification(System.String,System.String,System.String,System.Windows.Media.ImageSource)">
+            <summary>
+            Создает и возвращает предустановленное уведомление предупреждения.
+            </summary>
+            <param name="title">Заголовок уведомления.</param>
+            <param name="body">Текст отображаемый в уведомлении.</param>
+            <param name="author">Автор плагина.</param>
+            <param name="imageSource">Изображение отображаемое в уведомлении.</param>
+            <returns>Возвращает созданное уведомление.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.INotificationService.CreateWarningNotification(System.String,System.String,System.String,System.Windows.Media.ImageSource)">
+            <summary>
+            Создает и возвращает предустановленное уведомление ошибки.
+            </summary>
+            <param name="title">Заголовок уведомления.</param>
+            <param name="body">Текст отображаемый в уведомлении.</param>
+            <param name="author">Автор плагина.</param>
             <param name="imageSource">Изображение отображаемое в уведомлении.</param>
             <returns>Возвращает созданное уведомление.</returns>
         </member>
@@ -300,6 +321,218 @@
             Возвращает коллекцию указывающую на все папки выбранные в диалоговом окне.
             </summary>
         </member>
+        <member name="T:dosymep.SimpleServices.IPlatformProfileService">
+            <summary>
+            Интерфейс сервиса профилей.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IPlatformProfileService.User">
+            <summary>
+            Профиль пользователя.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IPlatformProfileService.System">
+            <summary>
+            Профиль системы.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IPlatformProfileService.Organization">
+            <summary>
+            Профиль организации 
+            </summary>
+        </member>
+        <member name="T:dosymep.SimpleServices.IPlatformProfileService`1">
+            <summary>
+            Интерфейс предоставляет доступ к настройкам плагинов.
+            </summary>
+            <typeparam name="TSpaceProfile">Класс пространства конфигурации.</typeparam>
+        </member>
+        <member name="M:dosymep.SimpleServices.IPlatformProfileService`1.GetPluginSettings``1(System.String)">
+            <summary>
+            Возвращает экземпляр настроек плагина.
+            </summary>
+            <param name="pluginName">Наименование плагина.</param>
+            <typeparam name="T">Тип настроек плагина.</typeparam>
+            <returns>Возвращает экземпляр настроек плагина.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.IPlatformProfileService`1.GetPluginSettings``1(System.String,System.String)">
+            <summary>
+            Возвращает экземпляр настроек плагина.
+            </summary>
+            <param name="pluginName">Наименование плагина.</param>
+            <param name="settingsName">Наименование настроек.</param>
+            <typeparam name="T">Тип настроек плагина.</typeparam>
+            <returns>Возвращает экземпляр настроек плагина.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.IPlatformProfileService`1.SavePluginSettings``1(``0,System.String)">
+            <summary>
+            Сохраняет настройки плагина.
+            </summary>
+            <param name="settings">Настройки плагина.</param>
+            <param name="pluginName">Наименование плагина.</param>
+            <typeparam name="T">Тип настроек плагина.</typeparam>
+        </member>
+        <member name="M:dosymep.SimpleServices.IPlatformProfileService`1.SavePluginSettings``1(``0,System.String,System.String)">
+            <summary>
+            Сохраняет настройки плагина.
+            </summary>
+            <param name="settings">Настройки плагина.</param>
+            <param name="pluginName">Наименование плагина.</param>
+            <param name="settingsName">Наименование настроек.</param>
+            <typeparam name="T">Тип настроек плагина.</typeparam>
+        </member>
+        <member name="T:dosymep.SimpleServices.ProfileSpace">
+            <summary>
+            Абстрактный класс настроек пространства профиля.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.ProfileSpace.#ctor(System.String)">
+            <summary>
+            Создает экземпляр пространства настроек профиля.
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="P:dosymep.SimpleServices.ProfileSpace.UserSpace">
+            <summary>
+            Пользовательские настройки пространства профиля.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.ProfileSpace.SystemSpace">
+            <summary>
+            Системные настройки пространства профиля.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.ProfileSpace.OrganizationSpace">
+            <summary>
+            Организации настройки пространства профиля.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.ProfileSpace.Name">
+            <summary>
+            Наименование пространства профиля.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.ProfileSpace.Equals(dosymep.SimpleServices.ProfileSpace)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.ProfileSpace.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.ProfileSpace.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.ProfileSpace.op_Equality(dosymep.SimpleServices.ProfileSpace,dosymep.SimpleServices.ProfileSpace)">
+            <summary>
+            Оператор сравнения.
+            </summary>
+            <param name="left">Левый операнд.</param>
+            <param name="right">Правый операнд.</param>
+            <returns>Возвращает true - если левый операнд равен правому, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.ProfileSpace.op_Inequality(dosymep.SimpleServices.ProfileSpace,dosymep.SimpleServices.ProfileSpace)">
+            <summary>
+            Оператор сравнения.
+            </summary>
+            <param name="left">Левый операнд.</param>
+            <param name="right">Правый операнд.</param>
+            <returns>Возвращает true - если левый операнд не равен правому, иначе false.</returns>
+        </member>
+        <member name="T:dosymep.SimpleServices.UserSpace">
+            <summary>
+            Пользовательские настройки пространства профиля.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.UserSpace.#ctor(System.String)">
+            <summary>
+            Создает экземпляр пользовательского пространства настроек профиля.
+            </summary>
+            <param name="name">Наименование профиля.</param>
+        </member>
+        <member name="T:dosymep.SimpleServices.SystemSpace">
+            <summary>
+            Системные настройки пространства профиля.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.SystemSpace.#ctor(System.String)">
+            <summary>
+            Создает экземпляр системного пространства настроек профиля.
+            </summary>
+            <param name="name">Наименование профиля.</param>
+        </member>
+        <member name="T:dosymep.SimpleServices.OrganizationSpace">
+            <summary>
+            Организации настройки пространства профиля.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.OrganizationSpace.#ctor(System.String)">
+            <summary>
+            Создает экземпляр организации пространства настроек профиля.
+            </summary>
+            <param name="name">Наименование профиля.</param>
+        </member>
+        <member name="T:dosymep.SimpleServices.IProgressDialogService">
+            <summary>
+            Интерфейс прогресс диалога.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IProgressDialogService.MaxValue">
+            <summary>
+            Максимальное значение прогресса.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IProgressDialogService.StepValue">
+            <summary>
+            Шаг обновления значение прогресса.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IProgressDialogService.DisplayTitleFormat">
+            <summary>
+            Строка форматирования отображения.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.IProgressDialogService.CreateProgress">
+            <summary>
+            Создает класс прогресса.
+            </summary>
+            <returns>Возвращает прогресс.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.IProgressDialogService.CreateAsyncProgress">
+            <summary>
+            Создает класс прогресса.
+            </summary>
+            <returns>Возвращает прогресс.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.IProgressDialogService.CreateCancellationToken">
+            <summary>
+            Возвращает токен отмены.
+            </summary>
+            <returns>Возвращает токен отмены.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.IProgressDialogService.Close">
+            <summary>
+            Закрывает диалог прогресса.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.IProgressDialogService.Show">
+            <summary>
+            Открывает диалог прогресса не в модальном режиме.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.IProgressDialogService.ShowDialog">
+            <summary>
+            Открывает диалог прогресса в модальном режиме.
+            </summary>
+        </member>
+        <member name="T:dosymep.SimpleServices.IRootWindowService">
+            <summary>
+            Интерфейс рабочего окна
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IRootWindowService.RootWindow">
+            <summary>
+            Текущее корневое окно.
+            </summary>
+        </member>
         <member name="T:dosymep.SimpleServices.ISaveFileDialogService">
             <summary>
             Предоставляет методы для сохранения данных в файл.
@@ -327,6 +560,32 @@
             <param name="directoryName">Устанавливает исходную папку.</param>
             <param name="fileName">Наименование файла.</param>
             <returns>Возвращает результат true - если пользователь кликнул OK, иначе возвращает false.</returns>
+        </member>
+        <member name="T:dosymep.SimpleServices.ISerializationService">
+            <summary>
+            Сервис сериализации.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.ISerializationService.FileExtension">
+            <summary>
+            Расширение файла при сериализации в файл.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.ISerializationService.Serialize``1(``0)">
+            <summary>
+            Сериализует объект в строку.
+            </summary>
+            <typeparam name="T">Тип объекта сериализации.</typeparam>
+            <param name="object">Экземпляр объекта сериализации.</param>
+            <returns>Возвращает строковое значение сериализованного объекта.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.ISerializationService.Deserialize``1(System.String)">
+            <summary>
+            Десериализует строку в объект.
+            </summary>
+            <typeparam name="T">Тип результата десериализации.</typeparam>
+            <param name="text">Строка десериализуемого объекта.</param>
+            <returns>Возвращает экземпляр десериализованного объекта.</returns>
         </member>
         <member name="T:dosymep.SimpleServices.IUIThemeService">
             <summary>
@@ -357,6 +616,171 @@
             <summary>
             Светлая тема.
             </summary>
+        </member>
+        <member name="T:dosymep.SimpleServices.IUIThemeUpdaterService">
+            <summary>
+            Интерфейс по обновлению тем окон.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.IUIThemeUpdaterService.SetTheme(System.Windows.Window,dosymep.SimpleServices.UIThemes)">
+            <summary>
+            Устанавливает текущую тему окна.
+            </summary>
+            <param name="window">Окно, которому устанавливают тему.</param>
+            <param name="theme">Устанавливаемая тема окна.</param>
+        </member>
+        <member name="T:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService">
+            <summary>
+            Класс сервиса профилей платформы.
+            </summary>
+        </member>
+        <member name="F:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService._profileStorage">
+            <summary>
+            Хранилище профилей.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.#ctor(dosymep.SimpleServices.PlatformProfiles.ProfileStorages.IProfileStorage,dosymep.SimpleServices.PlatformProfiles.ProfileInfo)">
+            <summary>
+            Сохраняет экземпляр профиля.
+            </summary>
+            <param name="profileStorage">Хранилище профилей.</param>
+            <param name="profileInfo">Информация о профиле.</param>
+        </member>
+        <member name="P:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.User">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.System">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.Organization">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.dosymep#SimpleServices#IPlatformProfileService{dosymep#SimpleServices#UserSpace}#GetPluginSettings``1(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.dosymep#SimpleServices#IPlatformProfileService{dosymep#SimpleServices#UserSpace}#GetPluginSettings``1(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.dosymep#SimpleServices#IPlatformProfileService{dosymep#SimpleServices#UserSpace}#SavePluginSettings``1(``0,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.dosymep#SimpleServices#IPlatformProfileService{dosymep#SimpleServices#UserSpace}#SavePluginSettings``1(``0,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.dosymep#SimpleServices#IPlatformProfileService{dosymep#SimpleServices#SystemSpace}#GetPluginSettings``1(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.dosymep#SimpleServices#IPlatformProfileService{dosymep#SimpleServices#SystemSpace}#GetPluginSettings``1(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.dosymep#SimpleServices#IPlatformProfileService{dosymep#SimpleServices#SystemSpace}#SavePluginSettings``1(``0,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.dosymep#SimpleServices#IPlatformProfileService{dosymep#SimpleServices#SystemSpace}#SavePluginSettings``1(``0,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.dosymep#SimpleServices#IPlatformProfileService{dosymep#SimpleServices#OrganizationSpace}#GetPluginSettings``1(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.dosymep#SimpleServices#IPlatformProfileService{dosymep#SimpleServices#OrganizationSpace}#GetPluginSettings``1(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.dosymep#SimpleServices#IPlatformProfileService{dosymep#SimpleServices#OrganizationSpace}#SavePluginSettings``1(``0,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService.dosymep#SimpleServices#IPlatformProfileService{dosymep#SimpleServices#OrganizationSpace}#SavePluginSettings``1(``0,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.SimpleServices.PlatformProfiles.ProfileInfo">
+            <summary>
+            Класс предоставляет информацию о профиле.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.PlatformProfiles.ProfileInfo.Name">
+            <summary>
+            Возвращает и устанавливает значение профиля.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.PlatformProfiles.ProfileInfo.FullName">
+            <summary>
+            Возвращает и устанавливает полное имя профиля.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.PlatformProfiles.ProfileInfo.IsReadOnly">
+            <summary>
+            Возвращает и устанавливает свойство только чтение.
+            </summary>
+        </member>
+        <member name="T:dosymep.SimpleServices.PlatformProfiles.ProfileStorages.IProfileStorage">
+            <summary>
+            Интерфейс предоставляет доступ к профилям.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.PlatformProfiles.ProfileStorages.IProfileStorage.ProfileName">
+            <summary>
+            Возвращает и устанавливает используемое наименование профиля.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.PlatformProfiles.ProfileStorages.IProfileStorage.ProfileLocalPath">
+            <summary>
+            Возвращает и устанавливает путь до локального хранения профилей.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.ProfileStorages.IProfileStorage.GetProfileInfos">
+            <summary>
+            Возвращает информацию о сохраненных профилях в системе.
+            </summary>
+            <returns>Возвращает информацию о сохраненных профилях в системе.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.ProfileStorages.IProfileStorage.GetCurrentProfileInfo">
+            <summary>
+            Возвращает информацию о текущем профиле.
+            </summary>
+            <returns>Возвращает информацию о текущем профиле.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.ProfileStorages.IProfileStorage.LoadProfileSpace(dosymep.SimpleServices.PlatformProfiles.ProfileInfo,dosymep.SimpleServices.ProfileSpace)">
+            <summary>
+            Возвращает определение профиля из хранилища.
+            </summary>
+            <param name="profileInfo">Информация профиля.</param>
+            <param name="profileSpace">Пространство профиля.</param>
+            <returns>Возвращает определение профиля из хранилища.</returns>
+        </member>
+        <member name="T:dosymep.SimpleServices.PlatformProfiles.ProfileStorages.RegStorage">
+            <summary>
+            Класс хранилища профиля в реестре.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.ProfileStorages.RegStorage.#ctor(System.String,System.String,dosymep.SimpleServices.ISerializationService)">
+            <summary>
+            Конструктор хранилища профиля в реестре.
+            </summary>
+            <param name="regPath">Относительный путь до хранилища в реестре.</param>
+            <param name="applicationVersion">Версия приложения.</param>
+            <param name="serializationService">Сервис сериализации.</param>
+        </member>
+        <member name="P:dosymep.SimpleServices.PlatformProfiles.ProfileStorages.RegStorage.ProfileName">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.SimpleServices.PlatformProfiles.ProfileStorages.RegStorage.ProfileLocalPath">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.ProfileStorages.RegStorage.GetProfileInfos">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.ProfileStorages.RegStorage.GetCurrentProfileInfo">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.SimpleServices.PlatformProfiles.ProfileStorages.RegStorage.LoadProfileSpace(dosymep.SimpleServices.PlatformProfiles.ProfileInfo,dosymep.SimpleServices.ProfileSpace)">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.SimpleServices.RootWindowService">
+            <summary>
+            Класс текущего рабочего окна.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.RootWindowService.RootWindow">
+            <inheritdoc />
         </member>
     </members>
 </doc>

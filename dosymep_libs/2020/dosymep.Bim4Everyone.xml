@@ -1081,6 +1081,15 @@
             </summary>
             <returns>Возвращает параметр Revit.</returns>
         </member>
+        <member name="M:dosymep.Bim4Everyone.RevitParam.Equals(dosymep.Bim4Everyone.RevitParam)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.RevitParam.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.RevitParam.GetHashCode">
+            <inheritdoc />
+        </member>
         <member name="T:dosymep.Bim4Everyone.RevitParamsConfig">
             <summary>
             Класс по работе с параметрами Revit.
@@ -1584,6 +1593,16 @@
             <param name="revitParamElement">Элемент параметра проекта.</param>
             <returns>Возвращает новый созданный параметр проекта.</returns>
         </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.IPluginInfoService">
+            <summary>
+            Интерфейс по предоставлению выполняемого плагина.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.IPluginInfoService.PluginAssembly">
+            <summary>
+            Сборка выполняемого плагина.
+            </summary>
+        </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.IProjectParamsService">
             <summary>
             Сервис предоставляет доступ к параметрам проекта.
@@ -1886,9 +1905,22 @@
             </summary>
             <returns>Возвращает весь список системных параметров.</returns>
         </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.PluginInfoService">
+            <summary>
+            Класс информации о выполняемом плагине.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.PluginInfoService.PluginAssembly">
+            <inheritdoc />
+        </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.ServicesProvider">
             <summary>
             Класс предоставляющий доступ к внутренним сервисам платформы
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.ServicesProvider.PluginBindingName">
+            <summary>
+            Наименование биндингов плагина
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SimpleServices.ServicesProvider.Instance">

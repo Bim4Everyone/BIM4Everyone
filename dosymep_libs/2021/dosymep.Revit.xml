@@ -11,11 +11,18 @@
         </member>
         <member name="M:dosymep.Revit.CategoryExtensions.IsId(Autodesk.Revit.DB.Category,Autodesk.Revit.DB.BuiltInCategory)">
             <summary>
-            Проверяет <see cref="T:BuiltInCategory"/> ли является она идентификатором категории.
+            Проверяет <see cref="T:BuiltInCategory"/> является ли она идентификатором категории.
             </summary>
-            <param name="self">Категория.</param>
+            <param name="category">Категория.</param>
             <param name="builtInCategory">Встроенная категория.</param>
             <returns>Возвращает true - если <see cref="T:BuiltInCategory"/> является идентификатором категории, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.CategoryExtensions.GetBuiltInCategory(Autodesk.Revit.DB.Category)">
+            <summary>
+            Возвращает <see cref="T:BuiltInCategory"/> для категории.
+            </summary>
+            <param name="category">Категория.</param>
+            <returns>Возвращает <see cref="T:BuiltInCategory"/> для категории, для не системных категорий возвращает <see cref="F:Autodesk.Revit.DB.BuiltInCategory.INVALID"/>.</returns>
         </member>
         <member name="T:dosymep.Revit.Comparators.ElementComparer">
             <summary>
@@ -706,6 +713,21 @@
             <param name="parameterElement">Элемент параметра.</param>
             <returns>Возвращает тип параметра.</returns>
         </member>
+        <member name="M:dosymep.Revit.ParamElementExtensions.IsId(Autodesk.Revit.DB.ParameterElement,Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+            Проверяет <see cref="T:Autodesk.Revit.DB.BuiltInParameter"/> является ли он идентификатором системного параметра.
+            </summary>
+            <param name="parameterElement">Элемент параметра.</param>
+            <param name="builtInParameter">Системный параметр.</param>
+            <returns>Возвращает true - если <see cref="T:Autodesk.Revit.DB.BuiltInParameter"/> является идентификатором системного параметра, иначе false</returns>
+        </member>
+        <member name="M:dosymep.Revit.ParamElementExtensions.GetBuiltInParameter(Autodesk.Revit.DB.ParameterElement)">
+            <summary>
+            Возвращает <see cref="T:Autodesk.Revit.DB.BuiltInParameter"/> для определения параметра.
+            </summary>
+            <param name="parameterElement">Элемент параметра".</param>
+            <returns>Возвращает <see cref="T:Autodesk.Revit.DB.BuiltInParameter"/> для определения параметра, для не системных параметров возвращает <see cref="F:Autodesk.Revit.DB.BuiltInParameter.INVALID"/>.</returns>
+        </member>
         <member name="T:dosymep.Revit.ParamExtensions">
             <summary>
             Расширения класса параметров.
@@ -758,6 +780,21 @@
             </summary>
             <param name="definition">Определение параметра.</param>
             <returns>Возвращает идентификатор определения параметра.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ParamExtensions.IsId(Autodesk.Revit.DB.Definition,Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+            Проверяет <see cref="T:Autodesk.Revit.DB.BuiltInParameter"/> является ли он идентификатором системного параметра.
+            </summary>
+            <param name="definition">Определение параметра.</param>
+            <param name="builtInParameter">Системный параметр.</param>
+            <returns>Возвращает true - если <see cref="T:Autodesk.Revit.DB.BuiltInParameter"/> является идентификатором системного параметра, иначе false</returns>
+        </member>
+        <member name="M:dosymep.Revit.ParamExtensions.GetBuiltInParameter(Autodesk.Revit.DB.Definition)">
+            <summary>
+            Возвращает <see cref="T:Autodesk.Revit.DB.BuiltInParameter"/> для определения параметра.
+            </summary>
+            <param name="definition">Определение параметра.</param>
+            <returns>Возвращает <see cref="T:Autodesk.Revit.DB.BuiltInParameter"/> для определения параметра, для не системных параметров возвращает <see cref="F:Autodesk.Revit.DB.BuiltInParameter.INVALID"/>.</returns>
         </member>
         <member name="M:dosymep.Revit.ParamExtensions.GetStorageType(Autodesk.Revit.DB.BuiltInParameter)">
             <summary>
