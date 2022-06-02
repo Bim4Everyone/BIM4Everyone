@@ -2,6 +2,8 @@
 
 import os.path
 
+import Autodesk.Revit.Exceptions
+import System
 import clr
 
 clr.AddReference('dosymep.Revit.dll')
@@ -113,3 +115,26 @@ def show_script_warning_notification(body):
     notification_service = get_notification_service()
     notification_service.CreateWarningNotification(script.get_button().ui_title, body,
                                                    get_author(), get_image_source("warning")).ShowAsync()
+
+
+def notification():
+    def plugin_decorator(func):
+        def wrapper(*args, **kwargs):
+            try:
+                func(*args, **kwargs)
+            except SystemExit:
+                show_canceled_script_notification()
+                raise
+            except System.OperationCanceledException:
+                show_canceled_script_notification()
+                raise
+            except Autodesk.Revit.Exceptions.OperationCanceledException:
+                show_canceled_script_notification()
+                raise
+            except Exception:
+                show_fatal_script_notification()
+                raise
+
+        return wrapper
+
+    return plugin_decorator
