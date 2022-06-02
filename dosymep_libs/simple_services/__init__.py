@@ -122,6 +122,7 @@ def notification():
         def wrapper(*args, **kwargs):
             try:
                 func(*args, **kwargs)
+                show_executed_script_notification()
             except SystemExit:
                 show_canceled_script_notification()
                 raise
