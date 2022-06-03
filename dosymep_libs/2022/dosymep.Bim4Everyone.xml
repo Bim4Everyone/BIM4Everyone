@@ -4,6 +4,22 @@
         <name>dosymep.Bim4Everyone</name>
     </assembly>
     <members>
+        <member name="T:dosymep.Bim4Everyone.BasePluginServicesModule">
+            <summary>
+            Абстрактный класс модуля для плагина.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.BasePluginServicesModule.InitModule">
+            <summary>
+            Инициализация модуля плагина для контейнера зависимостей.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.BasePluginServicesModule.Unload">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.BasePluginServicesModule.Dispose(System.Boolean)">
+            <inheritdoc />
+        </member>
         <member name="T:dosymep.Bim4Everyone.DocumentExtensions">
             <summary>
             Класс расширения документа.
