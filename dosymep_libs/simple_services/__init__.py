@@ -29,6 +29,10 @@ def get_ui_theme_service():
     return ServicesProvider.GetPlatformService[IUIThemeService]()
 
 
+def get_progress_dialog_service():
+    return ServicesProvider.GetPlatformService[IProgressDialogService]()
+
+
 def get_logger_service():
     return ServicesProvider.GetPlatformService[ILoggerService]()
 
