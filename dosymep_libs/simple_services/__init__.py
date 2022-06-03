@@ -129,16 +129,12 @@ def notification():
                 show_executed_script_notification()
             except SystemExit:
                 show_canceled_script_notification()
-                raise
             except System.OperationCanceledException:
                 show_canceled_script_notification()
-                raise
             except Autodesk.Revit.Exceptions.OperationCanceledException:
                 show_canceled_script_notification()
-                raise
             except Exception:
                 show_fatal_script_notification()
-                raise
 
         return wrapper
 
