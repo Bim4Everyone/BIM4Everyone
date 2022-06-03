@@ -25,7 +25,7 @@ from dosymep.SimpleServices import *
 from dosymep.Bim4Everyone.SimpleServices import *
 
 
-def ui_theme_service():
+def get_ui_theme_service():
     return ServicesProvider.GetPlatformService[IUIThemeService]()
 
 
@@ -67,9 +67,9 @@ def get_icon_file(file_name):
 
 
 def get_themed_icon_file():
-    if ui_theme_service().HostTheme == UIThemes.Dark:
+    if get_ui_theme_service().HostTheme == UIThemes.Dark:
         return get_icon_file("icon.dark.png")
-    elif ui_theme_service().HostTheme == UIThemes.Light:
+    elif get_ui_theme_service().HostTheme == UIThemes.Light:
         return get_icon_file("icon.png")
 
 
