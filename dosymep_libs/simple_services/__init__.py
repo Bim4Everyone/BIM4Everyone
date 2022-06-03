@@ -109,16 +109,22 @@ def show_script_notification(body):
                                             get_author(), get_image_source()).ShowAsync()
 
 
-def show_script_fatal_notification(body):
+def show_script_fatal_notification(body, exit_script=False):
     notification_service = get_notification_service()
     notification_service.CreateFatalNotification(script.get_button().ui_title, body,
                                                  get_author(), get_image_source("fatal")).ShowAsync()
 
+    if exit_script:
+        script.exit()
 
-def show_script_warning_notification(body):
+
+def show_script_warning_notification(body, exit_script=False):
     notification_service = get_notification_service()
     notification_service.CreateWarningNotification(script.get_button().ui_title, body,
                                                    get_author(), get_image_source("warning")).ShowAsync()
+
+    if exit_script:
+        script.exit()
 
 
 def notification():
