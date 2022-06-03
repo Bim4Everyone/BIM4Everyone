@@ -475,6 +475,11 @@
             Интерфейс прогресс диалога.
             </summary>
         </member>
+        <member name="P:dosymep.SimpleServices.IProgressDialogService.Indeterminate">
+            <summary>
+            Указывает будет ли прогресс бар неопределенным
+            </summary>
+        </member>
         <member name="P:dosymep.SimpleServices.IProgressDialogService.MaxValue">
             <summary>
             Максимальное значение прогресса.

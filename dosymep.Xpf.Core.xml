@@ -26,15 +26,6 @@
             <param name="window">Родительское окно для сервиса.</param>
             <param name="serviceBase">Привязываемый сервис к окну.</param>
         </member>
-        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraBaseWindowService`1.Dispose(System.Boolean)">
-            <summary>
-            Очищает привязку к окну.
-            </summary>
-            <param name="disposing">Указывает на очистку ресурсов.</param>
-        </member>
-        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraBaseWindowService`1.Dispose">
-            <inheritdoc />
-        </member>
         <member name="T:dosymep.Xpf.Core.SimpleServices.XtraDispatcherService">
             <summary>
             Класс сервиса диспетчера окна.
@@ -250,6 +241,9 @@
             </summary>
         </member>
         <member name="M:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.Indeterminate">
             <inheritdoc />
         </member>
         <member name="P:dosymep.Xpf.Core.SimpleServices.XtraProgressDialogService.MaxValue">
