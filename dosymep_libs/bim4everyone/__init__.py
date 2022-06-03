@@ -16,6 +16,12 @@ def log_plugin(plugin_name):
             except SystemExit:
                 plugin_logger_service.Information("Выход из команды расширения.")
                 raise
+            except System.OperationCanceledException:
+                plugin_logger_service.Information("Отмена выполнения команды расширения.")
+                raise
+            except Autodesk.Revit.Exceptions.OperationCanceledException:
+                plugin_logger_service.Information("Отмена выполнения команды расширения.")
+                raise
             except Exception as ex:
                 plugin_logger_service.Warning("IronPython Traceback.\r\n" + traceback.format_exc().strip())
                 raise
