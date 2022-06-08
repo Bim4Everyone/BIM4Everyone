@@ -20,6 +20,29 @@
         <member name="M:dosymep.Bim4Everyone.BasePluginServicesModule.Dispose(System.Boolean)">
             <inheritdoc />
         </member>
+        <member name="T:dosymep.Bim4Everyone.CustomParams.CustomParam">
+            <summary>
+            Пользовательский параметр Revit.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.CustomParams.CustomParam.#ctor(System.String)">
+            <summary>
+            Создает экземпляр пользовательского параметра Revit.
+            </summary>
+            <param name="id">Идентификатор параметра.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.CustomParams.CustomParam.IsExistsParam(Autodesk.Revit.DB.Document)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.CustomParams.CustomParam.GetParamBinding(Autodesk.Revit.DB.Document)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.CustomParams.CustomParam.GetRevitParamElement(Autodesk.Revit.DB.Document)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.CustomParams.CustomParam.GetParam(Autodesk.Revit.DB.Element)">
+            <inheritdoc />
+        </member>
         <member name="T:dosymep.Bim4Everyone.DocumentExtensions">
             <summary>
             Класс расширения документа.
@@ -810,32 +833,11 @@
             Класс параметров проекта Revit.
             </summary>
         </member>
-        <member name="F:dosymep.Bim4Everyone.ProjectParams.ProjectParam._description">
-            <summary>
-            Содержит все описания параметров проекта.
-            </summary>
-        </member>
-        <member name="F:dosymep.Bim4Everyone.ProjectParams.ProjectParam._paramTypes">
-            <summary>
-            Содержит все типы параметров проекта.
-            </summary>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParam.#ctor">
+        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParam.#ctor(System.String)">
             <summary>
             Конструктор класса параметра проекта.
             </summary>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParam.#ctor(System.Nullable{Autodesk.Revit.DB.StorageType})">
-            <summary>
-            Конструктор класса параметра проекта.
-            </summary>
-            <param name="storageType">Тип параметра проекта.</param>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParam.Description">
-            <inheritdoc/>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParam.StorageType">
-            <inheritdoc/>
+            <param name="id">Идентификатор параметра.</param>
         </member>
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParam.IsExistsParam(Autodesk.Revit.DB.Document)">
             <inheritdoc/>
@@ -868,9 +870,44 @@
             </summary>
             <remarks>Перед использованием нужно вызвать <see cref="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.Load(System.String)"/></remarks>
         </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ViewNumberOnSheet">
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.CheckCorrectDistanceGrid">
             <summary>
-            _Номер Вида на Листе
+            Пров_Ровно от Оси
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.CheckIsNormalGrid">
+            <summary>
+            Пров_Ортогональность Осям
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomBalcony">
+            <summary>
+            КВГ_Летнее
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomLiving">
+            <summary>
+            КВГ_Жилое
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomNumberFix">
+            <summary>
+            КВГ_ПМЩ_Фиксация номера
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.NumberingOrder">
+            <summary>
+            КВГ_Приоритет нумерации
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ProjectStage">
+            <summary>
+            _Стадия Проекта
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ViewGroup">
+            <summary>
+            _Группа Видов
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.WithFullSheetNumber">
@@ -883,24 +920,9 @@
             _Номера Листа Наличие
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ViewGroup">
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ViewNumberOnSheet">
             <summary>
-            _Группа Видов
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ProjectStage">
-            <summary>
-            _Стадия Проекта
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.CheckIsNormalGrid">
-            <summary>
-            Пров_Ортогональность Осям
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.CheckCorrectDistanceGrid">
-            <summary>
-            Пров_Ровно от Оси
+            _Номер Вида на Листе
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomGroupName">
@@ -926,26 +948,6 @@
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomName">
             <summary>
             КВГ_Наименование
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomBalcony">
-            <summary>
-            КВГ_Летнее
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomLiving">
-            <summary>
-            КВГ_Жилое
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomNumberFix">
-            <summary>
-            КВГ_ПМЩ_Фиксация номера
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.NumberingOrder">
-            <summary>
-            КВГ_Приоритет нумерации
             </summary>
         </member>
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">
@@ -978,6 +980,12 @@
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.dosymep#Bim4Everyone#SimpleServices#IProjectParamsService#GetRevitParams">
             <inheritdoc />
         </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#GetRevitParams(Autodesk.Revit.DB.Document)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.GetRevitParams(Autodesk.Revit.DB.Document)">
+            <inheritdoc/>
+        </member>
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.LoadInstance(System.String)">
             <summary>
             Загрузка текущей конфигурации.
@@ -1003,6 +1011,12 @@
             Абстрактный класс параметра Revit.
             </summary>
         </member>
+        <member name="M:dosymep.Bim4Everyone.RevitParam.#ctor(System.String)">
+            <summary>
+            Создает экземпляр класса параметра Revit.
+            </summary>
+            <param name="id">Идентификатор параметра.</param>
+        </member>
         <member name="P:dosymep.Bim4Everyone.RevitParam.Id">
             <summary>
             Идентификатор параметра.
@@ -1021,6 +1035,16 @@
         <member name="P:dosymep.Bim4Everyone.RevitParam.StorageType">
             <summary>
             Тип параметра.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.RevitParam.UnitType">
+            <summary>
+            Тип измерения параметра.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.RevitParam.UnitTypeName">
+            <summary>
+            Наименование свойства типа измерения параметра.
             </summary>
         </member>
         <member name="M:dosymep.Bim4Everyone.RevitParam.IsExistsParam(Autodesk.Revit.DB.Document)">
@@ -1084,6 +1108,11 @@
         <member name="T:dosymep.Bim4Everyone.RevitParamsConfig">
             <summary>
             Класс по работе с параметрами Revit.
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.RevitParamsConfig._revitParams">
+            <summary>
+            Перечень всех общих параметров проекта.
             </summary>
         </member>
         <member name="M:dosymep.Bim4Everyone.RevitParamsConfig.Save(System.String)">
@@ -1216,38 +1245,17 @@
             Класс общего параметра
             </summary>
         </member>
-        <member name="F:dosymep.Bim4Everyone.SharedParams.SharedParam._description">
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParam.#ctor(System.String,System.Guid)">
             <summary>
-            Содержит все описания общих параметров
+            Конструктор класса общего параметра.
             </summary>
-        </member>
-        <member name="F:dosymep.Bim4Everyone.SharedParams.SharedParam._paramTypes">
-            <summary>
-            Содержит все типы общих параметров
-            </summary>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParam.#ctor">
-            <summary>
-            Конструктор класса общего параметра
-            </summary>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParam.#ctor(System.Guid,Autodesk.Revit.DB.StorageType)">
-            <summary>
-            Конструктор класса общего параметра проекта.
-            </summary>
+            <param name="id">Идентификатор параметра.</param>
             <param name="guid">Guid общего параметра.</param>
-            <param name="storageType">Тип параметра проекта.</param>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParam.Guid">
             <summary>
             Guid общего параметра.
             </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParam.Description">
-            <inheritdoc/>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParam.StorageType">
-            <inheritdoc/>
         </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParam.IsExistsParam(Autodesk.Revit.DB.Document)">
             <inheritdoc/>
@@ -1300,29 +1308,24 @@
             ADSK_Комплект чертежей
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.MechanicalSystemName">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentArea">
             <summary>
-            ADSK_Имя системы
+            ФОП_КВР_Площадь без коэф.
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.StampSheetNumber">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaFix">
             <summary>
-            Ш.НомерЛиста
+            ФОП_ФИКС_КВР_Площадь без коэф.
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomArea">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaMaxSpec">
             <summary>
-            ФОП_ПМЩ_Площадь
+            ФОП_КВР_Площадь по ТЗ макс
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomAreaWithRatio">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaMinSpec">
             <summary>
-            ФОП_ПМЩ_Площадь с коэф.
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaRatio">
-            <summary>
-            ФОП_КВР_Площадь с коэф.
+            ФОП_КВР_Площадь по ТЗ мин
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaNoBalcony">
@@ -1330,19 +1333,44 @@
             ФОП_КВР_Площадь без ЛП
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentLivingArea">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaNoBalconyFix">
             <summary>
-            ФОП_КВР_Площадь жилая
+            ФОП_ФИКС_КВР_Площадь без ЛП
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentArea">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaRatio">
             <summary>
-            ФОП_КВР_Площадь без коэф.
+            ФОП_КВР_Площадь с коэф.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaRatioFix">
+            <summary>
+            ФОП_ФИКС_КВР_Площадь с коэф.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaSpec">
+            <summary>
+            ФОП_КВР_Площадь по ТЗ
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentFullArea">
             <summary>
             ФОП_КВР_Площадь по пятну
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentFullAreaFix">
+            <summary>
+            ФОП_ФИКС_КВР_Площадь по пятну
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentGroupName">
+            <summary>
+            ФОП_Доп. сортировка групп
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentLivingArea">
+            <summary>
+            ФОП_КВР_Площадь жилая
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentNumber">
@@ -1355,29 +1383,34 @@
             ФОП_Доп. номер помещения
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomsCount">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingWorksBlock">
             <summary>
-            ФОП_Количество комнат
+            ФОП_Блок СМР
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaRatioFix">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingWorksSection">
             <summary>
-            ФОП_ФИКС_КВР_Площадь с коэф.
+            ФОП_Секция СМР
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaNoBalconyFix">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FireCompartmentShortName">
             <summary>
-            ФОП_ФИКС_КВР_Площадь без ЛП
+            ФОП_Пожарный отсек
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentLivingAreaFix">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.Level">
             <summary>
-            ФОП_ФИКС_КВР_Площадь жилая
+            ФОП_Этаж
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaFix">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.MechanicalSystemName">
             <summary>
-            ФОП_ФИКС_КВР_Площадь без коэф.
+            ADSK_Имя системы
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomArea">
+            <summary>
+            ФОП_ПМЩ_Площадь
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomAreaFix">
@@ -1385,34 +1418,24 @@
             ФОП_ФИКС_ПМЩ_Площадь
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomAreaWithRatioFix">
-            <summary>
-            ФОП_ФИКС_ПМЩ_Площадь с коэф.
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentFullAreaFix">
-            <summary>
-            ФОП_ФИКС_КВР_Площадь по пятну
-            </summary>
-        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomAreaRatio">
             <summary>
             ФОП_Коэффициент площади
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentGroupName">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomAreaWithRatio">
             <summary>
-            ФОП_Доп. сортировка групп
+            ФОП_ПМЩ_Площадь с коэф.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomAreaWithRatioFix">
+            <summary>
+            ФОП_ФИКС_ПМЩ_Площадь с коэф.
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomGroupShortName">
             <summary>
             ФОП_ПМЩ_Группа
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FireCompartmentShortName">
-            <summary>
-            ФОП_Пожарный отсек
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomSectionShortName">
@@ -1425,39 +1448,19 @@
             ФОП_Тип группы помещений
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaSpec">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomsCount">
             <summary>
-            ФОП_КВР_Площадь по ТЗ
+            ФОП_Количество комнат
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaMinSpec">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.StampSheetNumber">
             <summary>
-            ФОП_КВР_Площадь по ТЗ мин
+            Ш.НомерЛиста
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentAreaMaxSpec">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISCombinedName">
             <summary>
-            ФОП_КВР_Площадь по ТЗ макс
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.Level">
-            <summary>
-            ФОП_Этаж
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingWorksSection">
-            <summary>
-            ФОП_Номер секции
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingWorksBlock">
-            <summary>
-            ФОП_Блок СМР
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.EconomicFunction">
-            <summary>
-            ФОП_Экономическая функция
+            ФОП_ВИС_Наименование комбинированное
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISGrouping">
@@ -1470,19 +1473,9 @@
             ФОП_ВИС_Масса
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISUnit">
-            <summary>
-            ФОП_ВИС_Единица измерения
-            </summary>
-        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISMinDuctThickness">
             <summary>
             ФОП_ВИС_Минимальная толщина воздуховода
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISCombinedName">
-            <summary>
-            ФОП_ВИС_Наименование комбинированное
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISSpecNumbers">
@@ -1490,9 +1483,9 @@
             ФОП_ВИС_Число
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISEconomicFunction">
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISUnit">
             <summary>
-            ФОП_ВИС_Экономическая функция
+            ФОП_ВИС_Единица измерения
             </summary>
         </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">
@@ -1524,6 +1517,12 @@
         </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#ISharedParamsService#GetRevitParams">
             <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#GetRevitParams(Autodesk.Revit.DB.Document)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.GetRevitParams(Autodesk.Revit.DB.Document)">
+            <inheritdoc/>
         </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.LoadInstance(System.String)">
             <summary>
@@ -1583,6 +1582,13 @@
             <param name="propertyName">Уникальное название параметра.</param>
             <param name="revitParamElement">Элемент параметра проекта.</param>
             <returns>Возвращает новый созданный параметр проекта.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IParamElementService.GetRevitParams(Autodesk.Revit.DB.Document)">
+            <summary>
+            Возвращает весь список параметров.
+            </summary>
+            <param name="document">Документ из которого берутся параметры.</param>
+            <returns>Возвращает весь список общих параметров.</returns>
         </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.IPluginInfoService">
             <summary>
@@ -1644,6 +1650,13 @@
             Возвращает весь список параметров проекта.
             </summary>
             <returns>Возвращает весь список параметров проекта.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IProjectParamsService.GetRevitParams(Autodesk.Revit.DB.Document)">
+            <summary>
+            Возвращает весь список параметров проекта.
+            </summary>
+            <param name="document">Документ из которого берутся параметры.</param>
+            <returns>Возвращает весь список общих параметров.</returns>
         </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.IRevitOutputWindow">
             <summary>
@@ -1841,6 +1854,13 @@
             </summary>
             <returns>Возвращает весь список общих параметров.</returns>
         </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ISharedParamsService.GetRevitParams(Autodesk.Revit.DB.Document)">
+            <summary>
+            Возвращает весь список общих параметров.
+            </summary>
+            <param name="document">Документ из которого берутся параметры.</param>
+            <returns>Возвращает весь список общих параметров.</returns>
+        </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService">
             <summary>
             Сервис предоставляет доступ к системным параметрам.
@@ -1974,30 +1994,36 @@
             Класс системного параметра.
             </summary>
         </member>
-        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParam.#ctor(System.Nullable{Autodesk.Revit.ApplicationServices.LanguageType},System.String)">
+        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParam.#ctor(System.String)">
             <summary>
-            Создает экземпляр класса системного параметра.
+            Конструктор класса системного параметра.
             </summary>
-            <param name="languageType">Язык системы.</param>
-            <param name="id">Наименование свойства системного параметра.</param>
+            <param name="id">Идентификатор параметра.</param>
         </member>
         <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParam.SystemParamId">
             <summary>
             Системное наименование параметра.
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParam.Name">
-            <inheritdoc/>
-        </member>
         <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParam.LanguageType">
             <summary>
-            Язык параметра.
+            Язык системного параметра.
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParam.Description">
-            <inheritdoc/>
+        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParam.Name">
+            <summary>
+            Наименование параметра.
+            </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParam.StorageType">
+            <summary>
+            Тип параметра.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParam.UnitType">
+            <inheritdoc/>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParam.UnitTypeName">
             <inheritdoc/>
         </member>
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParam.IsExistsParam(Autodesk.Revit.DB.Document)">
@@ -2054,16 +2080,10 @@
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.CreateRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.ApplicationServices.LanguageType)">
             <inheritdoc/>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.Item(System.String)">
-            <inheritdoc/>
-        </member>
         <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.Item(Autodesk.Revit.DB.BuiltInParameter)">
             <inheritdoc/>
         </member>
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.dosymep#Bim4Everyone#SimpleServices#ISystemParamsService#GetRevitParams">
-            <inheritdoc/>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.GetRevitParams">
             <inheritdoc/>
         </member>
         <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.Item(Autodesk.Revit.DB.ForgeTypeId)">

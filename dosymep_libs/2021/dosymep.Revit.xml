@@ -680,6 +680,35 @@
             <param name="elementId">Идентификатор элемента.</param>
             <returns>Возвращает true - если идентификатор элемента является не системным, иначе false.</returns>
         </member>
+        <member name="T:dosymep.Revit.ForgeTypeIdExtensions">
+            <summary>
+            Расширения для класса <see cref="T:Autodesk.Revit.DB.ForgeTypeId"/>.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ForgeTypeIdExtensions.EmptyForgeTypeId">
+            <summary>
+            Пустой ForgeTypeId
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.ForgeTypeIdExtensions.UnitTypeUndefinedName">
+            <summary>
+            Наименование свойства SpecTypeId Undefined
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.ForgeTypeIdExtensions.GetSpecTypeIdName(Autodesk.Revit.DB.ForgeTypeId)">
+            <summary>
+            Возвращает наименование свойства единицы измерения <see cref="T:Autodesk.Revit.DB.SpecTypeId"/>.
+            </summary>
+            <param name="forgeTypeId">Единица измерения.</param>
+            <returns>Возвращает наименование свойства единицы измерения <see cref="T:Autodesk.Revit.DB.SpecTypeId"/>.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ForgeTypeIdExtensions.GetSpecIdByName(System.String)">
+            <summary>
+            Возвращает <see cref="T:Autodesk.Revit.DB.ForgeTypeId"/> единицы измерения по имени свойства <see cref="T:Autodesk.Revit.DB.SpecTypeId"/>.
+            </summary>
+            <param name="specTypeIdName">Наименование свойства единицы измерения.</param>
+            <returns>Возвращает <see cref="T:Autodesk.Revit.DB.ForgeTypeId"/> единицы измерения по имени свойства <see cref="T:Autodesk.Revit.DB.SpecTypeId"/>.</returns>
+        </member>
         <member name="T:dosymep.Revit.ParamElementExtensions">
             <summary>
             Класс расширений элементов параметров
@@ -727,6 +756,13 @@
             </summary>
             <param name="parameterElement">Элемент параметра".</param>
             <returns>Возвращает <see cref="T:Autodesk.Revit.DB.BuiltInParameter"/> для определения параметра, для не системных параметров возвращает <see cref="F:Autodesk.Revit.DB.BuiltInParameter.INVALID"/>.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ParamElementExtensions.GetUnitType(Autodesk.Revit.DB.ParameterElement)">
+            <summary>
+            Возвращает единицу измерения параметра.
+            </summary>
+            <param name="parameterElement">Элемент параметра.</param>
+            <returns>Возвращает единицу измерения параметра.</returns>
         </member>
         <member name="T:dosymep.Revit.ParamExtensions">
             <summary>
@@ -811,6 +847,13 @@
             <param name="definition">Определение параметра.</param>
             <returns>Возвращает тип параметра.</returns>
             <exception cref="T:System.ArgumentOutOfRangeException">Выбрасывает исключение если не был сопоставлен тип данных к параметру.</exception>
+        </member>
+        <member name="M:dosymep.Revit.ParamExtensions.GetUnitType(Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+            Возвращает <see cref="T:Autodesk.Revit.DB.ForgeTypeId"/> для системного параметра.
+            </summary>
+            <param name="builtInParameter">Системный параметр.</param>
+            <returns>Возвращает <see cref="T:Autodesk.Revit.DB.UnitType"/> для системного параметра.</returns>
         </member>
         <member name="T:dosymep.Revit.ServerClient.DirectoryInfo">
             <summary>

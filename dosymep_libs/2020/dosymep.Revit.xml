@@ -728,6 +728,13 @@
             <param name="parameterElement">Элемент параметра".</param>
             <returns>Возвращает <see cref="T:Autodesk.Revit.DB.BuiltInParameter"/> для определения параметра, для не системных параметров возвращает <see cref="F:Autodesk.Revit.DB.BuiltInParameter.INVALID"/>.</returns>
         </member>
+        <member name="M:dosymep.Revit.ParamElementExtensions.GetUnitType(Autodesk.Revit.DB.ParameterElement)">
+            <summary>
+            Возвращает единицу измерения параметра.
+            </summary>
+            <param name="parameterElement">Элемент параметра.</param>
+            <returns>Возвращает единицу измерения параметра.</returns>
+        </member>
         <member name="T:dosymep.Revit.ParamExtensions">
             <summary>
             Расширения класса параметров.
@@ -811,6 +818,13 @@
             <param name="definition">Определение параметра.</param>
             <returns>Возвращает тип параметра.</returns>
             <exception cref="T:System.ArgumentOutOfRangeException">Выбрасывает исключение если не был сопоставлен тип данных к параметру.</exception>
+        </member>
+        <member name="M:dosymep.Revit.ParamExtensions.GetUnitType(Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+            Возвращает <see cref="T:Autodesk.Revit.DB.UnitType"/> для системного параметра.
+            </summary>
+            <param name="builtInParameter">Системный параметр.</param>
+            <returns>Возвращает <see cref="T:Autodesk.Revit.DB.UnitType"/> для системного параметра.</returns>
         </member>
         <member name="T:dosymep.Revit.ServerClient.DirectoryInfo">
             <summary>
