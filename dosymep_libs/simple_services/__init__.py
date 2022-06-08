@@ -141,6 +141,7 @@ def notification():
                 show_canceled_script_notification()
             except Exception:
                 show_fatal_script_notification()
+                raise
 
         return wrapper
 
