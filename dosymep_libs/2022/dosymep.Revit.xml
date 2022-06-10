@@ -302,6 +302,14 @@
             <param name="paramName">Наименование параметра.</param>
             <returns>Возвращает true - если параметр существует, иначе false.</returns>
         </member>
+        <member name="M:dosymep.Revit.ElementExtensions.IsExistsParamValue(Autodesk.Revit.DB.Element,System.String)">
+            <summary>
+            Проверяет на существование значение параметра в элементе.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <returns>Возвращает true - если значение параметра существует, иначе false.</returns>
+        </member>
         <member name="M:dosymep.Revit.ElementExtensions.GetParamValueOrDefault``1(Autodesk.Revit.DB.Element,System.String,``0)">
             <summary>
             Возвращает значение параметра либо значение по умолчанию.
@@ -391,6 +399,14 @@
             <param name="element">Элемент.</param>
             <param name="paramName">Наименование параметра.</param>
             <returns>Возвращает true - если общий параметр существует, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.IsExistsSharedParamValue(Autodesk.Revit.DB.Element,System.String)">
+            <summary>
+            Проверяет на существование значение общего параметра в элементе.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Наименование параметра.</param>
+            <returns>Возвращает true - если значение общего параметра существует, иначе false.</returns>
         </member>
         <member name="M:dosymep.Revit.ElementExtensions.GetSharedParamValueOrDefault``1(Autodesk.Revit.DB.Element,System.String,``0)">
             <summary>
@@ -490,6 +506,14 @@
             <param name="paramName">Наименование параметра проекта.</param>
             <returns>Возвращает true - если параметр проекта существует, иначе false.</returns>
         </member>
+        <member name="M:dosymep.Revit.ElementExtensions.IsExistsProjectParamValue(Autodesk.Revit.DB.Element,System.String)">
+            <summary>
+            Проверяет на существование значения параметра проекта в элементе.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Наименование параметра проекта.</param>
+            <returns>Возвращает true - если значение параметра проекта существует, иначе false.</returns>
+        </member>
         <member name="M:dosymep.Revit.ElementExtensions.GetProjectParamValueOrDefault``1(Autodesk.Revit.DB.Element,System.String,``0)">
             <summary>
             Возвращает значение параметра проекта либо значение по умолчанию.
@@ -580,6 +604,14 @@
             <param name="builtInParameter">Встроенный тип параметра.</param>
             <returns>Возвращает true - если параметр существует, иначе false.</returns>
         </member>
+        <member name="M:dosymep.Revit.ElementExtensions.IsExistsParamValue(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+            Проверяет на существование значения параметра в элементе.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="builtInParameter">Встроенный тип параметра.</param>
+            <returns>Возвращает true - если значение параметра существует, иначе false.</returns>
+        </member>
         <member name="M:dosymep.Revit.ElementExtensions.GetParamValueOrDefault``1(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInParameter,``0)">
             <summary>
             Возвращает значение параметра либо значение по умолчанию.
@@ -669,6 +701,14 @@
             <param name="element">Элемент.</param>
             <param name="forgeTypeId">Встроенный тип параметра.</param>
             <returns>Возвращает true - если параметр существует, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.IsExistsParamValue(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.ForgeTypeId)">
+            <summary>
+            Проверяет на существование значения параметра в элементе.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="forgeTypeId">Встроенный тип параметра.</param>
+            <returns>Возвращает true - если значение параметра существует, иначе false.</returns>
         </member>
         <member name="M:dosymep.Revit.ElementExtensions.GetParamValueOrDefault``1(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.ForgeTypeId,``0)">
             <summary>
@@ -763,6 +803,13 @@
             </summary>
             <param name="elementId">Идентификатор элемента.</param>
             <returns>Возвращает true - если идентификатор элемента null или <see cref="P:Autodesk.Revit.DB.ElementId.InvalidElementId"/>, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementIdExtensions.IsNotNull(Autodesk.Revit.DB.ElementId)">
+            <summary>
+            Проверяет идентификатор на не null.
+            </summary>
+            <param name="elementId">Идентификатор элемента.</param>
+            <returns>Возвращает true - если идентификатор элемента не null или <see cref="P:Autodesk.Revit.DB.ElementId.InvalidElementId"/>, иначе false.</returns>
         </member>
         <member name="M:dosymep.Revit.ElementIdExtensions.IsSystemId(Autodesk.Revit.DB.ElementId)">
             <summary>

@@ -85,6 +85,14 @@
             <param name="revitParam">Параметр Revit.</param>
             <returns>Возвращает true - если параметр существует, иначе false.</returns>
         </member>
+        <member name="M:dosymep.Bim4Everyone.ElementExtensions.IsExistsParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.RevitParam)">
+            <summary>
+            Проверяет на существование значения параметра в элементе.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="revitParam">Параметр Revit.</param>
+            <returns>Возвращает true - если значение параметра существует, иначе false.</returns>
+        </member>
         <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParamValueOrDefault``1(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.RevitParam,``0)">
             <summary>
             Возвращает значение параметра либо значение по умолчанию.
@@ -206,120 +214,6 @@
             </summary>
             <param name="element">Элемент.</param>
             <param name="revitParam">Параметр Revit.</param>
-            <returns>Возвращает параметр.</returns>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParamValueOrDefault(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.SharedParams.SharedParam,System.Object)">
-            <summary>
-            Возвращает значение параметра либо значение по умолчанию.
-            </summary>
-            <param name="element">Элемент.</param>
-            <param name="sharedParam">Общий параметр.</param>
-            <param name="default">Значение по умолчанию.</param>
-            <returns>Возвращает значение параметра либо значение по умолчанию.</returns>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.SharedParams.SharedParam)">
-            <summary>
-            Возвращает значение параметра элемента.
-            </summary>
-            <param name="element">Элемент.</param>
-            <param name="sharedParam">Общий параметр.</param>
-            <returns>Возвращает значение параметра элемента.</returns>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.SharedParams.SharedParam,System.Double)">
-            <summary>
-            Устанавливает значение параметра.
-            </summary>
-            <param name="element">Элемент.</param>
-            <param name="sharedParam">Общий параметр.</param>
-            <param name="paramValue">Значение общего параметра.</param>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.SharedParams.SharedParam,System.Int32)">
-            <summary>
-            Устанавливает значение параметра.
-            </summary>
-            <param name="element">Элемент.</param>
-            <param name="sharedParam">Общий параметр.</param>
-            <param name="paramValue">Значение общего параметра.</param>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.SharedParams.SharedParam,System.String)">
-            <summary>
-            Устанавливает значение параметра.
-            </summary>
-            <param name="element">Элемент.</param>
-            <param name="sharedParam">Общий параметр.</param>
-            <param name="paramValue">Значение общего параметра.</param>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.SharedParams.SharedParam,Autodesk.Revit.DB.ElementId)">
-            <summary>
-            Устанавливает значение параметра.
-            </summary>
-            <param name="element">Элемент.</param>
-            <param name="sharedParam">Общий параметр.</param>
-            <param name="paramValue">Значение общего параметра.</param>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParam(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.SharedParams.SharedParam)">
-            <summary>
-            Возвращает параметр.
-            </summary>
-            <param name="element">Элемент.</param>
-            <param name="sharedParam">Общий параметр.</param>
-            <returns>Возвращает параметр.</returns>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParamValueOrDefault(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.ProjectParams.ProjectParam,System.Object)">
-            <summary>
-            Возвращает значение параметра либо значение по умолчанию.
-            </summary>
-            <param name="element">Элемент.</param>
-            <param name="projectParam">Параметр проекта.</param>
-            <param name="default">Значение по умолчанию.</param>
-            <returns>Возвращает значение параметра либо значение по умолчанию.</returns>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.ProjectParams.ProjectParam)">
-            <summary>
-            Возвращает значение параметра элемента.
-            </summary>
-            <param name="element">Элемент.</param>
-            <param name="projectParam">Параметр проекта.</param>
-            <returns>Возвращает значение параметра элемента.</returns>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.ProjectParams.ProjectParam,System.Double)">
-            <summary>
-            Устанавливает значение параметра.
-            </summary>
-            <param name="element">Элемент.</param>
-            <param name="projectParam">Параметр проекта.</param>
-            <param name="paramValue">Значение общего параметра.</param>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.ProjectParams.ProjectParam,System.Int32)">
-            <summary>
-            Устанавливает значение параметра.
-            </summary>
-            <param name="element">Элемент.</param>
-            <param name="projectParam">Параметр проекта.</param>
-            <param name="paramValue">Значение общего параметра.</param>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.ProjectParams.ProjectParam,System.String)">
-            <summary>
-            Устанавливает значение параметра.
-            </summary>
-            <param name="element">Элемент.</param>
-            <param name="projectParam">Параметр проекта.</param>
-            <param name="paramValue">Значение общего параметра.</param>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ElementExtensions.SetParamValue(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.ProjectParams.ProjectParam,Autodesk.Revit.DB.ElementId)">
-            <summary>
-            Устанавливает значение параметра.
-            </summary>
-            <param name="element">Элемент.</param>
-            <param name="projectParam">Параметр проекта.</param>
-            <param name="paramValue">Значение общего параметра.</param>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.ElementExtensions.GetParam(Autodesk.Revit.DB.Element,dosymep.Bim4Everyone.ProjectParams.ProjectParam)">
-            <summary>
-            Возвращает параметр.
-            </summary>
-            <param name="element">Элемент.</param>
-            <param name="projectParam">Параметр проекта.</param>
             <returns>Возвращает параметр.</returns>
         </member>
         <member name="T:dosymep.Bim4Everyone.FamilyManagerExtensions">
@@ -2207,54 +2101,6 @@
             <param name="target">Документ, в котором требуется настроить параметры.</param>
             <param name="revitParams">Параметры, которые требуется настроить.</param>
             <remarks>Метод открывает транзакцию при настройке параметров.</remarks>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupRevitParam(Autodesk.Revit.DB.Document,dosymep.Bim4Everyone.ProjectParams.ProjectParam)">
-            <summary>
-            Настройка параметра проекта.
-            </summary>
-            <param name="target">Документ, в котором требуется настроить параметр проекта.</param>
-            <param name="revitParam">Параметр проекта, который требуется настроить.</param>
-            <remarks>Метод открывает транзакцию при настройке параметра проекта.</remarks>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupRevitParams(Autodesk.Revit.DB.Document,dosymep.Bim4Everyone.ProjectParams.ProjectParam[])">
-            <summary>
-            Настройка параметров проекта.
-            </summary>
-            <param name="target">Документ, в котором требуется настроить параметры проекта.</param>
-            <param name="revitParams">Параметры проекта, которые требуется настроить.</param>
-            <remarks>Метод открывает транзакцию при настройке параметров проекта.</remarks>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupRevitParams(Autodesk.Revit.DB.Document,System.Collections.Generic.IEnumerable{dosymep.Bim4Everyone.ProjectParams.ProjectParam})">
-            <summary>
-            Настройка параметров проекта.
-            </summary>
-            <param name="target">Документ, в котором требуется настроить параметры проекта.</param>
-            <param name="revitParams">Параметры проекта, которые требуется настроить.</param>
-            <remarks>Метод открывает транзакцию при настройке параметров проекта.</remarks>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupRevitParam(Autodesk.Revit.DB.Document,dosymep.Bim4Everyone.SharedParams.SharedParam)">
-            <summary>
-            Настройка общий параметр.
-            </summary>
-            <param name="target">Документ, в котором требуется настроить общий параметр.</param>
-            <param name="revitParam">Общий параметр, который требуется настроить.</param>
-            <remarks>Метод открывает транзакцию при настройке общего параметра.</remarks>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupRevitParams(Autodesk.Revit.DB.Document,dosymep.Bim4Everyone.SharedParams.SharedParam[])">
-            <summary>
-            Настройка общих параметров.
-            </summary>
-            <param name="target">Документ, в котором требуется настроить общие параметры.</param>
-            <param name="revitParams">Общие параметры, которые требуется настроить.</param>
-            <remarks>Метод открывает транзакцию при настройке общих параметров.</remarks>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupRevitParams(Autodesk.Revit.DB.Document,System.Collections.Generic.IEnumerable{dosymep.Bim4Everyone.SharedParams.SharedParam})">
-            <summary>
-            Настройка общих параметров.
-            </summary>
-            <param name="target">Документ, в котором требуется настроить общие параметры.</param>
-            <param name="revitParams">Общие параметры, которые требуется настроить.</param>
-            <remarks>Метод открывает транзакцию при настройке общих параметров.</remarks>
         </member>
         <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SetupSchedule(Autodesk.Revit.DB.Document,System.Boolean,dosymep.Bim4Everyone.RevitScheduleRule)">
             <summary>
