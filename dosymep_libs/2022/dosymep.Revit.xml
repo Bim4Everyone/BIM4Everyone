@@ -830,7 +830,7 @@
             Расширения для класса <see cref="T:Autodesk.Revit.DB.ForgeTypeId"/>.
             </summary>
         </member>
-        <member name="P:dosymep.Revit.ForgeTypeIdExtensions.EmptyForgeTypeId">
+        <member name="F:dosymep.Revit.ForgeTypeIdExtensions.EmptyForgeTypeId">
             <summary>
             Пустой ForgeTypeId
             </summary>
