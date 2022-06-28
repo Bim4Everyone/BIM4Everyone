@@ -892,7 +892,7 @@
             Возвращает <see cref="T:Autodesk.Revit.DB.ForgeTypeId"/> для системного параметра.
             </summary>
             <param name="builtInParameter">Системный параметр.</param>
-            <returns>Возвращает <see cref="T:Autodesk.Revit.DB.UnitType"/> для системного параметра.</returns>
+            <returns>Возвращает <see cref="T:Autodesk.Revit.DB.ForgeTypeId"/> для системного параметра.</returns>
         </member>
         <member name="T:dosymep.Revit.ServerClient.DirectoryInfo">
             <summary>
