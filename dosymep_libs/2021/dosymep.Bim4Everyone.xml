@@ -733,6 +733,13 @@
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParam.GetParam(Autodesk.Revit.DB.Element)">
             <inheritdoc/>
         </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParam.GetUnitType(System.String)">
+            <summary>
+            Возвращает единицу измерения параметра по его идентификатору.
+            </summary>
+            <param name="paramId">Идентификатор параметра.</param>
+            <returns>Возвращает единицу измерения параметра по его идентификатору.</returns>
+        </member>
         <member name="T:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig">
             <summary>
             Конфигурация параметров проекта.
@@ -743,61 +750,6 @@
             Текущее состояние конфигурации.
             </summary>
             <remarks>Перед использованием нужно вызвать <see cref="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.Load(System.String)"/></remarks>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.CheckCorrectDistanceGrid">
-            <summary>
-            Пров_Ровно от Оси
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.CheckIsNormalGrid">
-            <summary>
-            Пров_Ортогональность Осям
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomBalcony">
-            <summary>
-            КВГ_Летнее
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomLiving">
-            <summary>
-            КВГ_Жилое
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomNumberFix">
-            <summary>
-            КВГ_ПМЩ_Фиксация номера
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.NumberingOrder">
-            <summary>
-            КВГ_Приоритет нумерации
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ProjectStage">
-            <summary>
-            _Стадия Проекта
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ViewGroup">
-            <summary>
-            _Группа Видов
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.WithFullSheetNumber">
-            <summary>
-            _Полный Номер Листа
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.WithSheetNumber">
-            <summary>
-            _Номера Листа Наличие
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ViewNumberOnSheet">
-            <summary>
-            _Номер Вида на Листе
-            </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomGroupName">
             <summary>
@@ -824,14 +776,69 @@
             КВГ_Наименование
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomAreaRatio">
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ViewGroup">
             <summary>
-            КВГ_Коэффициент площади
+            _Группа Видов
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ViewNumberOnSheet">
+            <summary>
+            _Номер Вида на Листе
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.WithSheetNumber">
+            <summary>
+            _Номера Листа Наличие
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.WithFullSheetNumber">
+            <summary>
+            _Полный Номер Листа
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ProjectStage">
+            <summary>
+            _Стадия Проекта
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomLiving">
+            <summary>
+            КВГ_Жилое
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomBalcony">
+            <summary>
+            КВГ_Летнее
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomNumberFix">
+            <summary>
+            КВГ_ПМЩ_Фиксация номера
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.NumberingOrder">
+            <summary>
+            КВГ_Приоритет нумерации
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.CheckIsNormalGrid">
+            <summary>
+            Пров_Ортогональность Осям
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.CheckCorrectDistanceGrid">
+            <summary>
+            Пров_Ровно от Оси
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ApartmentGroupName">
             <summary>
             КВГ_Доп. сортировка групп
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomAreaRatio">
+            <summary>
+            КВГ_Коэффициент площади
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomGroupShortName">
@@ -1226,6 +1233,13 @@
             <param name="groupName">Наименование группы параметров.</param>
             <returns>Возвращает описание общего параметра из ФОП.</returns>
         </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParam.GetUnitType(System.String)">
+            <summary>
+            Возвращает единицу измерения параметра по его идентификатору.
+            </summary>
+            <param name="paramId">Идентификатор параметра.</param>
+            <returns>Возвращает единицу измерения параметра по его идентификатору.</returns>
+        </member>
         <member name="T:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig">
             <summary>
             Конфигурация общих параметров.
@@ -1420,6 +1434,16 @@
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISUnit">
             <summary>
             ФОП_ВИС_Единица измерения
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISOutSystemName">
+            <summary>
+            ФОП_ВИС_Имя внесистемных элементов
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISSystemShortName">
+            <summary>
+            ФОП_ВИС_Сокращение для системы
             </summary>
         </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">
