@@ -1134,6 +1134,21 @@
             КВГ_Удаление помещений по этажам
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsCheckDeviationAreas">
+            <summary>
+            КВГ_(Проверка) Отклонение от площади по ТЗ
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsCheckTypes">
+            <summary>
+            КВГ_(Проверка) Квартирография по типам
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsCheckGroupTypes">
+            <summary>
+            КВГ_(Проверка) Тип группы
+            </summary>
+        </member>
         <member name="M:dosymep.Bim4Everyone.Schedules.SchedulesConfig.LoadInstance(System.String)">
             <summary>
             Загрузка текущей конфигурации.
