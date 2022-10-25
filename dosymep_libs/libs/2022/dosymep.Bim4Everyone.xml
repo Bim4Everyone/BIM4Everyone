@@ -1316,6 +1316,11 @@
             ФОП_Секция СМР
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingWorksTyping">
+            <summary>
+            ФОП_Секция СМР
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FireCompartmentShortName">
             <summary>
             ФОП_Пожарный отсек
@@ -1911,6 +1916,11 @@
             </summary>
         </member>
         <member name="M:dosymep.Bim4Everyone.SimpleServices.ServicesProvider.LoadInstance(Autodesk.Revit.UI.UIApplication)">
+            <summary>
+            Загружает сервисы платформы.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ServicesProvider.LoadInstanceCore(Autodesk.Revit.ApplicationServices.Application)">
             <summary>
             Загружает сервисы платформы.
             </summary>

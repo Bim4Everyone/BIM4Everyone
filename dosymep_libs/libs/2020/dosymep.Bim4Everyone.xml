@@ -1897,6 +1897,11 @@
             Загружает сервисы платформы.
             </summary>
         </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ServicesProvider.LoadInstanceCore(Autodesk.Revit.ApplicationServices.Application)">
+            <summary>
+            Загружает сервисы платформы.
+            </summary>
+        </member>
         <member name="M:dosymep.Bim4Everyone.SimpleServices.ServicesProvider.GetPlatformService``1">
             <summary>
             Возвращает сервис из контейнера.
