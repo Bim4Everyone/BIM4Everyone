@@ -1343,7 +1343,7 @@
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingWorksTyping">
             <summary>
-            ФОП_Секция СМР
+            ФОП_Типизация СМР
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FireCompartmentShortName">
