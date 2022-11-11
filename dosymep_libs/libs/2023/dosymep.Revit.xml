@@ -231,6 +231,39 @@
             <param name="transactionName">Название транзакции.</param>
             <returns>Возвращает запущенную групповую транзакцию на изменение документа.</returns>
         </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.GetUniqId(Autodesk.Revit.DB.Document)">
+            <summary>
+            Возвращает уникальный идентификатор документа.
+            </summary>
+            <param name="document">Документ.</param>
+            <returns>Возвращает уникальный идентификатор документа.</returns>
+            <remarks>На данный момент возвращает отображаемое имя документа <see cref="P:Autodesk.Revit.DB.Document.Title"/>.</remarks>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.ZoomToElements(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.View3D,System.Collections.Generic.IList{Autodesk.Revit.DB.Element},System.Double)">
+            <summary>
+            Показывает и выделяет элементы в документе.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="view">3D вид.</param>
+            <param name="elements">Список элементов.</param>
+            <param name="offset">Расстояние на которое увеличивается <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>, во внутренних координатах.</param>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.IsLinkedElement(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.Element)">
+            <summary>
+            Возвращает признак того что элемент из связанного документа.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="element">Элемент.</param>
+            <returns>True если элемент из связанного документа, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.IsNotLinkedElement(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.Element)">
+            <summary>
+            Возвращает признак того что элемент не из связанного документа.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="element">Элемент.</param>
+            <returns>True если элемент не из связанного документа, иначе false.</returns>
+        </member>
         <member name="M:dosymep.Revit.DocumentExtensions.GetStorageType(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.BuiltInParameter)">
             <summary>
             Возвращает тип системного параметра.
@@ -246,6 +279,13 @@
             <param name="document">Документ Revit.</param>
             <param name="forgeTypeId">Системный параметр документа.</param>
             <returns>Возвращает тип системного параметра.</returns>
+        </member>
+        <member name="M:dosymep.Revit.DocumentExtensions.GetTopLinkInstances(Autodesk.Revit.DB.Document)">
+            <summary>
+            Возвращает ссылки верхнего уровня.
+            </summary>
+            <param name="document">Документ.</param>
+            <returns>Возвращает ссылки верхнего уровня.</returns>
         </member>
         <member name="M:dosymep.Revit.DocumentExtensions.UnloadAllLinks(System.String[])">
             <summary>
@@ -792,6 +832,44 @@
             <param name="forgeTypeId">Встроенный тип параметра.</param>
             <returns>Возвращает признак удаления параметра true - если был удален, иначе false.</returns>
         </member>
+        <member name="M:dosymep.Revit.ElementExtensions.IsElementType(Autodesk.Revit.DB.Element)">
+            <summary>
+            Проверяет элемент является ли он <see cref="T:Autodesk.Revit.DB.ElementType"/>
+            </summary>
+            <param name="element">Элемент.</param>
+            <returns>Возвращает true - если элемент является типом элемента, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.HasElementType(Autodesk.Revit.DB.Element)">
+            <summary>
+            Проверяет есть ли тип у элемента.
+            </summary>
+            <param name="element">Элемент.</param>
+            <returns>Возвращает true - если у элемента есть тип, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.GetElementType``1(Autodesk.Revit.DB.Element)">
+            <summary>
+            Возвращает тип элемента.
+            </summary>
+            <param name="element">Элемент.</param>
+            <returns>Возвращает тип элемента.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.GetBoundingBox(Autodesk.Revit.DB.Element)">
+            <summary>
+            Возвращает <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> по умолчанию.
+            </summary>
+            <param name="element">Элемент.</param>
+            <returns>Возвращает <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> по умолчанию.</returns>
+            <remarks>Может вернуть Null, если у элемента нет <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</remarks>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.GetBoundingBox(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.View)">
+            <summary>
+            Возвращает <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> по умолчанию.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="view">Вид у которого будет браться <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</param>
+            <returns>Возвращает <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> по умолчанию.</returns>
+            <remarks>Может вернуть Null, если у элемента нет <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</remarks>
+        </member>
         <member name="T:dosymep.Revit.ElementIdExtensions">
             <summary>
             Расширения для идентификатора элемента.
@@ -853,6 +931,146 @@
             </summary>
             <param name="specTypeIdName">Наименование свойства единицы измерения.</param>
             <returns>Возвращает <see cref="T:Autodesk.Revit.DB.ForgeTypeId"/> единицы измерения по имени свойства <see cref="T:Autodesk.Revit.DB.SpecTypeId"/>.</returns>
+        </member>
+        <member name="T:dosymep.Revit.Geometry.BoundingBoxExtensions">
+            <summary>
+            Расширения для <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.BoundingBoxExtensions.CreateSolid(Autodesk.Revit.DB.BoundingBoxXYZ)">
+            <summary>
+            Возвращает <see cref="T:Autodesk.Revit.DB.Solid"/> по <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.
+            </summary>
+            <param name="bb"><see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> по которому создается <see cref="T:Autodesk.Revit.DB.Solid"/>.</param>
+            <returns>Возвращает <see cref="T:Autodesk.Revit.DB.Solid"/> по <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.BoundingBoxExtensions.IncreaseBoundingBox(Autodesk.Revit.DB.BoundingBoxXYZ,System.Double)">
+            <summary>
+            Создает увеличенный <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.
+            </summary>
+            <param name="bb"></param>
+            <param name="offset">Расстояние увеличения, во внутренних координатах.</param>
+            <returns>Создает увеличенный <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.BoundingBoxExtensions.TransformBoundingBox(Autodesk.Revit.DB.BoundingBoxXYZ,Autodesk.Revit.DB.Transform)">
+            <summary>
+            Возвращает новый <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> с примененной трансформацией.
+            </summary>
+            <param name="bb"><see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>, который трансформируют.</param>
+            <param name="transform">Применяемый <see cref="T:Autodesk.Revit.DB.Transform"/>.</param>
+            <returns>Возвращает новый <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> с примененной трансформацией.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.BoundingBoxExtensions.IsIntersected(Autodesk.Revit.DB.BoundingBoxXYZ,Autodesk.Revit.DB.BoundingBoxXYZ)">
+            <summary>
+            Проверяет на пересечение двух <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.
+            </summary>
+            <param name="bb1">Первый <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</param>
+            <param name="bb2">Второй <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</param>
+            <returns>Возвращает true - если первый <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> пересекается со вторым, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.BoundingBoxExtensions.IsIntersected(System.Collections.Generic.IList{Autodesk.Revit.DB.BoundingBoxXYZ})">
+            <summary>
+            Проверяет пересечение всех <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> между собой.
+            </summary>
+            <param name="bbs">Коллекция <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</param>
+            <returns>Возвращает true - если все <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> пересекаются, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.BoundingBoxExtensions.CreateCommonBoundingBox(System.Collections.Generic.IList{Autodesk.Revit.DB.BoundingBoxXYZ})">
+            <summary>
+            Возвращает общий <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.
+            </summary>
+            <param name="bbs">Коллекция <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</param>
+            <returns>Возвращает общий <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</returns>
+            <remarks>Возвращает общий <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>,
+            если у всех <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>
+            есть общий <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>,
+            иначе возвращает объединенный.</remarks>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.BoundingBoxExtensions.CreateIntersectedBoundingBox(Autodesk.Revit.DB.BoundingBoxXYZ,Autodesk.Revit.DB.BoundingBoxXYZ)">
+            <summary>
+            Возвращает <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> пересечения между двумя <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.
+            </summary>
+            <param name="bb1">Первый <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</param>
+            <param name="bb2">Второй <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</param>
+            <returns>Возвращает <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> пересечения между двумя <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.BoundingBoxExtensions.CreateIntersectedBoundingBox(System.Collections.Generic.ICollection{Autodesk.Revit.DB.BoundingBoxXYZ})">
+            <summary>
+            Возвращает общий <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.
+            </summary>
+            <param name="bbs">Коллекция <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</param>
+            <returns>Возвращает общий <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.BoundingBoxExtensions.CreateUnitedBoundingBox(System.Collections.Generic.ICollection{Autodesk.Revit.DB.BoundingBoxXYZ})">
+            <summary>
+            Возвращает объединенный <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.
+            </summary>
+            <param name="bbs">Коллекция <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</param>
+            <returns>Возвращает объединенный <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.BoundingBoxExtensions.GetMaxPoint(System.Collections.Generic.ICollection{Autodesk.Revit.DB.BoundingBoxXYZ})">
+            <summary>
+            Возвращает максимальную точку по всем <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.
+            </summary>
+            <param name="bbs">Коллекция <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</param>
+            <returns>Возвращает максимальную точку по всем <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.BoundingBoxExtensions.GetMinPoint(System.Collections.Generic.ICollection{Autodesk.Revit.DB.BoundingBoxXYZ})">
+            <summary>
+            Возвращает минимальную точку по всем <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.
+            </summary>
+            <param name="bbs">Коллекция <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</param>
+            <returns>Возвращает минимальную точку по всем <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</returns>
+        </member>
+        <member name="T:dosymep.Revit.Geometry.ElementExtensions">
+            <summary>
+            Расширения <see cref="T:Autodesk.Revit.DB.Element"/>
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.ElementExtensions.GetSolids(Autodesk.Revit.DB.Element)">
+            <summary>
+            Возвращает все <see cref="T:Autodesk.Revit.DB.Solid"/> объекты из <see cref="T:Autodesk.Revit.DB.Element"/>.
+            </summary>
+            <param name="element">Элемент у которого берутся <see cref="T:Autodesk.Revit.DB.Solid"/>.</param>
+            <returns>Возвращает все <see cref="T:Autodesk.Revit.DB.Solid"/> объекты из <see cref="T:Autodesk.Revit.DB.Element"/>.</returns>
+        </member>
+        <member name="T:dosymep.Revit.Geometry.GeometryObjectExtensions">
+            <summary>
+            Расширения <see cref="T:Autodesk.Revit.DB.GeometryObject"/>
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.GeometryObjectExtensions.GetSolids(Autodesk.Revit.DB.GeometryObject)">
+            <summary>
+            Возвращает перечисление объектов <see cref="T:Autodesk.Revit.DB.Solid"/>.
+            </summary>
+            <param name="geometryObject">Объект у которого запрашиваются объекты <see cref="T:Autodesk.Revit.DB.Solid"/>.</param>
+            <returns>Возвращает перечисление объектов <see cref="T:Autodesk.Revit.DB.Solid"/>.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.GeometryObjectExtensions.GetSolids(Autodesk.Revit.DB.GeometryInstance)">
+            <summary>
+             Возвращает перечисление объектов <see cref="T:Autodesk.Revit.DB.Solid"/>.
+            </summary>
+            <param name="geometryInstance">Объект у которого запрашиваются объекты <see cref="T:Autodesk.Revit.DB.Solid"/>.</param>
+            <returns> Возвращает перечисление объектов <see cref="T:Autodesk.Revit.DB.Solid"/>.</returns>
+        </member>
+        <member name="T:dosymep.Revit.Geometry.SolidExtensions">
+            <summary>
+            Расширения для <see cref="T:Autodesk.Revit.DB.Solid"/>
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.SolidExtensions.GetTransformedBoundingBox(Autodesk.Revit.DB.Solid)">
+            <summary>
+            Возвращает новый <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> с примененной трансформацией.
+            </summary>
+            <param name="solid"><see cref="T:Autodesk.Revit.DB.Solid"/> у которого берется <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</param>
+            <returns>Возвращает новый <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> с примененной трансформацией.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.SolidExtensions.CreateUnitedSolids(System.Collections.Generic.IList{Autodesk.Revit.DB.Solid})">
+            <summary>
+            Объединяет коллекцию <see cref="T:Autodesk.Revit.DB.Solid"/>.
+            </summary>
+            <param name="solids">Коллекция <see cref="T:Autodesk.Revit.DB.Solid"/>.</param>
+            <returns>Возвращает максимально возможные объединения <see cref="T:Autodesk.Revit.DB.Solid"/>.</returns>
         </member>
         <member name="T:dosymep.Revit.ParamElementExtensions">
             <summary>
@@ -1841,6 +2059,37 @@
             </summary>
             <param name="document">Документ.</param>
             <param name="elementIds">Идентификаторы выделяемых элементов.</param>
+        </member>
+        <member name="M:dosymep.Revit.UIDocumentExtensions.GetUniqId(Autodesk.Revit.UI.UIDocument)">
+            <summary>
+            Возвращает уникальный идентификатор документа.
+            </summary>
+            <param name="document">Документ.</param>
+            <returns>Возвращает уникальный идентификатор документа.</returns>
+            <remarks>На данный момент возвращает отображаемое имя документа <see cref="P:Autodesk.Revit.DB.Document.Title"/>.</remarks>
+        </member>
+        <member name="M:dosymep.Revit.UIDocumentExtensions.GetActiveUIView(Autodesk.Revit.UI.UIDocument)">
+            <summary>
+            Возвращает активный вид.
+            </summary>
+            <param name="uiDocument">Документ.</param>
+            <returns>Возвращает активный вид.</returns>
+        </member>
+        <member name="M:dosymep.Revit.UIDocumentExtensions.IsLinkedElement(Autodesk.Revit.UI.UIDocument,Autodesk.Revit.DB.Element)">
+            <summary>
+            Возвращает признак того что элемент из связанного документа.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="element">Элемент.</param>
+            <returns>True если элемент из связанного документа, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.UIDocumentExtensions.IsNotLinkedElement(Autodesk.Revit.UI.UIDocument,Autodesk.Revit.DB.Element)">
+            <summary>
+            Возвращает признак того что элемент не из связанного документа.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="element">Элемент.</param>
+            <returns>True если элемент не из связанного документа, иначе false.</returns>
         </member>
     </members>
 </doc>

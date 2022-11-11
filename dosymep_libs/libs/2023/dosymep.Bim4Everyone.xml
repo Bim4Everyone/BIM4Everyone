@@ -1316,6 +1316,16 @@
             ФОП_Секция СМР
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingWorksTyping">
+            <summary>
+            ФОП_Типизация СМР
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FixBuildingWorks">
+            <summary>
+            ФОП_Фиксация координаты СМР
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FireCompartmentShortName">
             <summary>
             ФОП_Пожарный отсек
