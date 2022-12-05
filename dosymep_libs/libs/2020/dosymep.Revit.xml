@@ -887,6 +887,13 @@
             <param name="bbs">Коллекция <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</param>
             <returns>Возвращает минимальную точку по всем <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</returns>
         </member>
+        <member name="M:dosymep.Revit.Geometry.BoundingBoxExtensions.GetMidPoint(Autodesk.Revit.DB.BoundingBoxXYZ)">
+            <summary>
+            Возвращает центральную точку <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.
+            </summary>
+            <param name="bb">Экземпляр <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</param>
+            <returns>Возвращает центральную точку <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</returns>
+        </member>
         <member name="T:dosymep.Revit.Geometry.ElementExtensions">
             <summary>
             Расширения <see cref="T:Autodesk.Revit.DB.Element"/>
@@ -1877,6 +1884,19 @@
             <typeparam name="T">Тип десериализуемого объекта.</typeparam>
             <param name="textReader">Текст десериализуемого объекта.</param>
             <returns>Возвращает десериализованный объект.</returns>
+        </member>
+        <member name="T:dosymep.Revit.UIApplicationExtensions">
+            <summary>
+            Расширение для класса <see cref="T:Autodesk.Revit.UI.UIApplication"/>.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.UIApplicationExtensions.SetStatusBarText(Autodesk.Revit.UI.UIApplication,System.String)">
+            <summary>
+            Устанавливает текст в статус баре в приложении Revit.
+            <p>https://jeremytammik.github.io/tbc/a/0534_status_bar_text.htm</p>
+            </summary>
+            <param name="uiApplication">Приложение.</param>
+            <param name="text">Отображаемый текст в статус баре.</param>
         </member>
         <member name="T:dosymep.Revit.UIDocumentExtensions">
             <summary>

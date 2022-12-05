@@ -1351,6 +1351,11 @@
             ФОП_Фиксация координаты СМР
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingWorksLevel">
+            <summary>
+            ФОП_Этаж СМР
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FireCompartmentShortName">
             <summary>
             ФОП_Пожарный отсек
