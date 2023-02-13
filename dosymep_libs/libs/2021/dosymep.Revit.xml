@@ -1119,6 +1119,48 @@
             <param name="builtInParameter">Системный параметр.</param>
             <returns>Возвращает <see cref="T:Autodesk.Revit.DB.ForgeTypeId"/> для системного параметра.</returns>
         </member>
+        <member name="T:dosymep.Revit.RoomExtensions">
+            <summary>
+            Расширения класса <see cref="T:Autodesk.Revit.DB.Architecture.Room"/>.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.RoomExtensions.DefaultBoundaryOptions">
+            <summary>
+            Опции получения границ помещений по умолчанию.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.RoomExtensions.IsRedundant(Autodesk.Revit.DB.Architecture.Room,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
+            <summary>
+            Проверяет является элемент избыточным.
+            </summary>
+            <param name="room">Проверяемый элемент.</param>
+            <param name="options">Опции получение границ элемента.</param>
+            <returns>Возвращает true если элемент является избыточным, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.RoomExtensions.IsNotRedundant(Autodesk.Revit.DB.Architecture.Room,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
+            <summary>
+            Проверяет является элемент не избыточным.
+            </summary>
+            <param name="room">Проверяемый элемент.</param>
+            <param name="options">Опции получение границ элемента.</param>
+            <returns>Возвращает true если элемент является не избыточным, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.RoomExtensions.IsEnclosed(Autodesk.Revit.DB.Architecture.Room,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
+            <summary>
+            Проверяет является элемент замкнутым.
+            </summary>
+            <param name="room">Проверяемый элемент.</param>
+            <param name="options">Опции получение границ элемента.</param>
+            <returns>Возвращает true если элемент является замкнутым, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.RoomExtensions.IsNotEnclosed(Autodesk.Revit.DB.Architecture.Room,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
+            <summary>
+            Проверяет является элемент не замкнутым.
+            </summary>
+            <param name="room">Проверяемый элемент.</param>
+            <param name="options">Опции получение границ элемента.</param>
+            <returns>Возвращает true если элемент является не замкнутым, иначе false.</returns>
+        </member>
         <member name="T:dosymep.Revit.ServerClient.DirectoryInfo">
             <summary>
             Информация об элементе.
@@ -1659,6 +1701,24 @@
             <summary>
             Список ролей сервера.
             </summary>
+        </member>
+        <member name="T:dosymep.Revit.SpatialElementExtensions">
+            <summary>
+            Расширения класса <see cref="T:Autodesk.Revit.DB.SpatialElement"/>.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.SpatialElementExtensions.DefaultBoundaryOptions">
+            <summary>
+            Опции получения границ размещаемых элементов по умолчанию.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.SpatialElementExtensions.IsSelfCrossBoundaries(Autodesk.Revit.DB.SpatialElement,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
+            <summary>
+            Находит самопересечения у границ размещаемых элементов.
+            </summary>
+            <param name="spatialElement">Проверяемый элемент.</param>
+            <param name="options">Опции получение границ элемента.</param>
+            <returns>Возвращает true если были найдены самопересечения, иначе false.</returns>
         </member>
         <member name="T:dosymep.Revit.TransactionExtensions">
             <summary>
