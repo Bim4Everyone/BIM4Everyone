@@ -1321,6 +1321,11 @@
             ФОП_КВР_Площадь жилая
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentLivingAreaFix">
+            <summary>
+            ФОП_ФИКС_КВР_Площадь жилая
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentNumber">
             <summary>
             ФОП_Номер квартиры
