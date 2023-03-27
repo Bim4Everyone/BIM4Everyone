@@ -4,6 +4,43 @@
         <name>dosymep.Revit</name>
     </assembly>
     <members>
+        <member name="T:dosymep.Revit.AreaExtensions">
+            <summary>
+            Расширения класса <see cref="T:Autodesk.Revit.DB.Area"/>.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.AreaExtensions.IsRedundant(Autodesk.Revit.DB.Area,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
+            <summary>
+            Проверяет является зона избыточной.
+            </summary>
+            <param name="area">Проверяемая зона.</param>
+            <param name="options">Опции получение границ зоны.</param>
+            <returns>Возвращает true если зона является избыточной, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.AreaExtensions.IsNotRedundant(Autodesk.Revit.DB.Area,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
+            <summary>
+            Проверяет является зона не избыточной.
+            </summary>
+            <param name="area">Проверяемая зона.</param>
+            <param name="options">Опции получение границ зоны.</param>
+            <returns>Возвращает true если зона является не избыточной, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.AreaExtensions.IsEnclosed(Autodesk.Revit.DB.Area,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
+            <summary>
+            Проверяет является зона замкнутой.
+            </summary>
+            <param name="area">Проверяемая зона.</param>
+            <param name="options">Опции получение границ зоны.</param>
+            <returns>Возвращает true если зона является замкнутой, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.AreaExtensions.IsNotEnclosed(Autodesk.Revit.DB.Area,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
+            <summary>
+            Проверяет является зона не замкнутой.
+            </summary>
+            <param name="area">Проверяемая зона.</param>
+            <param name="options">Опции получение границ зоны.</param>
+            <returns>Возвращает true если зона является не замкнутой, иначе false.</returns>
+        </member>
         <member name="T:dosymep.Revit.CategoryExtensions">
             <summary>
             Класс расширений категории.
@@ -764,6 +801,30 @@
             <returns>Возвращает <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> по умолчанию.</returns>
             <remarks>Может вернуть Null, если у элемента нет <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</remarks>
         </member>
+        <member name="M:dosymep.Revit.ElementExtensions.InAnyCategory(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInCategory)">
+            <summary>
+            Проверяет принадлежность элемента к переданной категории.
+            </summary>
+            <param name="element">Проверяемый элемент.</param>
+            <param name="category">Проверяемая категория.</param>
+            <returns>Возвращает true - если элемент является переданной категории, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.InAnyCategory(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInCategory[])">
+            <summary>
+            Проверяет принадлежность элемента к переданным категориям.
+            </summary>
+            <param name="element">Проверяемый элемент.</param>
+            <param name="categories">Проверяемые категории.</param>
+            <returns>Возвращает true - если элемент является переданным категориям, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.InAnyCategory(Autodesk.Revit.DB.Element,System.Collections.Generic.IEnumerable{Autodesk.Revit.DB.BuiltInCategory})">
+            <summary>
+            Проверяет принадлежность элемента к переданным категориям.
+            </summary>
+            <param name="element">Проверяемый элемент.</param>
+            <param name="categories">Проверяемые категории.</param>
+            <returns>Возвращает true - если элемент является переданным категориям, иначе false.</returns>
+        </member>
         <member name="T:dosymep.Revit.ElementIdExtensions">
             <summary>
             Расширения для идентификатора элемента.
@@ -1124,42 +1185,37 @@
             Расширения класса <see cref="T:Autodesk.Revit.DB.Architecture.Room"/>.
             </summary>
         </member>
-        <member name="F:dosymep.Revit.RoomExtensions.DefaultBoundaryOptions">
-            <summary>
-            Опции получения границ помещений по умолчанию.
-            </summary>
-        </member>
         <member name="M:dosymep.Revit.RoomExtensions.IsRedundant(Autodesk.Revit.DB.Architecture.Room,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
             <summary>
-            Проверяет является элемент избыточным.
+            Проверяет является помещение избыточным.
             </summary>
-            <param name="room">Проверяемый элемент.</param>
-            <param name="options">Опции получение границ элемента.</param>
-            <returns>Возвращает true если элемент является избыточным, иначе false.</returns>
+            <param name="room">Проверяемое помещение.</param>
+            <param name="options">Опции получение границ помещения.</param>
+            <returns>Возвращает true если помещение является избыточным, иначе false.</returns>
         </member>
         <member name="M:dosymep.Revit.RoomExtensions.IsNotRedundant(Autodesk.Revit.DB.Architecture.Room,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
             <summary>
-            Проверяет является элемент не избыточным.
+            Проверяет является помещение не избыточным.
             </summary>
-            <param name="room">Проверяемый элемент.</param>
-            <param name="options">Опции получение границ элемента.</param>
-            <returns>Возвращает true если элемент является не избыточным, иначе false.</returns>
+            <param name="room">Проверяемое помещение.</param>
+            <param name="options">Опции получение границ помещения.</param>
+            <returns>Возвращает true если помещение является не избыточным, иначе false.</returns>
         </member>
         <member name="M:dosymep.Revit.RoomExtensions.IsEnclosed(Autodesk.Revit.DB.Architecture.Room,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
             <summary>
-            Проверяет является элемент замкнутым.
+            Проверяет является помещение замкнутым.
             </summary>
-            <param name="room">Проверяемый элемент.</param>
-            <param name="options">Опции получение границ элемента.</param>
-            <returns>Возвращает true если элемент является замкнутым, иначе false.</returns>
+            <param name="room">Проверяемое помещение.</param>
+            <param name="options">Опции получение границ помещения.</param>
+            <returns>Возвращает true если помещение является замкнутым, иначе false.</returns>
         </member>
         <member name="M:dosymep.Revit.RoomExtensions.IsNotEnclosed(Autodesk.Revit.DB.Architecture.Room,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
             <summary>
-            Проверяет является элемент не замкнутым.
+            Проверяет является помещение не замкнутым.
             </summary>
-            <param name="room">Проверяемый элемент.</param>
-            <param name="options">Опции получение границ элемента.</param>
-            <returns>Возвращает true если элемент является не замкнутым, иначе false.</returns>
+            <param name="room">Проверяемое помещение.</param>
+            <param name="options">Опции получение границ помещения.</param>
+            <returns>Возвращает true если помещение является не замкнутым, иначе false.</returns>
         </member>
         <member name="T:dosymep.Revit.ServerClient.DirectoryInfo">
             <summary>
@@ -1719,6 +1775,38 @@
             <param name="spatialElement">Проверяемый элемент.</param>
             <param name="options">Опции получение границ элемента.</param>
             <returns>Возвращает true если были найдены самопересечения, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.SpatialElementExtensions.IsRedundant(Autodesk.Revit.DB.SpatialElement,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
+            <summary>
+            Проверяет является элемент избыточным.
+            </summary>
+            <param name="spatialElement">Проверяемый элемент.</param>
+            <param name="options">Опции получение границ элемента.</param>
+            <returns>Возвращает true если элемент является избыточным, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.SpatialElementExtensions.IsNotRedundant(Autodesk.Revit.DB.SpatialElement,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
+            <summary>
+            Проверяет является элемент не избыточным.
+            </summary>
+            <param name="spatialElement">Проверяемый элемент.</param>
+            <param name="options">Опции получение границ элемента.</param>
+            <returns>Возвращает true если элемент является не избыточным, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.SpatialElementExtensions.IsEnclosed(Autodesk.Revit.DB.SpatialElement,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
+            <summary>
+            Проверяет является элемент замкнутым.
+            </summary>
+            <param name="spatialElement">Проверяемый элемент.</param>
+            <param name="options">Опции получение границ элемента.</param>
+            <returns>Возвращает true если элемент является замкнутым, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.SpatialElementExtensions.IsNotEnclosed(Autodesk.Revit.DB.SpatialElement,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
+            <summary>
+            Проверяет является элемент не замкнутым.
+            </summary>
+            <param name="spatialElement">Проверяемый элемент.</param>
+            <param name="options">Опции получение границ элемента.</param>
+            <returns>Возвращает true если элемент является не замкнутым, иначе false.</returns>
         </member>
         <member name="T:dosymep.Revit.TransactionExtensions">
             <summary>

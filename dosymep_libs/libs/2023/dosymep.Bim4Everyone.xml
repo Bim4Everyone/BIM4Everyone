@@ -20,6 +20,166 @@
         <member name="M:dosymep.Bim4Everyone.BasePluginServicesModule.Dispose(System.Boolean)">
             <inheritdoc />
         </member>
+        <member name="T:dosymep.Bim4Everyone.BimModelPart">
+            <summary>
+            Класс предоставляющий информацию о разделе.
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.ARPart">
+            <summary>
+            AR
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.KRPart">
+            <summary>
+            KR
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.KMPart">
+            <summary>
+            KM
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.OVPart">
+            <summary>
+            OV
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.ITPPart">
+            <summary>
+            ITP
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.HCPart">
+            <summary>
+            HC
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.VKPart">
+            <summary>
+            VK
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.EOMPart">
+            <summary>
+            ЕОМ
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.EGPart">
+            <summary>
+            EG
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.SSPart">
+            <summary>
+            SS
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.GPPart">
+            <summary>
+            GP
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.KOORDPart">
+            <summary>
+            KOORD
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.VNPart">
+            <summary>
+            VN
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.KVPart">
+            <summary>
+            KV
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.OTPart">
+            <summary>
+            OT
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.DUPart">
+            <summary>
+            DU
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.VSPart">
+            <summary>
+            VS
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.KNPart">
+            <summary>
+            KN
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.PTPart">
+            <summary>
+            PT
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.EOPart">
+            <summary>
+            EO
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.BimModelPart.EMPart">
+            <summary>
+            EM
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.BimModelPart.Id">
+            <summary>
+            Идентификатор раздела.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.BimModelPart.Name">
+            <summary>
+            Наименование раздела.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.BimModelPart.Description">
+            <summary>
+            Описание раздела.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.BimModelPart.Equals(dosymep.Bim4Everyone.BimModelPart)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.BimModelPart.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.BimModelPart.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.BimModelPart.op_Equality(dosymep.Bim4Everyone.BimModelPart,dosymep.Bim4Everyone.BimModelPart)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.BimModelPart.op_Inequality(dosymep.Bim4Everyone.BimModelPart,dosymep.Bim4Everyone.BimModelPart)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.BimModelSubPart">
+            <summary>
+            Класс предоставляющий информацию о подразделе.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.BimModelSubPart.Parent">
+            <summary>
+            Родительский раздел.
+            </summary>
+        </member>
         <member name="T:dosymep.Bim4Everyone.CustomParams.CustomParam">
             <summary>
             Пользовательский параметр Revit.
@@ -1336,6 +1496,11 @@
             ФОП_Этаж СМР
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FixComment">
+            <summary>
+            ФОП_ФИКС_Комментарии
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FireCompartmentShortName">
             <summary>
             ФОП_Пожарный отсек
@@ -1496,6 +1661,95 @@
             Возвращает конфигурацию по умолчанию.
             </summary>
             <returns>Возвращает конфигурацию по умолчанию.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.BimModelPartsServiceExtensions">
+            <summary>
+            Класс расширений сервиса по получению разделов BIM модели.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.BimModelPartsServiceExtensions.GetBimModelPart(dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService,Autodesk.Revit.DB.Document)">
+            <summary>
+            Получает раздел по переданному документу.
+            </summary>
+            <param name="service">Сервис.</param>
+            <param name="document">Документ.</param>
+            <returns>Возвращает раздел модели по документу.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.BimModelPartsServiceExtensions.InAnyBimModelParts(dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService,Autodesk.Revit.DB.Document,dosymep.Bim4Everyone.BimModelPart)">
+            <summary>
+            Проверят является ли документ переданному разделу.
+            </summary>
+            <param name="service">Сервис.</param>
+            <param name="document">Документ.</param>
+            <param name="bimModelPart">Раздел BIM модели.</param>
+            <returns>Возвращает раздел модели по документу.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.BimModelPartsServiceExtensions.InAnyBimModelParts(dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService,Autodesk.Revit.DB.Document,dosymep.Bim4Everyone.BimModelPart[])">
+            <summary>
+            Проверят является ли документ переданному разделу.
+            </summary>
+            <param name="service">Сервис.</param>
+            <param name="document">Документ.</param>
+            <param name="bimModelParts">Раздел BIM модели.</param>
+            <returns>Возвращает раздел модели по документу.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.BimModelPartsServiceExtensions.InAnyBimModelParts(dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService,Autodesk.Revit.DB.Document,System.Collections.Generic.IEnumerable{dosymep.Bim4Everyone.BimModelPart})">
+            <summary>
+            Проверят является ли документ переданному разделу.
+            </summary>
+            <param name="service">Сервис.</param>
+            <param name="document">Документ.</param>
+            <param name="bimModelParts">Раздел BIM модели.</param>
+            <returns>Возвращает раздел модели по документу.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService">
+            <summary>
+            Сервис по получению разделов BIM модели.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService.GetBimModelPart(System.String)">
+            <summary>
+            Получает раздел по переданному имени документа.
+            </summary>
+            <param name="documentName">Имя документа.</param>
+            <returns>Возвращает раздел модели по имени документа.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService.InAnyBimModelParts(System.String,dosymep.Bim4Everyone.BimModelPart)">
+            <summary>
+            Проверят является ли документ переданному разделу.
+            </summary>
+            <param name="documentName">Имя документа.</param>
+            <param name="bimModelPart">Раздел BIM модели.</param>
+            <returns>Возвращает раздел модели по документу.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService.InAnyBimModelParts(System.String,dosymep.Bim4Everyone.BimModelPart[])">
+            <summary>
+            Проверят является ли документ переданному разделу.
+            </summary>
+            <param name="documentName">Имя документа.</param>
+            <param name="bimModelParts">Раздел BIM модели.</param>
+            <returns>Возвращает раздел модели по документу.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService.InAnyBimModelParts(System.String,System.Collections.Generic.IEnumerable{dosymep.Bim4Everyone.BimModelPart})">
+            <summary>
+            Проверят является ли документ переданному разделу.
+            </summary>
+            <param name="documentName">Имя документа.</param>
+            <param name="bimModelParts">Раздел BIM модели.</param>
+            <returns>Возвращает раздел модели по документу.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService.GetBimModelParts">
+            <summary>
+            Возвращает все разделы BIM модели.
+            </summary>
+            <returns>Возвращает все разделы BIM модели.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService.GetBimModelSubParts(dosymep.Bim4Everyone.BimModelPart)">
+            <summary>
+            Возвращает все разделы BIM модели.
+            </summary>
+            <param name="parentPart">Родительский раздел.</param>
+            <returns>Возвращает все разделы BIM модели.</returns>
         </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.IParamElementService">
             <summary>
