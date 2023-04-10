@@ -1727,6 +1727,76 @@
             <param name="bimModelParts">Раздел BIM модели.</param>
             <returns>Возвращает раздел модели по документу.</returns>
         </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.BimModelPartsServiceExtensions.GetBimModelPart(dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService,Autodesk.Revit.DB.RevitLinkType)">
+            <summary>
+            Получает раздел по переданному документу.
+            </summary>
+            <param name="service">Сервис.</param>
+            <param name="revitLinkType">Тип связи Revit.</param>
+            <returns>Возвращает раздел модели по документу.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.BimModelPartsServiceExtensions.InAnyBimModelParts(dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService,Autodesk.Revit.DB.RevitLinkType,dosymep.Bim4Everyone.BimModelPart)">
+            <summary>
+            Проверят является ли документ переданному разделу.
+            </summary>
+            <param name="service">Сервис.</param>
+            <param name="revitLinkType">Тип связи Revit.</param>
+            <param name="bimModelPart">Раздел BIM модели.</param>
+            <returns>Возвращает раздел модели по документу.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.BimModelPartsServiceExtensions.InAnyBimModelParts(dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService,Autodesk.Revit.DB.RevitLinkType,dosymep.Bim4Everyone.BimModelPart[])">
+            <summary>
+            Проверят является ли документ переданному разделу.
+            </summary>
+            <param name="service">Сервис.</param>
+            <param name="revitLinkType">Тип связи Revit.</param>
+            <param name="bimModelParts">Раздел BIM модели.</param>
+            <returns>Возвращает раздел модели по документу.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.BimModelPartsServiceExtensions.InAnyBimModelParts(dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService,Autodesk.Revit.DB.RevitLinkType,System.Collections.Generic.IEnumerable{dosymep.Bim4Everyone.BimModelPart})">
+            <summary>
+            Проверят является ли документ переданному разделу.
+            </summary>
+            <param name="service">Сервис.</param>
+            <param name="revitLinkType">Тип связи Revit.</param>
+            <param name="bimModelParts">Раздел BIM модели.</param>
+            <returns>Возвращает раздел модели по документу.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.BimModelPartsServiceExtensions.GetBimModelPart(dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService,Autodesk.Revit.DB.RevitLinkInstance)">
+            <summary>
+            Получает раздел по переданному документу.
+            </summary>
+            <param name="service">Сервис.</param>
+            <param name="revitLinkInstance">Экземпляр связи Revit.</param>
+            <returns>Возвращает раздел модели по документу.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.BimModelPartsServiceExtensions.InAnyBimModelParts(dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService,Autodesk.Revit.DB.RevitLinkInstance,dosymep.Bim4Everyone.BimModelPart)">
+            <summary>
+            Проверят является ли документ переданному разделу.
+            </summary>
+            <param name="service">Сервис.</param>
+            <param name="revitLinkInstance">Экземпляр связи Revit.</param>
+            <param name="bimModelPart">Раздел BIM модели.</param>
+            <returns>Возвращает раздел модели по документу.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.BimModelPartsServiceExtensions.InAnyBimModelParts(dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService,Autodesk.Revit.DB.RevitLinkInstance,dosymep.Bim4Everyone.BimModelPart[])">
+            <summary>
+            Проверят является ли документ переданному разделу.
+            </summary>
+            <param name="service">Сервис.</param>
+            <param name="revitLinkInstance">Экземпляр связи Revit.</param>
+            <param name="bimModelParts">Раздел BIM модели.</param>
+            <returns>Возвращает раздел модели по документу.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.BimModelPartsServiceExtensions.InAnyBimModelParts(dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService,Autodesk.Revit.DB.RevitLinkInstance,System.Collections.Generic.IEnumerable{dosymep.Bim4Everyone.BimModelPart})">
+            <summary>
+            Проверят является ли документ переданному разделу.
+            </summary>
+            <param name="service">Сервис.</param>
+            <param name="revitLinkInstance">"Экземпляр связи Revit.</param>
+            <param name="bimModelParts">Раздел BIM модели.</param>
+            <returns>Возвращает раздел модели по документу.</returns>
+        </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService">
             <summary>
             Сервис по получению разделов BIM модели.
