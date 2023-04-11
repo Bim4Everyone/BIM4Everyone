@@ -858,6 +858,13 @@
             <param name="elementId">Идентификатор элемента.</param>
             <returns>Возвращает true - если идентификатор элемента является не системным, иначе false.</returns>
         </member>
+        <member name="M:dosymep.Revit.ElementIdExtensions.GetIdValue(Autodesk.Revit.DB.ElementId)">
+            <summary>
+            Возвращает числовое значение идентификатора элемента.
+            </summary>
+            <param name="elementId">Идентификатор элемента.</param>
+            <returns> Возвращает числовое значение идентификатора элемента.</returns>
+        </member>
         <member name="T:dosymep.Revit.Geometry.BoundingBoxExtensions">
             <summary>
             Расширения для <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>

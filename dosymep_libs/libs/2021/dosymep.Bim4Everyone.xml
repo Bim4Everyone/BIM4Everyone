@@ -376,69 +376,6 @@
             <param name="revitParam">Параметр Revit.</param>
             <returns>Возвращает параметр.</returns>
         </member>
-        <member name="T:dosymep.Bim4Everyone.FamilyManagerExtensions">
-            <summary>
-            Класс расширений для менеджера семейств.
-            </summary>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.FamilyManagerExtensions.CreateTypeParam(Autodesk.Revit.DB.FamilyManager,dosymep.Bim4Everyone.RevitParam,Autodesk.Revit.DB.BuiltInParameterGroup)">
-            <summary>
-            Создает параметр типа у семейства.
-            </summary>
-            <param name="self">Менеджер семейства.</param>
-            <param name="revitParam">Параметр Revit.</param>
-            <param name="group">Группа, к которой принадлежит параметр семейства.</param>
-            <returns>Возвращает новый созданный параметр типа у семейства.</returns>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.FamilyManagerExtensions.CreateTypeParam(Autodesk.Revit.DB.FamilyManager,dosymep.Bim4Everyone.RevitParam,Autodesk.Revit.DB.BuiltInParameterGroup,Autodesk.Revit.DB.Category)">
-            <summary>
-            Создает параметр типа семейства.
-            </summary>
-            <param name="self">Менеджер семейства.</param>
-            <param name="revitParam">Параметр Revit.</param>
-            <param name="group">Группа, к которой принадлежит параметр семейства.</param>
-            <param name="category">Категория, к которой привязывается новый параметр семейства.</param>
-            <returns>Возвращает новый созданный параметр типа у семейства.</returns>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.FamilyManagerExtensions.CreateInstanceParam(Autodesk.Revit.DB.FamilyManager,dosymep.Bim4Everyone.RevitParam,Autodesk.Revit.DB.BuiltInParameterGroup)">
-            <summary>
-            Создает параметр экземпляра у семейства.
-            </summary>
-            <param name="self">Менеджер семейства.</param>
-            <param name="revitParam">Параметр Revit.</param>
-            <param name="group">Группа, к которой принадлежит параметр семейства.</param>
-            <returns>Возвращает новый созданный параметр экземпляра у семейства.</returns>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.FamilyManagerExtensions.CreateInstanceParam(Autodesk.Revit.DB.FamilyManager,dosymep.Bim4Everyone.RevitParam,Autodesk.Revit.DB.BuiltInParameterGroup,Autodesk.Revit.DB.Category)">
-            <summary>
-            Создает параметр экземпляра семейства.
-            </summary>
-            <param name="self">Менеджер семейства.</param>
-            <param name="revitParam">Параметр Revit.</param>
-            <param name="group">Группа, к которой принадлежит параметр семейства.</param>
-            <param name="category">Категория, к которой привязывается новый параметр семейства.</param>
-            <returns>Возвращает новый созданный параметр экземпляра у семейства.</returns>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.FamilyManagerExtensions.CreateTypeParam(Autodesk.Revit.DB.FamilyManager,dosymep.Bim4Everyone.RevitParam,Autodesk.Revit.DB.BuiltInParameterGroup,Autodesk.Revit.DB.ParameterType)">
-            <summary>
-            Создает параметр типа у семейства.
-            </summary>
-            <param name="self">Менеджер семейства.</param>
-            <param name="revitParam">Параметр Revit.</param>
-            <param name="group">Группа, к которой принадлежит параметр семейства.</param>
-            <param name="parameterType">Тип создаваемого параметра у семейства.</param>
-            <returns>Возвращает новый созданный параметр типа у семейства.</returns>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.FamilyManagerExtensions.CreateInstanceParam(Autodesk.Revit.DB.FamilyManager,dosymep.Bim4Everyone.RevitParam,Autodesk.Revit.DB.BuiltInParameterGroup,Autodesk.Revit.DB.ParameterType)">
-            <summary>
-            Создает параметр экземпляра у семейства.
-            </summary>
-            <param name="self">Менеджер семейства.</param>
-            <param name="revitParam">Параметр Revit.</param>
-            <param name="group">Группа, к которой принадлежит параметр семейства.</param>
-            <param name="parameterType">Тип создаваемого параметра у семейства.</param>
-            <returns>Возвращает новый созданный параметр экземпляра у семейства.</returns>
-        </member>
         <member name="T:dosymep.Bim4Everyone.KeySchedules.KeyScheduleRule">
             <summary>
             Настройки проверки ключевых спецификаций.
