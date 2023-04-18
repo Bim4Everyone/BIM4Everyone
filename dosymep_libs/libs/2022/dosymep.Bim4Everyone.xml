@@ -428,7 +428,7 @@
             <param name="viewSchedule">Проверяемая спецификация.</param>
             <returns>Возвращает объект проверок спецификации</returns>
         </member>
-        <member name="M:dosymep.Bim4Everyone.KeySchedules.KeyScheduleRule.GetKeyScheduleRuleInternal">
+        <member name="M:dosymep.Bim4Everyone.KeySchedules.KeyScheduleRule.GetKeyScheduleRuleInternal(Autodesk.Revit.DB.ViewSchedule)">
             <summary>
             Возвращает внутренние настройки проверки ключевых спецификаций.
             </summary>
@@ -627,6 +627,22 @@
         <member name="P:dosymep.Bim4Everyone.ModuleEnvironment.ParametersTemplatePath">
             <summary>
             Путь до шаблона параметров
+            </summary>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.PlatformCommandIds">
+            <summary>
+            Статический класс идентификаторов команд.
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.PlatformCommandIds.ExecutedFromUI">
+            <summary>
+            Имя поля данных журнал.
+            Данное поле означает запущена команда из GUI.
+            </summary>
+        </member>
+        <member name="F:dosymep.Bim4Everyone.PlatformCommandIds.CheckLevelsCommandId">
+            <summary>
+            Модуль проверки уровней.
             </summary>
         </member>
         <member name="T:dosymep.Bim4Everyone.ProjectConfigs.IConfigSerializer">
@@ -1738,6 +1754,73 @@
             <param name="parentPart">Родительский раздел.</param>
             <returns>Возвращает все разделы BIM модели.</returns>
         </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.InvokeButtons.ButtonCommand">
+            <summary>
+            Информация о команде платформы.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.InvokeButtons.ButtonCommand.CommandId">
+            <summary>
+            Идентификатор команды.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.InvokeButtons.ButtonCommand.CommandPath">
+            <summary>
+            Путь до папки с командой.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.InvokeButtons.ButtonCommand.CommandName">
+            <summary>
+            Имя команды.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.InvokeButtons.ButtonCommand.Icon">
+            <summary>
+            Иконка команды - светлая.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.InvokeButtons.ButtonCommand.IconDark">
+            <summary>
+            Иконка команды - темная. 
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.InvokeButtons.ButtonCommand.IconFatal">
+            <summary>
+            Иконка команды - ошибка. 
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.InvokeButtons.ButtonCommand.IconWarning">
+            <summary>
+            Иконка команды - предупреждение. 
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.InvokeButtons.ButtonCommand.GetFile(System.String)">
+            <summary>
+            Возвращает файл из папки с командой.
+            </summary>
+            <param name="searchPattern">Шаблон поиска файла.</param>
+            <returns>Возвращает файл из папки с командой.</returns>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.InvokeButtons.InvokeButtonCommand.CommandTypeName">
+            <summary>
+            Имя типа команды.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.InvokeButtons.InvokeButtonCommand.AssemblyPath">
+            <summary>
+            Путь до сборки с командой.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.InvokeButtons.InvokeButtonCommand.AssemblyDirectory">
+            <summary>
+            Путь до папки сборки с командой.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.InvokeButtons.InvokeButtonCommand.AssemblyName">
+            <summary>
+            Имя сборки.
+            </summary>
+        </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.IParamElementService">
             <summary>
             Интерфейс по получению параметров Revit.
@@ -1784,15 +1867,30 @@
             <param name="document">Документ из которого берутся параметры.</param>
             <returns>Возвращает весь список общих параметров.</returns>
         </member>
-        <member name="T:dosymep.Bim4Everyone.SimpleServices.IPluginInfoService">
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.IPlatformCommandsService">
             <summary>
-            Интерфейс по предоставлению выполняемого плагина.
+            Сервис предоставляющий доступ ко всем командам платформы.
             </summary>
+            <remarks>На данный момент поддерживаются только C# команды.</remarks>
         </member>
-        <member name="P:dosymep.Bim4Everyone.SimpleServices.IPluginInfoService.PluginAssembly">
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IPlatformCommandsService.InvokeCommand(System.Guid,System.String@,Autodesk.Revit.DB.ElementSet)">
             <summary>
-            Сборка выполняемого плагина.
+            Запускает команду платформы.
             </summary>
+            <param name="commandId">Запускаемая команда платформы.</param>
+            <param name="message">Описание параметра в методе <see cref="M:Autodesk.Revit.UI.IExternalCommand.Execute(Autodesk.Revit.UI.ExternalCommandData,System.String@,Autodesk.Revit.DB.ElementSet)"/>.</param>
+            <param name="elements">Описание параметра <see cref="M:Autodesk.Revit.UI.IExternalCommand.Execute(Autodesk.Revit.UI.ExternalCommandData,System.String@,Autodesk.Revit.DB.ElementSet)"/>.</param>
+            <returns>Возвращает результат работы команды.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IPlatformCommandsService.InvokeCommand(System.Guid,System.String@,Autodesk.Revit.DB.ElementSet,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Запускает команду платформы.
+            </summary>
+            <param name="commandId">Запускаемая команда платформы.</param>
+            <param name="message">Описание параметра в методе <see cref="M:Autodesk.Revit.UI.IExternalCommand.Execute(Autodesk.Revit.UI.ExternalCommandData,System.String@,Autodesk.Revit.DB.ElementSet)"/>.</param>
+            <param name="elements">Описание параметра <see cref="M:Autodesk.Revit.UI.IExternalCommand.Execute(Autodesk.Revit.UI.ExternalCommandData,System.String@,Autodesk.Revit.DB.ElementSet)"/>.</param>
+            <param name="journalData">Описание параметра в свойстве <see cref="P:Autodesk.Revit.UI.ExternalCommandData.JournalData"/>.</param>
+            <returns>Возвращает результат работы команды.</returns>
         </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.IProjectParamsService">
             <summary>
@@ -2075,14 +2173,6 @@
             <param name="systemParamId">Системный параметр.</param>
             <returns>Возвращает системный параметр.</returns>
         </member>
-        <member name="M:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.CreateRevitParam(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.ApplicationServices.LanguageType)">
-            <summary>
-            Возвращает системный параметр.
-            </summary>
-            <param name="systemParamId">Системный параметр.</param>
-            <param name="languageType">Язык возвращаемого параметра.</param>
-            <returns>Возвращает системный параметр.</returns>
-        </member>
         <member name="M:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.CreateRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.ApplicationServices.LanguageType)">
             <summary>
             Возвращает системный параметр.
@@ -2092,27 +2182,12 @@
             /// <param name="languageType">Язык возвращаемого параметра.</param>
             <returns>Возвращает системный параметр.</returns>
         </member>
-        <member name="M:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.CreateRevitParam(Autodesk.Revit.DB.ForgeTypeId)">
-            <summary>
-            Возвращает системный параметр.
-            </summary>
-            <param name="systemParamId">Системный параметр.</param>
-            <returns>Возвращает системный параметр.</returns>
-        </member>
         <member name="M:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.CreateRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.ForgeTypeId)">
             <summary>
             Возвращает системный параметр.
             </summary>
             <param name="document">Документ системного параметра.</param>
             <param name="systemParamId">Системный параметр.</param>
-            <returns>Возвращает системный параметр.</returns>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.CreateRevitParam(Autodesk.Revit.DB.ForgeTypeId,Autodesk.Revit.ApplicationServices.LanguageType)">
-            <summary>
-            Возвращает системный параметр.
-            </summary>
-            <param name="systemParamId">Системный параметр.</param>
-            <param name="languageType">Язык возвращаемого параметра.</param>
             <returns>Возвращает системный параметр.</returns>
         </member>
         <member name="M:dosymep.Bim4Everyone.SimpleServices.ISystemParamsService.CreateRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.ForgeTypeId,Autodesk.Revit.ApplicationServices.LanguageType)">
@@ -2147,14 +2222,6 @@
             Возвращает весь список системных параметров.
             </summary>
             <returns>Возвращает весь список системных параметров.</returns>
-        </member>
-        <member name="T:dosymep.Bim4Everyone.SimpleServices.PluginInfoService">
-            <summary>
-            Класс информации о выполняемом плагине.
-            </summary>
-        </member>
-        <member name="P:dosymep.Bim4Everyone.SimpleServices.PluginInfoService.PluginAssembly">
-            <inheritdoc />
         </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.ServicesProvider">
             <summary>
@@ -2273,9 +2340,6 @@
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.CreateRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.BuiltInParameter)">
             <inheritdoc/>
         </member>
-        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.CreateRevitParam(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.ApplicationServices.LanguageType)">
-            <inheritdoc/>
-        </member>
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.CreateRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.ApplicationServices.LanguageType)">
             <inheritdoc/>
         </member>
@@ -2288,13 +2352,7 @@
         <member name="P:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.Item(Autodesk.Revit.DB.ForgeTypeId)">
             <inheritdoc/>
         </member>
-        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.CreateRevitParam(Autodesk.Revit.DB.ForgeTypeId)">
-            <inheritdoc/>
-        </member>
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.CreateRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.ForgeTypeId)">
-            <inheritdoc/>
-        </member>
-        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.CreateRevitParam(Autodesk.Revit.DB.ForgeTypeId,Autodesk.Revit.ApplicationServices.LanguageType)">
             <inheritdoc/>
         </member>
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig.CreateRevitParam(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.ForgeTypeId,Autodesk.Revit.ApplicationServices.LanguageType)">

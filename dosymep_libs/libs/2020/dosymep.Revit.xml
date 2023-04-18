@@ -777,6 +777,13 @@
             <param name="element">Элемент.</param>
             <returns>Возвращает true - если у элемента есть тип, иначе false.</returns>
         </member>
+        <member name="M:dosymep.Revit.ElementExtensions.GetElementType(Autodesk.Revit.DB.Element)">
+            <summary>
+            Возвращает тип элемента.
+            </summary>
+            <param name="element">Элемент.</param>
+            <returns>Возвращает тип элемента.</returns>
+        </member>
         <member name="M:dosymep.Revit.ElementExtensions.GetElementType``1(Autodesk.Revit.DB.Element)">
             <summary>
             Возвращает тип элемента.
