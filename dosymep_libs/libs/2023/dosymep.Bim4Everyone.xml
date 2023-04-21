@@ -645,6 +645,11 @@
             Модуль проверки уровней.
             </summary>
         </member>
+        <member name="F:dosymep.Bim4Everyone.PlatformCommandIds.PlatformSettingsCommandId">
+            <summary>
+            Модуль настроек платформы.
+            </summary>
+        </member>
         <member name="T:dosymep.Bim4Everyone.ProjectConfigs.IConfigSerializer">
             <summary>
             Интерфейс сериализатора для конфигурации проекта.
