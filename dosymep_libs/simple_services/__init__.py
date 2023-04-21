@@ -15,8 +15,11 @@ clr.AddReference('dosymep.SimpleServices.dll')
 clr.AddReference('Serilog.dll')
 clr.AddReference('Serilog.Sinks.File.dll')
 
-from System import Uri
+from System import Uri, InvalidOperationException, OperationCanceledException
 from System.Windows.Media.Imaging import BitmapImage, BitmapCacheOption
+
+from Autodesk.Revit.DB import *
+from Autodesk.Revit.UI import *
 
 from os.path import *
 from pyrevit import script
@@ -39,6 +42,21 @@ def get_logger_service():
 
 def get_notification_service():
     return ServicesProvider.GetPlatformService[INotificationService]()
+
+
+def get_platform_command_service():
+    return ServicesProvider.GetPlatformService[IPlatformCommandsService]()
+
+
+def invoke_command(command_id):
+    service = get_platform_command_service()
+    (command_result, message) = service.InvokeCommand(command_id, None, ElementSet())
+
+    if command_result == Result.Cancelled:
+        raise OperationCanceledException()
+
+    if command_result == Result.Failed:
+        raise InvalidOperationException(message)
 
 
 def show_notification_service(title, body, footer="IronPython", author="dosymep", image_source=None):
