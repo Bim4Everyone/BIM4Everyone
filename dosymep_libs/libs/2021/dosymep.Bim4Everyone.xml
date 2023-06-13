@@ -614,6 +614,11 @@
             Путь до текущей библиотеки
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.ModuleEnvironment.CurrentConfigPath">
+            <summary>
+            Текущая конфигурация платформы.
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.ModuleEnvironment.TemplatesPath">
             <summary>
             Путь до папки с шаблонами
@@ -937,6 +942,11 @@
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.NumberingOrder">
             <summary>
             КВГ_Приоритет нумерации
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomMainLevel">
+            <summary>
+            КВГ_Основной этаж
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.CheckIsNormalGrid">
@@ -1537,6 +1547,11 @@
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomTypeGroupShortName">
             <summary>
             ФОП_Тип группы помещений
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomMultilevelGroup">
+            <summary>
+            ФОП_Многоуровневая группа
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomsCount">
@@ -2276,6 +2291,103 @@
             </summary>
             <typeparam name="T">Запрашиваемый сервис.</typeparam>
             <returns>Возвращает сервис из контейнера.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord">
+            <summary>
+            Log event record class.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.Timestamp">
+            <summary>
+            The time at which the event occurred.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.Level">
+            <summary>
+            The level of the event.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.MessageTemplate">
+            <summary>
+            The message template describing the event.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.RenderedMessage">
+            <summary>
+            The render message describing the event.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.Exception">
+            <summary>
+            An exception associated with the event, or null.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.SessionId">
+            <summary>
+            Revit Session Id (unique revit start instance)
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.PluginName">
+            <summary>
+            Revit plugin name.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.PluginSessionId">
+            <summary>
+            Revit Plugin Session Id  (unique revit plugin start instance)
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.EnvironmentUserName">
+            <summary>
+            Environment UserName
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.EnvironmentMachineName">
+            <summary>
+            Environment MachineName
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.RevitBuild">
+            <summary>
+            Revit <a href="https://www.revitapidocs.com/2017.1/04ef312a-e25a-cbcd-40c4-43fe6311e677.htm">VersionBuild</a> property.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.RevitVersion">
+            <summary>
+            Revit <a href="https://www.revitapidocs.com/2017.1/320391bf-2c21-98ca-192c-da1d9becff11.htm">VersionNumber</a> property.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.RevitLanguage">
+            <summary>
+            Revit <a href="https://www.revitapidocs.com/2017.1/2b1d8b80-a11c-2a57-63bd-6c0d67691879.htm">Language</a> property.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.RevitUserName">
+            <summary>
+            Revit <a href="https://www.revitapidocs.com/2017.1/2a7c8664-de0d-7a43-e670-2e733e579609.htm">Username</a> property.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.RevitDocumentTitle">
+            <summary>
+            Revit <a href="https://www.revitapidocs.com/2017.1/4cee7916-d799-fc83-daf3-97cb03900b72.htm">Document.Title</a> property.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.RevitDocumentPathName">
+            <summary>
+            Revit <a href="https://www.revitapidocs.com/2022/8a92a6fd-ce25-cd86-2068-f9dcb24d72d6.htm">Document.PathName</a> property.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.RevitDocumentModelPath">
+            <summary>
+            Revit ModelPath property.
+            <br/>If <a href="https://www.revitapidocs.com/2020/e12f7980-ba6c-2e72-6687-f0bf807ff014.htm">Document.IsModelInCloud</a> is true <a href="https://www.revitapidocs.com/2020/087a7c14-1a6e-7022-c47b-923e90f4c5be.htm">Document.GetCloudModelPath()</a>.
+            <br/>If <a href="https://www.revitapidocs.com/2017.1/7f368167-6543-9be9-67a3-c6e1696ae060.htm">Document.IsWorkshared</a> is true <a href="https://www.revitapidocs.com/2017.1/6d42ee05-5738-8685-2165-57f9809f3161.htm">Document.GetWorksharingCentralModelPath()</a>.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord.LogEvent">
+            <summary>
+            Dynamic properties data.
+            </summary>
         </member>
         <member name="T:dosymep.Bim4Everyone.SystemParams.SystemParam">
             <summary>
