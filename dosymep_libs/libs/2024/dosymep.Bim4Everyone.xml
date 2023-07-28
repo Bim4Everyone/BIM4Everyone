@@ -1244,6 +1244,11 @@
             КВГ_(Проверка) Тип группы
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsMultiLevel">
+            <summary>
+            КВГ_Многоуровневые квартиры
+            </summary>
+        </member>
         <member name="M:dosymep.Bim4Everyone.Schedules.SchedulesConfig.LoadInstance(System.String)">
             <summary>
             Загрузка текущей конфигурации.
@@ -1258,7 +1263,7 @@
             <param name="configPath">Путь до конфигурации.</param>
             <remarks>Возвращает конфигурацию по умолчанию если был найден переданный файл.</remarks>
         </member>
-        <member name="M:dosymep.Bim4Everyone.Schedules.SchedulesConfig.GetDefaultConfg">
+        <member name="M:dosymep.Bim4Everyone.Schedules.SchedulesConfig.GetDefaultConfig">
             <summary>
             Возвращает конфигурацию по умолчанию.
             </summary>
