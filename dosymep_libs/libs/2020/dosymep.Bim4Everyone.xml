@@ -959,6 +959,26 @@
             Пров_Ровно от Оси
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RelatedRoomName">
+            <summary>
+            Имя помещения
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RelatedRoomNumber">
+            <summary>
+            Номер помещения
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RelatedRoomID">
+            <summary>
+            ID помещения
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RelatedApartmentNumber">
+            <summary>
+            Номер квартиры
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ApartmentGroupName">
             <summary>
             КВГ_Доп. сортировка групп
