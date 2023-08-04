@@ -974,9 +974,9 @@
             ID помещения
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RelatedApartmentNumber">
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RelatedRoomGroup">
             <summary>
-            Номер квартиры
+            Группа помещения
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ApartmentGroupName">
