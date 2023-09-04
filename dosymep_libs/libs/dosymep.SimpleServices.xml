@@ -4,6 +4,38 @@
         <name>dosymep.SimpleServices</name>
     </assembly>
     <members>
+        <member name="T:dosymep.SimpleServices.IAttachableService">
+            <summary>
+            Интерфейс прикрепления сервиса.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IAttachableService.IsAttached">
+            <summary>
+            true - если прикреплен, иначе false.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IAttachableService.AllowAttach">
+            <summary>
+            Разрешение прикрепления. true - разрешено, false - запрещено.
+            </summary>
+            <remarks>При запрете прикрепления, прикреплении не активируется и пропускается.</remarks>
+        </member>
+        <member name="P:dosymep.SimpleServices.IAttachableService.AssociatedObject">
+            <summary>
+            Ассоциированный объект с сервисом.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.IAttachableService.Detach">
+            <summary>
+            Открепление сервиса.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.IAttachableService.Attach(System.Windows.DependencyObject)">
+            <summary>
+            Прикрепление сервиса.
+            </summary>
+            <param name="dependencyObject">Объект с которым прикрепляется сервис.</param>
+        </member>
         <member name="T:dosymep.SimpleServices.IDispatcherService">
             <summary>
             Предоставляет доступ к <see cref="T:System.Windows.Threading.Dispatcher"/> 
@@ -199,6 +231,12 @@
             Возвращает или устанавливает признак выбора нескольких файлов.
             </summary>
         </member>
+        <member name="M:dosymep.SimpleServices.IOpenDialogServiceBase.ShowDialog">
+            <summary>
+            Показывает диалог выбора.
+            </summary>
+            <returns>Возвращает результат true - если пользователь кликнул OK, иначе возвращает false.</returns>
+        </member>
         <member name="M:dosymep.SimpleServices.IOpenDialogServiceBase.ShowDialog(System.String)">
             <summary>
             Показывает диалог выбора.
@@ -385,6 +423,17 @@
             </summary>
             <param name="name">Наименование профиля.</param>
         </member>
+        <member name="T:dosymep.SimpleServices.IProgressDialogFactory">
+            <summary>
+            Фабрика создания сервиса прогресс диалога.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.IProgressDialogFactory.CreateDialog">
+            <summary>
+            Создает сервис прогресс диалога.
+            </summary>
+            <returns>Возвращает новый экземпляр сервиса прогресс диалога.</returns>
+        </member>
         <member name="T:dosymep.SimpleServices.IProgressDialogService">
             <summary>
             Интерфейс прогресс диалога.
@@ -509,7 +558,7 @@
         </member>
         <member name="T:dosymep.SimpleServices.IUIThemeService">
             <summary>
-            Предоставляет доступ к теме инттерфейса
+            Предоставляет доступ к теме интерфейса.
             </summary>
         </member>
         <member name="E:dosymep.SimpleServices.IUIThemeService.UIThemeChanged">
@@ -548,6 +597,49 @@
             </summary>
             <param name="window">Окно, которому устанавливают тему.</param>
             <param name="theme">Устанавливаемая тема окна.</param>
+        </member>
+        <member name="T:dosymep.SimpleServices.MessageBoxServiceExtensions">
+            <summary>
+            Расширения для сервиса сообщений.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.MessageBoxServiceExtensions.Show(dosymep.SimpleServices.IMessageBoxService,System.String)">
+            <summary>
+            Показывает сообщение с указанными параметрами.
+            </summary>
+            <param name="service">Сервис окна сообщений.</param>
+            <param name="messageBoxText">Текст отображаемый в окне сообщения.</param>
+            <returns>Возвращает кнопку, на которую кликнул пользователь.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.MessageBoxServiceExtensions.Show(dosymep.SimpleServices.IMessageBoxService,System.String,System.String)">
+            <summary>
+            Показывает сообщение с указанными параметрами.
+            </summary>
+            <param name="service">Сервис окна сообщений.</param>
+            <param name="messageBoxText">Текст отображаемый в окне сообщения.</param>
+            <param name="caption">Заголовок окна сообщения.</param>
+            <returns>Возвращает кнопку, на которую кликнул пользователь.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.MessageBoxServiceExtensions.Show(dosymep.SimpleServices.IMessageBoxService,System.String,System.String,System.Windows.MessageBoxButton)">
+            <summary>
+            Показывает сообщение с указанными параметрами.
+            </summary>
+            <param name="service">Сервис окна сообщений.</param>
+            <param name="messageBoxText">Текст отображаемый в окне сообщения.</param>
+            <param name="caption">Заголовок окна сообщения.</param>
+            <param name="button">Кнопки отображаемые в окне сообщения.</param>
+            <returns>Возвращает кнопку, на которую кликнул пользователь.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.MessageBoxServiceExtensions.Show(dosymep.SimpleServices.IMessageBoxService,System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage)">
+            <summary>
+            Показывает сообщение с указанными параметрами.
+            </summary>
+            <param name="service">Сервис окна сообщений.</param>
+            <param name="messageBoxText">Текст отображаемый в окне сообщения.</param>
+            <param name="caption">Заголовок окна сообщения.</param>
+            <param name="button">Кнопки отображаемые в окне сообщения.</param>
+            <param name="icon">отображаемая в окне сообщения.</param>
+            <returns>Возвращает кнопку, на которую кликнул пользователь.</returns>
         </member>
         <member name="T:dosymep.SimpleServices.PlatformProfiles.PlatformProfileService">
             <summary>

@@ -2312,6 +2312,20 @@
             <typeparam name="T">Запрашиваемый сервис.</typeparam>
             <returns>Возвращает сервис из контейнера.</returns>
         </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ServicesProvider.CreatePlatformServices(Autodesk.Revit.UI.UIApplication)">
+            <summary>
+            Добавляет сервисы платформы в контейнер.
+            </summary>
+            <param name="application">Приложение Revit.</param>
+            <returns>Возвращает новый контейнер с сервисами платформы.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ServicesProvider.CreatePlatformServices(Autodesk.Revit.ApplicationServices.Application)">
+            <summary>
+            Добавляет сервисы платформы в контейнер.
+            </summary>
+            <param name="application">Приложение Revit.</param>
+            <returns>Возвращает новый контейнер с сервисами платформы.</returns>
+        </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.Sinks.LogEventRecord">
             <summary>
             Log event record class.
