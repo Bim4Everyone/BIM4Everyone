@@ -1,0 +1,18 @@
+{
+    "builtin": "False",
+    "default_enabled": "True",
+    "type": "lib",
+    "rocket_mode_compatible": "True",
+    "name": "Bim4Everyone",
+    "description": "Библиотека для платформы Bim4Everyone",
+    "author": "dosymep",
+    "author_profile": "https://github.com/dosymep/",
+    "url": "https://github.com/dosymep/BIM4Everyone",
+    "website": "https://github.com/dosymep/BIM4Everyone",
+    "image": "",
+    "templates": {
+        "author": "dosymep",
+        "docpath": "https://www.youtube.com/watch?v="
+    },
+    "dependencies": []
+}
