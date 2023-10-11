@@ -98,8 +98,8 @@ def get_themed_icon_file():
 def get_typed_icon(type_icon):
     if not type_icon:
         return get_themed_icon_file()
-    elif type_icon == "fatal":
-        return get_icon_file("icon.fatal.png")
+    elif type_icon == "fail":
+        return get_icon_file("icon.fail.png")
     elif type_icon == "warning":
         return get_icon_file("icon.warning.png")
 
@@ -130,7 +130,7 @@ def show_script_notification(body):
 def show_script_fatal_notification(body, exit_script=False):
     notification_service = get_notification_service()
     notification_service.CreateFatalNotification(script.get_button().ui_title, body,
-                                                 get_author(), get_image_source("fatal")).ShowAsync()
+                                                 get_author(), get_image_source("fail")).ShowAsync()
 
     if exit_script:
         script.exit()
