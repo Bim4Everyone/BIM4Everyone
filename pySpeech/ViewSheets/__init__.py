@@ -20,6 +20,8 @@ from dosymep.Bim4Everyone.ProjectParams import ProjectParamsConfig
 
 from operator import itemgetter
 from pyrevit import script
+from pyrevit import revit
+from pyrevit import forms
 
 def alert(msg, exit_script=True):
     if msg:
@@ -236,21 +238,18 @@ def GetNumber(list):
 
 def CheckSheets(selections):
     if not selections:
-        alert("Не были выбраны элементы.")
+        forms.alert("Не были выбраны листы.", exitscript=True)
 
     sheet_numbers = set([ViewSheetModel.GetSheetAlbum(s) for s in selections])
     if len(sheet_numbers) > 1:
-        alert("У выделенных элементов указано несколько альбомов.")
-
-    return selections
-
-
-doc = __revit__.ActiveUIDocument.Document
-uidoc = __revit__.ActiveUIDocument
-selection = list(__revit__.ActiveUIDocument.GetSelectedElements())
+        forms.alert("У выделенных листов указано несколько альбомов.", exitscript=True)
 
 
 def renumber(step, direction, count, transactionName):
+    doc = __revit__.ActiveUIDocument.Document
+    selection = list(__revit__.ActiveUIDocument.GetSelectedElements())
+    selection = [view for view in selection if view.ViewType == ViewType.DrawingSheet]
+
     # проверка выделенных элементов
     CheckSheets(selection)
 
