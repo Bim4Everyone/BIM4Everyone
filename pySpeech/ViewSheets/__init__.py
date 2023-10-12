@@ -211,8 +211,14 @@ def clear_string(msg):
 
 
 # Получаем число для сравнения из строки вида "str-num.num"
-def get_number(splitted):
-    return float(splitted.pop())
+def get_number(view_sheet):
+    number_string = view_sheet.GetParamValueOrDefault(BuiltInParameter.SHEET_NUMBER)
+    splitted = number_string.split('-')
+    if len(splitted) == 2:
+        return float(splitted.pop()), number_string
+
+    forms.alert("{}, имеет ошибку форматирования параметра \"{}\"."
+                .format(view_sheet.Title, LabelUtils.GetLabelFor(BuiltInParameter.SHEET_NUMBER)), exitscript=True)
 
 
 def check_sheets(selections):
@@ -220,6 +226,11 @@ def check_sheets(selections):
         forms.alert("Не были выбраны листы.", exitscript=True)
 
     sheet_numbers = set([ViewSheetModel.get_sheet_album(s) for s in selections])
+
+    empty_count = [s for s in sheet_numbers if not s]
+    if empty_count:
+        forms.alert("У выделенных листов не указаны альбомы.", exitscript=True)
+
     if len(sheet_numbers) > 1:
         forms.alert("У выделенных листов указано несколько альбомов.", exitscript=True)
 
@@ -234,7 +245,8 @@ def renumber(step, direction, count, transaction_name):
 
     # настройка атрибутов
     project_parameters = ProjectParameters.Create(__revit__.Application)
-    project_parameters.SetupRevitParams(doc, SharedParamsConfig.Instance.AlbumBlueprints,
+    project_parameters.SetupRevitParams(doc,
+                                        SharedParamsConfig.Instance.AlbumBlueprints,
                                         SharedParamsConfig.Instance.StampSheetNumber)
 
     # список из листов участвующих в перестановке
@@ -247,7 +259,7 @@ def renumber(step, direction, count, transaction_name):
     sheets_compose_album_list = []
 
     # пара значений, будет хранить в себе номер крайнего листа среди рабочих
-    prop = [get_number(selection[0].GetParamValueOrDefault(BuiltInParameter.SHEET_NUMBER).split("-")), ""]
+    prop = get_number(selection[0])
 
     # название альбома
     album = selection[0].GetParamValueOrDefault(SharedParamsConfig.Instance.AlbumBlueprints)
@@ -258,8 +270,7 @@ def renumber(step, direction, count, transaction_name):
     # составляем список из троек значений, [пригодный для сортировки номер, сам лист, номер листа в строковой форме]
     for sheet in sheets_base_list:
         if album_filter(sheet, album):
-            number_string = sheet.GetParamValueOrDefault(BuiltInParameter.SHEET_NUMBER)
-            number_list = get_number(number_string.split("-"))
+            number_list, number_string = get_number(sheet)
             sorting_list.append([number_list, sheet, number_string])
 
     # сортируем список
@@ -271,11 +282,9 @@ def renumber(step, direction, count, transaction_name):
 
     # находим опорное значение из выбранных листов, при уменьшении номера ищем большее, иначе - меньшее
     for sheet in selection:
-        number_string = sheet.GetParamValueOrDefault(BuiltInParameter.SHEET_NUMBER)
-        number_int = get_number(number_string.split("-"))
+        number_int, number_string = get_number(sheet)
         if direction * prop[0] < direction * number_int:
-            prop[0] = number_int
-            prop[1] = number_string
+            prop = (number_int, number_string)
 
     # идем с конца списка, удаляя все листы стоящие после наших выбранных
     for sheet in sheets_current_album_list[::-1]:
@@ -295,6 +304,7 @@ def renumber(step, direction, count, transaction_name):
     for i in range(n - count, n):
         element = [sheets_current_album_list[i - (n - count)][0], sheets_current_album_list[i][1], sheets_current_album_list[i - (n - count)][2]]
         sheets_compose_album_list.append(element)
+
     for i in range(n - count):
         element = [sheets_current_album_list[i + count][0], sheets_current_album_list[i][1], sheets_current_album_list[i + count][2]]
         sheets_compose_album_list.append(element)
@@ -302,6 +312,7 @@ def renumber(step, direction, count, transaction_name):
     with revit.Transaction("BIM: " + transaction_name):
         for idx, sheet in enumerate(sheets_compose_album_list):
             sheet[1].SetParamValue(BuiltInParameter.SHEET_NUMBER, str(idx) + "+Temp")
+
         for sheet in sheets_compose_album_list:
             sheet[1].SetParamValue(BuiltInParameter.SHEET_NUMBER, sheet[2])
             sheet[1].SetParamValue(SharedParamsConfig.Instance.StampSheetNumber, str(int(sheet[0])))
