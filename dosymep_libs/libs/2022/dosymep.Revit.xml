@@ -971,6 +971,22 @@
             <param name="elementId">Идентификатор элемента.</param>
             <returns>Возвращает true - если идентификатор элемента является не системным, иначе false.</returns>
         </member>
+        <member name="M:dosymep.Revit.ElementIdExtensions.AsBuiltInCategory(Autodesk.Revit.DB.ElementId)">
+            <summary>
+            Конвертирует идентификатор в <see cref="T:BuiltInCategory"/>.
+            </summary>
+            <param name="elementId">Идентификатор элемента.</param>
+            <returns>Возвращает <see cref="T:BuiltInCategory"/>.</returns>
+            <exception cref="T:System.ArgumentException">Если идентификатор не является встроенной категорией.</exception>
+        </member>
+        <member name="M:dosymep.Revit.ElementIdExtensions.AsBuiltInParameter(Autodesk.Revit.DB.ElementId)">
+            <summary>
+            Конвертирует идентификатор в <see cref="T:Autodesk.Revit.DB.BuiltInParameter"/>.
+            </summary>
+            <param name="elementId">Идентификатор элемента.</param>
+            <returns>Возвращает <see cref="T:Autodesk.Revit.DB.BuiltInParameter"/>.</returns>
+            <exception cref="T:System.ArgumentException">Если идентификатор не является встроенным параметром.</exception>
+        </member>
         <member name="M:dosymep.Revit.ElementIdExtensions.GetIdValue(Autodesk.Revit.DB.ElementId)">
             <summary>
             Возвращает числовое значение идентификатора элемента.
