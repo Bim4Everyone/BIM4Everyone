@@ -125,14 +125,14 @@
             If true open central model with audit.
             </summary>
         </member>
-        <member name="P:dosymep.Revit.Journaling.JournalElements.OpenCentralModelElement.KeepWorkset">
-            <summary>
-            If true keep workset.
-            </summary>
-        </member>
         <member name="P:dosymep.Revit.Journaling.JournalElements.OpenCentralModelElement.CreateLocal">
             <summary>
             If true create local file.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Journaling.JournalElements.OpenCentralModelElement.WorksetOption">
+            <summary>
+            Worksets options.
             </summary>
         </member>
         <member name="P:dosymep.Revit.Journaling.JournalElements.OpenCentralModelElement.ModelPath">
@@ -199,6 +199,31 @@
         <member name="M:dosymep.Revit.Journaling.JournalElements.SyncCentralModelElement.Reduce``2(dosymep.AutodeskApps.ITransformer{``0,``1})">
             <inheritdoc />
         </member>
+        <member name="T:dosymep.Revit.Journaling.JournalElements.WorksetsOption">
+            <summary>
+            Workset options
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.JournalElements.WorksetsOption.Custom">
+            <summary>
+            Custom option (Specify)
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.JournalElements.WorksetsOption.All">
+            <summary>
+            All option.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.JournalElements.WorksetsOption.Edited">
+            <summary>
+            Edited option.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.JournalElements.WorksetsOption.LastViewed">
+            <summary>
+            Last viewed option.
+            </summary>
+        </member>
         <member name="T:dosymep.Revit.Journaling.RevitJournalTemplates">
             <summary>
             Revit journal templates.
@@ -214,8 +239,6 @@
             <summary>
             Initialization debug mode template.
             </summary>
-            <param name="{0}{0}">PerformAutomaticActionInErrorDialog.</param>
-            <param name="{1}{1}">PermissiveJournal.</param>
         </member>
         <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.ExitApplication">
             <summary>
@@ -236,9 +259,21 @@
             <summary>
             Open central model template.
             </summary>
-            <param name="{0}{0}">Params template.</param>
-            <param name="{1}{1}">File name.</param>
-            <param name="{2}{2}">Open workset config.</param>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.CentralModelName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.CentralWorksetConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.CentralAcceptCustomWorksets">
+            <summary>
+            
+            </summary>
         </member>
         <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.CentralOpenAsLocalCheckBox">
             <summary>
@@ -259,8 +294,16 @@
             <summary>
             Synchronization central model template.
             </summary>
-            <param name="{0}{0}">Params template.</param>
-            <param name="{1}{1}">Comments.</param>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.FileSyncComment">
+            <summary>
+            Sync comment.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.FileSyncAccept">
+            <summary>
+            Accept sync.
+            </summary>
         </member>
         <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.FileSyncCompactFile">
             <summary>
@@ -292,7 +335,7 @@
             Execute external command journal data template.
             </summary>
         </member>
-        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.DynamoCommmandExcecute">
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.DynamoCommandExecute">
             <summary>
             Dynamo command execute template.
             </summary>
@@ -306,8 +349,16 @@
             <summary>
             Synchronization central model template.
             </summary>
-            <param name="{0}{0}">Params template.</param>
-            <param name="{1}{1}">Comments.</param>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplatesOld.FileSyncComment">
+            <summary>
+            Sync comment.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplatesOld.FileSyncAccept">
+            <summary>
+            Accept sync.
+            </summary>
         </member>
         <member name="F:dosymep.Revit.Journaling.RevitJournalTemplatesOld.FileSyncCompactFile">
             <summary>
