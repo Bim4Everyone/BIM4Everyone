@@ -188,7 +188,7 @@ class OrderViewSheetModel(object):
 
         sheet_numbers = set([ViewSheetModel.get_sheet_album(s) for s in selections])
         if len(sheet_numbers) > 1:
-            forms.alert("У выделенных листов указано несколько альбомов.", exitscript=True)
+            forms.alert("Выбраны листы из разных альбомов.", exitscript=True)
 
         return selections
 
@@ -217,7 +217,8 @@ def get_number(view_sheet):
     if len(splitted) == 2:
         return float(splitted.pop()), number_string
 
-    forms.alert("{}, имеет ошибку форматирования параметра \"{}\"."
+    forms.alert("\"{}\", имеет ошибку форматирования параметра \"{}\". "
+                "Параметр должен состоять их префикса и номера, разделенных дефисом, например, \"АР-12\"."
                 .format(view_sheet.Title, LabelUtils.GetLabelFor(BuiltInParameter.SHEET_NUMBER)), exitscript=True)
 
 
@@ -232,7 +233,7 @@ def check_sheets(selections):
         forms.alert("У выделенных листов не указаны альбомы.", exitscript=True)
 
     if len(sheet_numbers) > 1:
-        forms.alert("У выделенных листов указано несколько альбомов.", exitscript=True)
+        forms.alert("Выбраны листы из разных альбомов.", exitscript=True)
 
 
 def renumber(step, direction, count, transaction_name):
