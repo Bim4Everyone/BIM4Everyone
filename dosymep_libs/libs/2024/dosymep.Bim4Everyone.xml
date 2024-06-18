@@ -495,6 +495,11 @@
             КВГ_(Ключ.) - Тип группы
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.KeySchedules.KeySchedulesConfig.RoomsFinishing">
+            <summary>
+            КВГ_(Ключ.) - Тип группы
+            </summary>
+        </member>
         <member name="M:dosymep.Bim4Everyone.KeySchedules.KeySchedulesConfig.LoadInstance(System.String)">
             <summary>
             Загрузка текущей конфигурации.
@@ -977,6 +982,11 @@
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RelatedRoomGroup">
             <summary>
             Группа помещения
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomFinishingType">
+            <summary>
+            КВГ_Группа
             </summary>
         </member>
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">
@@ -1582,6 +1592,146 @@
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISSystemShortName">
             <summary>
             ФОП_ВИС_Сокращение для системы
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FloorFinishingType1">
+            <summary>
+            ФОП_ОТД_Полы Тип 1
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FloorFinishingType2">
+            <summary>
+            ФОП_ОТД_Полы Тип 2
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.CeilingFinishingType1">
+            <summary>
+            ФОП_ОТД_Потолки Тип 1
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.CeilingFinishingType2">
+            <summary>
+            ФОП_ОТД_Потолки Тип 2
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.WallFinishingType1">
+            <summary>
+            ФОП_ОТД_Стены Тип 1
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.WallFinishingType2">
+            <summary>
+            ФОП_ОТД_Стены Тип 2
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.WallFinishingType3">
+            <summary>
+            ФОП_ОТД_Стены Тип 3
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.WallFinishingType4">
+            <summary>
+            ФОП_ОТД_Стены Тип 4
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.WallFinishingType5">
+            <summary>
+            ФОП_ОТД_Стены Тип 5
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.WallFinishingType6">
+            <summary>
+            ФОП_ОТД_Стены Тип 6
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.WallFinishingType7">
+            <summary>
+            ФОП_ОТД_Стены Тип 7
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.WallFinishingType8">
+            <summary>
+            ФОП_ОТД_Стены Тип 8
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.WallFinishingType9">
+            <summary>
+            ФОП_ОТД_Стены Тип 9
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.WallFinishingType10">
+            <summary>
+            ФОП_ОТД_Стены Тип 10
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BaseboardFinishingType1">
+            <summary>
+            ФОП_ОТД_Плинтусы Тип 1
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BaseboardFinishingType2">
+            <summary>
+            ФОП_ОТД_Плинтусы Тип 2
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FinishingRoomName">
+            <summary>
+            ФОП_ОТД_Имя помещения
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FinishingRoomNumber">
+            <summary>
+            ФОП_ОТД_Номер помещения
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FinishingRoomNames">
+            <summary>
+            ФОП_ОТД_Имена помещений
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FinishingRoomNumbers">
+            <summary>
+            ФОП_ОТД_Номера помещений
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FinishingType">
+            <summary>
+            ФОП_ОТД_Тип отделки_ТЕ
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FloorFinishingOrder">
+            <summary>
+            ФОП_ОТД_Тип пола_ДЕ
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.CeilingFinishingOrder">
+            <summary>
+            ФОП_ОТД_Тип потолка_ДЕ
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.WallFinishingOrder">
+            <summary>
+            ФОП_ОТД_Тип стены_ДЕ
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BaseboardFinishingOrder">
+            <summary>
+            ФОП_ОТД_Тип плинтуса_ДЕ
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeLengthAdditional">
+            <summary>
+            ФОП_РАЗМ_Длина_ДЕ
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeArea">
+            <summary>
+            ФОП_РАЗМ_Площадь
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeVolume">
+            <summary>
+            ФОП_РАЗМ_Объем
             </summary>
         </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">
