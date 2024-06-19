@@ -1574,6 +1574,11 @@
             ФОП_ПМЩ_Секция
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomBuildingShortName">
+            <summary>
+            ФОП_ПМЩ_Корпус
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomTypeGroupShortName">
             <summary>
             ФОП_Тип группы помещений
