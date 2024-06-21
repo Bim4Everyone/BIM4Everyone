@@ -986,7 +986,7 @@
         </member>
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomFinishingType">
             <summary>
-            КВГ_Группа
+            ОТД_Тип отделки
             </summary>
         </member>
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">

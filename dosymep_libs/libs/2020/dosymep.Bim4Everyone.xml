@@ -979,11 +979,6 @@
             Группа помещения
             </summary>
         </member>
-        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomFinishingType">
-            <summary>
-            КВГ_Группа
-            </summary>
-        </member>
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ApartmentGroupName">
             <summary>
             КВГ_Доп. сортировка групп
