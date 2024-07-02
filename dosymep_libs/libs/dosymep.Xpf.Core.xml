@@ -120,6 +120,32 @@
         <member name="M:dosymep.Xpf.Core.SimpleServices.XtraDispatcherService.BeginInvoke(System.Action)">
             <inheritdoc />
         </member>
+        <member name="T:dosymep.Xpf.Core.SimpleServices.XtraLocalizationService">
+            <summary>
+            Класс сервиса локализации.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraLocalizationService.#ctor(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Создает экземпляр сервиса локализации.
+            </summary>
+            <param name="resourceName">Отночительный или абсолютный путь до ресурсов <see cref="T:System.Windows.ResourceDictionary"/> локализации.</param>
+            <param name="defaultCulture">Языковые стандарты по умолчанию. Применяются, если не были найдены основные.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="resourceName"/> пустое или null.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="defaultCulture"/> если null.</exception>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraLocalizationService.SetLocalization(System.Globalization.CultureInfo)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraLocalizationService.SetLocalization(System.Globalization.CultureInfo,System.Windows.FrameworkElement)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraLocalizationService.GetLocalizedString(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraLocalizationService.GetLocalizedString(System.String,System.Object[])">
+            <inheritdoc />
+        </member>
         <member name="T:dosymep.Xpf.Core.SimpleServices.XtraMessageBoxService">
             <summary>
             Класс сервиса окна сообщений.

@@ -139,6 +139,39 @@
             Используемый язык.
             </summary>
         </member>
+        <member name="T:dosymep.SimpleServices.ILocalizationService">
+            <summary>
+            Сервис локализации предоставляет простой интерфейс для получения локализированных строк.
+            </summary>
+        </member>
+        <member name="M:dosymep.SimpleServices.ILocalizationService.GetLocalizedString(System.String)">
+            <summary>
+            Возвращает локализированную строку.
+            </summary>
+            <param name="name">Наименование локализированной строки.</param>
+            <returns>Возвращает локализированную строку. Если строка не была найдена возвращает null.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.ILocalizationService.GetLocalizedString(System.String,System.Object[])">
+            <summary>
+            Возвращает форматированную локализированную строку.
+            </summary>
+            <param name="name">Наименование локализированной строки.</param>
+            <param name="args">Параметры форматирования локализированной строки.</param>
+            <returns>Возвращает форматированную локализированную строку. Если строка не была найдена возвращает null.</returns>
+        </member>
+        <member name="M:dosymep.SimpleServices.ILocalizationService.SetLocalization(System.Globalization.CultureInfo)">
+            <summary>
+            Устанавливает ресурсы локализации для интерфейса.
+            </summary>
+            <param name="cultureInfo">Применяемые языковые стандарты.</param>
+        </member>
+        <member name="M:dosymep.SimpleServices.ILocalizationService.SetLocalization(System.Globalization.CultureInfo,System.Windows.FrameworkElement)">
+            <summary>
+            Устанавливает ресурсы локализации для интерфейса.
+            </summary>
+            <param name="cultureInfo">Применяемые языковые стандарты.</param>
+            <param name="frameworkElement">Элемент интерфейса WPF.</param>
+        </member>
         <member name="T:dosymep.SimpleServices.IMessageBoxService">
             <summary>
             Предоставляет методы для показа окна сообщений.
