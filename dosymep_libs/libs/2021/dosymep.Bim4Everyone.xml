@@ -1800,6 +1800,121 @@
             <param name="bimModelParts">Раздел BIM модели.</param>
             <returns>Возвращает раздел модели по документу.</returns>
         </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.Configuration.CorpSettings">
+            <summary>
+            Корпоративные настройки.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.CorpSettings.Name">
+            <summary>
+            Название настроек.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.CorpSettings.ImagePath">
+            <summary>
+            Путь до изобрежения.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.CorpSettings.SettingsPath">
+            <summary>
+            Путь до настроек.
+            </summary>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.Configuration.LogTrace">
+            <summary>
+            Настройки трассировки.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.LogTrace.IsActive">
+            <summary>
+            Признак активности.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.LogTrace.LogLevel">
+            <summary>
+            Уровень логгирования.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.LogTrace.ServerName">
+            <summary>
+            Наименование сервера телеметрии.
+            </summary>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.Configuration.LogTraceJournal">
+            <summary>
+            Настройки журналирования в ревит.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.LogTraceJournal.IsActive">
+            <summary>
+            Признак активности журналирования.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.LogTraceJournal.LogLevel">
+            <summary>
+            Уровень логгирования.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.LogTraceJournal.UseUtc">
+            <summary>
+            Использовать время UTC.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.LogTraceJournal.OutputTemplate">
+            <summary>
+            Формат вывода событий.
+            </summary>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.Configuration.NotificationSettings">
+            <summary>
+            Настройка уведомлений.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.NotificationSettings.IsActive">
+            <summary>
+            Признак активности уведомлений.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.NotificationSettings.NotificationScreen">
+            <summary>
+            Экран уведомлений.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.NotificationSettings.NotificationPosition">
+            <summary>
+            Позиция уведомлений.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.NotificationSettings.NotificationVisibleMaxCount">
+            <summary>
+            Максимальное количество уведомлений на экране.
+            </summary>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.Configuration.SocialsSettings">
+            <summary>
+            Настройки социальных сетей.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.SocialsSettings.NewsChatUrl">
+            <summary>
+            Канал новостей.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.SocialsSettings.MainChatUrl">
+            <summary>
+            Основной чат платформы.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.SocialsSettings.PlatformPageUrl">
+            <summary>
+            Ссылка на описание платформы.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.SocialsSettings.DownloadLinkUrl">
+            <summary>
+            Ссылка на скачивание платформы.
+            </summary>
+        </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService">
             <summary>
             Сервис по получению разделов BIM модели.
@@ -1986,6 +2101,36 @@
             <param name="elements">Описание параметра <see cref="M:Autodesk.Revit.UI.IExternalCommand.Execute(Autodesk.Revit.UI.ExternalCommandData,System.String@,Autodesk.Revit.DB.ElementSet)"/>.</param>
             <param name="journalData">Описание параметра в свойстве <see cref="P:Autodesk.Revit.UI.ExternalCommandData.JournalData"/>.</param>
             <returns>Возвращает результат работы команды.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.IPlatformSettingsService">
+            <summary>
+            Настройки платформы.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.IPlatformSettingsService.LogTrace">
+            <summary>
+            Настройки трассировки.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.IPlatformSettingsService.LogTraceJournal">
+            <summary>
+            Настройки журналирования.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.IPlatformSettingsService.CorpSettings">
+            <summary>
+            Корпоративные настройки.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.IPlatformSettingsService.SocialsSettings">
+            <summary>
+            Настройки социальных сетей.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.IPlatformSettingsService.NotificationSettings">
+            <summary>
+            Настройки увеломлений.
+            </summary>
         </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.IProjectParamsService">
             <summary>
