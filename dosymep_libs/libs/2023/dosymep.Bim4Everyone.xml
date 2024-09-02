@@ -1599,6 +1599,296 @@
             ФОП_ВИС_Сокращение для системы
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISCrossSection">
+            <summary>
+            ФОП_ВИС_Живое сечение, м2
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISLocalResistanceCoef">
+            <summary>
+            ФОП_ВИС_КМС
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISEconomicFunction">
+            <summary>
+            ФОП_ВИС_Экономическая функция
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISHvacSystemFunction">
+            <summary>
+            ФОП_ВИС_ЭФ для системы
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISSystemName">
+            <summary>
+            ФОП_ВИС_Имя системы
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISSystemNameForced">
+            <summary>
+            ФОП_ВИС_Имя системы принудительное
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISItemCode">
+            <summary>
+            ФОП_ВИС_Код изделия
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISManufacturer">
+            <summary>
+            ФОП_ВИС_Завод-изготовитель
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISGroupingForced">
+            <summary>
+            ФОП_ВИС_Группирование принудительное
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISNameForced">
+            <summary>
+            ФОП_ВИС_Наименование принудительное
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISNameAddition">
+            <summary>
+            ФОП_ВИС_Дополнение к имени
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISMarkAxisToZero">
+            <summary>
+            ФОП_ВИС_Отметка оси от нуля
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISMarkBottomToZero">
+            <summary>
+            ФОП_ВИС_Отметка низа от нуля
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISPosition">
+            <summary>
+            ФОП_ВИС_Позиция
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISMarkNumber">
+            <summary>
+            ФОП_ВИС_Марка
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISNote">
+            <summary>
+            ФОП_ВИС_Примечание
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISIndividualStock">
+            <summary>
+            ФОП_ВИС_Индивидуальный запас
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISMaxDuctThickness">
+            <summary>
+            ФОП_ВИС_Максимальная толщина воздуховода
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISJunction">
+            <summary>
+            ФОП_ВИС_Узел
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISExcludeFromJunction">
+            <summary>
+            ФОП_ВИС_Исключить из узла
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISDiameterNominal">
+            <summary>
+            ФОП_ВИС_Ду
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISDiameterNominalXThikness">
+            <summary>
+            ФОП_ВИС_Ду х Стенка
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISDiameterExternalXThikness">
+            <summary>
+            ФОП_ВИС_Днар х Стенка
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISIsPipeNameFromSegment">
+            <summary>
+            ФОП_ВИС_Имя трубы из сегмента
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISIsPaintCalculation">
+            <summary>
+            ФОП_ВИС_Расчет краски и грунтовки
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISIsClampsCalculation">
+            <summary>
+            ФОП_ВИС_Расчет хомутов
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISIsFasteningMetalCalculation">
+            <summary>
+            ФОП_ВИС_Расчет металла для креплений
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISConsiderPipeFittingsByType">
+            <summary>
+            ФОП_ВИС_Учитывать фитинги труб по типу трубы
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISConsiderDuctFittings">
+            <summary>
+            ФОП_ВИС_Учитывать фитинги воздуховодов
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISConsiderPipeFittings">
+            <summary>
+            ФОП_ВИС_Учитывать фитинги труб
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationReserve">
+            <summary>
+            ФОП_ВИС_Запас изоляции
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISDuctInsulationReserve">
+            <summary>
+            ФОП_ВИС_Запас изоляции воздуховодов
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISPipeInsulationReserve">
+            <summary>
+            ФОП_ВИС_Запас изоляции труб
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISPipeDuctReserve">
+            <summary>
+            ФОП_ВИС_Запас воздуховодов/труб
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISParamReplacementUnit">
+            <summary>
+            ФОП_ВИС_Замена параметра_Единица измерения
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISParamReplacementManufacturer">
+            <summary>
+            ФОП_ВИС_Замена параметра_Завод-изготовитель
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISParamReplacementItemCode">
+            <summary>
+            ФОП_ВИС_Замена параметра_Код изделия
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISParamReplacementMarkNumber">
+            <summary>
+            ФОП_ВИС_Замена параметра_Марка
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISParamReplacementName">
+            <summary>
+            ФОП_ВИС_Замена параметра_Наименование
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable1Name">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 1_Наименование
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable1MarkNumber">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 1_Марка
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable1Manufacturer">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 1_Изготовитель
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable1Unit">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 1_Ед. изм.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable1ConsumptionPerSqM">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 1_Расход на м2
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable1ConsumptionPerMetr">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 1_Расход по м.п.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable2Name">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 2_Наименование
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable2MarkNumber">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 2_Марка
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable2Manufacturer">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 2_Изготовитель
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable2Unit">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 2_Ед. изм.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable2ConsumptionPerSqM">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 2_Расход на м2
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable2ConsumptionPerMetr">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 2_Расход по м.п.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable3Name">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 3_Наименование
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable3MarkNumber">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 3_Марка
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable3Manufacturer">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 3_Изготовитель
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable3Unit">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 3_Ед. изм.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable3ConsumptionPerSqM">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 3_Расход на м2
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISInsulationConsumable3ConsumptionPerMetr">
+            <summary>
+            ФОП_ВИС_Изол_Расходник 3_Расход по м.п.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.EconomicFunction">
+            <summary>
+            ФОП_Экономическая функция
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FloorFinishingType1">
             <summary>
             ФОП_ОТД_Полы Тип 1
