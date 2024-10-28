@@ -1619,6 +1619,11 @@
             ФОП_ВИС_Число
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISSpecNumbersCurrency">
+            <summary>
+            ФОП_ВИС_Число ДЕ
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISUnit">
             <summary>
             ФОП_ВИС_Единица измерения
@@ -1652,6 +1657,11 @@
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISHvacSystemFunction">
             <summary>
             ФОП_ВИС_ЭФ для системы
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISHvacSystemForcedFunction">
+            <summary>
+            ФОП_ВИС_ЭФ принудительная
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISSystemName">

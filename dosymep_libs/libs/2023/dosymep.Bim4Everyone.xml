@@ -1584,6 +1584,11 @@
             ФОП_ВИС_Число
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISSpecNumbersCurrency">
+            <summary>
+            ФОП_ВИС_Число ДЕ
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISUnit">
             <summary>
             ФОП_ВИС_Единица измерения
@@ -1617,6 +1622,11 @@
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISHvacSystemFunction">
             <summary>
             ФОП_ВИС_ЭФ для системы
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISHvacSystemForcedFunction">
+            <summary>
+            ФОП_ВИС_ЭФ принудительная
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISSystemName">
@@ -2027,6 +2037,16 @@
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeVolume">
             <summary>
             ФОП_РАЗМ_Объем
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingNumber">
+            <summary>
+            ФОП_ПМЩ_Номер здания
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ConstructionWorksNumber">
+            <summary>
+            ФОП_ПМЩ_Номер ОКС
             </summary>
         </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">
