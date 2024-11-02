@@ -992,10 +992,28 @@
         </member>
         <member name="M:dosymep.Revit.Geometry.ElementExtensions.GetSolids(Autodesk.Revit.DB.Element)">
             <summary>
-            Возвращает все <see cref="T:Autodesk.Revit.DB.Solid"/> объекты из <see cref="T:Autodesk.Revit.DB.Element"/>.
+            Возвращает все <see cref="T:Autodesk.Revit.DB.Solid"/> объекты из <see cref="T:Autodesk.Revit.DB.Element"/> с <see cref="T:Autodesk.Revit.DB.Options"/> по умолчанию<br/>
+            в координатах документа этого элемента относительно начала проекта.<br/>
+            Настройки <see cref="T:Autodesk.Revit.DB.Options"/> по умолчанию:<br/>
+            <code>
+            ComputeReferences = true
+            IncludeNonVisibleObjects = false
+            DetailLevel = ViewDetailLevel.Fine.
+            </code>
             </summary>
             <param name="element">Элемент у которого берутся <see cref="T:Autodesk.Revit.DB.Solid"/>.</param>
             <returns>Возвращает все <see cref="T:Autodesk.Revit.DB.Solid"/> объекты из <see cref="T:Autodesk.Revit.DB.Element"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Исключение, если один из обязательных параметров null.</exception>
+        </member>
+        <member name="M:dosymep.Revit.Geometry.ElementExtensions.GetSolids(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.Options)">
+            <summary>
+            Возвращает все <see cref="T:Autodesk.Revit.DB.Solid"/> объекты из <see cref="T:Autodesk.Revit.DB.Element"/> с заданными <see cref="T:Autodesk.Revit.DB.Options"/><br/>
+            в координатах документа этого элемента относительно начала проекта.
+            </summary>
+            <param name="element">Элемент у которого берутся <see cref="T:Autodesk.Revit.DB.Solid"/>.</param>
+            <param name="options">Настройки получения <see cref="T:Autodesk.Revit.DB.Solid"/> из <see cref="T:Autodesk.Revit.DB.Element"/>.</param>
+            <returns>Возвращает все <see cref="T:Autodesk.Revit.DB.Solid"/> объекты из <see cref="T:Autodesk.Revit.DB.Element"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Исключение, если один из обязательных параметров null.</exception>
         </member>
         <member name="T:dosymep.Revit.Geometry.GeometryObjectExtensions">
             <summary>
