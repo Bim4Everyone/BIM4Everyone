@@ -1899,6 +1899,11 @@
             ФОП_Экономическая функция
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ElementMirroring">
+            <summary>
+            ФОП_Зеркальность
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FloorFinishingType1">
             <summary>
             ФОП_ОТД_Полы Тип 1
@@ -2047,6 +2052,11 @@
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ConstructionWorksNumber">
             <summary>
             ФОП_ПМЩ_Номер ОКС
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ParkingSpaceClass">
+            <summary>
+            ФОП_Класс ММ
             </summary>
         </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">
