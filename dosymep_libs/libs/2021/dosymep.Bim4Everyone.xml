@@ -771,6 +771,11 @@
             Версия Revit.
             </summary>
         </member>
+        <member name="F:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfigBuilder._projectConfigPath">
+            <summary>
+            Путь к файлу конфигурации проекта.
+            </summary>
+        </member>
         <member name="M:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfigBuilder.SetPluginName(System.String)">
             <summary>
             Устанавливает наименование плагина.
@@ -797,6 +802,13 @@
             Устанавливает версию Revit.
             </summary>
             <param name="revitVersion">Версия Revit.</param>
+            <returns>Возвращает текущий билдер.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfigBuilder.SetProjectConfigPath(System.String)">
+            <summary>
+            Устанавливает путь к файлу конфигурации проекта для его десериализации.
+            </summary>
+            <param name="projectConfigPath">Путь к файлу конфигурации проекта.</param>
             <returns>Возвращает текущий билдер.</returns>
         </member>
         <member name="M:dosymep.Bim4Everyone.ProjectConfigs.ProjectConfigBuilder.Build``1">

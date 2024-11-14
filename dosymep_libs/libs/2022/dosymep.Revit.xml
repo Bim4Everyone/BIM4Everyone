@@ -938,6 +938,60 @@
             <param name="categories">Проверяемые категории.</param>
             <returns>Возвращает true - если элемент является переданным категориям, иначе false.</returns>
         </member>
+        <member name="M:dosymep.Revit.ElementExtensions.TryGetParam(Autodesk.Revit.DB.Element,System.String,Autodesk.Revit.DB.Parameter@)">
+            <summary>
+            Пытается найти параметр у элемента по названию.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Название параметра.</param>
+            <param name="param">Параметр, если он найден.</param>
+            <returns>True, если параметр найден и не равен null, иначе False.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.TryGetSharedParam(Autodesk.Revit.DB.Element,System.String,Autodesk.Revit.DB.Parameter@)">
+            <summary>
+            Пытается найти общий параметр у элемента по названию.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Название общего параметра.</param>
+            <param name="param">Параметр, если он найден.</param>
+            <returns>True, если параметр найден и не равен null, иначе False.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.TryGetSharedParam(Autodesk.Revit.DB.Element,System.Guid,Autodesk.Revit.DB.Parameter@)">
+            <summary>
+            Пытается найти общий параметр у элемента по Guid.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramGuid">Guid общего параметра.</param>
+            <param name="param">Параметр, если он найден.</param>
+            <returns>True, если параметр найден и не равен null, иначе False.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.TryGetProjectParam(Autodesk.Revit.DB.Element,System.String,Autodesk.Revit.DB.Parameter@)">
+            <summary>
+            Пытается найти параметр проекта у элемента по названию.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Название параметра проекта.</param>
+            <param name="param">Параметр, если он найден.</param>
+            <returns>True, если параметр найден и не равен null, иначе False.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.TryGetParam(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.Parameter@)">
+            <summary>
+            Пытается найти параметр у элемента по <see cref="T:Autodesk.Revit.DB.BuiltInParameter"/>.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="builtInParameter">Значение <see cref="T:Autodesk.Revit.DB.BuiltInParameter"/> параметра.</param>
+            <param name="param">Параметр, если он найден.</param>
+            <returns>True, если параметр найден и не равен null, иначе False.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.TryGetParam(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.ForgeTypeId,Autodesk.Revit.DB.Parameter@)">
+            <summary>
+            Пытается найти параметр проекта у элемента по <see cref="T:Autodesk.Revit.DB.ForgeTypeId"/>.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="forgeTypeId">Значение <see cref="T:Autodesk.Revit.DB.ForgeTypeId"/> параметра.</param>
+            <param name="param">Параметр, если он найден.</param>
+            <returns>True, если параметр найден и не равен null, иначе False.</returns>
+        </member>
         <member name="T:dosymep.Revit.ElementIdExtensions">
             <summary>
             Расширения для идентификатора элемента.
