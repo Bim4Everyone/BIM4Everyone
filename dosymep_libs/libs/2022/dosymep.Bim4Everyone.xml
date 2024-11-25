@@ -2056,6 +2056,21 @@
             ФОП_РАЗМ_Объем
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeLength">
+            <summary>
+            ФОП_РАЗМ_Длина
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeWidth">
+            <summary>
+            ФОП_РАЗМ_Ширина
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeHeight">
+            <summary>
+            ФОП_РАЗМ_Высота
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingNumber">
             <summary>
             ФОП_ПМЩ_Номер здания
