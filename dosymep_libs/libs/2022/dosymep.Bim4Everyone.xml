@@ -203,6 +203,16 @@
         <member name="M:dosymep.Bim4Everyone.CustomParams.CustomParam.GetParam(Autodesk.Revit.DB.Element)">
             <inheritdoc />
         </member>
+        <member name="M:dosymep.Bim4Everyone.CustomParams.CustomParam.ReadFromJson(pyRevitLabs.Json.Linq.JObject,pyRevitLabs.Json.JsonSerializer)">
+            <summary>
+            Метод чтения параметра из json
+            </summary>
+            <param name="token">Токен</param>
+            <param name="serializer">Сериализатор</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.CustomParams.CustomParam.SaveToJsonImpl(pyRevitLabs.Json.JsonWriter,pyRevitLabs.Json.JsonSerializer)">
+            <inheritdoc />
+        </member>
         <member name="T:dosymep.Bim4Everyone.DocumentExtensions">
             <summary>
             Класс расширения документа.
@@ -873,6 +883,16 @@
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParam.GetParam(Autodesk.Revit.DB.Element)">
             <inheritdoc/>
         </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParam.ReadFromJson(pyRevitLabs.Json.Linq.JObject,pyRevitLabs.Json.JsonSerializer)">
+            <summary>
+            Метод чтения параметра из json
+            </summary>
+            <param name="token">Токен</param>
+            <param name="serializer">Сериализатор</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParam.SaveToJsonImpl(pyRevitLabs.Json.JsonWriter,pyRevitLabs.Json.JsonSerializer)">
+            <inheritdoc />
+        </member>
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParam.GetUnitType(System.String)">
             <summary>
             Возвращает единицу измерения параметра по его идентификатору.
@@ -1147,6 +1167,20 @@
             </summary>
             <returns>Возвращает параметр Revit.</returns>
         </member>
+        <member name="M:dosymep.Bim4Everyone.RevitParam.SaveToJson(pyRevitLabs.Json.JsonWriter,pyRevitLabs.Json.JsonSerializer)">
+            <summary>
+            Метод чтения параметра из json
+            </summary>
+            <param name="writer">Writer</param>
+            <param name="serializer">Serializer</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.RevitParam.SaveToJsonImpl(pyRevitLabs.Json.JsonWriter,pyRevitLabs.Json.JsonSerializer)">
+            <summary>
+            Метод чтения параметра из json
+            </summary>
+            <param name="writer">Writer</param>
+            <param name="serializer">Serializer</param>
+        </member>
         <member name="M:dosymep.Bim4Everyone.RevitParam.Equals(dosymep.Bim4Everyone.RevitParam)">
             <inheritdoc />
         </member>
@@ -1362,6 +1396,16 @@
             <param name="application">Приложение Revit.</param>
             <param name="groupName">Наименование группы параметров.</param>
             <returns>Возвращает описание общего параметра из ФОП.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParam.ReadFromJson(pyRevitLabs.Json.Linq.JObject,pyRevitLabs.Json.JsonSerializer)">
+            <summary>
+            Метод чтения параметра из json
+            </summary>
+            <param name="token">Токен</param>
+            <param name="serializer">Сериализатор</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParam.SaveToJsonImpl(pyRevitLabs.Json.JsonWriter,pyRevitLabs.Json.JsonSerializer)">
+            <inheritdoc />
         </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParam.GetUnitType(System.String)">
             <summary>
@@ -2915,6 +2959,29 @@
             </summary>
             <returns>Возвращает весь список системных параметров.</returns>
         </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.Serialization.NinjectSerializationExtensions">
+            <summary>
+            Расширения для сериализаторов <see cref="T:Ninject.IKernel"/>.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.Serialization.NinjectSerializationExtensions.UseJsonSerialization(Ninject.IKernel,System.Action{pyRevitLabs.Json.JsonSerializerSettings})">
+            <summary>
+            Добавляет в контейнер сервис сериализации <see cref="T:dosymep.SimpleServices.ISerializationService" />
+            </summary>
+            <param name="kernel">Ninject контейнер.</param>
+            <param name="setupAction">Настройки сериализатора.</param>
+            <returns>Возвращает настроенный контейнер Ninject.</returns>
+            <exception cref="T:System.ArgumentNullException">kernel is null.</exception>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.Serialization.NinjectSerializationExtensions.UseConfigSerialization(Ninject.IKernel,System.Action{pyRevitLabs.Json.JsonSerializerSettings})">
+            <summary>
+            Добавляет в контейнер сервис сериализации <see cref="T:dosymep.Bim4Everyone.ProjectConfigs.IConfigSerializer" />
+            </summary>
+            <param name="kernel">Ninject контейнер.</param>
+            <param name="setupAction">Настройки сериализатора.</param>
+            <returns>Возвращает настроенный контейнер Ninject.</returns>
+            <exception cref="T:System.ArgumentNullException">kernel is null.</exception>
+        </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.ServicesProvider">
             <summary>
             Класс предоставляющий доступ к внутренним сервисам платформы
@@ -3109,6 +3176,16 @@
         </member>
         <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParam.GetParam(Autodesk.Revit.DB.Element)">
             <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParam.ReadFromJson(pyRevitLabs.Json.Linq.JObject,pyRevitLabs.Json.JsonSerializer)">
+            <summary>
+            Метод чтения параметра из json
+            </summary>
+            <param name="token">Токен</param>
+            <param name="serializer">Сериализатор</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SystemParams.SystemParam.SaveToJsonImpl(pyRevitLabs.Json.JsonWriter,pyRevitLabs.Json.JsonSerializer)">
+            <inheritdoc />
         </member>
         <member name="T:dosymep.Bim4Everyone.SystemParams.SystemParamsConfig">
             <summary>
