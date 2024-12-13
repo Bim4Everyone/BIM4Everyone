@@ -4,8 +4,11 @@ import os
 import sys
 import shutil
 import os.path as op
+import pyrevit.coreutils.git as libgit
+from pyrevit.versionmgr import updater
 
 from pyrevit import HOST_APP
+from pyrevit.coreutils import envvars
 
 
 def copy_files(source_dir, target_dir):
@@ -28,3 +31,21 @@ def load_assemblies():
     sys.path.append(temp_path)
 
 
+def update_extension(extension_file):
+    if not check_update_in_progress():
+        set_autoupdate_in_progress(True)
+
+        path = os.path.abspath(extension_file)
+        repo_path = libgit.libgit.Repository.Discover(path)
+        repo_info = libgit.get_repo(repo_path)
+        updater.update_repo(repo_info)
+
+        set_autoupdate_in_progress(False)
+
+
+def check_update_in_progress():
+    return envvars.get_pyrevit_env_var(envvars.AUTOUPDATING_ENVVAR)
+
+
+def set_autoupdate_in_progress(state):
+    envvars.set_pyrevit_env_var(envvars.AUTOUPDATING_ENVVAR, state)
