@@ -6,6 +6,7 @@ import shutil
 import os.path as op
 import pyrevit.coreutils.git as libgit
 from pyrevit.versionmgr import updater
+from pyrevit.loader import sessionmgr
 
 from pyrevit import HOST_APP
 from pyrevit.coreutils import envvars
@@ -39,6 +40,7 @@ def update_extension(extension_file):
         repo_path = libgit.libgit.Repository.Discover(path)
         repo_info = libgit.get_repo(repo_path)
         updater.update_repo(repo_info)
+        sessionmgr.load_session()
 
         set_autoupdate_in_progress(False)
 
