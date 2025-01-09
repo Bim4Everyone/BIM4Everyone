@@ -34,15 +34,15 @@ def load_assemblies():
 
 def update_extension(extension_file):
     if not check_update_in_progress():
-        set_autoupdate_in_progress(True)
-
-        path = os.path.abspath(extension_file)
-        repo_path = libgit.libgit.Repository.Discover(path)
-        repo_info = libgit.get_repo(repo_path)
-        updater.update_repo(repo_info)
-        sessionmgr.load_session()
-
-        set_autoupdate_in_progress(False)
+        try:
+            set_autoupdate_in_progress(True)
+            path = os.path.abspath(extension_file)
+            repo_path = libgit.libgit.Repository.Discover(path)
+            repo_info = libgit.get_repo(repo_path)
+            updater.update_repo(repo_info)
+            sessionmgr.load_session()
+        finally:
+            set_autoupdate_in_progress(False)
 
 
 def check_update_in_progress():
