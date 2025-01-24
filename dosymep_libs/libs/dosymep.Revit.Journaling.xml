@@ -115,6 +115,11 @@
             Constructs open central model journal element.
             </summary>
         </member>
+        <member name="P:dosymep.Revit.Journaling.JournalElements.OpenCentralModelElement.IsWorksharedModel">
+            <summary>
+            Shows that a model with working sets is being opened default true.
+            </summary>
+        </member>
         <member name="P:dosymep.Revit.Journaling.JournalElements.OpenCentralModelElement.Detach">
             <summary>
             If true detaching central model.
@@ -159,6 +164,64 @@
             </summary>
         </member>
         <member name="M:dosymep.Revit.Journaling.JournalElements.PurgeUnusedElement.Reduce``2(dosymep.AutodeskApps.ITransformer{``0,``1})">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.Revit.Journaling.JournalElements.SaveAsFileCommandElement">
+            <summary>
+            Save as command journal element.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.Journaling.JournalElements.SaveAsFileCommandElement.#ctor">
+            <summary>
+            Constructs save as command journal element.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Journaling.JournalElements.SaveAsFileCommandElement.MaxBackupCount">
+            <summary>
+            Maximum backup count.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Journaling.JournalElements.SaveAsFileCommandElement.ThumbnailViewId">
+            <summary>
+            View id for generate thumbnail. Default (empty) value -1.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Journaling.JournalElements.SaveAsFileCommandElement.RegenerateThumbnail">
+            <summary>
+            Regenerate thumbnail if view/sheet is not up-to date.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Journaling.JournalElements.SaveAsFileCommandElement.CompactFile">
+            <summary>
+            Compact file.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Journaling.JournalElements.SaveAsFileCommandElement.ReplaceExistingFile">
+            <summary>
+            Replace existing file.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Journaling.JournalElements.SaveAsFileCommandElement.EnableWorksharing">
+            <summary>
+            Enable workshared model from not workshared.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Journaling.JournalElements.SaveAsFileCommandElement.MakeThisFileCentalModel">
+            <summary>
+            Make this a Central Model after save.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Journaling.JournalElements.SaveAsFileCommandElement.ModelPath">
+            <summary>
+            New model path location.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Journaling.JournalElements.SaveAsFileCommandElement.WorksetOption">
+            <summary>
+            Worksets options.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.Journaling.JournalElements.SaveAsFileCommandElement.Reduce``2(dosymep.AutodeskApps.ITransformer{``0,``1})">
             <inheritdoc />
         </member>
         <member name="T:dosymep.Revit.Journaling.JournalElements.SyncCentralModelElement">
@@ -288,6 +351,41 @@
         <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.CentralOpenAuditCheckBox">
             <summary>
             Central open with audit template.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.SaveAsFile">
+            <summary>
+            Save as file command template.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.SaveAsFileOptions">
+            <summary>
+            Save as file options template.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.SaveAsFileNameOption">
+            <summary>
+            Save as file name option.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.SaveAsMakeThisFileCentalModel">
+            <summary>
+            Save as make this a Central Model after save template
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.SaveAsEnableWorksharing">
+            <summary>
+            Save as enable worksharing template
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.SaveAsReplaceCentralFile">
+            <summary>
+            Replace central file template (replace on revit server)
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.SaveAsReplaceWorksharingFile">
+            <summary>
+            Replace workshring file template (replace on file system)
             </summary>
         </member>
         <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.FileSync">
@@ -462,6 +560,20 @@
             </summary>
             <param name="visitable">Visitable object.</param>
             <returns>Returns transformation object.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Journaling.RevitJournalTransformer.Transform(dosymep.Revit.Journaling.JournalElements.SaveAsFileCommandElement)">
+            <summary>
+            Save as command transformer.
+            </summary>
+            <param name="visitable">Visitable object.</param>
+            <returns>Returns transformation object.</returns>
+        </member>
+        <member name="M:dosymep.Revit.Journaling.RevitJournalTransformer.IsRsnFile(System.String)">
+            <summary>
+            Determines whether the path is RSN path.
+            </summary>
+            <param name="modelPath">Model path.</param>
+            <returns>true if path is RSN path, otherwise fals.</returns>
         </member>
     </members>
 </doc>
