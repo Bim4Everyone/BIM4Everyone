@@ -2130,6 +2130,21 @@
             ФОП_Класс ММ
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISTaskSSDate">
+            <summary>
+            ФОП_ВИС_СС Дата задания
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISTaskSSMark">
+            <summary>
+            ФОП_ВИС_СС Марка задания
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISTaskSSAdd">
+            <summary>
+            ФОП_ВИС_СС Добавить к заданию
+            </summary>
+        </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">
             <inheritdoc />
         </member>
