@@ -2145,6 +2145,11 @@
             ФОП_ВИС_СС Добавить к заданию
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentNameExtra">
+            <summary>
+            ФОП_Доп. имя помещения
+            </summary>
+        </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">
             <inheritdoc />
         </member>
