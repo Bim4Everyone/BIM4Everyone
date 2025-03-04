@@ -1350,9 +1350,19 @@
             КВГ_(Проверка) Тип группы
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsCheckFixedAreas">
+            <summary>
+            КВГ_(Проверка) Фиксированные площади
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsMultiLevel">
             <summary>
             КВГ_Многоуровневые квартиры
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsSummer">
+            <summary>
+            КВГ_Летние помещения
             </summary>
         </member>
         <member name="M:dosymep.Bim4Everyone.Schedules.SchedulesConfig.LoadInstance(System.String)">
