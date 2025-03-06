@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dosymep.WpfUI.Core</name>
+    </assembly>
+    <members>
+        <member name="T:dosymep.WpfUI.Core.SimpleServices.WpfUIMessageBoxService">
+            <summary>
+            Класс сервиса окна сообщений. 
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIMessageBoxService.#ctor(dosymep.SimpleServices.IHasTheme,dosymep.SimpleServices.IHasLocalization)">
+            <summary>
+            Конструирует объект.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIMessageBoxService.Show(System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage,System.Windows.MessageBoxResult)">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogFactory">
+            <summary>
+            Класс фабрики создания сервиса прогресс диалога.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogFactory.#ctor(dosymep.SimpleServices.IHasTheme,dosymep.SimpleServices.IHasLocalization)">
+            <summary>
+            Конструирует объект.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogFactory.StepValue">
+            <summary>
+            Шаг обновления значение прогресса.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogFactory.Indeterminate">
+            <summary>
+            Указывает будет ли прогресс бар неопределенным
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogFactory.DisplayTitleFormat">
+            <summary>
+            Строка форматирования отображения.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogFactory.CreateDialog">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogService">
+            <summary>
+            Класс сервиса прогресс диалога.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogService.#ctor(dosymep.SimpleServices.IHasTheme,dosymep.SimpleServices.IHasLocalization)">
+            <summary>
+            Конструирует объект.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogService.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogService.Indeterminate">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogService.MaxValue">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogService.StepValue">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogService.DisplayTitleFormat">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogService.CreateProgress">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogService.CreateAsyncProgress">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogService.CreateCancellationToken">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogService.Close">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogService.Show">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogService.ShowDialog">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogService.Detach">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogService.Attach(System.Windows.DependencyObject)">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.WpfUI.Core.SimpleServices.WpfUIThemeUpdaterService">
+            <summary>
+            Обновляет тему для библиотеки WIN-UI.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIThemeUpdaterService.SetTheme(System.Windows.Window,dosymep.SimpleServices.UIThemes)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfUI.Core.Windows.WpfUIProgressWindow.#ctor(dosymep.SimpleServices.IHasTheme,dosymep.SimpleServices.IHasLocalization)">
+            <summary>
+            Инициализирует окно прогресс бара.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.Windows.WpfUIProgressWindow.CreateCancellationToken">
+            <summary>
+            Возвращает токен отмены.
+            </summary>
+            <returns>Возвращает токен отмены.</returns>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.Windows.WpfUIProgressWindow.DispatcherUpdateWindow(System.Int32)">
+            <summary>
+            Обновляет окно.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.Windows.WpfUIProgressWindow.UpdateWindow(System.Int32)">
+            <summary>
+            Обновляет окно.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.Windows.WpfUIProgressWindow.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfUI.Core.Windows.WpfUIProgressWindow.Dispose(System.Boolean)">
+            <summary>
+            Очищает подписку на событие.
+            </summary>
+            <param name="disposing">Указывает на очистку ресурсов.</param>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.Windows.WpfUIProgressWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

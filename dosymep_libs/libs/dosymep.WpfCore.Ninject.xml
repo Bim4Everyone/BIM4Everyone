@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dosymep.WpfCore.Ninject</name>
+    </assembly>
+    <members>
+        <member name="T:dosymep.WpfCore.Ninject.NinjectExtensions">
+            <summary>
+            Расширения для настройки <see cref="T:Ninject.IKernel"/>.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfCore.Ninject.NinjectExtensions.BindMainWindow``2(Ninject.IKernel)">
+            <summary>
+            Регистрирует основное окно с вьюмоделью.
+            </summary>
+            <param name="kernel">Ninject контейнер.</param>
+            <typeparam name="TViewModel">ViewModel</typeparam>
+            <typeparam name="TMainWindow">Window</typeparam>
+            <returns>Возвращает настроенный контейнер Ninject.</returns>
+            <remarks>Биндит основное окно и вьюмодель как синглтон.</remarks>
+        </member>
+        <member name="M:dosymep.WpfCore.Ninject.NinjectExtensions.BindOtherWindow``2(Ninject.IKernel)">
+            <summary>
+            Регистрирует окно с вьюмоделью.
+            </summary>
+            <param name="kernel">Ninject контейнер.</param>
+            <typeparam name="TViewModel">ViewModel</typeparam>
+            <typeparam name="TWindow">Window</typeparam>
+            <returns>Возвращает настроенный контейнер Ninject.</returns>
+            <remarks>Биндит окно и вьюмодель как синглтон.</remarks>
+        </member>
+        <member name="M:dosymep.WpfCore.Ninject.NinjectExtensions.UseWpfWindowsLanguage(Ninject.IKernel)">
+            <summary>
+            Добавляет в контейнер <see cref="T:dosymep.SimpleServices.ILanguageService"/>,
+            который возвращает установленную локализацию в настройках Windows.
+            </summary>
+            <param name="kernel">Ninject контейнер.</param>
+            <returns>Возвращает настроенный контейнер Ninject.</returns>
+            <exception cref="T:System.ArgumentNullException">kernel is null.</exception>
+        </member>
+        <member name="M:dosymep.WpfCore.Ninject.NinjectExtensions.UseWpfWindowsTheme(Ninject.IKernel)">
+            <summary>
+            Добавляет в контейнер <see cref="T:dosymep.SimpleServices.IUIThemeService"/>,
+            который возвращает установленную тему в настройках Windows.
+            </summary>
+            <param name="kernel">Ninject контейнер.</param>
+            <returns>Возвращает настроенный контейнер Ninject.</returns>
+            <exception cref="T:System.ArgumentNullException">kernel is null.</exception>
+        </member>
+        <member name="M:dosymep.WpfCore.Ninject.NinjectExtensions.UseWpfDispatcher(Ninject.IKernel)">
+            <summary>
+            Добавляет в контейнер <see cref="T:dosymep.SimpleServices.IDispatcherService"/>.
+            </summary>
+            <param name="kernel">Ninject контейнер.</param>
+            <returns>Возвращает настроенный контейнер Ninject.</returns>
+            <exception cref="T:System.ArgumentNullException">kernel is null.</exception>
+        </member>
+        <member name="M:dosymep.WpfCore.Ninject.NinjectExtensions.UseWpfDispatcher``1(Ninject.IKernel)">
+            <summary>
+            Добавляет в контейнер <see cref="T:dosymep.SimpleServices.IDispatcherService"/>.
+            </summary>
+            <param name="kernel">Ninject контейнер.</param>
+            <typeparam name="T">Тип ViewModel к которой будет прикрепление сервиса.</typeparam>
+            <returns>Возвращает настроенный контейнер Ninject.</returns>
+            <remarks>Обязательно требуется прикрепить к элементу управления через <see cref="T:dosymep.WpfCore.Behaviors.WpfAttachServiceBehavior"/>.</remarks>
+            <exception cref="T:System.ArgumentNullException">kernel is null.</exception>
+        </member>
+        <member name="M:dosymep.WpfCore.Ninject.NinjectExtensions.UseWpfLocalization(Ninject.IKernel,System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Добавляет в контейнер <see cref="T:dosymep.SimpleServices.ILocalizationService"/>.
+            </summary>
+            <param name="kernel">Ninject контейнер.</param>
+            <param name="resourceName">Наименование ресурсов.</param>
+            <param name="defaultCulture">Языковые настройки по умолчанию. Значение по умолчанию <see cref="P:System.Globalization.CultureInfo.CurrentUICulture"/>.</param>
+            <returns>Возвращает настроенный контейнер Ninject.</returns>
+        </member>
+    </members>
+</doc>

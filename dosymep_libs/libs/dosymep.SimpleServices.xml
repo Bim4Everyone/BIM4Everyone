@@ -129,9 +129,54 @@
             Сбрасывает все свойства до значений по умолчанию.
             </summary>
         </member>
+        <member name="T:dosymep.SimpleServices.IHasLocalization">
+            <summary>
+            Интерфейс с сервисами локализации.
+            </summary>
+        </member>
+        <member name="E:dosymep.SimpleServices.IHasLocalization.LanguageChanged">
+            <summary>
+            Событие изменения языка.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IHasLocalization.HostLanguage">
+            <summary>
+            Используемый язык.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IHasLocalization.LocalizationService">
+            <summary>
+            Сервис локализации.
+            </summary>
+        </member>
+        <member name="T:dosymep.SimpleServices.IHasTheme">
+            <summary>
+            Интерфейс с сервисами тем.
+            </summary>
+        </member>
+        <member name="E:dosymep.SimpleServices.IHasTheme.ThemeChanged">
+            <summary>
+            Событие изменения темы.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IHasTheme.HostTheme">
+            <summary>
+            Текущая используемая тема.
+            </summary>
+        </member>
+        <member name="P:dosymep.SimpleServices.IHasTheme.ThemeUpdaterService">
+            <summary>
+            Сервис изменения тем.
+            </summary>
+        </member>
         <member name="T:dosymep.SimpleServices.ILanguageService">
             <summary>
             Предоставляет доступ к языку интерфейса.
+            </summary>
+        </member>
+        <member name="E:dosymep.SimpleServices.ILanguageService.LanguageChanged">
+            <summary>
+            Событие возникающее при изменении языка.
             </summary>
         </member>
         <member name="P:dosymep.SimpleServices.ILanguageService.HostLanguage">

@@ -522,8 +522,25 @@
             Класс сервиса доступа к языку Windows.
             </summary>
         </member>
+        <member name="E:dosymep.Xpf.Core.SimpleServices.XtraWindowsLanguageService.LanguageChanged">
+            <inheritdoc />
+        </member>
         <member name="P:dosymep.Xpf.Core.SimpleServices.XtraWindowsLanguageService.HostLanguage">
             <inheritdoc/>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraWindowsLanguageService.#ctor">
+            <summary>
+            Конструирует объект.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraWindowsLanguageService.Dispose(System.Boolean)">
+            <summary>
+            Очищает подписку на событие.
+            </summary>
+            <param name="disposing">Указывает на очистку ресурсов.</param>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraWindowsLanguageService.Dispose">
+            <inheritdoc />
         </member>
         <member name="T:dosymep.Xpf.Core.SimpleServices.XtraWindowsThemeService">
             <summary>
