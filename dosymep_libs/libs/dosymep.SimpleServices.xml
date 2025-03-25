@@ -676,6 +676,13 @@
             <param name="window">Окно, которому устанавливают тему.</param>
             <param name="theme">Устанавливаемая тема окна.</param>
         </member>
+        <member name="M:dosymep.SimpleServices.IUIThemeUpdaterService.SetTheme(dosymep.SimpleServices.UIThemes,System.Windows.FrameworkElement)">
+            <summary>
+            Устанавливает текущую тему окна.
+            </summary>
+            <param name="theme">Устанавливаемая тема окна.</param>
+            <param name="frameworkElement">Элемент управления, которому устанавливают тему.</param>
+        </member>
         <member name="T:dosymep.SimpleServices.MessageBoxServiceExtensions">
             <summary>
             Расширения для сервиса сообщений.

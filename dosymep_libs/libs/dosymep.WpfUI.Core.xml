@@ -102,6 +102,9 @@
         <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIThemeUpdaterService.SetTheme(System.Windows.Window,dosymep.SimpleServices.UIThemes)">
             <inheritdoc />
         </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIThemeUpdaterService.SetTheme(dosymep.SimpleServices.UIThemes,System.Windows.FrameworkElement)">
+            <inheritdoc />
+        </member>
         <member name="M:dosymep.WpfUI.Core.Windows.WpfUIProgressWindow.#ctor(dosymep.SimpleServices.IHasTheme,dosymep.SimpleServices.IHasLocalization)">
             <summary>
             Инициализирует окно прогресс бара.

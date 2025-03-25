@@ -517,6 +517,9 @@
         <member name="M:dosymep.Xpf.Core.SimpleServices.XtraThemeUpdaterService.SetTheme(System.Windows.Window,dosymep.SimpleServices.UIThemes)">
             <inheritdoc />
         </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.XtraThemeUpdaterService.SetTheme(dosymep.SimpleServices.UIThemes,System.Windows.FrameworkElement)">
+            <inheritdoc />
+        </member>
         <member name="T:dosymep.Xpf.Core.SimpleServices.XtraWindowsLanguageService">
             <summary>
             Класс сервиса доступа к языку Windows.
