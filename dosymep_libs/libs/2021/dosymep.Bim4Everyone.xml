@@ -971,6 +971,11 @@
             КВГ_ПМЩ_Фиксация номера
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.IsRoomLevelFix">
+            <summary>
+            КВГ_ПМЩ_Фиксация этажа
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.NumberingOrder">
             <summary>
             КВГ_Приоритет нумерации
