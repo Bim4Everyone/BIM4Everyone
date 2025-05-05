@@ -1242,6 +1242,14 @@
             <param name="solids">Коллекция <see cref="T:Autodesk.Revit.DB.Solid"/>.</param>
             <returns>Возвращает максимально возможные объединения <see cref="T:Autodesk.Revit.DB.Solid"/>.</returns>
         </member>
+        <member name="M:dosymep.Revit.Geometry.SolidExtensions.GetVolumeOrDefault(Autodesk.Revit.DB.Solid,System.Nullable{System.Double})">
+            <summary>
+            Возвращает объем <see cref="T:Autodesk.Revit.DB.Solid"/> или значение по умолчанию, если объем не может быть определен.
+            </summary>
+            <param name="solid"><see cref="T:Autodesk.Revit.DB.Solid"/>, для которого вычисляется объем.</param>
+            <param name="defaultValue">Значение по умолчанию, возвращаемое в случае, если объем <see cref="T:Autodesk.Revit.DB.Solid"/> не может быть определен.</param>
+            <returns>Возвращает объем <see cref="T:Autodesk.Revit.DB.Solid"/>, или значение по умолчанию, если объем не может быть определен.</returns>
+        </member>
         <member name="T:dosymep.Revit.ParamElementExtensions">
             <summary>
             Класс расширений элементов параметров
