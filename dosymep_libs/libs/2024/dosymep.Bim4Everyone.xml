@@ -2160,6 +2160,11 @@
             ФОП_ВИС_СС Добавить к заданию
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISPressureLoss">
+            <summary>
+            ФОП_ВИС_Потери давления
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.ApartmentNameExtra">
             <summary>
             ФОП_Доп. имя помещения
