@@ -1997,11 +1997,11 @@
             </summary>
             <param name="spatialElement">Проверяемый элемент.</param>
             <param name="options">Опции получение границ элемента.</param>
-            <returns>Возвращает true если были найдены самопересечения, иначе false.</returns>
+            <returns>Возвращает true, если были найдены самопересечения, иначе false.</returns>
         </member>
         <member name="M:dosymep.Revit.SpatialElementExtensions.IsRedundant(Autodesk.Revit.DB.SpatialElement,Autodesk.Revit.DB.SpatialElementBoundaryOptions)">
             <summary>
-            Проверяет является элемент избыточным.
+            Проверяет является ли элемент избыточным.
             </summary>
             <param name="spatialElement">Проверяемый элемент.</param>
             <param name="options">Опции получение границ элемента.</param>
