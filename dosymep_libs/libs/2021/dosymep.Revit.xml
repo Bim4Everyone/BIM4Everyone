@@ -1258,6 +1258,14 @@
             <param name="definition">Определение параметра.</param>
             <returns>Возвращает <see cref="T:Autodesk.Revit.DB.BuiltInParameter"/> для определения параметра, для не системных параметров возвращает <see cref="F:Autodesk.Revit.DB.BuiltInParameter.INVALID"/>.</returns>
         </member>
+        <member name="M:dosymep.Revit.ParamExtensions.ReInsertToGroup(Autodesk.Revit.DB.Definition,Autodesk.Revit.DB.Document,Autodesk.Revit.DB.BuiltInParameterGroup)">
+            <summary>
+            Заново объявляет общий параметр в проекте, меняя его группу
+            </summary>
+            <param name="definition">Определение параметра</param>
+            <param name="document">Документ проекта</param>
+            <param name="group">Группа параметра</param>
+        </member>
         <member name="M:dosymep.Revit.ParamExtensions.GetStorageType(Autodesk.Revit.DB.BuiltInParameter)">
             <summary>
             Возвращает тип параметра.
