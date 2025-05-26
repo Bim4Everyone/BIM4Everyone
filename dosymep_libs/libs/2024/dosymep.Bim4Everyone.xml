@@ -1985,6 +1985,21 @@
             ФОП_ОТД_Полы Тип 2
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FloorFinishingType3">
+            <summary>
+            ФОП_ОТД_Полы Тип 3
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FloorFinishingType4">
+            <summary>
+            ФОП_ОТД_Полы Тип 4
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FloorFinishingType5">
+            <summary>
+            ФОП_ОТД_Полы Тип 5
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.CeilingFinishingType1">
             <summary>
             ФОП_ОТД_Потолки Тип 1
@@ -1993,6 +2008,21 @@
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.CeilingFinishingType2">
             <summary>
             ФОП_ОТД_Потолки Тип 2
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.CeilingFinishingType3">
+            <summary>
+            ФОП_ОТД_Потолки Тип 3
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.CeilingFinishingType4">
+            <summary>
+            ФОП_ОТД_Потолки Тип 4
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.CeilingFinishingType5">
+            <summary>
+            ФОП_ОТД_Потолки Тип 5
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.WallFinishingType1">
@@ -2053,6 +2083,21 @@
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BaseboardFinishingType2">
             <summary>
             ФОП_ОТД_Плинтусы Тип 2
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BaseboardFinishingType3">
+            <summary>
+            ФОП_ОТД_Плинтусы Тип 3
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BaseboardFinishingType4">
+            <summary>
+            ФОП_ОТД_Плинтусы Тип 4
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BaseboardFinishingType5">
+            <summary>
+            ФОП_ОТД_Плинтусы Тип 5
             </summary>
         </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FinishingRoomName">
