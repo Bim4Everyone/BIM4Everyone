@@ -2211,6 +2211,16 @@
             Наименование сервера телеметрии.
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.LogTrace.EnableOpenDocTime">
+            <summary>
+            Включает логгирование времени открытия файла.
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SimpleServices.Configuration.LogTrace.EnableSyncDocTime">
+            <summary>
+            Включает логгирование времени синхронизации файла.
+            </summary>
+        </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.Configuration.LogTraceJournal">
             <summary>
             Настройки журналирования в ревит.
