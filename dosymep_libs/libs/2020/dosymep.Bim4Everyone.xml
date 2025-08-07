@@ -1370,6 +1370,11 @@
             КВГ_Летние помещения
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.ListOfSchedules">
+            <summary>
+            ВС_Ведомость спецификаций
+            </summary>
+        </member>
         <member name="M:dosymep.Bim4Everyone.Schedules.SchedulesConfig.LoadInstance(System.String)">
             <summary>
             Загрузка текущей конфигурации.
