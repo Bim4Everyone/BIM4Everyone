@@ -1026,6 +1026,31 @@
             ОТД_Тип отделки
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ListOfSchedulesListName">
+            <summary>
+            ВС_Наименование спецификации
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ListOfSchedulesSheetName">
+            <summary>
+            ВС_Номер листа
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ListOfSchedulesRevNumber">
+            <summary>
+            ВС_Номер изменения
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ListOfSchedulesNotes">
+            <summary>
+            ВС_Примечания
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.ListOfSchedulesGroup">
+            <summary>
+            ВС_Группировка
+            </summary>
+        </member>
         <member name="M:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">
             <inheritdoc />
         </member>
@@ -1338,6 +1363,11 @@
         <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.RoomsSummer">
             <summary>
             КВГ_Летние помещения
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.Schedules.SchedulesConfig.ListOfSchedules">
+            <summary>
+            ВС_Ведомость спецификаций
             </summary>
         </member>
         <member name="M:dosymep.Bim4Everyone.Schedules.SchedulesConfig.LoadInstance(System.String)">
