@@ -2335,6 +2335,56 @@
             ФОП_Категория помещения
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeOpeningWidth">
+            <summary>
+            ФОП_РАЗМ_Ширина проёма
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeOpeningHeight">
+            <summary>
+            ФОП_РАЗМ_Высота проёма
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeOpeningDepth">
+            <summary>
+            ФОП_РАЗМ_Глубина проёма
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeDiameter">
+            <summary>
+            ФОП_РАЗМ_Диаметр
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeDepth">
+            <summary>
+            ФОП_РАЗМ_Глубина
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.DimensionAModeling">
+            <summary>
+            мод_ФОП_Габарит А
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.DimensionBModeling">
+            <summary>
+            мод_ФОП_Габарит Б
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeRotationAngle">
+            <summary>
+            ADSK_Размер_УголПоворота
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISSideThickness">
+            <summary>
+            ФОП_ВИС_Толщина стенки
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.Description">
+            <summary>
+            ФОП_Описание
+            </summary>
+        </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">
             <inheritdoc />
         </member>
