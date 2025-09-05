@@ -997,10 +997,10 @@
         </member>
         <member name="M:dosymep.Revit.Geometry.BoundingBoxExtensions.CreateIntersectedBoundingBox(System.Collections.Generic.ICollection{Autodesk.Revit.DB.BoundingBoxXYZ})">
             <summary>
-            Возвращает общий <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.
+            Возвращает <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> пересечения между всеми <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.
             </summary>
             <param name="bbs">Коллекция <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</param>
-            <returns>Возвращает общий <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</returns>
+            <returns>Возвращает <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/> пересечения между всеми <see cref="T:Autodesk.Revit.DB.BoundingBoxXYZ"/>.</returns>
         </member>
         <member name="M:dosymep.Revit.Geometry.BoundingBoxExtensions.CreateUnitedBoundingBox(System.Collections.Generic.ICollection{Autodesk.Revit.DB.BoundingBoxXYZ})">
             <summary>
