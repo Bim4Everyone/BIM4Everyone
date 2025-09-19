@@ -872,6 +872,189 @@
         <member name="M:dosymep.WpfCore.SimpleServices.WpfLocalizationService.GetLocalizedString(System.String,System.Object[])">
             <inheritdoc />
         </member>
+        <member name="T:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService">
+            <summary>
+            Предоставляет методы для открытия  диалога просмотра и открытия файлов.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.Multiselect">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.AddExtension">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.AutoUpgradeEnabled">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.CheckFileExists">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.CheckPathExists">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.ValidateNames">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.DereferenceLinks">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.RestoreDirectory">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.ShowHelp">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.SupportMultiDottedExtensions">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.FilterIndex">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.Title">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.Filter">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.InitialDirectory">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.File">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.Files">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.ShowDialog">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.ShowDialog(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfCore.SimpleServices.WpfOpenFileDialogService.Reset">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService">
+            <summary>
+            Предоставляет методы для открытия диалога выбора папок.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.Multiselect">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.AddExtension">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.AutoUpgradeEnabled">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.CheckFileExists">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.CheckPathExists">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.ValidateNames">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.DereferenceLinks">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.RestoreDirectory">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.ShowHelp">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.SupportMultiDottedExtensions">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.FilterIndex">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.Title">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.Filter">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.InitialDirectory">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.Folders">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.ShowDialog">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.ShowDialog(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfCore.SimpleServices.WpfOpenFolderDialogService.Reset">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService">
+            <summary>
+            Предоставляет методы для открытия диалога сохранения файлов.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.AddExtension">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.AutoUpgradeEnabled">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.CheckFileExists">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.CheckPathExists">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.ValidateNames">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.DereferenceLinks">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.RestoreDirectory">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.ShowHelp">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.SupportMultiDottedExtensions">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.FilterIndex">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.Title">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.Filter">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.InitialDirectory">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.DefaultExt">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.DefaultFileName">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.File">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.ShowDialog(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfCore.SimpleServices.WpfSaveFileDialogService.Reset">
+            <inheritdoc />
+        </member>
         <member name="T:dosymep.WpfCore.SimpleServices.WpfWindowsLanguageService">
             <summary>
             Класс сервиса доступа к языку Windows.

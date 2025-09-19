@@ -140,6 +140,15 @@
             <remarks>Обязательно требуется прикрепить к элементу управления через <see cref="T:dosymep.Xpf.Core.SimpleServices.AttachServiceBehavior"/>.</remarks>
             <exception cref="T:System.ArgumentNullException">kernel is null.</exception>
         </member>
+        <member name="M:dosymep.Xpf.Core.Ninject.NinjectExtensions.UseXtraLocalization(Ninject.IKernel,System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Добавляет в контейнер <see cref="T:dosymep.SimpleServices.ILocalizationService"/>.
+            </summary>
+            <param name="kernel">Ninject контейнер.</param>
+            <param name="resourceName">Наименование ресурсов.</param>
+            <param name="defaultCulture">Языковые настройки по умолчанию. Значение по умолчанию <see cref="P:System.Globalization.CultureInfo.CurrentUICulture"/>.</param>
+            <returns>Возвращает настроенный контейнер Ninject.</returns>
+        </member>
         <member name="M:dosymep.Xpf.Core.Ninject.NinjectExtensions.UseXtraOpenFileDialog(Ninject.IKernel,System.String,System.String,System.Int32,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
             <summary>
             Добавляет в контейнер <see cref="T:dosymep.SimpleServices.IOpenFileDialogService"/>.
@@ -208,15 +217,6 @@
             <param name="supportMultiDottedExtensions">True - включает отображение и сохранение файлов с несколькими расширениями. По умолчанию выключено.</param>
             <returns>Возвращает настроенный контейнер Ninject.</returns>
             <exception cref="T:System.ArgumentNullException">kernel is null.</exception>
-        </member>
-        <member name="M:dosymep.Xpf.Core.Ninject.NinjectExtensions.UseXtraLocalization(Ninject.IKernel,System.String,System.Globalization.CultureInfo)">
-            <summary>
-            Добавляет в контейнер <see cref="T:dosymep.SimpleServices.ILocalizationService"/>.
-            </summary>
-            <param name="kernel">Ninject контейнер.</param>
-            <param name="resourceName">Наименование ресурсов.</param>
-            <param name="defaultCulture">Языковые настройки по умолчанию. Значение по умолчанию <see cref="P:System.Globalization.CultureInfo.CurrentUICulture"/>.</param>
-            <returns>Возвращает настроенный контейнер Ninject.</returns>
         </member>
         <member name="M:dosymep.Xpf.Core.Ninject.NinjectExtensions.UseXtraSaveFileDialog``1(Ninject.IKernel,System.String,System.String,System.Int32,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
             <summary>

@@ -25,6 +25,66 @@
         <member name="M:dosymep.Xpf.Core.SimpleServices.AttachServiceBehavior.OnDetaching">
             <inheritdoc />
         </member>
+        <member name="T:dosymep.Xpf.Core.SimpleServices.DxCustomServices.CustomDXOpenFileDialogService">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.DxCustomServices.CustomDXOpenFileDialogService.UIThemeService">
+            <summary>
+            Сервис по получению тем.
+            </summary>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.DxCustomServices.CustomDXOpenFileDialogService.UIThemeUpdaterService">
+            <summary>
+            Сервис по установке тем.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.DxCustomServices.CustomDXOpenFileDialogService.CreateFileDialogAdapter">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="T:dosymep.Xpf.Core.SimpleServices.DxCustomServices.CustomDXOpenFolderDialogService">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.DxCustomServices.CustomDXOpenFolderDialogService.UIThemeService">
+            <summary>
+            Сервис по получению тем.
+            </summary>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.DxCustomServices.CustomDXOpenFolderDialogService.UIThemeUpdaterService">
+            <summary>
+            Сервис по установке тем.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.DxCustomServices.CustomDXOpenFolderDialogService.CreateFileDialogAdapter">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="T:dosymep.Xpf.Core.SimpleServices.DxCustomServices.CustomDXSaveFileDialogService">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.DxCustomServices.CustomDXSaveFileDialogService.UIThemeService">
+            <summary>
+            Сервис по получению тем.
+            </summary>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.DxCustomServices.CustomDXSaveFileDialogService.UIThemeUpdaterService">
+            <summary>
+            Сервис по установке тем.
+            </summary>
+        </member>
+        <member name="M:dosymep.Xpf.Core.SimpleServices.DxCustomServices.CustomDXSaveFileDialogService.CreateFileDialogAdapter">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
         <member name="T:dosymep.Xpf.Core.SimpleServices.ProgressDialogFactory">
             <summary>
             Класс фабрики создания сервиса прогресс диалога.
@@ -248,6 +308,16 @@
             Класс сервиса открытия диалога выбора файла.
             </summary>
         </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.UIThemeService">
+            <summary>
+            Сервис по получению тем.
+            </summary>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.UIThemeUpdaterService">
+            <summary>
+            Сервис по установке тем.
+            </summary>
+        </member>
         <member name="M:dosymep.Xpf.Core.SimpleServices.XtraOpenFileDialogService.#ctor">
             <summary>
             Создает экземпляр сервиса открытия диалога выбора файла.
@@ -313,6 +383,16 @@
         <member name="T:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService">
             <summary>
             Класс сервиса открытия диалога выбора папки.
+            </summary>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.UIThemeService">
+            <summary>
+            Сервис по получению тем.
+            </summary>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.UIThemeUpdaterService">
+            <summary>
+            Сервис по установке тем.
             </summary>
         </member>
         <member name="M:dosymep.Xpf.Core.SimpleServices.XtraOpenFolderDialogService.#ctor">
@@ -448,6 +528,16 @@
         <member name="T:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService">
             <summary>
             Класс сервиса открытия диалога сохранения файла.
+            </summary>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.UIThemeService">
+            <summary>
+            Сервис по получению тем.
+            </summary>
+        </member>
+        <member name="P:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.UIThemeUpdaterService">
+            <summary>
+            Сервис по установке тем.
             </summary>
         </member>
         <member name="M:dosymep.Xpf.Core.SimpleServices.XtraSaveFileDialogService.#ctor">
