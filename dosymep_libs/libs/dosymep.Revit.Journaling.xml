@@ -308,6 +308,11 @@
             Exit revit application template.
             </summary>
         </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.PromptDoNotSaveFileWhenExit">
+            <summary>
+            Template automatically selects the "Do not save the project" option.
+            </summary>
+        </member>
         <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.PurgeUnused">
             <summary>
             Purge unused elements template.
