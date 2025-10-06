@@ -323,6 +323,16 @@
             Ignore missing links template.
             </summary>
         </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.PromptUpdaterContinueWorkingWithFile">
+            <summary>
+            Continue working with the file.
+            </summary>
+        </member>
+        <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.PromptUpdaterDoNotWarnAgain">
+            <summary>
+            Do not warn about this updater again and continue working with the file.
+            </summary>
+        </member>
         <member name="F:dosymep.Revit.Journaling.RevitJournalTemplates.CentralOpen">
             <summary>
             Open central model template.
