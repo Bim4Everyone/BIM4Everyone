@@ -2385,6 +2385,16 @@
             ФОП_Описание
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingWorksLevelCurrency">
+            <summary>
+            ФОП_Этаж СМР_ДЕ
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.FixSolution">
+            <summary>
+            ФОП_Фиксация решения
+            </summary>
+        </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">
             <inheritdoc />
         </member>
