@@ -2380,6 +2380,16 @@
             ФОП_ВИС_Толщина стенки
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISUnmodellingSettings">
+            <summary>
+            ФОП_ВИС_Настройки немоделируемых
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISSettings">
+            <summary>
+            ФОП_ВИС_Настройки
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.Description">
             <summary>
             ФОП_Описание
