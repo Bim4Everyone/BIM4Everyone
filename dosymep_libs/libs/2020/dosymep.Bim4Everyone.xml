@@ -665,6 +665,11 @@
             Модуль настроек платформы.
             </summary>
         </member>
+        <member name="F:dosymep.Bim4Everyone.PlatformCommandIds.RevitSetCoordParamsHeadlessId">
+            <summary>
+            Вызов обновления СМР без интерфейса
+            </summary>
+        </member>
         <member name="T:dosymep.Bim4Everyone.ProjectConfigs.IConfigSerializer">
             <summary>
             Интерфейс сериализатора для конфигурации проекта.
