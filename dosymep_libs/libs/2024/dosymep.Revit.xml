@@ -379,6 +379,14 @@
             <param name="paramName">Наименование параметра.</param>
             <returns>Возвращает true - если параметр существует, иначе false.</returns>
         </member>
+        <member name="M:dosymep.Revit.ElementExtensions.IsReadOnlyParam(Autodesk.Revit.DB.Element,System.String)">
+            <summary>
+            Проверяет, является ли редактируемым заданный параметр.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Название параметра.</param>
+            <returns>Возвращает доступ на редактирование параметра: true - параметр только для чтения, иначе false.</returns>
+        </member>
         <member name="M:dosymep.Revit.ElementExtensions.IsExistsParamValue(Autodesk.Revit.DB.Element,System.String)">
             <summary>
             Проверяет на существование значение параметра в элементе.
@@ -476,6 +484,14 @@
             <param name="element">Элемент.</param>
             <param name="paramName">Наименование параметра.</param>
             <returns>Возвращает true - если общий параметр существует, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.IsReadOnlySharedParam(Autodesk.Revit.DB.Element,System.String)">
+            <summary>
+            Проверяет, является ли редактируемым заданный общий параметр.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Название общего параметра.</param>
+            <returns>Возвращает доступ на редактирование общего параметра: true - параметр только для чтения, иначе false.</returns>
         </member>
         <member name="M:dosymep.Revit.ElementExtensions.IsExistsSharedParamValue(Autodesk.Revit.DB.Element,System.String)">
             <summary>
@@ -583,6 +599,14 @@
             <param name="paramName">Наименование параметра проекта.</param>
             <returns>Возвращает true - если параметр проекта существует, иначе false.</returns>
         </member>
+        <member name="M:dosymep.Revit.ElementExtensions.IsReadOnlyProjectParam(Autodesk.Revit.DB.Element,System.String)">
+            <summary>
+            Проверяет, является ли редактируемым заданный параметр проекта.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="paramName">Название параметра проекта.</param>
+            <returns>Возвращает доступ на редактирование параметра проекта: true - параметр только для чтения, иначе false.</returns>
+        </member>
         <member name="M:dosymep.Revit.ElementExtensions.IsExistsProjectParamValue(Autodesk.Revit.DB.Element,System.String)">
             <summary>
             Проверяет на существование значения параметра проекта в элементе.
@@ -681,6 +705,14 @@
             <param name="builtInParameter">Встроенный тип параметра.</param>
             <returns>Возвращает true - если параметр существует, иначе false.</returns>
         </member>
+        <member name="M:dosymep.Revit.ElementExtensions.IsReadOnlyParam(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+            Проверяет, является ли редактируемым заданный встроенный параметр.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="builtInParameter">Встроенный тип параметра.</param>
+            <returns>Возвращает доступ на редактирование встроенного параметра: true - параметр только для чтения, иначе false.</returns>
+        </member>
         <member name="M:dosymep.Revit.ElementExtensions.IsExistsParamValue(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.BuiltInParameter)">
             <summary>
             Проверяет на существование значения параметра в элементе.
@@ -778,6 +810,14 @@
             <param name="element">Элемент.</param>
             <param name="forgeTypeId">Встроенный тип параметра.</param>
             <returns>Возвращает true - если параметр существует, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Revit.ElementExtensions.IsReadOnlyParam(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.ForgeTypeId)">
+            <summary>
+            Проверяет, является ли редактируемым заданный встроенный параметр.
+            </summary>
+            <param name="element">Элемент.</param>
+            <param name="forgeTypeId">Встроенный тип параметра.</param>
+            <returns>Возвращает доступ на редактирование встроенного параметра: true - параметр только для чтения, иначе false.</returns>
         </member>
         <member name="M:dosymep.Revit.ElementExtensions.IsExistsParamValue(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.ForgeTypeId)">
             <summary>
