@@ -2418,6 +2418,31 @@
             ФОП_Фиксация решения
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingWorksMarkBottom">
+            <summary>
+            ФОП_Отметка низа СМР
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingWorksMarkTop">
+            <summary>
+            ФОП_Отметка верха СМР
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingWorksZone">
+            <summary>
+            ФОП_Зона СМР
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.BuildingWorksDescription">
+            <summary>
+            ФОП_Описание СМР
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.SizeVolumeBuildingWorks">
+            <summary>
+            ФОП_РАЗМ_Объем СМР
+            </summary>
+        </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">
             <inheritdoc />
         </member>
