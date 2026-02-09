@@ -1,0 +1,350 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bim4Everyone.RevitFiltration.Controls</name>
+    </assembly>
+    <members>
+        <member name="T:Bim4Everyone.RevitFiltration.Controls.IDataProvider">
+            <summary>
+                Провайдер данных.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetParams(System.Collections.Generic.ICollection{Autodesk.Revit.DB.Category})">
+            <summary>
+                Возвращает параметры, доступные сразу для всех заданных категорий.
+            </summary>
+            <param name="categories">Заданные категории.</param>
+            <returns>Коллекция доступных параметров.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetCategories">
+            <summary>
+                Возвращает категории, доступные для фильтрации.
+            </summary>
+            <returns>Коллекция доступных для выбора категорий.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetDocuments">
+            <summary>
+                Возвращает документы, из которых будут браться существующие значения параметров для выпадающего списка в UI.
+            </summary>
+            <returns>Документы со значениями параметров.</returns>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Controls.IErrorContext">
+            <summary>
+                Ошибка ввода пользователя в UI.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Controls.IErrorContext.Message">
+            <summary>
+                Сообщение об ошибке.
+            </summary>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Controls.IFilterContextParser">
+            <summary>
+                Сериализует и десериализует <see cref="T:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext" />.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.TryParse(System.String,Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext@)">
+            <summary>
+                Пытается десериализовать <see cref="T:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext" /> из заданной строки.
+            </summary>
+            <param name="content">Строка, полученная через метод <see cref="M:Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.Serialize(Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)" />.</param>
+            <param name="context">Десериализованный контекст фильтра по категориям.</param>
+            <returns>True - если десериализация прошла успешно, иначе - False.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.Serialize(Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)">
+            <summary>
+                Сериализует контекст фильтра по категориям в строку.
+            </summary>
+            <param name="context">Контекст фильтра по категориям.</param>
+            <returns>Сериализованный контекст.</returns>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext">
+            <summary>
+                Контекст фильтра элементов по категориям и правилам.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.SelectedCategories">
+            <summary>
+                Выбранные пользователем категории элементов для фильтрации.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.GetFilter">
+            <summary>
+                Правила фильтрации значений параметров.
+            </summary>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider">
+            <summary>
+                Сервис для получения контекста фильтра по категориям, который пользователь задал в UI.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.GetFilter">
+            <summary>
+                Возвращает контекст фильтра, настроенного в UI. Перед вызовом надо проверить, что контекст может быть получен,
+                вызвав метод <see cref="M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.CanGetFilter(Bim4Everyone.RevitFiltration.Controls.IErrorContext[]@)" />.
+            </summary>
+            <returns>Ссылка на контекст фильтра по категориям.</returns>
+            <exception cref="T:System.InvalidOperationException">Исключение, если контекст не может быть получен.</exception>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.CanGetFilter(Bim4Everyone.RevitFiltration.Controls.IErrorContext[]@)">
+            <summary>
+                Проверяет возможность получения контекста фильтра.
+            </summary>
+            <param name="errors">Ошибки, если контекст не может быть получен.</param>
+            <returns>True, если контекст может быть получен, иначе False.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.GetDataProvider">
+            <summary>
+                Возвращает провайдер данных.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.SetErrors(Bim4Everyone.RevitFiltration.Controls.IErrorContext[])">
+            <summary>
+                Назначает ошибки, если ввод пользователя некорректный.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.SetFilter(Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)">
+            <summary>
+                Назначает контекст фильтра, который пользователь сделал в UI.
+            </summary>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory">
+            <summary>
+                Фабрика для создания провайдеров фильтров по категориям.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider)">
+            <summary>
+                Создает провайдер фильтра элементов по доступным данным.
+            </summary>
+            <param name="dataProvider">Провайдер доступных данных для выбора пользователя.</param>
+            <returns>Провайдер контекста фильтра по категориям.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider,Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)">
+            <summary>
+                Загружает заданный контекст и создает провайдер фильтра элементов по доступным данным.
+            </summary>
+            <param name="dataProvider">Провайдер доступных данных для выбора пользователя.</param>
+            <param name="contextToLoad">
+                Контекст для загрузки. Категории и правила фильтрации по параметрам, которых нет в доступных, будут удалены.
+            </param>
+            <returns>Провайдер контекста фильтра по категориям.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Models.Params.ParamModel.IsSystemParam(Autodesk.Revit.DB.BuiltInParameter@)">
+            <summary>
+                Проверяет, является ли параметр системным
+            </summary>
+            <param name="builtInParameter">Значение системного параметра, если таковым является текущий параметр</param>
+            <returns>True, если параметр является системным, иначе false</returns>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Controls.Services.ILocalizationProvider.InnerLocalization">
+            <summary>
+                Внутренняя локализация либы.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Controls.Services.ILocalizationProvider.OutsourceLocalization">
+            <summary>
+                Внешняя локализация, переопределяющая внутреннюю.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Services.ILocalizationProvider.GetLocalizedString(System.String)">
+            <summary>
+                Возвращает строку локализации. Поиск строки локализации будет сначала по <see cref="P:Bim4Everyone.RevitFiltration.Controls.Services.ILocalizationProvider.OutsourceLocalization" />, если
+                это свойство указано.
+            </summary>
+            <param name="name">Наименование локализированной строки.</param>
+            <returns>Возвращает локализированную строку.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Services.ILocalizationProvider.GetLocalizedString(System.String,System.Object[])">
+            <summary>
+                Возвращает форматированную строку локализации. Поиск строки локализации будет сначала по
+                <see cref="P:Bim4Everyone.RevitFiltration.Controls.Services.ILocalizationProvider.OutsourceLocalization" />, если
+                это свойство указано.
+            </summary>
+            <param name="name">Наименование локализированной строки.</param>
+            <param name="args">Параметры форматирования локализированной строки.</param>
+            <returns>Возвращает форматированную локализированную строку.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Services.ILocalizationProvider.SetInnerLocalization(System.Globalization.CultureInfo)">
+            <summary>
+                Устанавливает внутренние ресурсы локализации для интерфейса.
+            </summary>
+            <param name="cultureInfo">Применяемые языковые стандарты.</param>
+        </member>
+        <member name="E:Bim4Everyone.RevitFiltration.Controls.Services.ILocalizationProvider.LocalizationChanged">
+            <summary>
+                Событие, которое вызывается при смене языковых стандартов или при смене <see cref="P:Bim4Everyone.RevitFiltration.Controls.Services.ILocalizationProvider.OutsourceLocalization" />
+            </summary>
+        </member>
+        <member name="F:Bim4Everyone.RevitFiltration.Controls.ViewModels.RuleViewModel._paramValuesAlreadyUpdated">
+            <summary>
+                Флаг, показывающий, обновлен ли список существующих значений выбранного параметра
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Controls.ViewModels.RuleViewModel.UpdateParamValuesCommand">
+            <summary>
+                Обновляет список существующих значений параметра для выбора в выпадающем списке
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.ViewModels.RuleViewModel.CreateRule">
+            <summary>
+                Возвращает модель правила фильтрации для UI.
+                Перед вызовом этого метода надо проверить, что в текущем правиле нет ошибок и оно не пустое.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Views.CategoriesView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl">
+            <summary>
+                Контрол только с фильтром по параметрам для всех доступных категорий из <see cref="P:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProvider" />
+            </summary>
+            <summary>
+            DynamicCategoriesFilterControl
+            </summary>
+        </member>
+        <member name="F:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProviderProperty">
+            <summary>
+                Свойство для привязки сервиса контекста фильтра к UI.
+            </summary>
+        </member>
+        <member name="F:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LocalizationServiceProperty">
+            <summary>
+                Свойство для привязки внешнего сервиса локализации к UI.
+            </summary>
+        </member>
+        <member name="F:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LanguageServiceProperty">
+            <summary>
+                Свойство для привязки внешнего сервиса установки языка к UI.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.#ctor">
+            <summary>
+                Создает контрол только с фильтром по параметрам для всех доступных категорий из
+                <see cref="P:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProvider" />
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProvider">
+            <summary>
+                Свойство для привязки сервиса контекста фильтра к UI.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LanguageService">
+            <summary>
+                Свойство для установки языка интерфейса.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LocalizationService">
+            <summary>
+                Свойство для переопределения локализации.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Views.InnerDynamicCategoriesFilterControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Views.InnerPresetCategoriesFilterControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl">
+            <summary>
+                Контрол с фильтром по параметрам и с возможностью выбора категорий из доступных в
+                <see cref="P:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProvider" />
+            </summary>
+            <summary>
+            PresetCategoriesFilterControl
+            </summary>
+        </member>
+        <member name="F:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProviderProperty">
+            <summary>
+                Свойство для привязки сервиса контекста фильтра к UI.
+            </summary>
+        </member>
+        <member name="F:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LocalizationServiceProperty">
+            <summary>
+                Свойство для привязки внешнего сервиса локализации к UI.
+            </summary>
+        </member>
+        <member name="F:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LanguageServiceProperty">
+            <summary>
+                Свойство для привязки внешнего сервиса установки языка к UI.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.#ctor">
+            <summary>
+                Создает контрол с фильтром по параметрам и с возможностью выбора категорий из доступных в
+                <see cref="P:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProvider" />
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProvider">
+            <summary>
+                Свойство для привязки сервиса контекста фильтра к UI.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LanguageService">
+            <summary>
+                Свойство для установки языка интерфейса.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LocalizationService">
+            <summary>
+                Свойство для переопределения локализации.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Views.RuleView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Views.SetView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>
