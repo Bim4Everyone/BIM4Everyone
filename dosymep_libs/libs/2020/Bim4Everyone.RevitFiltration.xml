@@ -1,0 +1,1276 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bim4Everyone.RevitFiltration</name>
+    </assembly>
+    <members>
+        <member name="T:Bim4Everyone.RevitFiltration.Compositors.AndCompositor">
+            <summary>
+                Создает фильтр с логическим правилом "И".
+            </summary>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Compositors.ICompositor">
+            <summary>
+                Создает фильтр с логическим правилом "И" или "ИЛИ".
+            </summary>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Compositors.OrCompositor">
+            <summary>
+                Создает фильтр с логическим правилом "ИЛИ".
+            </summary>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Filtration.IFilterRule">
+            <summary>
+                Отвечает за создание правила по фильтрации на основе параметра, например "Высота больше 5000".
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Filtration.IFilterRule.Param">
+            <summary>
+                Параметр, который проверяется при фильтрации.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Filtration.IFilterRule.OperatorToken">
+            <summary>
+                Настройки для определения условия фильтрации и проверяемого значения.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.IFilterRule.CreateFilterRule(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+            <summary>
+                Создаёт правило фильтрации на основе документа Revit.
+            </summary>
+            <param name="document">Документ Revit.</param>
+            <param name="options">Настройки точности для проверки чисел с плавающей точкой.</param>
+            <returns>Возвращает объект FilterRule из Revit.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddFilter(Bim4Everyone.RevitFiltration.ILogicalFilter)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterOrEqualRule(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterOrEqualRule(System.String,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterOrEqualRule(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterOrEqualRule(System.String,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterRule(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterRule(System.String,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterRule(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterRule(System.String,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessOrEqualRule(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessOrEqualRule(System.String,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessOrEqualRule(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessOrEqualRule(System.String,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessRule(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessRule(System.String,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessRule(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessRule(System.String,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddEqualsRule(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddEqualsRule(System.String,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddEqualsRule(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddEqualsRule(System.String,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddNotEqualsRule(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddNotEqualsRule(System.String,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddNotEqualsRule(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddNotEqualsRule(System.String,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddHasNoValueRule(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddHasNoValueRule(Autodesk.Revit.DB.BuiltInParameter)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddHasValueRule(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddHasValueRule(Autodesk.Revit.DB.BuiltInParameter)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddBeginsWithRule(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddBeginsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddNotBeginsWithRule(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddNotBeginsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddEndsWithRule(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddEndsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddNotEndsWithRule(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddNotEndsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddContainsRule(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddContainsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddNotContainsRule(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddNotContainsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.IsFilterInside(Bim4Everyone.RevitFiltration.Filtration.LogicalFilter,Bim4Everyone.RevitFiltration.Filtration.LogicalFilter)">
+            <summary>
+                Проверяет является ли <paramref name="innerLogicalFilter" />
+                вложенным в <paramref name="parentLogicalFilter" />.
+            </summary>
+            <param name="innerLogicalFilter">Вложенный фильтр</param>
+            <param name="parentLogicalFilter">Родительский фильтр</param>
+            <returns>
+                True если <see cref="P:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.InnerFilters" /> содержит <paramref name="innerLogicalFilter" />
+                или если <paramref name="innerLogicalFilter" /> является <paramref name="parentLogicalFilter" />.
+            </returns>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Filtration.LogicalFilterFactory">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilterFactory.CreateAndFilter">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilterFactory.CreateOrFilter">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Filtration.Rule">
+            <summary>
+                Правило фильтрации на основе параметра.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.Rule.#ctor(Bim4Everyone.RevitFiltration.Params.IParam,Bim4Everyone.RevitFiltration.OperatorTokens.IOperatorToken)">
+            <summary>
+                Создание правила на основе параметра и настроек фильтрации (условия и проверяемого значения).
+            </summary>
+            <param name="param">Параметр для создания фильтра.</param>
+            <param name="operatorToken">Настройки, определяющие условие (больше, меньше и т.д.) и значение фильтра.</param>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Filtration.Rule.Param">
+            <inheritdoc />
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Filtration.Rule.OperatorToken">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.Rule.CreateFilterRule(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.ILogicalFilter">
+            <summary>
+                Создает правила фильтрации элементов в Autodesk Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+            <summary>
+                Создает фильтр по элементам в Autodesk Revit с заданными настройками.
+            </summary>
+            <param name="document">Документ, в котором будут фильтроваться элементы.</param>
+            <param name="options">Настройки генерации фильтра.</param>
+            <returns>Фильтр по элементам.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddFilter(Bim4Everyone.RevitFiltration.ILogicalFilter)">
+            <summary>
+                Добавляет вложенный ILogicalFilter.
+            </summary>
+            <param name="innerFilter">Вложенный фильтр.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,System.Int32)">
+            <summary>
+                Добавляет правило фильтрации с условием "больше или равно" для полученного параметра и значения.
+                Работает для пользовательских параметров (общих, проекта и глобальных).
+            </summary>
+            <param name="paramName">Имя параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,System.Double)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,System.String)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+            <summary>
+                Добавляет правило фильтрации с условием "больше или равно" для полученного параметра и значения.
+                Работает для встроенных параметров (BuiltInParameter).
+            </summary>
+            <param name="paramId">Перечисление BuiltInParameter параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,System.Int32)">
+            <summary>
+                Добавляет правило фильтрации с условием "больше" для полученного параметра и значения.
+                Работает для пользовательских параметров (общих, проекта и глобальных).
+            </summary>
+            <param name="paramName">Имя параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,System.Double)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,System.String)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+            <summary>
+                Добавляет правило фильтрации с условием "больше" для полученного параметра и значения.
+                Работает для встроенных параметров (BuiltInParameter).
+            </summary>
+            <param name="paramId">Перечисление BuiltInParameter параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,System.Int32)">
+            <summary>
+                Добавляет правило фильтрации с условием "меньше или равно" для полученного параметра и значения.
+                Работает для пользовательских параметров (общих, проекта и глобальных).
+            </summary>
+            <param name="paramName">Имя параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,System.Double)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,System.String)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+            <summary>
+                Добавляет правило фильтрации с условием "меньше или равно" для полученного параметра и значения.
+                Работает для встроенных параметров (BuiltInParameter).
+            </summary>
+            <param name="paramId">Перечисление BuiltInParameter параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,System.Int32)">
+            <summary>
+                Добавляет правило фильтрации с условием "меньше" для полученного параметра и значения.
+                Работает для пользовательских параметров (общих, проекта и глобальных).
+            </summary>
+            <param name="paramName">Имя параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,System.Double)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,System.String)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+            <summary>
+                Добавляет правило фильтрации с условием "меньше" для полученного параметра и значения.
+                Работает для встроенных параметров (BuiltInParameter).
+            </summary>
+            <param name="paramId">Перечисление BuiltInParameter параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,System.Int32)">
+            <summary>
+                Добавляет правило фильтрации с условием "равно" для полученного параметра и значения.
+                Работает для пользовательских параметров (общих, проекта и глобальных).
+            </summary>
+            <param name="paramName">Имя параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,System.Double)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,System.String)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+            <summary>
+                Добавляет правило фильтрации с условием "равно" для полученного параметра и значения.
+                Работает для встроенных параметров (BuiltInParameter).
+            </summary>
+            <param name="paramId">Перечисление BuiltInParameter параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,System.Int32)">
+            <summary>
+                Добавляет правило фильтрации с условием "не равно" для полученного параметра и значения.
+                Работает для пользовательских параметров (общих, проекта и глобальных).
+            </summary>
+            <param name="paramName">Имя параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,System.Double)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,System.String)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+            <summary>
+                Добавляет правило фильтрации с условием "не равно" для полученного параметра и значения.
+                Работает для встроенных параметров (BuiltInParameter).
+            </summary>
+            <param name="paramId">Перечисление BuiltInParameter параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc cref="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)" />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule(System.String)">
+            <summary>
+                Добавляет правило фильтрации с условием "не имеет значение" для полученного параметра.
+                Работает для пользовательских параметров (общих, проекта и глобальных).
+            </summary>
+            <param name="paramName">Имя параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule(Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+                Добавляет правило фильтрации с условием "не имеет значение" для полученного параметра.
+                Работает для встроенных параметров (BuiltInParameter).
+            </summary>
+            <param name="paramId">Перечисление BuiltInParameter параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule(System.String)">
+            <summary>
+                Добавляет правило фильтрации с условием "имеет значение" для полученного параметра.
+                Работает для пользовательских параметров (общих, проекта и глобальных).
+            </summary>
+            <param name="paramName">Имя параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule(Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+                Добавляет правило фильтрации с условием "имеет значение" для полученного параметра.
+                Работает для встроенных параметров (BuiltInParameter).
+            </summary>
+            <param name="paramId">Перечисление BuiltInParameter параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule(System.String,System.String)">
+            <summary>
+                Добавляет правило фильтрации с условием "начинается с" для полученного параметра и значения.
+                Работает для пользовательских параметров (общих, проекта и глобальных).
+            </summary>
+            <param name="paramName">Имя параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <summary>
+                Добавляет правило фильтрации с условием "начинается с" для полученного параметра и значения.
+                Работает для встроенных параметров (BuiltInParameter).
+            </summary>
+            <param name="paramId">Перечисление BuiltInParameter параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule(System.String,System.String)">
+            <summary>
+                Добавляет правило фильтрации с условием "не начинается с" для полученного параметра и значения.
+                Работает для пользовательских параметров (общих, проекта и глобальных).
+            </summary>
+            <param name="paramName">Имя параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <summary>
+                Добавляет правило фильтрации с условием "не начинается с" для полученного параметра и значения.
+                Работает для встроенных параметров (BuiltInParameter).
+            </summary>
+            <param name="paramId">Перечисление BuiltInParameter параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule(System.String,System.String)">
+            <summary>
+                Добавляет правило фильтрации с условием "заканчивается на" для полученного параметра и значения.
+                Работает для пользовательских параметров (общих, проекта и глобальных).
+            </summary>
+            <param name="paramName">Имя параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <summary>
+                Добавляет правило фильтрации с условием "заканчивается на" для полученного параметра и значения.
+                Работает для встроенных параметров (BuiltInParameter).
+            </summary>
+            <param name="paramId">Перечисление BuiltInParameter параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule(System.String,System.String)">
+            <summary>
+                Добавляет правило фильтрации с условием "не заканчивается на" для полученного параметра и значения.
+                Работает для пользовательских параметров (общих, проекта и глобальных).
+            </summary>
+            <param name="paramName">Имя параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <summary>
+                Добавляет правило фильтрации с условием "не заканчивается на" для полученного параметра и значения.
+                Работает для встроенных параметров (BuiltInParameter).
+            </summary>
+            <param name="paramId">Перечисление BuiltInParameter параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule(System.String,System.String)">
+            <summary>
+                Добавляет правило фильтрации с условием "содержит" для полученного параметра и значения.
+                Работает для пользовательских параметров (общих, проекта и глобальных).
+            </summary>
+            <param name="paramName">Имя параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <summary>
+                Добавляет правило фильтрации с условием "содержит" для полученного параметра и значения.
+                Работает для встроенных параметров (BuiltInParameter).
+            </summary>
+            <param name="paramId">Перечисление BuiltInParameter параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule(System.String,System.String)">
+            <summary>
+                Добавляет правило фильтрации с условием "не содержит" для полученного параметра и значения.
+                Работает для пользовательских параметров (общих, проекта и глобальных).
+            </summary>
+            <param name="paramName">Имя параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+            <summary>
+                Добавляет правило фильтрации с условием "не содержит" для полученного параметра и значения.
+                Работает для встроенных параметров (BuiltInParameter).
+            </summary>
+            <param name="paramId">Перечисление BuiltInParameter параметра для фильтрации.</param>
+            <param name="paramValue">Значение параметра для фильтрации.</param>
+            <returns>Ссылка на текущий <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.</returns>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.ILogicalFilterFactory">
+            <summary>
+                Фабрика для создания <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilterFactory.CreateAndFilter">
+            <summary>
+                Создает фильтр с условием "И".
+            </summary>
+            <returns>Ссылка на созданный фильтр.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilterFactory.CreateOrFilter">
+            <summary>
+                Создает фильтр с условием "Или".
+            </summary>
+            <returns>Ссылка на созданный фильтр.</returns>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.ILogicalFilterParser">
+            <summary>
+                Сериализует и десериализует <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilterParser.TryParse(System.String,Bim4Everyone.RevitFiltration.ILogicalFilter@)">
+            <summary>
+                Пытается десериализовать <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" /> из заданной строки.
+            </summary>
+            <param name="content">Строка, полученная через метод <see cref="M:Bim4Everyone.RevitFiltration.ILogicalFilterParser.Serialize(Bim4Everyone.RevitFiltration.ILogicalFilter)" />.</param>
+            <param name="filter">Десериализованный фильтр.</param>
+            <returns>True - если десериализация прошла успешно, иначе - False.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilterParser.Serialize(Bim4Everyone.RevitFiltration.ILogicalFilter)">
+            <summary>
+                Сериализует фильтр в строку.
+            </summary>
+            <param name="filter">Заданный фильтр.</param>
+            <returns>Сериализованный фильтр.</returns>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.IOptions">
+            <summary>
+                Настройки сборки фильтра <see cref="T:Autodesk.Revit.DB.ElementFilter" /> из <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.IOptions.Tolerance">
+            <summary>
+                Допустимая погрешность для значений параметров с плавающей точкой.
+            </summary>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Operators.BeginsWithOperator">
+            <summary>
+                Создает правило "начинается с" для фильтрации элементов в Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.BeginsWithOperator.Create(Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.BeginsWithOperator.Create(Autodesk.Revit.DB.ElementId,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.BeginsWithOperator.Create(Autodesk.Revit.DB.ElementId,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.BeginsWithOperator.Create(Autodesk.Revit.DB.ElementId,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.BeginsWithOperator.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Operators.ContainsOperator">
+            <summary>
+                Создает правило "содержит" для фильтрации элементов в Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.ContainsOperator.Create(Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.ContainsOperator.Create(Autodesk.Revit.DB.ElementId,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.ContainsOperator.Create(Autodesk.Revit.DB.ElementId,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.ContainsOperator.Create(Autodesk.Revit.DB.ElementId,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.ContainsOperator.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Operators.EndsWithOperator">
+            <summary>
+                Создает правило "закачивается на" для фильтрации элементов в Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.EndsWithOperator.Create(Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.EndsWithOperator.Create(Autodesk.Revit.DB.ElementId,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.EndsWithOperator.Create(Autodesk.Revit.DB.ElementId,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.EndsWithOperator.Create(Autodesk.Revit.DB.ElementId,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.EndsWithOperator.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Operators.EqualsOperator">
+            <summary>
+                Создает правило "равно" для фильтрации элементов в Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.EqualsOperator.Create(Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.EqualsOperator.Create(Autodesk.Revit.DB.ElementId,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.EqualsOperator.Create(Autodesk.Revit.DB.ElementId,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.EqualsOperator.Create(Autodesk.Revit.DB.ElementId,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.EqualsOperator.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Operators.GreaterOperator">
+            <summary>
+                Создает правило "больше" для фильтрации элементов в Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.GreaterOperator.Create(Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.GreaterOperator.Create(Autodesk.Revit.DB.ElementId,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.GreaterOperator.Create(Autodesk.Revit.DB.ElementId,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.GreaterOperator.Create(Autodesk.Revit.DB.ElementId,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.GreaterOperator.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Operators.GreaterOrEqualOperator">
+            <summary>
+                Создает правило "больше или равно" для фильтрации элементов в Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.GreaterOrEqualOperator.Create(Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.GreaterOrEqualOperator.Create(Autodesk.Revit.DB.ElementId,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.GreaterOrEqualOperator.Create(Autodesk.Revit.DB.ElementId,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.GreaterOrEqualOperator.Create(Autodesk.Revit.DB.ElementId,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.GreaterOrEqualOperator.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Operators.HasNoValueOperator">
+            <summary>
+                Создает правило "не имеет значения" для фильтрации элементов в Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.HasNoValueOperator.Create(Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.HasNoValueOperator.Create(Autodesk.Revit.DB.ElementId,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.HasNoValueOperator.Create(Autodesk.Revit.DB.ElementId,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.HasNoValueOperator.Create(Autodesk.Revit.DB.ElementId,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.HasNoValueOperator.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Operators.HasValueOperator">
+            <summary>
+                Создает правило "имеет значение" для фильтрации элементов в Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.HasValueOperator.Create(Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.HasValueOperator.Create(Autodesk.Revit.DB.ElementId,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.HasValueOperator.Create(Autodesk.Revit.DB.ElementId,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.HasValueOperator.Create(Autodesk.Revit.DB.ElementId,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.HasValueOperator.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Operators.IOperator">
+            <summary>
+                Создает правило фильтрации элементов в Revit (больше, больше или равно, меньше, содержит, без значения и т.д.).
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.IOperator.Create(Autodesk.Revit.DB.ElementId)">
+            <summary>
+                Создаёт правило на основе параметра.
+            </summary>
+            <param name="paramId">Id параметра для проверки.</param>
+            <returns>Возвращает объект FilterRule из Revit.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.IOperator.Create(Autodesk.Revit.DB.ElementId,System.Int32)">
+            <summary>
+                Создаёт правило на основе параметра и целочисленного значения.
+            </summary>
+            <param name="paramId">Id параметра для проверки.</param>
+            <param name="value">Значение для проверки.</param>
+            <returns>Возвращает объект FilterRule из Revit.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.IOperator.Create(Autodesk.Revit.DB.ElementId,System.Double,System.Double)">
+            <summary>
+                Создаёт правило на основе параметра и значения числа с плавающей точкой.
+            </summary>
+            <param name="paramId">Id параметра для проверки.</param>
+            <param name="value">Значение для проверки.</param>
+            <param name="epsilon">Точность проверки.</param>
+            <returns>Возвращает объект FilterRule из Revit.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.IOperator.Create(Autodesk.Revit.DB.ElementId,System.String)">
+            <summary>
+                Создаёт правило на основе параметра и строкового значения.
+            </summary>
+            <param name="paramId">Id параметра для проверки.</param>
+            <param name="value">Значение для проверки.</param>
+            <returns>Возвращает объект FilterRule из Revit.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.IOperator.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.ElementId)">
+            <summary>
+                Создаёт правило на основе параметра и значения типа ElementId.
+            </summary>
+            <param name="paramId">Id параметра для проверки.</param>
+            <param name="value">Значение для проверки.</param>
+            <returns>Возвращает объект FilterRule из Revit.</returns>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Operators.LessOperator">
+            <summary>
+                Создает правило "меньше" для фильтрации элементов в Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.LessOperator.Create(Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.LessOperator.Create(Autodesk.Revit.DB.ElementId,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.LessOperator.Create(Autodesk.Revit.DB.ElementId,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.LessOperator.Create(Autodesk.Revit.DB.ElementId,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.LessOperator.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Operators.LessOrEqualOperator">
+            <summary>
+                Создает правило "меньше или равно" для фильтрации элементов в Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.LessOrEqualOperator.Create(Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.LessOrEqualOperator.Create(Autodesk.Revit.DB.ElementId,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.LessOrEqualOperator.Create(Autodesk.Revit.DB.ElementId,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.LessOrEqualOperator.Create(Autodesk.Revit.DB.ElementId,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.LessOrEqualOperator.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Operators.NotBeginsWithOperator">
+            <summary>
+                Создает правило "не начинается с" для фильтрации элементов в Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotBeginsWithOperator.Create(Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotBeginsWithOperator.Create(Autodesk.Revit.DB.ElementId,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotBeginsWithOperator.Create(Autodesk.Revit.DB.ElementId,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotBeginsWithOperator.Create(Autodesk.Revit.DB.ElementId,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotBeginsWithOperator.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Operators.NotContainsOperator">
+            <summary>
+                Создает правило "не сожержит" для фильтрации элементов в Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotContainsOperator.Create(Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotContainsOperator.Create(Autodesk.Revit.DB.ElementId,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotContainsOperator.Create(Autodesk.Revit.DB.ElementId,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotContainsOperator.Create(Autodesk.Revit.DB.ElementId,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotContainsOperator.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Operators.NotEndsWithOperator">
+            <summary>
+                Создает правило "не заканчивается на" для фильтрации элементов в Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotEndsWithOperator.Create(Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotEndsWithOperator.Create(Autodesk.Revit.DB.ElementId,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotEndsWithOperator.Create(Autodesk.Revit.DB.ElementId,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotEndsWithOperator.Create(Autodesk.Revit.DB.ElementId,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotEndsWithOperator.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Operators.NotEqualsOperator">
+            <summary>
+                Создает правило "не равно" для фильтрации элементов в Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotEqualsOperator.Create(Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotEqualsOperator.Create(Autodesk.Revit.DB.ElementId,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotEqualsOperator.Create(Autodesk.Revit.DB.ElementId,System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotEqualsOperator.Create(Autodesk.Revit.DB.ElementId,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Operators.NotEqualsOperator.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.ElementId)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.OperatorTokens.DoubleOperatorToken">
+            <summary>
+                Настройки для проверки параметра с числом с плавающей точкой.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.DoubleOperatorToken.#ctor(Bim4Everyone.RevitFiltration.Operators.IOperator,System.Double)">
+            <summary>
+                Создание токена для проверки параметра с числом с плавающей точкой.
+            </summary>
+            <param name="operator">Оператор, определяющий условие фильтрации (больше, меньше, равно и т.д.).</param>
+            <param name="value">Значение для проверки в фильтре.</param>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.OperatorTokens.DoubleOperatorToken.Value">
+            <summary>
+                Значение для проверки в фильтре.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.OperatorTokens.DoubleOperatorToken.Operator">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.DoubleOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.OperatorTokens.ElementIdOperatorToken">
+            <summary>
+                Настройки для проверки параметра с типом ElementId.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.ElementIdOperatorToken.#ctor(Bim4Everyone.RevitFiltration.Operators.IOperator,Autodesk.Revit.DB.ElementId)">
+            <summary>
+                Создание токена для проверки параметра с типом ElementId.
+            </summary>
+            <param name="operator">Оператор, определяющий условие фильтрации (больше, меньше, равно и т.д.).</param>
+            <param name="value">Значение для проверки в фильтре.</param>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.OperatorTokens.ElementIdOperatorToken.Value">
+            <summary>
+                Значение для проверки в фильтре.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.OperatorTokens.ElementIdOperatorToken.Operator">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.ElementIdOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.OperatorTokens.EmptyOperatorToken">
+            <summary>
+                Настройки для проверки параметра на наличие значения.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.EmptyOperatorToken.#ctor(Bim4Everyone.RevitFiltration.Operators.IOperator)">
+            <summary>
+                Создание токена для проверки параметра на наличие значения.
+            </summary>
+            <param name="operator">Оператор, определяющий условие фильтрации (без значения, имеет значение).</param>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.OperatorTokens.EmptyOperatorToken.Operator">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.EmptyOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.OperatorTokens.IntOperatorToken">
+            <summary>
+                Настройки для проверки параметра с целочисленным значением.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.IntOperatorToken.#ctor(Bim4Everyone.RevitFiltration.Operators.IOperator,System.Int32)">
+            <summary>
+                Создание токена для проверки параметра с целочисленным значением.
+            </summary>
+            <param name="operator">Оператор, определяющий условие фильтрации (больше, меньше, равно и т.д.).</param>
+            <param name="value">Значение для проверки в фильтре.</param>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.OperatorTokens.IntOperatorToken.Value">
+            <summary>
+                Значение для проверки в фильтре.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.OperatorTokens.IntOperatorToken.Operator">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.IntOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.OperatorTokens.IOperatorToken">
+            <summary>
+                Отвечает за вызов правильной перегрузки метода <see cref="M:Bim4Everyone.RevitFiltration.Operators.IOperator.Create(Autodesk.Revit.DB.ElementId)" />.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.OperatorTokens.IOperatorToken.Operator">
+            <summary>
+                Оператор, определяющий условие фильтрации (больше, меньше, равно, содержит, без значения и т.д.).
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.IOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+            <summary>
+                Создаёт правило на основе параметра и настроек точности.
+            </summary>
+            <param name="paramId">Параметр для проверки.</param>
+            <param name="document">Документ, для которого создается правило.</param>
+            <param name="options">Настройки точности проверки.</param>
+            <returns>Возвращает объект FilterRule из Revit.</returns>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.OperatorTokens.StringOperatorToken">
+            <summary>
+                Настройки для проверки строкового параметра.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.StringOperatorToken.#ctor(Bim4Everyone.RevitFiltration.Operators.IOperator,System.String)">
+            <summary>
+                Создание токена для проверки строкового параметра.
+            </summary>
+            <param name="operator">
+                Оператор, определяющий условие фильтрации (больше, меньше, равно, содержит и т.д.)
+            </param>
+            <param name="value">Значение для проверки в фильтре.</param>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.OperatorTokens.StringOperatorToken.Value">
+            <summary>
+                Значение для проверки в фильтре.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.OperatorTokens.StringOperatorToken.Operator">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.StringOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Params.BuiltInParam">
+            <summary>
+                Класс для работы со встроенным BuiltInParam параметром Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Params.BuiltInParam.#ctor(Autodesk.Revit.DB.BuiltInParameter)">
+            <summary>
+                Создание на основе перечисления BuiltInParameter.
+            </summary>
+            <param name="param">Значение перечисления BuiltInParameter искомого параметра.</param>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Params.BuiltInParam.Param">
+            <summary>
+                Значение перечисления BuiltInParameter параметра.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Params.BuiltInParam.GetId(Autodesk.Revit.DB.Document)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Params.IParam">
+            <summary>
+                Предоставляет метод для получения id параметра из документа.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Params.IParam.GetId(Autodesk.Revit.DB.Document)">
+            <summary>
+                Получает ElementId параметра из заданного документа Revit.
+            </summary>
+            <param name="doc">Документ Revit для поиска параметра.</param>
+            <returns>Возвращает ElementId найденного параметра.</returns>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Params.UserParam">
+            <summary>
+                Класс для работы с пользовательским параметром Revit: общим, проекта или глобальным.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Params.UserParam.#ctor(System.String)">
+            <summary>
+                Создание на основе имени параметра в проекте Revit.
+            </summary>
+            <param name="name">Имя искомого параметра в проекте Revit.</param>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Params.UserParam.Name">
+            <summary>
+                Имя параметра в проекте Revit.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Params.UserParam.GetId(Autodesk.Revit.DB.Document)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Serialization.ElementIdConverter">
+            <summary>
+                JSON-конвертер для типа <see cref="T:Autodesk.Revit.DB.ElementId" />.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Serialization.ElementIdConverter.WriteJson(pyRevitLabs.Json.JsonWriter,Autodesk.Revit.DB.ElementId,pyRevitLabs.Json.JsonSerializer)">
+            <summary>
+                Записывает объект <see cref="T:Autodesk.Revit.DB.ElementId" /> в JSON.
+            </summary>
+            <param name="writer">Объект для записи JSON.</param>
+            <param name="value">Экземпляр <see cref="T:Autodesk.Revit.DB.ElementId" /> для сериализации.</param>
+            <param name="serializer">Сериализатор JSON.</param>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Serialization.ElementIdConverter.ReadJson(pyRevitLabs.Json.JsonReader,System.Type,Autodesk.Revit.DB.ElementId,System.Boolean,pyRevitLabs.Json.JsonSerializer)">
+            <summary>
+                Считывает объект <see cref="T:Autodesk.Revit.DB.ElementId" /> в JSON.
+            </summary>
+            <param name="reader">Объект для чтения JSON.</param>
+            <param name="objectType">Тип объекта, в который производится десериализация.</param>
+            <param name="existingValue">Существующее значение объекта.</param>
+            <param name="hasExistingValue">Признак наличия существующего значения объекта.</param>
+            <param name="serializer">Сериализатор JSON.</param>
+            <returns>Десериализованное значение <see cref="T:Autodesk.Revit.DB.ElementId" />.</returns>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Serialization.JsonSerializationBinder">
+            <summary>
+                Биндер для сопоставления типов и имён сборок при сериализации и десериализации JSON.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Serialization.JsonSerializationBinder.BindToName(System.Type,System.String@,System.String@)">
+            <summary>
+                Определяет имя сборки и полное имя типа для указанного сериализуемого типа.
+            </summary>
+            <param name="serializedType">Сериализуемый тип.</param>
+            <param name="assemblyName">Имя сборки сериализуемого типа.</param>
+            <param name="typeName">Имя сериализуемого типа.</param>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Serialization.JsonSerializationBinder.BindToType(System.String,System.String)">
+            <summary>
+                Определяет тип по имени сборки и имени типа при десериализации JSON.
+            </summary>
+            <param name="assemblyName">Имя сборки из JSON.</param>
+            <param name="typeName">Имя типа из JSON.</param>
+            <returns>Тип, соответствующий указанным имени сборки и имени типа.</returns>
+            <exception cref="T:pyRevitLabs.Json.JsonSerializationException">
+                в случае, если тип из текущей сборки не найден.
+            </exception>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Serialization.JsonSerializationBinder.GetCurrentAssemblyName">
+            <summary>
+                Возвращает имя текущей исполняемой сборки.
+            </summary>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Serialization.LogicalFilterParser">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Serialization.LogicalFilterParser.TryParse(System.String,Bim4Everyone.RevitFiltration.ILogicalFilter@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Serialization.LogicalFilterParser.Serialize(Bim4Everyone.RevitFiltration.ILogicalFilter)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
