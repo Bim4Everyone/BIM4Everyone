@@ -64,5 +64,41 @@
             <remarks>Обязательно требуется прикрепить к элементу управления через <see cref="T:dosymep.WpfCore.Behaviors.WpfAttachServiceBehavior"/>.</remarks>
             <exception cref="T:System.ArgumentNullException">kernel is null.</exception>
         </member>
+        <member name="M:dosymep.WpfUI.Core.Ninject.NinjectExtensions.UseWpfUINotifications(Ninject.IKernel,System.String,System.String,System.String,System.Windows.Media.ImageSource,dosymep.WpfCore.SimpleServices.NotificationScreen,dosymep.WpfCore.SimpleServices.NotificationPosition,System.Int32)">
+            <summary>
+            Добавляет в контейнер <see cref="T:dosymep.SimpleServices.INotificationService"/>.
+            </summary>
+            <param name="kernel">Ninject контейнер.</param>
+            <param name="applicationId">Идентификатор приложения.</param>
+            <param name="defaultAuthor">Имя автора по умолчанию. Расположение снизу справа на уведомлении.</param>
+            <param name="defaultFooter">Значение футера по умолчанию. Расположение снизу слева на уведомлении.</param>
+            <param name="defaultImage">Значение изображения по умолчанию. Расположение слева на уведомлении.</param>
+            <param name="notificationScreen">Значение выбора окна.
+            По умолчанию <see cref="F:dosymep.WpfCore.SimpleServices.NotificationScreen.Primary"/>.</param>
+            <param name="notificationPosition">Значение места отображения уведомления.
+            По умолчанию <see cref="F:dosymep.WpfCore.SimpleServices.NotificationPosition.BottomRight"/>.</param>
+            <param name="notificationVisibleMaxCount">Максимальное количество уведомлений на экране. По умолчанию "5".</param>
+            <returns>Возвращает настроенный контейнер Ninject.</returns>
+            <exception cref="T:System.ArgumentNullException">kernel is null.</exception>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.Ninject.NinjectExtensions.UseWpfUINotifications``1(Ninject.IKernel,System.String,System.String,System.String,System.Windows.Media.ImageSource,dosymep.WpfCore.SimpleServices.NotificationScreen,dosymep.WpfCore.SimpleServices.NotificationPosition,System.Int32)">
+            <summary>
+            Добавляет в контейнер <see cref="T:dosymep.SimpleServices.INotificationService"/>.
+            </summary>
+            <param name="kernel">Ninject контейнер.</param>
+            <param name="applicationId">Идентификатор приложения.</param>
+            <param name="defaultAuthor">Имя автора по умолчанию. Расположение снизу справа на уведомлении.</param>
+            <param name="defaultFooter">Значение футера по умолчанию. Расположение снизу слева на уведомлении.</param>
+            <param name="defaultImage">Значение изображения по умолчанию. Расположение слева на уведомлении.</param>
+            <param name="notificationScreen">Значение выбора окна.
+            По умолчанию <see cref="F:dosymep.WpfCore.SimpleServices.NotificationScreen.Primary"/>.</param>
+            <param name="notificationPosition">Значение места отображения уведомления.
+            По умолчанию <see cref="F:dosymep.WpfCore.SimpleServices.NotificationPosition.BottomRight"/>.</param>
+            <param name="notificationVisibleMaxCount">Максимальное количество уведомлений на экране. По умолчанию "5".</param>
+            <typeparam name="T">Тип ViewModel к которой будет прикрепление сервиса.</typeparam>
+            <returns>Возвращает настроенный контейнер Ninject.</returns>
+            <remarks>Обязательно требуется прикрепить к элементу управления через <see cref="T:dosymep.WpfCore.Behaviors.WpfAttachServiceBehavior"/>.</remarks>
+            <exception cref="T:System.ArgumentNullException">kernel is null.</exception>
+        </member>
     </members>
 </doc>

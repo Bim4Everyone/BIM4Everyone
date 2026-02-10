@@ -36,6 +36,73 @@
         <member name="M:dosymep.WpfCore.Behaviors.WpfLocalizationBehavior.OnDetaching">
             <inheritdoc />
         </member>
+        <member name="T:dosymep.WpfCore.Behaviors.WpfNotificationWindowBehavior">
+            <summary>
+            Поведение, которое применяет анимацию скольжения появления окна.
+            </summary>
+        </member>
+        <member name="F:dosymep.WpfCore.Behaviors.WpfNotificationWindowBehavior.NotificationScreenProperty">
+            <summary>
+            Определяет, на каком мониторе будет отображаться уведомление.
+            </summary>
+        </member>
+        <member name="F:dosymep.WpfCore.Behaviors.WpfNotificationWindowBehavior.NotificationPositionProperty">
+            <summary>
+            Позиция уведомления на экране.
+            </summary>
+        </member>
+        <member name="F:dosymep.WpfCore.Behaviors.WpfNotificationWindowBehavior.WindowStackProperty">
+            <summary>
+            Список открытых окон уведомлений.
+            </summary>
+        </member>
+        <member name="F:dosymep.WpfCore.Behaviors.WpfNotificationWindowBehavior.OffsetProperty">
+            <summary>
+            Идентифицирует свойство зависимости BottomOffset,
+            которое определяет расстояние от нижнего края экрана до нижнего края окна при анимации скольжения.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfCore.Behaviors.WpfNotificationWindowBehavior.OnAttached">
+            <inheritdoc />
+        </member>
+        <member name="P:dosymep.WpfCore.Behaviors.WpfNotificationWindowBehavior.WindowStack">
+            <summary>
+            Список открытых окон уведомлений.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfCore.Behaviors.WpfNotificationWindowBehavior.NotificationScreen">
+            <summary>
+            Определяет, на каком мониторе будет отображаться уведомление.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfCore.Behaviors.WpfNotificationWindowBehavior.NotificationPosition">
+            <summary>
+            Позиция уведомления на экране.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfCore.Behaviors.WpfNotificationWindowBehavior.Offset">
+            <summary>
+            Определяет расстояние от нижнего края экрана до нижнего края окна при анимации скольжения.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfCore.Behaviors.WpfNotificationWindowBehavior.OnDetaching">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfCore.Behaviors.WpfNotificationWindowBehavior.OnShowing">
+            <summary>
+            Запускает анимацию показа окна.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfCore.Behaviors.WpfNotificationWindowBehavior.OnClosing">
+            <summary>
+            Запускает анимацию закрытия окна.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfCore.Behaviors.WpfNotificationWindowBehavior.OnAutoClosing">
+            <summary>
+            Запускает анимацию закрытия окна по времени.
+            </summary>
+        </member>
         <member name="T:dosymep.WpfCore.Behaviors.WpfSavePositionBehavior">
             <summary>
             Поведение сохранения позиции окна.
@@ -802,6 +869,36 @@
             <param name="serviceProvider">Интерфейс провайдера сервисов.</param>
             <typeparam name="T">Тип в который нужно привести root объект.</typeparam>
             <returns>Возвращает root объект сконвертированный в нужный тип.</returns>
+        </member>
+        <member name="T:dosymep.WpfCore.SimpleServices.NotificationPosition">
+            <summary>
+            Определяет возможные позиции отображения уведомлений.
+            </summary>
+        </member>
+        <member name="F:dosymep.WpfCore.SimpleServices.NotificationPosition.TopRight">
+            <summary>
+            Сверху справа.
+            </summary>
+        </member>
+        <member name="F:dosymep.WpfCore.SimpleServices.NotificationPosition.BottomRight">
+            <summary>
+            Снизу справа.
+            </summary>
+        </member>
+        <member name="T:dosymep.WpfCore.SimpleServices.NotificationScreen">
+            <summary>
+            Перечисление, представляющее различные экраны для отображения уведомлений.
+            </summary>
+        </member>
+        <member name="F:dosymep.WpfCore.SimpleServices.NotificationScreen.Primary">
+            <summary>
+            Основной экран.
+            </summary>
+        </member>
+        <member name="F:dosymep.WpfCore.SimpleServices.NotificationScreen.ApplicationWindow">
+            <summary>
+            Экран, где расположено окно.
+            </summary>
         </member>
         <member name="T:dosymep.WpfCore.SimpleServices.WpfBaseService">
             <summary>

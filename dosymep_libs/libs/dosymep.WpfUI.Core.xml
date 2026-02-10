@@ -17,6 +17,60 @@
         <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIMessageBoxService.Show(System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage,System.Windows.MessageBoxResult)">
             <inheritdoc />
         </member>
+        <member name="T:dosymep.WpfUI.Core.SimpleServices.WpfUINotificationService">
+            <summary>
+            Класс сервиса уведомлений
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUINotificationService.#ctor(dosymep.SimpleServices.IHasTheme,dosymep.SimpleServices.IHasLocalization)">
+            <summary>
+            Создает экземпляр сервиса уведомлений.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.SimpleServices.WpfUINotificationService.ApplicationId">
+            <summary>
+            Идентификатор приложения.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.SimpleServices.WpfUINotificationService.DefaultAuthor">
+            <summary>
+            Значение автора по умолчанию.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.SimpleServices.WpfUINotificationService.DefaultFooter">
+            <summary>
+            Значение футера по умолчанию.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.SimpleServices.WpfUINotificationService.DefaultImage">
+            <summary>
+            Значение изображения по умолчанию.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.SimpleServices.WpfUINotificationService.NotificationScreen">
+            <summary>
+            Определяет, на каком мониторе будет отображаться уведомление.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.SimpleServices.WpfUINotificationService.NotificationPosition">
+            <summary>
+            Позиция уведомления на экране.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.SimpleServices.WpfUINotificationService.NotificationVisibleMaxCount">
+            <summary>
+            Максимальное количество отображаемых уведомлений на экране.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUINotificationService.CreateNotification(System.String,System.String,System.String,System.String,System.Windows.Media.ImageSource)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUINotificationService.CreateFatalNotification(System.String,System.String,System.String,System.Windows.Media.ImageSource)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUINotificationService.CreateWarningNotification(System.String,System.String,System.String,System.Windows.Media.ImageSource)">
+            <inheritdoc />
+        </member>
         <member name="T:dosymep.WpfUI.Core.SimpleServices.WpfUIProgressDialogFactory">
             <summary>
             Класс фабрики создания сервиса прогресс диалога.
@@ -109,6 +163,116 @@
         </member>
         <member name="M:dosymep.WpfUI.Core.SimpleServices.WpfUIThemeUpdaterService.SetTheme(dosymep.SimpleServices.UIThemes,System.Windows.FrameworkElement)">
             <inheritdoc />
+        </member>
+        <member name="T:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow">
+            <summary>
+            Предоставляет окно уведомления.
+            </summary>
+            <summary>
+            WpfUINotificationWindow
+            </summary>
+        </member>
+        <member name="F:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.NotificationScreenProperty">
+            <summary>
+            Определяет, на каком мониторе будет отображаться уведомление.
+            </summary>
+        </member>
+        <member name="F:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.NotificationPositionProperty">
+            <summary>
+             Позиция уведомления на экране.
+            </summary>
+        </member>
+        <member name="F:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.WindowStackProperty">
+            <summary>
+            Список открытых окон уведомлений.
+            </summary>
+        </member>
+        <member name="F:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.BodyProperty">
+            <summary>
+            Идентифицирует свойство зависимости Body,
+            которое представляет основное содержимое или сообщение уведомления, отображаемого в уведомлении.
+            </summary>
+        </member>
+        <member name="F:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.FooterProperty">
+            <summary>
+            Идентифицирует свойство зависимости Footer,
+            которое представляет нижний текст или дополнительную информацию, отображаемую в уведомлении.
+            </summary>
+        </member>
+        <member name="F:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.AuthorProperty">
+            <summary>
+            Идентифицирует свойство зависимости Author,
+            которое представляет автора уведомления, отображаемого в уведомлении.
+            </summary>
+        </member>
+        <member name="F:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.ImageSourceProperty">
+            <summary>
+            Идентифицирует свойство зависимости ImageSource,
+            которое определяет источник изображения, отображаемого в уведомлении.
+            </summary>
+        </member>
+        <member name="E:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.ThemeChanged">
+            <inheritdoc cref="E:dosymep.SimpleServices.IHasTheme.ThemeChanged"/>
+        </member>
+        <member name="E:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.LanguageChanged">
+            <inheritdoc cref="E:dosymep.SimpleServices.IHasLocalization.LanguageChanged"/>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.#ctor(dosymep.SimpleServices.IHasTheme,dosymep.SimpleServices.IHasLocalization)">
+            <summary>
+            Предоставляет конструктор окна уведомления.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.NotificationScreen">
+            <summary>
+            Определяет, на каком мониторе будет отображаться уведомление.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.NotificationPosition">
+            <summary>
+             Позиция уведомления на экране.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.WindowStack">
+            <summary>
+            Список открытых окон уведомлений.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.Body">
+            <summary>
+            Представляет основное содержимое или сообщение, отображаемое в окне уведомления.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.Footer">
+            <summary>
+            Идентифицирует свойство зависимости Footer,
+            которое представляет текст нижнего колонтитула, отображаемого в уведомлении.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.Author">
+            <summary>
+            Идентифицирует свойство зависимости Author,
+            которое представляет автора уведомления, отображаемого в окне уведомления.
+            </summary>
+        </member>
+        <member name="P:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.ImageSource">
+            <summary>
+            Идентифицирует свойство зависимости ImageSource,
+            которое определяет источник изображения, отображаемого в уведомлении.
+            </summary>
+        </member>
+        <member name="M:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.OnExtendsContentIntoTitleBarChanged(System.Boolean,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.OnBackdropTypeChanged(Wpf.Ui.Controls.WindowBackdropType,Wpf.Ui.Controls.WindowBackdropType)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.OnCornerPreferenceChanged(Wpf.Ui.Controls.WindowCornerPreference,Wpf.Ui.Controls.WindowCornerPreference)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.WpfUI.Core.Windows.WpfUINotificationWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
         </member>
         <member name="M:dosymep.WpfUI.Core.Windows.WpfUIProgressWindow.#ctor(dosymep.SimpleServices.IHasTheme,dosymep.SimpleServices.IHasLocalization)">
             <summary>
