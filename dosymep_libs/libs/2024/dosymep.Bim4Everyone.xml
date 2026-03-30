@@ -2443,6 +2443,11 @@
             ФОП_РАЗМ_Объем СМР
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomPositionType">
+            <summary>
+            ФОП_Тип расположения
+            </summary>
+        </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">
             <inheritdoc />
         </member>
