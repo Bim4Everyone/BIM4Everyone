@@ -1034,6 +1034,11 @@
             Группа помещения
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomNoGlazing">
+            <summary>
+            КВГ_Без остекления
+            </summary>
+        </member>
         <member name="P:dosymep.Bim4Everyone.ProjectParams.ProjectParamsConfig.RoomFinishingType">
             <summary>
             ОТД_Тип отделки
@@ -2461,6 +2466,11 @@
         <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.VISMaskMark">
             <summary>
             ФОП_ВИС_Маска марки
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.RoomFloorDifference">
+            <summary>
+            ФОП_Перепад ЛП
             </summary>
         </member>
         <member name="M:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.dosymep#Bim4Everyone#SimpleServices#IParamElementService#CreateRevitParam(Autodesk.Revit.DB.Document,System.String)">
