@@ -3293,5 +3293,55 @@
             <param name="target">Документ, в котором требуется настроить диспетчер видов.</param>
             <remarks>Метод открывает транзакцию при настройке диспетчера видов.</remarks>
         </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.GetRevitParamElements(Autodesk.Revit.DB.Document,System.Collections.Generic.IEnumerable{dosymep.Bim4Everyone.RevitParam})">
+            <summary>
+            Возвращает элементы параметров из документа.
+            </summary>
+            <param name="source">Документ с параметрами.</param>
+            <param name="revitParams">Параметры.</param>
+            <returns>Возвращает элементы параметров.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.SplitRevitParamsByBinding(Autodesk.Revit.DB.Document,System.Collections.Generic.IEnumerable{dosymep.Bim4Everyone.RevitParam})">
+            <summary>
+            Разделяет параметры на параметры для обычного копирования и общие параметры без привязки к категориям.
+            </summary>
+            <param name="target">Целевой документ.</param>
+            <param name="revitParams">Параметры, которые нужно разделить.</param>
+            <returns>Возвращает параметры для обычного копирования и параметры без привязки.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.HasRevitElementParam(Autodesk.Revit.DB.Document,dosymep.Bim4Everyone.RevitParam)">
+            <summary>
+            Проверяет, существует ли элемент параметра в документе.
+            </summary>
+            <param name="document">Документ.</param>
+            <param name="revitParam">Параметр Revit.</param>
+            <returns>Возвращает true, если элемент параметра существует, иначе false.</returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.CopyParamsByMultiCategorySchedule(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.Document,System.Collections.Generic.IEnumerable{Autodesk.Revit.DB.ParameterElement})">
+            <summary>
+            Копирует параметры через временную мультикатегорийную спецификацию.
+            </summary>
+            <param name="source">Файл шаблона.</param>
+            <param name="target">Целевой документ.</param>
+            <param name="paramsElements">Параметры из шаблона.</param>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.CreateCopyPasteOptions">
+            <summary>
+            Создает настройки копирования элементов.
+            </summary>
+            <returns>Возвращает настройки копирования элементов.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.Templates.ProjectParameters.UseDestinationDuplicateTypeNamesHandler">
+            <summary>
+            Обработчик совпадений имен типов при копировании элементов.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.Templates.ProjectParameters.UseDestinationDuplicateTypeNamesHandler.OnDuplicateTypeNamesFound(Autodesk.Revit.DB.DuplicateTypeNamesHandlerArgs)">
+            <summary>
+            Обрабатывает совпадения имен типов при копировании элементов.
+            </summary>
+            <param name="args">Аргументы обработчика совпадений имен типов.</param>
+            <returns>Возвращает действие для обработки совпадающих типов.</returns>
+        </member>
     </members>
 </doc>
