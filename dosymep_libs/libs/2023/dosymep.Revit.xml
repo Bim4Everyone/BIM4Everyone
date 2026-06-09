@@ -63,30 +63,107 @@
         </member>
         <member name="T:dosymep.Revit.Comparators.ElementComparer">
             <summary>
-            Компаратор для элемента.
+                Компаратор для элемента.
             </summary>
-            <remarks>Используется умное сравнение <see cref="T:dosymep.Revit.Comparators.LogicalStringComparer"/>. Сравнивает по свойству <see cref="P:Autodesk.Revit.DB.Element.Name"/>.</remarks>
+            <remarks>
+                Используется умное сравнение <see cref="T:dosymep.Revit.Comparators.LogicalStringComparer" />. Сравнивает по свойству
+                <see cref="P:Autodesk.Revit.DB.Element.Name" />.
+            </remarks>
         </member>
         <member name="M:dosymep.Revit.Comparators.ElementComparer.Compare(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.Element)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="T:dosymep.Revit.Comparators.LogicalStringComparer">
             <summary>
-            Умное сравнение строк.
+                Умное сравнение строк.
             </summary>
-            <remarks>Для сравнения используется метод WinApi <see cref="M:dosymep.Revit.Comparators.LogicalStringComparer.StrCmpLogicalW(System.String,System.String)"/></remarks>
+            <remarks>Для сравнения используется метод WinApi <see cref="M:dosymep.Revit.Comparators.LogicalStringComparer.StrCmpLogicalW(System.String,System.String)" /></remarks>
         </member>
         <member name="M:dosymep.Revit.Comparators.LogicalStringComparer.Compare(System.String,System.String)">
-            <inheritdoc/>
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.Revit.Comparators.RevitElementComparer">
+            <summary>
+            Предоставляет абстрактный базовый класс для сравнения элементов Revit.
+            Этот класс реализует различные интерфейсы сравнения и проверки на равенство,
+            что позволяет задавать пользовательскую логику сравнения объектов
+            Revit <see cref="T:Autodesk.Revit.DB.Element"/>.
+            </summary>
+            <remarks>
+            Производные классы должны переопределить абстрактные методы,
+            чтобы реализовать конкретную логику сравнения и вычисления хэша
+            в соответствии с требованиями конкретного сценария сравнения в Revit.
+            </remarks>
+        </member>
+        <member name="P:dosymep.Revit.Comparators.RevitElementComparer.ElementId">
+            <summary>
+            Возвращает компаратор элемента по Id.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Comparators.RevitElementComparer.ElementName">
+            <summary>
+            Возвращает компаратор элемента по имени.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Comparators.RevitElementComparer.CategoryId">
+            <summary>
+            Возвращает компаратор категории идентификатору.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Comparators.RevitElementComparer.CategoryName">
+            <summary>
+            Возвращает компаратор категории по имени.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Comparators.RevitElementComparer.GroupId">
+            <summary>
+            Возвращает компаратор элемента по идентификатору группы.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Comparators.RevitElementComparer.LevelId">
+            <summary>
+            Возвращает компаратор элемента по идентификатору уровня.
+            </summary>
+        </member>
+        <member name="P:dosymep.Revit.Comparators.RevitElementComparer.TypeId">
+            <summary>
+            Возвращает компаратор элемента по идентификатору типа.
+            </summary>
+        </member>
+        <member name="M:dosymep.Revit.Comparators.RevitElementComparer.Compare(System.Object,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Revit.Comparators.RevitElementComparer.Compare(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.Element)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Revit.Comparators.RevitElementComparer.Equals(System.Object,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Revit.Comparators.RevitElementComparer.GetHashCode(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Revit.Comparators.RevitElementComparer.Equals(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.Element)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Revit.Comparators.RevitElementComparer.GetHashCode(Autodesk.Revit.DB.Element)">
+            <inheritdoc />
+        </member>
+        <member name="F:dosymep.Revit.Comparators.RevitElementNameComparer.Naming">
+            <summary>
+            Сравнивает имена элементов с использованием <see cref="T:Autodesk.Revit.DB.NamingUtils"/>.
+            </summary>
         </member>
         <member name="T:dosymep.Revit.Comparators.ViewSheetComparer">
             <summary>
-            Компаратор для листов.
+                Компаратор для листов.
             </summary>
-            <remarks>Используется умное сравнение <see cref="T:dosymep.Revit.Comparators.LogicalStringComparer"/>. Сравнивает по свойству <see cref="P:Autodesk.Revit.DB.ViewSheet.SheetNumber"/>.</remarks>
+            <remarks>
+                Используется умное сравнение <see cref="T:dosymep.Revit.Comparators.LogicalStringComparer" />. Сравнивает по свойству
+                <see cref="P:Autodesk.Revit.DB.ViewSheet.SheetNumber" />.
+            </remarks>
         </member>
         <member name="M:dosymep.Revit.Comparators.ViewSheetComparer.Compare(Autodesk.Revit.DB.ViewSheet,Autodesk.Revit.DB.ViewSheet)">
-            <inheritdoc/>
+            <inheritdoc />
         </member>
         <member name="T:dosymep.Revit.DocumentExtensions">
             <summary>
