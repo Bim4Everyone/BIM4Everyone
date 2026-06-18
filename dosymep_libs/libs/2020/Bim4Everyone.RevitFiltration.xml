@@ -2717,7 +2717,7 @@
                 Настройки для определения условия фильтрации и проверяемого значения.
             </summary>
         </member>
-        <member name="M:Bim4Everyone.RevitFiltration.Filtration.IFilterRule.CreateFilterRule(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.IFilterRule.CreateFilterRule(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Options)">
             <summary>
                 Создаёт правило фильтрации на основе документа Revit.
             </summary>
@@ -2726,6 +2726,9 @@
             <returns>Возвращает объект FilterRule из Revit.</returns>
         </member>
         <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Options)">
             <inheritdoc />
         </member>
         <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.AddFilter(Bim4Everyone.RevitFiltration.ILogicalFilter)">
@@ -2962,7 +2965,7 @@
         <member name="P:Bim4Everyone.RevitFiltration.Filtration.Rule.OperatorToken">
             <inheritdoc />
         </member>
-        <member name="M:Bim4Everyone.RevitFiltration.Filtration.Rule.CreateFilterRule(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+        <member name="M:Bim4Everyone.RevitFiltration.Filtration.Rule.CreateFilterRule(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Options)">
             <inheritdoc />
         </member>
         <member name="T:Bim4Everyone.RevitFiltration.ILogicalFilter">
@@ -2971,6 +2974,14 @@
             </summary>
         </member>
         <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+            <summary>
+                Создает фильтр по элементам в Autodesk Revit с заданными настройками.
+            </summary>
+            <param name="document">Документ, в котором будут фильтроваться элементы.</param>
+            <param name="options">Настройки генерации фильтра.</param>
+            <returns>Фильтр по элементам.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Options)">
             <summary>
                 Создает фильтр по элементам в Autodesk Revit с заданными настройками.
             </summary>
@@ -3733,7 +3744,7 @@
         <member name="P:Bim4Everyone.RevitFiltration.OperatorTokens.DoubleOperatorToken.Operator">
             <inheritdoc />
         </member>
-        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.DoubleOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.DoubleOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Options)">
             <inheritdoc />
         </member>
         <member name="T:Bim4Everyone.RevitFiltration.OperatorTokens.ElementIdOperatorToken">
@@ -3756,7 +3767,7 @@
         <member name="P:Bim4Everyone.RevitFiltration.OperatorTokens.ElementIdOperatorToken.Operator">
             <inheritdoc />
         </member>
-        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.ElementIdOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.ElementIdOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Options)">
             <inheritdoc />
         </member>
         <member name="T:Bim4Everyone.RevitFiltration.OperatorTokens.EmptyOperatorToken">
@@ -3773,7 +3784,7 @@
         <member name="P:Bim4Everyone.RevitFiltration.OperatorTokens.EmptyOperatorToken.Operator">
             <inheritdoc />
         </member>
-        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.EmptyOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.EmptyOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Options)">
             <inheritdoc />
         </member>
         <member name="T:Bim4Everyone.RevitFiltration.OperatorTokens.IntOperatorToken">
@@ -3796,7 +3807,7 @@
         <member name="P:Bim4Everyone.RevitFiltration.OperatorTokens.IntOperatorToken.Operator">
             <inheritdoc />
         </member>
-        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.IntOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.IntOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Options)">
             <inheritdoc />
         </member>
         <member name="T:Bim4Everyone.RevitFiltration.OperatorTokens.IOperatorToken">
@@ -3809,7 +3820,7 @@
                 Оператор, определяющий условие фильтрации (больше, меньше, равно, содержит, без значения и т.д.).
             </summary>
         </member>
-        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.IOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.IOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Options)">
             <summary>
                 Создаёт правило на основе параметра и настроек точности.
             </summary>
@@ -3840,8 +3851,24 @@
         <member name="P:Bim4Everyone.RevitFiltration.OperatorTokens.StringOperatorToken.Operator">
             <inheritdoc />
         </member>
-        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.StringOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+        <member name="M:Bim4Everyone.RevitFiltration.OperatorTokens.StringOperatorToken.Create(Autodesk.Revit.DB.ElementId,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Options)">
             <inheritdoc />
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Options">
+            <summary>
+                Настройки сборки фильтра <see cref="T:Autodesk.Revit.DB.ElementFilter" /> из <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Options.Tolerance">
+            <summary>
+                Допустимая погрешность для значений параметров с плавающей точкой.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Options.FilterByType">
+            <summary>
+                Если True, фильтр генерируется по типоразмерам (типам элементов).
+                Если False (по умолчанию), фильтр генерируется по экземплярам элементов.
+            </summary>
         </member>
         <member name="T:Bim4Everyone.RevitFiltration.Params.BuiltInParam">
             <summary>
