@@ -2687,6 +2687,50 @@
             Asynchronously creates a new XElement and initializes its underlying XML tree using the specified text reader, optionally preserving white space.
             </summary>
         </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Controls.DataProvider">
+            <summary>
+                Провайдер данных для построения фильтра по категориям: доступные категории, параметры и значения параметров.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.DataProvider.#ctor(System.Collections.Generic.ICollection{Autodesk.Revit.DB.Category},System.Func{System.Collections.Generic.ICollection{Autodesk.Revit.DB.Category},System.Collections.Generic.ICollection{dosymep.Bim4Everyone.RevitParam}},System.Collections.Generic.ICollection{Autodesk.Revit.DB.Document})">
+            <summary>
+                Создает провайдер, который берет значения параметров из экземпляров элементов заданных документов.
+            </summary>
+            <param name="categories">Доступные для фильтрации категории.</param>
+            <param name="getParams">Функция получения доступных параметров для заданных категорий.</param>
+            <param name="documents">Документы, из которых берутся существующие значения параметров для выпадающего списка.</param>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.DataProvider.#ctor(System.Collections.Generic.ICollection{Autodesk.Revit.DB.Category},System.Func{System.Collections.Generic.ICollection{Autodesk.Revit.DB.Category},System.Collections.Generic.ICollection{dosymep.Bim4Everyone.RevitParam}},System.Func{System.Collections.Generic.ICollection{Autodesk.Revit.DB.Category},dosymep.Bim4Everyone.RevitParam,System.Collections.Generic.ICollection{System.String}})">
+            <summary>
+                Создает провайдер, который берет значения параметров из пользовательской функции
+                (позволяет переопределить список существующих значений параметра).
+            </summary>
+            <param name="categories">Доступные для фильтрации категории.</param>
+            <param name="getParams">Функция получения доступных параметров для заданных категорий.</param>
+            <param name="getParamValues">Функция получения существующих значений параметра для выпадающего списка.</param>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Controls.FilterContextChangedEventArgs">
+            <summary>
+                Аргументы события изменения контекста фильтра в <see cref="T:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider" />.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.FilterContextChangedEventArgs.#ctor(Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext,Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)">
+            <summary>
+                Создает аргументы события изменения контекста фильтра.
+            </summary>
+            <param name="oldContext">Предыдущий контекст фильтра (может быть null).</param>
+            <param name="newContext">Новый контекст фильтра (может быть null, если контекст не может быть получен).</param>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Controls.FilterContextChangedEventArgs.OldContext">
+            <summary>
+                Предыдущий контекст фильтра. Null, если контекст ранее не был задан.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Controls.FilterContextChangedEventArgs.NewContext">
+            <summary>
+                Новый контекст фильтра. Null, если контекст не может быть получен (например, при ошибках ввода).
+            </summary>
+        </member>
         <member name="T:Bim4Everyone.RevitFiltration.Controls.IDataProvider">
             <summary>
                 Провайдер данных.
@@ -2761,6 +2805,11 @@
                 Сервис для получения контекста фильтра по категориям, который пользователь задал в UI.
             </summary>
         </member>
+        <member name="E:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.FilterContextChanged">
+            <summary>
+                Возникает при изменении контекста фильтра.
+            </summary>
+        </member>
         <member name="M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.GetFilter">
             <summary>
                 Возвращает контекст фильтра, настроенного в UI. Перед вызовом надо проверить, что контекст может быть получен,
@@ -2813,12 +2862,56 @@
             </param>
             <returns>Провайдер контекста фильтра по категориям.</returns>
         </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.DataProvider)">
+            <summary>
+                Создает провайдер фильтра элементов по доступным данным.
+            </summary>
+            <param name="dataProvider">Провайдер доступных данных для выбора пользователя.</param>
+            <returns>Провайдер контекста фильтра по категориям.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.DataProvider,Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)">
+            <summary>
+                Загружает заданный контекст и создает провайдер фильтра элементов по доступным данным.
+            </summary>
+            <param name="dataProvider">Провайдер доступных данных для выбора пользователя.</param>
+            <param name="contextToLoad">
+                Контекст для загрузки. Категории и правила фильтрации по параметрам, которых нет в доступных, будут удалены.
+            </param>
+            <returns>Провайдер контекста фильтра по категориям.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Models.LogicalFilterProvider.BindRevitParams(Bim4Everyone.RevitFiltration.Controls.Models.FilterModel.Set,System.Collections.Generic.ICollection{dosymep.Bim4Everyone.RevitParam})">
+            <summary>
+            Задайт свойство <see cref="P:Bim4Everyone.RevitFiltration.Controls.Models.Params.ParamModel.RevitParam"/>
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Controls.Models.Params.ParamModel.RevitParam">
+            <summary>
+                Соответствующий <see cref="P:Bim4Everyone.RevitFiltration.Controls.Models.Params.ParamModel.RevitParam" />. Заполняется при создании из <see cref="P:Bim4Everyone.RevitFiltration.Controls.Models.Params.ParamModel.RevitParam" />
+                либо при загрузке контекста (обратный маппинг по доступным параметрам). Null после десериализации.
+            </summary>
+        </member>
         <member name="M:Bim4Everyone.RevitFiltration.Controls.Models.Params.ParamModel.IsSystemParam(Autodesk.Revit.DB.BuiltInParameter@)">
             <summary>
                 Проверяет, является ли параметр системным
             </summary>
             <param name="builtInParameter">Значение системного параметра, если таковым является текущий параметр</param>
             <returns>True, если параметр является системным, иначе false</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Models.Params.ParamModel.Equals(dosymep.Bim4Everyone.RevitParam)">
+            <summary>
+                Проверяет, соответствует ли данная модель параметру <see cref="P:Bim4Everyone.RevitFiltration.Controls.Models.Params.ParamModel.RevitParam" />.
+            </summary>
+            <param name="p">Параметр Revit для сравнения.</param>
+            <returns>True, если параметры совпадают, иначе false.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.Models.Params.ParamModel.LocalizeName(System.String,System.String)">
+            <summary>
+                Локализует название системного параметра по текущему языку интерфейса Revit.
+                Нужно при десериализации контекста, сохраненного в другой языковой версии Revit.
+            </summary>
+            <param name="name">Сохраненное название параметра.</param>
+            <param name="id">Идентификатор параметра.</param>
+            <returns>Локализованное название для системного параметра, иначе исходное название.</returns>
         </member>
         <member name="M:Bim4Everyone.RevitFiltration.Controls.Models.Utils.DoubleValueParser.TryParse(System.String,Autodesk.Revit.DB.ForgeTypeId,System.Double@)">
             <summary>
