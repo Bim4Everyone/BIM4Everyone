@@ -6267,6 +6267,16 @@
                 ФОП_Перепад ЛП
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.CargoArea">
+            <summary>
+                ФОП_Площадь грузовая
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.LandscapingThickness">
+            <summary>
+                ФОП_Толщина БИО
+            </summary>
+        </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.BimModelPartsServiceExtensions">
             <summary>
                 Класс расширений сервиса по получению разделов BIM модели.
