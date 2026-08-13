@@ -2962,6 +2962,14 @@
                 Событие, которое вызывается при смене языковых стандартов или при смене <see cref="P:Bim4Everyone.RevitFiltration.Controls.Services.ILocalizationProvider.OutsourceLocalization" />
             </summary>
         </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.ViewModels.CategoriesInfoViewModel.SetParams(System.Collections.Generic.ICollection{Autodesk.Revit.DB.Category})">
+            <summary>
+                Обновляет список доступных параметров под заданные категории.
+                Уже присутствующие параметры остаются прежними экземплярами:
+                полная очистка коллекции сбросила бы выбор параметра во всех правилах.
+            </summary>
+            <param name="categories">Выбранные категории.</param>
+        </member>
         <member name="F:Bim4Everyone.RevitFiltration.Controls.ViewModels.RuleViewModel._paramValuesAlreadyUpdated">
             <summary>
                 Флаг, показывающий, обновлен ли список существующих значений выбранного параметра
@@ -2976,6 +2984,19 @@
             <summary>
                 Возвращает модель правила фильтрации для UI.
                 Перед вызовом этого метода надо проверить, что в текущем правиле нет ошибок и оно не пустое.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.ViewModels.RuleViewModel.ValidateParams">
+            <summary>
+                Сверяет правило с текущим списком доступных параметров.
+                Если выбранный параметр больше не доступен, правило сбрасывается,
+                иначе оно сохраняется, а список существующих значений параметра помечается как устаревший.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Controls.ViewModels.SetViewModel.ValidateParams">
+            <summary>
+                Сверяет вложенные наборы и правила с текущим списком доступных параметров,
+                сбрасывая те правила, параметры которых стали недоступны.
             </summary>
         </member>
         <member name="M:Bim4Everyone.RevitFiltration.Controls.Views.CategoriesView.InitializeComponent">
