@@ -6277,6 +6277,31 @@
                 ФОП_Толщина БИО
             </summary>
         </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.MtrChapterTitle">
+            <summary>
+                ФОП_МТР_Наименование главы
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.MtrWorkTitle">
+            <summary>
+                ФОП_МТР_Наименование работы
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.MtrMeasurementUnit">
+            <summary>
+                ФОП_МТР_Единица измерения
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.MtrCountingType">
+            <summary>
+                ФОП_МТР_Тип подсчета
+            </summary>
+        </member>
+        <member name="P:dosymep.Bim4Everyone.SharedParams.SharedParamsConfig.Grouping">
+            <summary>
+                ФОП_Группирование
+            </summary>
+        </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.BimModelPartsServiceExtensions">
             <summary>
                 Класс расширений сервиса по получению разделов BIM модели.
