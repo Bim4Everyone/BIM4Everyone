@@ -2692,15 +2692,28 @@
                 Создает фильтр с логическим правилом "И".
             </summary>
         </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Compositors.AndCompositor.Invert">
+            <inheritdoc />
+        </member>
         <member name="T:Bim4Everyone.RevitFiltration.Compositors.ICompositor">
             <summary>
                 Создает фильтр с логическим правилом "И" или "ИЛИ".
             </summary>
         </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Compositors.ICompositor.Invert">
+            <summary>
+                Возвращает противоположный композитор: "ИЛИ" для "И" и наоборот.
+                Нужен для построения инвертированного фильтра по законам де Моргана.
+            </summary>
+            <returns>Противоположный композитор.</returns>
+        </member>
         <member name="T:Bim4Everyone.RevitFiltration.Compositors.OrCompositor">
             <summary>
                 Создает фильтр с логическим правилом "ИЛИ".
             </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Compositors.OrCompositor.Invert">
+            <inheritdoc />
         </member>
         <member name="T:Bim4Everyone.RevitFiltration.Filtration.IFilterRule">
             <summary>
@@ -2722,11 +2735,8 @@
                 Создаёт правило фильтрации на основе документа Revit.
             </summary>
             <param name="document">Документ Revit.</param>
-            <param name="options">Настройки точности для проверки чисел с плавающей точкой.</param>
+            <param name="options">Настройки генерации фильтра.</param>
             <returns>Возвращает объект FilterRule из Revit.</returns>
-        </member>
-        <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
-            <inheritdoc />
         </member>
         <member name="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Options)">
             <inheritdoc />
@@ -2973,14 +2983,6 @@
                 Создает правила фильтрации элементов в Autodesk Revit.
             </summary>
         </member>
-        <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
-            <summary>
-                Создает фильтр по элементам в Autodesk Revit с заданными настройками.
-            </summary>
-            <param name="document">Документ, в котором будут фильтроваться элементы.</param>
-            <param name="options">Настройки генерации фильтра.</param>
-            <returns>Фильтр по элементам.</returns>
-        </member>
         <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Options)">
             <summary>
                 Создает фильтр по элементам в Autodesk Revit с заданными настройками.
@@ -2988,6 +2990,11 @@
             <param name="document">Документ, в котором будут фильтроваться элементы.</param>
             <param name="options">Настройки генерации фильтра.</param>
             <returns>Фильтр по элементам.</returns>
+            <remarks>
+                Если задан <see cref="P:Bim4Everyone.RevitFiltration.Options.Inverted" />, фильтр строится инвертированным по законам де Моргана.
+                Пустой набор правил при этом не инвертируется и отбирает
+                все экземпляры элементов либо все типоразмеры в зависимости от <see cref="P:Bim4Everyone.RevitFiltration.Options.FilterByType" />.
+            </remarks>
         </member>
         <member name="M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddFilter(Bim4Everyone.RevitFiltration.ILogicalFilter)">
             <summary>
@@ -3388,16 +3395,6 @@
             </summary>
             <param name="filter">Заданный фильтр.</param>
             <returns>Сериализованный фильтр.</returns>
-        </member>
-        <member name="T:Bim4Everyone.RevitFiltration.IOptions">
-            <summary>
-                Настройки сборки фильтра <see cref="T:Autodesk.Revit.DB.ElementFilter" /> из <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" />.
-            </summary>
-        </member>
-        <member name="P:Bim4Everyone.RevitFiltration.IOptions.Tolerance">
-            <summary>
-                Допустимая погрешность для значений параметров с плавающей точкой.
-            </summary>
         </member>
         <member name="T:Bim4Everyone.RevitFiltration.Operators.BeginsWithOperator">
             <summary>
@@ -3868,6 +3865,15 @@
             <summary>
                 Если True, фильтр генерируется по типоразмерам (типам элементов).
                 Если False (по умолчанию), фильтр генерируется по экземплярам элементов.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Options.Inverted">
+            <summary>
+                Если True, фильтр генерируется в инвертированном виде. По умолчанию False.
+                Инверсия строится по законам де Моргана:
+                "И" меняется на "ИЛИ" и наоборот, правило "больше" меняется на "меньше или равно" и т.д.
+                Пустые наборы правил не инвертируются: такой набор всегда отбирает
+                все экземпляры элементов либо все типоразмеры в зависимости от <see cref="P:Bim4Everyone.RevitFiltration.Options.FilterByType" />.
             </summary>
         </member>
         <member name="T:Bim4Everyone.RevitFiltration.Params.BuiltInParam">
