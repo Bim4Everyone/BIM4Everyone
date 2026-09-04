@@ -6057,6 +6057,31 @@
                 Ссылка на скачивание платформы.
             </summary>
         </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ElementEditorTracker.ElementEditorTracker.IsEditAvailable(Autodesk.Revit.DB.Element)">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ElementEditorTracker.ElementEditorTracker.GetUnavailabilityInfo">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ElementEditorTracker.ElementEditorTracker.Reset">
+            <inheritdoc />
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ElementEditorTracker.ElementEditorTrackerFactory.Create(Autodesk.Revit.DB.Document)">
+            <inheritdoc />
+        </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.ElementEditorTracker.NinjectElementEditorTrackerExtensions">
+            <summary>
+                Расширения для регистрации фабрики трекеров доступности элементов.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.ElementEditorTracker.NinjectElementEditorTrackerExtensions.UseElementEditorTracker(Ninject.IKernel)">
+            <summary>
+                Добавляет фабрику трекеров доступности элементов в контейнер зависимостей.
+            </summary>
+            <param name="kernel">Контейнер зависимостей.</param>
+            <returns>Настроенный контейнер зависимостей.</returns>
+            <exception cref="T:System.ArgumentNullException">Контейнер не задан.</exception>
+        </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.IBimModelPartsService">
             <summary>
                 Сервис по получению разделов BIM модели.
@@ -6105,6 +6130,50 @@
             </summary>
             <param name="parentPart">Родительский раздел.</param>
             <returns>Возвращает все разделы BIM модели.</returns>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.IElementEditorTracker">
+            <summary>
+                Проверяет доступность элементов для редактирования в модели с совместной работой
+                и накапливает сведения о причинах их недоступности.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IElementEditorTracker.IsEditAvailable(Autodesk.Revit.DB.Element)">
+            <summary>
+                Проверяет, доступен ли элемент для редактирования, и сохраняет причину недоступности.
+            </summary>
+            <param name="element">Проверяемый элемент.</param>
+            <returns>
+                <see langword="true" />, если элемент доступен для редактирования;
+                иначе <see langword="false" />. Для модели без совместной работы всегда возвращает
+                <see langword="true" />.
+            </returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IElementEditorTracker.GetUnavailabilityInfo">
+            <summary>
+                Возвращает накопленные сведения о причинах недоступности проверенных элементов.
+            </summary>
+            <returns>
+                Именованный кортеж, в котором <c>RequiresSynchronization</c> указывает, что хотя бы один элемент
+                обновлен в файле хранилища, а <c>Owners</c> содержит отсортированный список уникальных имен
+                пользователей, занявших элементы. Если такие элементы отсутствуют, список пуст.
+            </returns>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IElementEditorTracker.Reset">
+            <summary>
+                Очищает накопленные сведения о причинах недоступности элементов.
+            </summary>
+        </member>
+        <member name="T:dosymep.Bim4Everyone.SimpleServices.IElementEditorTrackerFactory">
+            <summary>
+                Фабрика трекеров доступности элементов для редактирования.
+            </summary>
+        </member>
+        <member name="M:dosymep.Bim4Everyone.SimpleServices.IElementEditorTrackerFactory.Create(Autodesk.Revit.DB.Document)">
+            <summary>
+                Создает трекер для указанного документа.
+            </summary>
+            <param name="document">Документ, содержащий проверяемые элементы.</param>
+            <returns>Новый трекер доступности элементов.</returns>
         </member>
         <member name="T:dosymep.Bim4Everyone.SimpleServices.InvokeButtons.ButtonCommand">
             <summary>
