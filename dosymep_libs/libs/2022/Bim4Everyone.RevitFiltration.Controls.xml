@@ -362,6 +362,17 @@
                 Свойство для привязки внешнего сервиса установки языка к UI.
             </summary>
         </member>
+        <member name="F:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.AdditionalContentProperty">
+            <summary>
+                Свойство для размещения произвольного контента справа снизу, под критериями фильтрации.
+            </summary>
+            <remarks>
+                Контент ведет себя так, будто объявлен там же, где сам контрол:
+                ему передается <see cref="P:System.Windows.FrameworkElement.DataContext" /> этого контрола,
+                поэтому привязки внутри контента работают против внешней модели представления.
+                Заданный на самом контенте DataContext, как обычно, имеет приоритет.
+            </remarks>
+        </member>
         <member name="M:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.#ctor">
             <summary>
                 Создает контрол только с фильтром по параметрам для всех доступных категорий из
@@ -372,6 +383,9 @@
             <summary>
                 Свойство для привязки сервиса контекста фильтра к UI.
             </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.AdditionalContent">
+            <inheritdoc cref="F:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.AdditionalContentProperty" />
         </member>
         <member name="P:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LanguageService">
             <summary>

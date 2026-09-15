@@ -2715,6 +2715,131 @@
         <member name="M:Bim4Everyone.RevitFiltration.Compositors.OrCompositor.Invert">
             <inheritdoc />
         </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions">
+            <summary>
+                Расширения <see cref="T:FilteredElementCollector" /> для фильтрации элементов по их материалам.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.PassesFilter(Autodesk.Revit.DB.FilteredElementCollector,Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter)">
+            <summary>
+                Возвращает элементы коллектора, которые проходят фильтр по материалам.
+            </summary>
+            <param name="collector">Коллектор элементов.</param>
+            <param name="filter">Фильтр по материалам.</param>
+            <returns>Элементы, прошедшие фильтр.</returns>
+            <exception cref="T:System.ArgumentNullException">Любой из аргументов null.</exception>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions">
+            <summary>
+                Расширения <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" /> для фильтрации элементов по параметрам их материалов.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.BuildMaterialsFilter(Bim4Everyone.RevitFiltration.ILogicalFilter,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions)">
+            <summary>
+                Отбирает материалы документа, которые проходят правила фильтра,
+                и создает фильтр элементов по этим материалам.
+                Значения параметров материалов сравниваются напрямую, без создания фильтров Revit.
+            </summary>
+            <param name="filter">Правила отбора материалов по значениям их параметров.</param>
+            <param name="doc">Документ, в котором отбираются материалы.</param>
+            <param name="opts">Настройки отбора материалов.</param>
+            <returns>Фильтр элементов по материалам.</returns>
+            <remarks>
+                Материалы отбираются сразу, за один проход по документу,
+                поэтому созданный <see cref="T:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter" /> в документ больше не обращается
+                и не увидит изменений, сделанных после его создания.
+                Фильтру без единого правила удовлетворяет любой элемент.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">Любой из аргументов null.</exception>
+            <exception cref="T:System.InvalidOperationException">Исключение, если нельзя построить фильтр по материалам.
+            </exception>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions">
+            <summary>
+                Настройки отбора материалов по значениям их параметров.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.Tolerance">
+            <summary>
+                Допустимая погрешность для значений параметров с плавающей точкой.
+            </summary>
+        </member>
+        <member name="P:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.Inverted">
+            <summary>
+                Если True, инвертируется отбор материалов: подходящими считаются материалы,
+                которые не проходят заданные правила. По умолчанию False.
+                Инверсия строится по законам де Моргана:
+                "И" меняется на "ИЛИ" и наоборот, правило "больше" меняется на "меньше или равно" и т.д.
+                Проверка элемента при этом не меняется: элемент проходит фильтр,
+                если у него есть хотя бы один из отобранных материалов.
+                Пустые наборы правил не инвертируются.
+                Материалы, у которых нет параметра из правила, не попадают в отбор и при инверсии:
+                отсутствие параметра не отрицается.
+            </summary>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter">
+            <summary>
+                Фильтр элементов по материалам, которые в них используются.
+                Создается через <see cref="M:Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.BuildMaterialsFilter(Bim4Everyone.RevitFiltration.ILogicalFilter,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions)" />.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.#ctor">
+            <summary>
+                Создает фильтр без правил, который пропускает любой элемент.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.PassesFilter(Autodesk.Revit.DB.Element)">
+            <summary>
+                Проверяет, используется ли в элементе хотя бы один из отобранных материалов.
+                Учитываются как материалы самого элемента, так и материалы краски его граней.
+            </summary>
+            <param name="element">Проверяемый элемент.</param>
+            <returns>True, если элемент проходит фильтр, иначе - False.</returns>
+            <exception cref="T:System.ArgumentNullException">element is null.</exception>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.PassesFilter(System.Collections.Generic.IEnumerable{Autodesk.Revit.DB.Element})">
+            <summary>
+                Возвращает элементы, которые проходят фильтр.
+            </summary>
+            <param name="elements">Проверяемые элементы.</param>
+            <returns>Элементы, прошедшие фильтр.</returns>
+            <exception cref="T:System.ArgumentNullException">elements is null.</exception>
+        </member>
+        <member name="T:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilterEvaluator">
+            <summary>
+                Проверяет материал на соответствие правилам <see cref="T:Bim4Everyone.RevitFiltration.ILogicalFilter" /> без создания фильтров Revit.
+                Повторяет структуру <see cref="M:Bim4Everyone.RevitFiltration.Filtration.LogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Options)" />, но вместо сборки
+                <see cref="T:Autodesk.Revit.DB.ElementFilter" /> вычисляет логическое значение.
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilterEvaluator.Evaluate(Autodesk.Revit.DB.Element)">
+            <summary>
+                Проверяет, проходит ли материал правила фильтра.
+            </summary>
+            <param name="material">Проверяемый материал.</param>
+            <returns>True, если материал проходит фильтр, иначе - False.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilterEvaluator.TryGetParameter(Bim4Everyone.RevitFiltration.Params.IParam,Autodesk.Revit.DB.Element,Autodesk.Revit.DB.Parameter@)">
+            <summary>
+                Возвращает параметр материала, если он у него есть.
+                Существование параметра проверяется до его получения: <c>GetParam</c>
+                на отсутствующем параметре выбрасывает исключение.
+            </summary>
+            <param name="param">Искомый параметр.</param>
+            <param name="material">Проверяемый материал.</param>
+            <param name="parameter">Параметр материала.</param>
+            <returns>True, если параметр есть у материала, иначе - False.</returns>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilterEvaluator.GetStringValue(Autodesk.Revit.DB.Parameter)">
+            <summary>
+                Возвращает строковое значение параметра
+            </summary>
+        </member>
+        <member name="M:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilterEvaluator.CompareString(Bim4Everyone.RevitFiltration.Operators.IOperator,System.String,System.String)">
+            <summary>
+                Сравнивает строки без учета регистра
+            </summary>
+        </member>
         <member name="T:Bim4Everyone.RevitFiltration.Filtration.IFilterRule">
             <summary>
                 Отвечает за создание правила по фильтрации на основе параметра, например "Высота больше 5000".
