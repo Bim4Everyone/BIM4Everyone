@@ -78,6 +78,28 @@
             P/Invokes, Delegate types, and unmanaged function pointer invocations.
             </summary>
         </member>
+        <member name="T:System.Runtime.CompilerServices.IUnion">
+            <summary>
+            Provides a common interface for accessing the contents of a union type at runtime.
+            </summary>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.IUnion.Value">
+            <summary>
+            Gets the value contained in the union, or <see langword="null"/> if the union has no value.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IsClosedTypeAttribute">
+            <summary>
+            Reserved for use by a compiler for tracking metadata.
+            This attribute should not be used by developers in source code.
+            </summary>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.IsClosedTypeAttribute.DerivedTypes">
+            <summary>
+            Gets or sets the derived types of the closed type.
+            A <see langword="null"/> value is normalized to an empty array.
+            </summary>
+        </member>
         <member name="T:System.Runtime.CompilerServices.IsExternalInit">
             <summary>
             Reserved to be used by the compiler for tracking metadata. This class should not be used by developers in source code.
@@ -118,6 +140,11 @@
             <summary>
             Used to indicate to the compiler that the <c>.locals init</c>
             flag should not be set in method headers.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.UnionAttribute">
+            <summary>
+            Indicates that a class or struct is a union type, enabling compiler support for union behaviors.
             </summary>
         </member>
         <member name="T:System.Runtime.InteropServices.CollectionsMarshal">
@@ -271,6 +298,41 @@
         <member name="P:System.Runtime.Versioning.RequiresPreviewFeaturesAttribute.Url">
             <summary>
             Returns the optional URL associated with this attribute instance.
+            </summary>
+        </member>
+        <member name="T:System.Numerics.BitOperations">
+            <summary>
+            Utility methods for intrinsic bit-twiddling operations.
+            </summary>
+        </member>
+        <member name="M:System.Numerics.BitOperations.IsPow2(System.Int32)">
+            <summary>
+            Evaluates whether the specified <see cref="T:System.Int32"/> value is a power of two.
+            </summary>
+        </member>
+        <member name="M:System.Numerics.BitOperations.IsPow2(System.UInt32)">
+            <summary>
+            Evaluates whether the specified <see cref="T:System.UInt32"/> value is a power of two.
+            </summary>
+        </member>
+        <member name="M:System.Numerics.BitOperations.IsPow2(System.Int64)">
+            <summary>
+            Evaluates whether the specified <see cref="T:System.Int64"/> value is a power of two.
+            </summary>
+        </member>
+        <member name="M:System.Numerics.BitOperations.IsPow2(System.UInt64)">
+            <summary>
+            Evaluates whether the specified <see cref="T:System.UInt64"/> value is a power of two.
+            </summary>
+        </member>
+        <member name="M:System.Numerics.BitOperations.IsPow2(System.IntPtr)">
+            <summary>
+            Determines whether the specified <see cref="T:System.IntPtr"/> value is a power of 2.
+            </summary>
+        </member>
+        <member name="M:System.Numerics.BitOperations.IsPow2(System.UIntPtr)">
+            <summary>
+            Determines whether the specified <see cref="T:System.UIntPtr"/> value is a power of 2.
             </summary>
         </member>
         <member name="T:System.Threading.Tasks.ConfigureAwaitOptions">
@@ -1121,6 +1183,41 @@
             this exception.
             </summary>
         </member>
+        <member name="T:System.Security.Cryptography.CryptographicOperations">
+            <summary>
+            Provides methods for common cryptographic operations and reducing side-channel information leakage.
+            </summary>
+        </member>
+        <member name="M:System.Security.Cryptography.CryptographicOperations.HashData(System.Security.Cryptography.HashAlgorithmName,System.Byte[])">
+            <summary>
+            Computes the hash of data using the specified algorithm.
+            </summary>
+        </member>
+        <member name="M:System.Security.Cryptography.CryptographicOperations.HashData(System.Security.Cryptography.HashAlgorithmName,System.IO.Stream)">
+            <summary>
+            Computes the hash of a stream using the specified algorithm.
+            </summary>
+        </member>
+        <member name="M:System.Security.Cryptography.CryptographicOperations.HmacData(System.Security.Cryptography.HashAlgorithmName,System.Byte[],System.Byte[])">
+            <summary>
+            Computes the HMAC of data using the specified key and algorithm.
+            </summary>
+        </member>
+        <member name="M:System.Security.Cryptography.CryptographicOperations.HmacData(System.Security.Cryptography.HashAlgorithmName,System.Byte[],System.IO.Stream)">
+            <summary>
+            Computes the HMAC of a stream using the specified key and algorithm.
+            </summary>
+        </member>
+        <member name="M:System.Security.Cryptography.CryptographicOperations.VerifyHmac(System.Security.Cryptography.HashAlgorithmName,System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+            Determines whether the HMAC of <paramref name="source"/> matches <paramref name="hash"/>, using a comparison whose time does not depend on the contents.
+            </summary>
+        </member>
+        <member name="M:System.Security.Cryptography.CryptographicOperations.VerifyHmac(System.Security.Cryptography.HashAlgorithmName,System.Byte[],System.IO.Stream,System.Byte[])">
+            <summary>
+            Determines whether the HMAC of the <paramref name="source"/> stream matches <paramref name="hash"/>, using a comparison whose time does not depend on the contents.
+            </summary>
+        </member>
         <member name="M:System.Linq.PolyfillEnumerableReverseExtension.Reverse``1(``0[])">
             <summary>Inverts the order of the elements in an array.</summary>
         </member>
@@ -1313,6 +1410,30 @@
         <member name="M:System.Range.GetOffsetAndLength(System.Int32)">
             <summary>Calculate the start offset and length of range object using a collection length.</summary>
         </member>
+        <member name="T:System.Text.RegularExpressions.RegexCache">
+            <summary>Cache used to store Regex instances used by the static methods on Regex.</summary>
+        </member>
+        <member name="P:System.Text.RegularExpressions.RegexCache.MaxCacheSize">
+            <summary>Gets or sets the maximum size of the cache.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.RegexCache.Key">
+            <summary>Used as a key for <see cref="T:System.Text.RegularExpressions.RegexCache.Node"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.RegexCache.Node">
+            <summary>Node for a cached Regex instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.RegexCache.Node.#ctor(System.Text.RegularExpressions.RegexCache.Key,System.Text.RegularExpressions.Regex)">
+            <summary>Node for a cached Regex instance.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.RegexCache.Node.Key">
+            <summary>The key associated with this cached instance.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.RegexCache.Node.Regex">
+            <summary>The cached Regex instance.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.RegexCache.Node.LastAccessStamp">
+            <summary>A "time" stamp representing the approximate last access time for this Regex.</summary>
+        </member>
         <member name="M:Polyfills.Polyfill.IsAscii(System.Char)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$617F055EF883302AD66AFAF0ACA83DC6.IsAscii(System.Char)"/>
         </member>
@@ -1342,6 +1463,17 @@
         </member>
         <member name="M:Polyfills.Polyfill.IsBetween(System.Char,System.Char,System.Char)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$617F055EF883302AD66AFAF0ACA83DC6.IsBetween(System.Char,System.Char,System.Char)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.ToLowerOrdinal(System.Char)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$617F055EF883302AD66AFAF0ACA83DC6.ToLowerOrdinal(System.Char)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.ToUpperOrdinal(System.Char)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$617F055EF883302AD66AFAF0ACA83DC6.ToUpperOrdinal(System.Char)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.ToOrdinalCase(System.Char[],System.Boolean)">
+            <summary>
+            Applies ordinal casing to <paramref name="chars"/> in place, treating surrogate pairs as a single scalar.
+            </summary>
         </member>
         <member name="M:Polyfills.Polyfill.OpenStandardInputHandle">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$BAD8AF7B4AB3B102ABB1C587EA783F40.OpenStandardInputHandle"/>
@@ -1417,6 +1549,23 @@
         <member name="M:Polyfills.Polyfill.CreateTempSubdirectory(System.String)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$7308ABC8FED7616EC364504034A27D12.CreateTempSubdirectory(System.String)"/>
         </member>
+        <member name="T:Polyfills.Polyfill.EnumerationWalker">
+            <summary>
+            Walks a directory tree applying <see cref="T:System.IO.EnumerationOptions"/>, for the frameworks where the file system enumeration only understands <see cref="T:System.IO.SearchOption"/>.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.EnumerationWalker.TranslateWin32Expression(System.String)">
+            <summary>
+            Converts a <see cref="F:System.IO.MatchType.Win32"/> pattern to the form used by <see cref="M:Polyfills.Polyfill.EnumerationWalker.MatchesExpression(System.String,System.String,System.Boolean,System.Boolean)"/>, where
+            '&lt;', '&gt;' and '"' are the DOS wildcards for "*.", "?" and "." respectively.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.EnumerationWalker.MatchesExpression(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Matches a file name against an expression. '*' is zero or more characters and '?' exactly one.
+            When <paramref name="win32"/> is true the expression is one produced by <see cref="M:Polyfills.Polyfill.EnumerationWalker.TranslateWin32Expression(System.String)"/>.
+            </summary>
+        </member>
         <member name="M:Polyfills.Polyfill.get_Latin1">
             <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$A5D28129F600FD77FB6D3E157F75B0E3.Latin1"/>
         </member>
@@ -1449,6 +1598,9 @@
         </member>
         <member name="M:Polyfills.Polyfill.Create``1(System.Func{``0,``0,System.Boolean},System.Func{``0,System.Int32})">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$824B137C9700787F7FAADF3CDD49751C`1.Create(System.Func{`0,`0,System.Boolean},System.Func{`0,System.Int32})"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.Create``2(System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$824B137C9700787F7FAADF3CDD49751C`1.Create``1(System.Func{`0,``0},System.Collections.Generic.IEqualityComparer{``0})"/>
         </member>
         <member name="M:Polyfills.Polyfill.SetCurrentStackTrace(System.Exception)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$75178716ED09D5ED20A26367481DB739.SetCurrentStackTrace(System.Exception)"/>
@@ -1519,6 +1671,12 @@
         <member name="M:Polyfills.Polyfill.SetUnixFileMode(System.String,System.IO.UnixFileMode)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$F8AA2908BAC5E2DCE9609C46C9D7AE18.SetUnixFileMode(System.String,System.IO.UnixFileMode)"/>
         </member>
+        <member name="M:Polyfills.Polyfill.UnixFileModeHelper.ParseMode(System.String)">
+            <summary>
+            Parses the octal mode written by stat. The low twelve bits are the permissions, and have the same values
+            as <see cref="T:System.IO.UnixFileMode"/>. Any higher bits are the file type, which BSD stat includes.
+            </summary>
+        </member>
         <member name="M:Polyfills.Polyfill.AllocateUninitializedArray``1(System.Int32,System.Boolean)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$2A66B3E596EA567C1CB65356319D61CC.AllocateUninitializedArray``1(System.Int32,System.Boolean)"/>
         </member>
@@ -1573,8 +1731,17 @@
         <member name="M:Polyfills.Polyfill.Clamp(System.IntPtr,System.IntPtr,System.IntPtr)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$853505F4C6E4266CC0CF997A13BEC9E3.Clamp(System.IntPtr,System.IntPtr,System.IntPtr)"/>
         </member>
+        <member name="M:Polyfills.Polyfill.BigMul(System.Int64,System.Int64,System.Int64@)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$853505F4C6E4266CC0CF997A13BEC9E3.BigMul(System.Int64,System.Int64,System.Int64@)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.BigMul(System.UInt64,System.UInt64,System.UInt64@)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$853505F4C6E4266CC0CF997A13BEC9E3.BigMul(System.UInt64,System.UInt64,System.UInt64@)"/>
+        </member>
         <member name="M:Polyfills.Polyfill.TryParse(System.String,System.IFormatProvider,System.Byte@)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$984646E5C90D4BE007AAE446F159AC52.TryParse(System.String,System.IFormatProvider,System.Byte@)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.Log10(System.Byte)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$984646E5C90D4BE007AAE446F159AC52.Log10(System.Byte)"/>
         </member>
         <member name="M:Polyfills.Polyfill.TryParse(System.String,System.IFormatProvider,System.Decimal@)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$05DA939D6DF05BA58CCF6B6457ACB41B.TryParse(System.String,System.IFormatProvider,System.Decimal@)"/>
@@ -1585,11 +1752,23 @@
         <member name="M:Polyfills.Polyfill.TryParse(System.String,System.IFormatProvider,System.Int16@)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$390DAE713F975834EF0C1ED2BEC2DBAC.TryParse(System.String,System.IFormatProvider,System.Int16@)"/>
         </member>
+        <member name="M:Polyfills.Polyfill.Log10(System.Int16)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$390DAE713F975834EF0C1ED2BEC2DBAC.Log10(System.Int16)"/>
+        </member>
         <member name="M:Polyfills.Polyfill.TryParse(System.String,System.IFormatProvider,System.Int32@)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$BA41CFE2B5EDAEB8C1B9062F59ED4D69.TryParse(System.String,System.IFormatProvider,System.Int32@)"/>
         </member>
+        <member name="M:Polyfills.Polyfill.BigMul(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$BA41CFE2B5EDAEB8C1B9062F59ED4D69.BigMul(System.Int32,System.Int32)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.Log10(System.Int32)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$BA41CFE2B5EDAEB8C1B9062F59ED4D69.Log10(System.Int32)"/>
+        </member>
         <member name="M:Polyfills.Polyfill.TryParse(System.String,System.IFormatProvider,System.Int64@)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$E8CA98ACBCAEE63BB261A3FD4AF31675.TryParse(System.String,System.IFormatProvider,System.Int64@)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.Log10(System.Int64)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$E8CA98ACBCAEE63BB261A3FD4AF31675.Log10(System.Int64)"/>
         </member>
         <member name="M:Polyfills.Polyfill.TryParse(System.String,System.IntPtr@)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$4F373AFAABDD639AB83427B59F106A43.TryParse(System.String,System.IntPtr@)"/>
@@ -1600,8 +1779,17 @@
         <member name="M:Polyfills.Polyfill.TryParse(System.String,System.IFormatProvider,System.IntPtr@)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$4F373AFAABDD639AB83427B59F106A43.TryParse(System.String,System.IFormatProvider,System.IntPtr@)"/>
         </member>
+        <member name="M:Polyfills.Polyfill.Log10(System.IntPtr)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$4F373AFAABDD639AB83427B59F106A43.Log10(System.IntPtr)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.BigMul(System.IntPtr,System.IntPtr,System.IntPtr@)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$4F373AFAABDD639AB83427B59F106A43.BigMul(System.IntPtr,System.IntPtr,System.IntPtr@)"/>
+        </member>
         <member name="M:Polyfills.Polyfill.TryParse(System.String,System.IFormatProvider,System.SByte@)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$49699017F639EF34A5A9E25ACB3E4B14.TryParse(System.String,System.IFormatProvider,System.SByte@)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.Log10(System.SByte)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$49699017F639EF34A5A9E25ACB3E4B14.Log10(System.SByte)"/>
         </member>
         <member name="M:Polyfills.Polyfill.TryParse(System.String,System.IFormatProvider,System.Single@)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$464CF13CF05F23E774A9D567340C67D6.TryParse(System.String,System.IFormatProvider,System.Single@)"/>
@@ -1609,11 +1797,23 @@
         <member name="M:Polyfills.Polyfill.TryParse(System.String,System.IFormatProvider,System.UInt16@)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$B7387B77E15A9DBF0D30EA969A07D0DD.TryParse(System.String,System.IFormatProvider,System.UInt16@)"/>
         </member>
+        <member name="M:Polyfills.Polyfill.Log10(System.UInt16)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$B7387B77E15A9DBF0D30EA969A07D0DD.Log10(System.UInt16)"/>
+        </member>
         <member name="M:Polyfills.Polyfill.TryParse(System.String,System.IFormatProvider,System.UInt32@)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$59D1B7AA0B822E2E4777E961258AA046.TryParse(System.String,System.IFormatProvider,System.UInt32@)"/>
         </member>
+        <member name="M:Polyfills.Polyfill.BigMul(System.UInt32,System.UInt32)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$59D1B7AA0B822E2E4777E961258AA046.BigMul(System.UInt32,System.UInt32)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.Log10(System.UInt32)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$59D1B7AA0B822E2E4777E961258AA046.Log10(System.UInt32)"/>
+        </member>
         <member name="M:Polyfills.Polyfill.TryParse(System.String,System.IFormatProvider,System.UInt64@)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CC86B4FD6473E1534D8E28315C194AD4.TryParse(System.String,System.IFormatProvider,System.UInt64@)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.Log10(System.UInt64)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CC86B4FD6473E1534D8E28315C194AD4.Log10(System.UInt64)"/>
         </member>
         <member name="M:Polyfills.Polyfill.TryParse(System.String,System.UIntPtr@)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$FA09D0635AC2552968188F8F9F981733.TryParse(System.String,System.UIntPtr@)"/>
@@ -1623,6 +1823,12 @@
         </member>
         <member name="M:Polyfills.Polyfill.TryParse(System.String,System.IFormatProvider,System.UIntPtr@)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$FA09D0635AC2552968188F8F9F981733.TryParse(System.String,System.IFormatProvider,System.UIntPtr@)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.Log10(System.UIntPtr)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$FA09D0635AC2552968188F8F9F981733.Log10(System.UIntPtr)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.BigMul(System.UIntPtr,System.UIntPtr,System.UIntPtr@)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$FA09D0635AC2552968188F8F9F981733.BigMul(System.UIntPtr,System.UIntPtr,System.UIntPtr@)"/>
         </member>
         <member name="M:Polyfills.Polyfill.IsWasi">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$7605939981053B1C5929A1954636C53C.IsWasi"/>
@@ -1727,6 +1933,29 @@
             Provides an enumerator for the elements of an <see cref="T:System.ArraySegment`1"/>.
             </summary>
         </member>
+        <member name="M:Polyfills.Polyfill.HasAllSet(System.Collections.BitArray)">
+            <summary>
+            Determines whether all bits in the <see cref="T:System.Collections.BitArray"/> are set to <see langword="true"/>.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.HasAnySet(System.Collections.BitArray)">
+            <summary>
+            Determines whether any bit in the <see cref="T:System.Collections.BitArray"/> is set to <see langword="true"/>.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.PopCount(System.Collections.BitArray)">
+            <summary>
+            Returns the number of bits set to <see langword="true"/> in the <see cref="T:System.Collections.BitArray"/>.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.CopyBitArrayWords(System.Collections.BitArray,System.Int32,System.Int32@)">
+            <summary>
+            Copies the bits of a non-empty <see cref="T:System.Collections.BitArray"/> into 32 bit words, one bit of the array per bit of a word,
+            lowest bit first. The bits of the last word that lie past <paramref name="length"/> are cleared: the
+            <see cref="T:System.Collections.BitArray"/> does not keep them zeroed, for example after <see cref="M:System.Collections.BitArray.Not"/>.
+            The result is longer than <paramref name="wordCount"/> when it comes from the pool.
+            </summary>
+        </member>
         <member name="M:Polyfills.Polyfill.UnsafeRegister(System.Threading.CancellationToken,System.Action{System.Object},System.Object)">
             <summary>
             Registers a delegate that will be called when this
@@ -1755,6 +1984,11 @@
         <member name="M:Polyfills.Polyfill.Clear``1(System.Collections.Concurrent.ConcurrentQueue{``0})">
             <summary>
             Removes all values from the <see cref="T:System.Collections.Concurrent.ConcurrentQueue`1"/>.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.Remove``2(System.Runtime.CompilerServices.ConditionalWeakTable{``0,``1},``0,``1@)">
+            <summary>
+            Removes a key and its value from the table, and returns the removed value.
             </summary>
         </member>
         <member name="M:Polyfills.Polyfill.AsReadOnly``2(System.Collections.Generic.IDictionary{``0,``1})">
@@ -1829,6 +2063,12 @@
             <summary>
             Returns an array of file system entries that match a search pattern and enumeration options.
             </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.get_Variant(System.Guid)">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$68F3962AE5697E254AA596E55C7A8792.Variant"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.get_Version(System.Guid)">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$68F3962AE5697E254AA596E55C7A8792.Version"/>
         </member>
         <member name="M:Polyfills.Polyfill.EnsureCapacity``1(System.Collections.Generic.HashSet{``0},System.Int32)">
             <summary>
@@ -2030,6 +2270,26 @@
         <member name="M:Polyfills.Polyfill.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0},``0)">
             <summary>Returns the first element of a sequence, or a default value if the sequence contains no elements.</summary>
         </member>
+        <member name="M:Polyfills.Polyfill.FullJoin``4(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``2},System.Func{``1,``2},System.Func{``0,``1,``3},System.Collections.Generic.IEqualityComparer{``2})">
+            <summary>
+            Correlates the elements of two sequences based on matching keys,
+            including elements of each sequence that have no matching element in the other.
+            A specified <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> is used to compare keys.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.FullJoin``3(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``2},System.Func{``1,``2},System.Collections.Generic.IEqualityComparer{``2})">
+            <summary>
+            Correlates the elements of two sequences based on matching keys,
+            including elements of each sequence that have no matching element in the other.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.GroupJoin``3(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``2},System.Func{``1,``2},System.Collections.Generic.IEqualityComparer{``2})">
+            <summary>
+            Correlates the elements of two sequences based on key equality and groups the results.
+            Each result is an <see cref="T:System.Linq.IGrouping`2" /> keyed by the outer element.
+            A specified <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> is used to compare keys.
+            </summary>
+        </member>
         <member name="M:Polyfills.Polyfill.Index``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/overview#linq
@@ -2043,6 +2303,12 @@
         <member name="M:Polyfills.Polyfill.IntersectBy``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
             <summary>
             Produces the set intersection of two sequences according to a specified key selector function.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.Join``3(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``2},System.Func{``1,``2},System.Collections.Generic.IEqualityComparer{``2})">
+            <summary>
+            Correlates the elements of two sequences based on matching keys.
+            A specified <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> is used to compare keys.
             </summary>
         </member>
         <member name="M:Polyfills.Polyfill.LastOrDefault``1(System.Collections.Generic.IEnumerable{``0},``0)">
@@ -2061,6 +2327,12 @@
             <summary>
             Correlates the elements of two sequences based on matching keys.
             A specified <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> is used to compare keys.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.LeftJoin``3(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``2},System.Func{``1,``2},System.Collections.Generic.IEqualityComparer{``2})">
+            <summary>
+            Correlates the elements of two sequences based on matching keys,
+            including elements of the outer sequence that have no matching inner element.
             </summary>
         </member>
         <member name="M:Polyfills.Polyfill.Max``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IComparer{``0})">
@@ -2107,6 +2379,12 @@
             <summary>
             Correlates the elements of two sequences based on matching keys.
             A specified <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> is used to compare keys.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.RightJoin``3(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``2},System.Func{``1,``2},System.Collections.Generic.IEqualityComparer{``2})">
+            <summary>
+            Correlates the elements of two sequences based on matching keys,
+            including elements of the inner sequence that have no matching outer element.
             </summary>
         </member>
         <member name="M:Polyfills.Polyfill.SingleOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean},``0)">
@@ -2164,6 +2442,30 @@
             <summary>
             Tries to get the value associated with the specified key in the dictionary.
             </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.Exchange(System.Byte@,System.Byte)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.Exchange(System.Byte@,System.Byte)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.CompareExchange(System.Byte@,System.Byte,System.Byte)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.CompareExchange(System.Byte@,System.Byte,System.Byte)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.Exchange(System.SByte@,System.SByte)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.Exchange(System.SByte@,System.SByte)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.CompareExchange(System.SByte@,System.SByte,System.SByte)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.CompareExchange(System.SByte@,System.SByte,System.SByte)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.Exchange(System.Int16@,System.Int16)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.Exchange(System.Int16@,System.Int16)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.CompareExchange(System.Int16@,System.Int16,System.Int16)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.CompareExchange(System.Int16@,System.Int16,System.Int16)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.Exchange(System.UInt16@,System.UInt16)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.Exchange(System.UInt16@,System.UInt16)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.CompareExchange(System.UInt16@,System.UInt16,System.UInt16)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.CompareExchange(System.UInt16@,System.UInt16,System.UInt16)"/>
         </member>
         <member name="M:Polyfills.Polyfill.AsReadOnly``1(System.Collections.Generic.IList{``0})">
             <summary>Returns a read-only <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> wrapper for the current collection.</summary>
@@ -2230,6 +2532,38 @@
             Asynchronously reads the standard output and standard error of the process as bytes, waiting for the process to exit.
             </summary>
         </member>
+        <member name="M:Polyfills.Polyfill.ReadAllLines(System.Diagnostics.Process,System.Nullable{System.TimeSpan})">
+            <summary>
+            Reads the standard output and standard error of the process line-by-line, waiting for the process to exit.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.Signal(System.Diagnostics.Process,System.Runtime.InteropServices.PosixSignal)">
+            <summary>
+            Sends the specified POSIX signal to the associated process.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.WaitForExitStatus(System.Diagnostics.Process)">
+            <summary>
+            Instructs the Process component to wait for the associated process to exit, and returns its exit status.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.TryWaitForExitStatus(System.Diagnostics.Process,System.TimeSpan,System.Diagnostics.ProcessExitStatus@)">
+            <summary>
+            Instructs the Process component to wait up to <paramref name="timeout"/> for the associated process to exit,
+            and returns a value indicating whether it exited.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.WaitForExitStatusAsync(System.Diagnostics.Process,System.Threading.CancellationToken)">
+            <summary>
+            Instructs the Process component to wait for the associated process to exit, or for the
+            <paramref name="cancellationToken"/> to be canceled, and returns its exit status.
+            </summary>
+        </member>
+        <member name="F:Polyfills.Polyfill.SignalHelper.SigKill">
+            <summary>
+            The value of PosixSignal.SIGKILL, which was added in net11 and so cannot be named on earlier target frameworks.
+            </summary>
+        </member>
         <member name="M:Polyfills.Polyfill.get_ArgumentList(System.Diagnostics.ProcessStartInfo)">
             <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$F1455ACED444938AEC8C578DB9384018.ArgumentList"/>
         </member>
@@ -2241,6 +2575,16 @@
         <member name="M:Polyfills.Polyfill.TrimExcess``1(System.Collections.Generic.Queue{``0},System.Int32)">
             <summary>
             Sets the capacity of a Queue object to the specified number of entries.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.TryPeek``1(System.Collections.Generic.Queue{``0},``0@)">
+            <summary>
+            Returns a value that indicates whether there is an object at the beginning of the <see cref="T:System.Collections.Generic.Queue`1"/>, and if one is present, copies it to the result parameter. The object is not removed from the <see cref="T:System.Collections.Generic.Queue`1"/>.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.TryDequeue``1(System.Collections.Generic.Queue{``0},``0@)">
+            <summary>
+            Removes the object at the beginning of the <see cref="T:System.Collections.Generic.Queue`1"/>, and copies it to the result parameter.
             </summary>
         </member>
         <member name="M:Polyfills.Polyfill.GetItems``1(System.Random,``0[],System.Int32)">
@@ -2324,21 +2668,6 @@
             Returns the hash code for this string using the specified rules.
             </summary>
         </member>
-        <member name="M:Polyfills.Polyfill.Contains(System.String,System.Char,System.StringComparison)">
-            <summary>
-            Returns a value indicating whether a specified character occurs within this string, using the specified comparison rules.
-            </summary>
-        </member>
-        <member name="M:Polyfills.Polyfill.IndexOf(System.String,System.Char,System.StringComparison)">
-            <summary>
-            Reports the zero-based index of the first occurrence of the specified Unicode character in this string. A parameter specifies the type of search to use for the specified character.
-            </summary>
-        </member>
-        <member name="M:Polyfills.Polyfill.Contains(System.String,System.String,System.StringComparison)">
-            <summary>
-            Returns a value indicating whether a specified string occurs within this string, using the specified comparison rules.
-            </summary>
-        </member>
         <member name="M:Polyfills.Polyfill.StartsWith(System.String,System.Char)">
             <summary>
             Determines whether this string instance starts with the specified character.
@@ -2374,6 +2703,21 @@
         <member name="M:Polyfills.Polyfill.Contains(System.String,System.Char)">
             <summary>
             Returns a value indicating whether a specified character occurs within this string.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.Contains(System.String,System.Char,System.StringComparison)">
+            <summary>
+            Returns a value indicating whether a specified character occurs within this string, using the specified comparison rules.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.IndexOf(System.String,System.Char,System.StringComparison)">
+            <summary>
+            Reports the zero-based index of the first occurrence of the specified Unicode character in this string. A parameter specifies the type of search to use for the specified character.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.Contains(System.String,System.String,System.StringComparison)">
+            <summary>
+            Returns a value indicating whether a specified string occurs within this string, using the specified comparison rules.
             </summary>
         </member>
         <member name="M:Polyfills.Polyfill.StartsWith(System.String,System.Char,System.StringComparison)">
@@ -2430,6 +2774,16 @@
             Replaces all newline sequences in the current string with <see cref="P:System.Environment.NewLine"/>.
             </summary>
         </member>
+        <member name="M:Polyfills.Polyfill.ToLowerOrdinal(System.String)">
+            <summary>
+            Returns a copy of this string converted to lowercase using ordinal casing rules.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.ToUpperOrdinal(System.String)">
+            <summary>
+            Returns a copy of this string converted to uppercase using ordinal casing rules.
+            </summary>
+        </member>
         <member name="M:Polyfills.Polyfill.Append(System.Text.StringBuilder,System.Text.StringBuilder,System.Int32,System.Int32)">
             <summary>
             Appends a copy of a substring within a specified string builder to this instance.
@@ -2452,12 +2806,6 @@
         </member>
         <member name="M:Polyfills.Polyfill.AppendJoin(System.Text.StringBuilder,System.Char,System.Object[])">
             <summary>Concatenates the string representations of the elements in the provided array of objects, using the specified char separator between each member, then appends the result to the current instance of the string builder.</summary>
-        </member>
-        <member name="M:Polyfills.Polyfill.AppendJoin``1(System.Text.StringBuilder,System.Char,``0[])">
-            <summary>Concatenates and appends the members of a collection, using the specified char separator between each member.</summary>
-        </member>
-        <member name="M:Polyfills.Polyfill.AppendJoin``1(System.Text.StringBuilder,System.String,``0[])">
-            <summary>Concatenates and appends the members of a collection, using the specified char separator between each member.</summary>
         </member>
         <member name="M:Polyfills.Polyfill.WaitAsync(System.Threading.Tasks.Task,System.Threading.CancellationToken)">
             <summary>Gets a <see cref="T:System.Threading.Tasks.Task"/> that will complete when this <see cref="T:System.Threading.Tasks.Task"/> completes or when the specified <see cref="T:System.Threading.CancellationToken"/> has cancellation requested.</summary>
@@ -2493,6 +2841,26 @@
             <summary>
             Transitions the underlying <see cref="T:System.Threading.Tasks.Task`1"/> into the <see cref="F:System.Threading.Tasks.TaskStatus.Canceled"/> state
             using the specified token.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.SetFromTask(System.Threading.Tasks.TaskCompletionSource,System.Threading.Tasks.Task)">
+            <summary>
+            Transitions the underlying <see cref="T:System.Threading.Tasks.Task"/> into the same completion state as the supplied task.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.TrySetFromTask(System.Threading.Tasks.TaskCompletionSource,System.Threading.Tasks.Task)">
+            <summary>
+            Attempts to transition the underlying <see cref="T:System.Threading.Tasks.Task"/> into the same completion state as the supplied task.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.SetFromTask``1(System.Threading.Tasks.TaskCompletionSource{``0},System.Threading.Tasks.Task{``0})">
+            <summary>
+            Transitions the underlying <see cref="T:System.Threading.Tasks.Task`1"/> into the same completion state as the supplied task.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.TrySetFromTask``1(System.Threading.Tasks.TaskCompletionSource{``0},System.Threading.Tasks.Task{``0})">
+            <summary>
+            Attempts to transition the underlying <see cref="T:System.Threading.Tasks.Task`1"/> into the same completion state as the supplied task.
             </summary>
         </member>
         <member name="M:Polyfills.Polyfill.ReadToEndAsync(System.IO.TextReader,System.Threading.CancellationToken)">
@@ -2606,32 +2974,35 @@
         <member name="M:Polyfills.Polyfill.Run(System.Diagnostics.ProcessStartInfo,System.Nullable{System.TimeSpan})">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.Run(System.Diagnostics.ProcessStartInfo,System.Nullable{System.TimeSpan})"/>
         </member>
-        <member name="M:Polyfills.Polyfill.Run(System.String,System.Collections.Generic.IList{System.String},System.Nullable{System.TimeSpan})">
-            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.Run(System.String,System.Collections.Generic.IList{System.String},System.Nullable{System.TimeSpan})"/>
+        <member name="M:Polyfills.Polyfill.Run(System.String,System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Nullable{System.TimeSpan})">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.Run(System.String,System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Nullable{System.TimeSpan})"/>
         </member>
         <member name="M:Polyfills.Polyfill.RunAsync(System.Diagnostics.ProcessStartInfo,System.Threading.CancellationToken)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.RunAsync(System.Diagnostics.ProcessStartInfo,System.Threading.CancellationToken)"/>
         </member>
-        <member name="M:Polyfills.Polyfill.RunAsync(System.String,System.Collections.Generic.IList{System.String},System.Threading.CancellationToken)">
-            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.RunAsync(System.String,System.Collections.Generic.IList{System.String},System.Threading.CancellationToken)"/>
+        <member name="M:Polyfills.Polyfill.RunAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.RunAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Threading.CancellationToken)"/>
         </member>
         <member name="M:Polyfills.Polyfill.RunAndCaptureText(System.Diagnostics.ProcessStartInfo,System.Nullable{System.TimeSpan})">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.RunAndCaptureText(System.Diagnostics.ProcessStartInfo,System.Nullable{System.TimeSpan})"/>
         </member>
-        <member name="M:Polyfills.Polyfill.RunAndCaptureText(System.String,System.Collections.Generic.IList{System.String},System.Nullable{System.TimeSpan})">
-            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.RunAndCaptureText(System.String,System.Collections.Generic.IList{System.String},System.Nullable{System.TimeSpan})"/>
+        <member name="M:Polyfills.Polyfill.RunAndCaptureText(System.String,System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.TimeSpan})">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.RunAndCaptureText(System.String,System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.TimeSpan})"/>
         </member>
         <member name="M:Polyfills.Polyfill.RunAndCaptureTextAsync(System.Diagnostics.ProcessStartInfo,System.Threading.CancellationToken)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.RunAndCaptureTextAsync(System.Diagnostics.ProcessStartInfo,System.Threading.CancellationToken)"/>
         </member>
-        <member name="M:Polyfills.Polyfill.RunAndCaptureTextAsync(System.String,System.Collections.Generic.IList{System.String},System.Threading.CancellationToken)">
-            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.RunAndCaptureTextAsync(System.String,System.Collections.Generic.IList{System.String},System.Threading.CancellationToken)"/>
+        <member name="M:Polyfills.Polyfill.RunAndCaptureTextAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.RunAndCaptureTextAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)"/>
         </member>
         <member name="M:Polyfills.Polyfill.StartAndForget(System.Diagnostics.ProcessStartInfo)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.StartAndForget(System.Diagnostics.ProcessStartInfo)"/>
         </member>
-        <member name="M:Polyfills.Polyfill.StartAndForget(System.String,System.Collections.Generic.IList{System.String})">
-            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.StartAndForget(System.String,System.Collections.Generic.IList{System.String})"/>
+        <member name="M:Polyfills.Polyfill.StartAndForget(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.StartAndForget(System.String,System.Collections.Generic.IEnumerable{System.String})"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.TryGetProcessById(System.Int32,System.Diagnostics.Process@)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.TryGetProcessById(System.Int32,System.Diagnostics.Process@)"/>
         </member>
         <member name="M:Polyfills.Polyfill.GetInt32(System.Int32,System.Int32)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$492A05EBCBEAE9092DC986CDAE193EE9.GetInt32(System.Int32,System.Int32)"/>
@@ -2686,20 +3057,68 @@
         <member name="M:Polyfills.Polyfill.Join``1(System.Char,System.Collections.Generic.IEnumerable{``0})">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$34505F560D9EACF86A87F3ED1F85E448.Join``1(System.Char,System.Collections.Generic.IEnumerable{``0})"/>
         </member>
+        <member name="M:Polyfills.Polyfill.CreateBroadcasting(System.IO.TextWriter[])">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$C8AD13954C5CA5B5C3C3A998919CD66C.CreateBroadcasting(System.IO.TextWriter[])"/>
+        </member>
         <member name="M:Polyfills.Polyfill.get_Nanoseconds(System.TimeSpan)">
             <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.Nanoseconds"/>
         </member>
         <member name="M:Polyfills.Polyfill.get_Microseconds(System.TimeSpan)">
             <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.Microseconds"/>
         </member>
-        <member name="M:Polyfills.Polyfill.FromDays(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
-            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.FromDays(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)"/>
+        <member name="M:Polyfills.Polyfill.get_HoursPerDay">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.HoursPerDay"/>
         </member>
-        <member name="M:Polyfills.Polyfill.FromHours(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
-            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.FromHours(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)"/>
+        <member name="M:Polyfills.Polyfill.get_MicrosecondsPerDay">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MicrosecondsPerDay"/>
         </member>
-        <member name="M:Polyfills.Polyfill.FromMinutes(System.Int32,System.Int32,System.Int32,System.Int32)">
-            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.FromMinutes(System.Int32,System.Int32,System.Int32,System.Int32)"/>
+        <member name="M:Polyfills.Polyfill.get_MicrosecondsPerHour">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MicrosecondsPerHour"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.get_MicrosecondsPerMillisecond">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MicrosecondsPerMillisecond"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.get_MicrosecondsPerMinute">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MicrosecondsPerMinute"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.get_MicrosecondsPerSecond">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MicrosecondsPerSecond"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.get_MillisecondsPerDay">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MillisecondsPerDay"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.get_MillisecondsPerHour">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MillisecondsPerHour"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.get_MillisecondsPerMinute">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MillisecondsPerMinute"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.get_MillisecondsPerSecond">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MillisecondsPerSecond"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.get_MinutesPerDay">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MinutesPerDay"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.get_MinutesPerHour">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MinutesPerHour"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.get_SecondsPerDay">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.SecondsPerDay"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.get_SecondsPerHour">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.SecondsPerHour"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.get_SecondsPerMinute">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.SecondsPerMinute"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.FromDays(System.Int32,System.Int32,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.FromDays(System.Int32,System.Int32,System.Int64,System.Int64,System.Int64,System.Int64)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.FromHours(System.Int32,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.FromHours(System.Int32,System.Int64,System.Int64,System.Int64,System.Int64)"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.FromMinutes(System.Int64,System.Int64,System.Int64,System.Int64)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.FromMinutes(System.Int64,System.Int64,System.Int64,System.Int64)"/>
         </member>
         <member name="M:Polyfills.Polyfill.FromSeconds(System.Int64,System.Int64,System.Int64)">
             <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.FromSeconds(System.Int64,System.Int64,System.Int64)"/>
@@ -2712,6 +3131,18 @@
         </member>
         <member name="M:Polyfills.Polyfill.get_IsGenericMethodParameter(System.Type)">
             <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$6B6159A298CA62A8C577E514BE40E3DD.IsGenericMethodParameter"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.GetNullableUnderlyingType(System.Type)">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$6B6159A298CA62A8C577E514BE40E3DD.GetNullableUnderlyingType"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.get_UriSchemeData">
+            <inheritdoc cref="P:Polyfills.Polyfill.&lt;G&gt;$A2D159684F90C84BD35ED118E17F9ADC.UriSchemeData"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.ReadBarrier">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$023899ECBC652B930B7ED200F94B364B.ReadBarrier"/>
+        </member>
+        <member name="M:Polyfills.Polyfill.WriteBarrier">
+            <inheritdoc cref="M:Polyfills.Polyfill.&lt;G&gt;$023899ECBC652B930B7ED200F94B364B.WriteBarrier"/>
         </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$617F055EF883302AD66AFAF0ACA83DC6.IsAscii(System.Char)">
             <summary>
@@ -2761,6 +3192,16 @@
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$617F055EF883302AD66AFAF0ACA83DC6.IsBetween(System.Char,System.Char,System.Char)">
             <summary>
             Indicates whether a character is within the specified inclusive range.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$617F055EF883302AD66AFAF0ACA83DC6.ToLowerOrdinal(System.Char)">
+            <summary>
+            Converts the value of a character to its lowercase equivalent using ordinal casing rules.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$617F055EF883302AD66AFAF0ACA83DC6.ToUpperOrdinal(System.Char)">
+            <summary>
+            Converts the value of a character to its uppercase equivalent using ordinal casing rules.
             </summary>
         </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$BAD8AF7B4AB3B102ABB1C587EA783F40.OpenStandardInputHandle">
@@ -2935,6 +3376,11 @@
             Creates an <see cref="T:System.Collections.Generic.EqualityComparer`1"/> by using the specified delegates as the implementation of the comparer's <see cref="M:System.Collections.Generic.EqualityComparer`1.Equals(`0,`0)"/> and <see cref="M:System.Collections.Generic.EqualityComparer`1.GetHashCode(`0)"/> methods.
             </summary>
         </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$824B137C9700787F7FAADF3CDD49751C`1.Create``1(System.Func{`0,``0},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Creates an <see cref="T:System.Collections.Generic.EqualityComparer`1"/> that determines equality by projecting each value through <paramref name="keySelector"/> and comparing the resulting keys.
+            </summary>
+        </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$75178716ED09D5ED20A26367481DB739.SetCurrentStackTrace(System.Exception)">
             <summary>
             Stores the current stack trace into the specified <see cref="T:System.Exception"/> instance.
@@ -3078,6 +3524,16 @@
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$68F3962AE5697E254AA596E55C7A8792.CreateVersion7(System.DateTimeOffset)">
             <summary>Creates a new <see cref="T:System.Guid" /> according to RFC 9562, following the Version 7 format.</summary>
         </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$68F3962AE5697E254AA596E55C7A8792.Variant">
+            <summary>
+            Gets the variant field of the <see cref="T:System.Guid"/>.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$68F3962AE5697E254AA596E55C7A8792.Version">
+            <summary>
+            Gets the version field of the <see cref="T:System.Guid"/>.
+            </summary>
+        </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$853505F4C6E4266CC0CF997A13BEC9E3.Clamp(System.Single,System.Single,System.Single)">
             <summary>
             Returns value clamped to the inclusive range of min and max.
@@ -3143,9 +3599,24 @@
             Returns value clamped to the inclusive range of min and max.
             </summary>
         </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$853505F4C6E4266CC0CF997A13BEC9E3.BigMul(System.Int64,System.Int64,System.Int64@)">
+            <summary>
+            Produces the full product of two 64-bit numbers.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$853505F4C6E4266CC0CF997A13BEC9E3.BigMul(System.UInt64,System.UInt64,System.UInt64@)">
+            <summary>
+            Produces the full product of two unsigned 64-bit numbers.
+            </summary>
+        </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$984646E5C90D4BE007AAE446F159AC52.TryParse(System.String,System.IFormatProvider,System.Byte@)">
             <summary>
             Tries to parse a string into a value.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$984646E5C90D4BE007AAE446F159AC52.Log10(System.Byte)">
+            <summary>
+            Computes the base-10 logarithm of a value.
             </summary>
         </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$05DA939D6DF05BA58CCF6B6457ACB41B.TryParse(System.String,System.IFormatProvider,System.Decimal@)">
@@ -3163,14 +3634,34 @@
             Tries to parse a string into a value.
             </summary>
         </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$390DAE713F975834EF0C1ED2BEC2DBAC.Log10(System.Int16)">
+            <summary>
+            Computes the base-10 logarithm of a value.
+            </summary>
+        </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$BA41CFE2B5EDAEB8C1B9062F59ED4D69.TryParse(System.String,System.IFormatProvider,System.Int32@)">
             <summary>
             Tries to parse a string into a value.
             </summary>
         </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$BA41CFE2B5EDAEB8C1B9062F59ED4D69.BigMul(System.Int32,System.Int32)">
+            <summary>
+            Produces the full product of two 32-bit numbers.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$BA41CFE2B5EDAEB8C1B9062F59ED4D69.Log10(System.Int32)">
+            <summary>
+            Computes the base-10 logarithm of a value.
+            </summary>
+        </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$E8CA98ACBCAEE63BB261A3FD4AF31675.TryParse(System.String,System.IFormatProvider,System.Int64@)">
             <summary>
             Tries to parse a string into a value.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$E8CA98ACBCAEE63BB261A3FD4AF31675.Log10(System.Int64)">
+            <summary>
+            Computes the base-10 logarithm of a value.
             </summary>
         </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$4F373AFAABDD639AB83427B59F106A43.TryParse(System.String,System.IntPtr@)">
@@ -3188,9 +3679,24 @@
             Tries to parse a string into a value.
             </summary>
         </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$4F373AFAABDD639AB83427B59F106A43.Log10(System.IntPtr)">
+            <summary>
+            Computes the base-10 logarithm of a value.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$4F373AFAABDD639AB83427B59F106A43.BigMul(System.IntPtr,System.IntPtr,System.IntPtr@)">
+            <summary>
+            Produces the full product of two native-sized signed numbers.
+            </summary>
+        </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$49699017F639EF34A5A9E25ACB3E4B14.TryParse(System.String,System.IFormatProvider,System.SByte@)">
             <summary>
             Tries to parse a string into a value.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$49699017F639EF34A5A9E25ACB3E4B14.Log10(System.SByte)">
+            <summary>
+            Computes the base-10 logarithm of a value.
             </summary>
         </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$464CF13CF05F23E774A9D567340C67D6.TryParse(System.String,System.IFormatProvider,System.Single@)">
@@ -3203,14 +3709,34 @@
             Tries to parse a string into a value.
             </summary>
         </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$B7387B77E15A9DBF0D30EA969A07D0DD.Log10(System.UInt16)">
+            <summary>
+            Computes the base-10 logarithm of a value.
+            </summary>
+        </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$59D1B7AA0B822E2E4777E961258AA046.TryParse(System.String,System.IFormatProvider,System.UInt32@)">
             <summary>
             Tries to parse a string into a value.
             </summary>
         </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$59D1B7AA0B822E2E4777E961258AA046.BigMul(System.UInt32,System.UInt32)">
+            <summary>
+            Produces the full product of two unsigned 32-bit numbers.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$59D1B7AA0B822E2E4777E961258AA046.Log10(System.UInt32)">
+            <summary>
+            Computes the base-10 logarithm of a value.
+            </summary>
+        </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$CC86B4FD6473E1534D8E28315C194AD4.TryParse(System.String,System.IFormatProvider,System.UInt64@)">
             <summary>
             Tries to parse a string into a value.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$CC86B4FD6473E1534D8E28315C194AD4.Log10(System.UInt64)">
+            <summary>
+            Computes the base-10 logarithm of a value.
             </summary>
         </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$FA09D0635AC2552968188F8F9F981733.TryParse(System.String,System.UIntPtr@)">
@@ -3226,6 +3752,16 @@
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$FA09D0635AC2552968188F8F9F981733.TryParse(System.String,System.IFormatProvider,System.UIntPtr@)">
             <summary>
             Tries to parse a string into a value.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$FA09D0635AC2552968188F8F9F981733.Log10(System.UIntPtr)">
+            <summary>
+            Computes the base-10 logarithm of a value.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$FA09D0635AC2552968188F8F9F981733.BigMul(System.UIntPtr,System.UIntPtr,System.UIntPtr@)">
+            <summary>
+            Produces the full product of two native-sized unsigned numbers.
             </summary>
         </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$7605939981053B1C5929A1954636C53C.IsWasi">
@@ -3359,6 +3895,46 @@
             Determines whether the specified file or directory exists.
             </summary>
         </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.Exchange(System.Byte@,System.Byte)">
+            <summary>
+            Sets an 8-bit unsigned integer to a specified value and returns the original value, as an atomic operation.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.CompareExchange(System.Byte@,System.Byte,System.Byte)">
+            <summary>
+            Compares two 8-bit unsigned integers for equality and, if they are equal, replaces the first value.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.Exchange(System.SByte@,System.SByte)">
+            <summary>
+            Sets an 8-bit signed integer to a specified value and returns the original value, as an atomic operation.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.CompareExchange(System.SByte@,System.SByte,System.SByte)">
+            <summary>
+            Compares two 8-bit signed integers for equality and, if they are equal, replaces the first value.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.Exchange(System.Int16@,System.Int16)">
+            <summary>
+            Sets a 16-bit signed integer to a specified value and returns the original value, as an atomic operation.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.CompareExchange(System.Int16@,System.Int16,System.Int16)">
+            <summary>
+            Compares two 16-bit signed integers for equality and, if they are equal, replaces the first value.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.Exchange(System.UInt16@,System.UInt16)">
+            <summary>
+            Sets a 16-bit unsigned integer to a specified value and returns the original value, as an atomic operation.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$B91E0F15010A015E387A3F65BEED1370.CompareExchange(System.UInt16@,System.UInt16,System.UInt16)">
+            <summary>
+            Compares two 16-bit unsigned integers for equality and, if they are equal, replaces the first value.
+            </summary>
+        </member>
         <member name="P:Polyfills.Polyfill.&lt;G&gt;$F1455ACED444938AEC8C578DB9384018.ArgumentList">
             <summary>
             Gets a collection of command-line arguments to use when starting the application.
@@ -3370,7 +3946,7 @@
             Starts the process described by <paramref name="startInfo"/>, waits for it to exit, and returns the exit status.
             </summary>
         </member>
-        <member name="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.Run(System.String,System.Collections.Generic.IList{System.String},System.Nullable{System.TimeSpan})">
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.Run(System.String,System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Nullable{System.TimeSpan})">
             <summary>
             Starts the process described by <paramref name="fileName"/> and <paramref name="arguments"/>, waits for it to exit, and returns the exit status.
             </summary>
@@ -3380,7 +3956,7 @@
             Asynchronously starts the process described by <paramref name="startInfo"/>, waits for it to exit, and returns the exit status.
             </summary>
         </member>
-        <member name="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.RunAsync(System.String,System.Collections.Generic.IList{System.String},System.Threading.CancellationToken)">
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.RunAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Threading.CancellationToken)">
             <summary>
             Asynchronously starts the process described by <paramref name="fileName"/> and <paramref name="arguments"/>, waits for it to exit, and returns the exit status.
             </summary>
@@ -3390,7 +3966,7 @@
             Starts the process described by <paramref name="startInfo"/>, captures its standard output and standard error as text, waits for it to exit, and returns the captured output.
             </summary>
         </member>
-        <member name="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.RunAndCaptureText(System.String,System.Collections.Generic.IList{System.String},System.Nullable{System.TimeSpan})">
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.RunAndCaptureText(System.String,System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.TimeSpan})">
             <summary>
             Starts the process described by <paramref name="fileName"/> and <paramref name="arguments"/>, captures its standard output and standard error as text, waits for it to exit, and returns the captured output.
             </summary>
@@ -3400,7 +3976,7 @@
             Asynchronously starts the process described by <paramref name="startInfo"/>, captures its standard output and standard error as text, waits for it to exit, and returns the captured output.
             </summary>
         </member>
-        <member name="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.RunAndCaptureTextAsync(System.String,System.Collections.Generic.IList{System.String},System.Threading.CancellationToken)">
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.RunAndCaptureTextAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
             <summary>
             Asynchronously starts the process described by <paramref name="fileName"/> and <paramref name="arguments"/>, captures its standard output and standard error as text, waits for it to exit, and returns the captured output.
             </summary>
@@ -3410,9 +3986,14 @@
             Starts the process described by <paramref name="startInfo"/> in detached fashion and returns its process identifier.
             </summary>
         </member>
-        <member name="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.StartAndForget(System.String,System.Collections.Generic.IList{System.String})">
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.StartAndForget(System.String,System.Collections.Generic.IEnumerable{System.String})">
             <summary>
             Starts the process described by <paramref name="fileName"/> and <paramref name="arguments"/> in detached fashion and returns its process identifier.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$CF0CE17D7A3EA2BB5895271206595CBD.TryGetProcessById(System.Int32,System.Diagnostics.Process@)">
+            <summary>
+            Gets the <see cref="T:System.Diagnostics.Process"/> associated with the specified process identifier, and returns a value that indicates whether the operation succeeded.
             </summary>
         </member>
         <member name="M:Polyfills.Polyfill.&lt;G&gt;$492A05EBCBEAE9092DC986CDAE193EE9.GetInt32(System.Int32,System.Int32)">
@@ -3499,6 +4080,11 @@
             Concatenates the specified elements of a string array, using the specified separator between each element.
             </summary>
         </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$C8AD13954C5CA5B5C3C3A998919CD66C.CreateBroadcasting(System.IO.TextWriter[])">
+            <summary>
+            Creates an instance of <see cref="T:System.IO.TextWriter"/> that writes supplied inputs to each of the writers in <paramref name="writers"/>.
+            </summary>
+        </member>
         <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.Nanoseconds">
             <summary>
             Gets the nanosecond component of the time represented by the current <see cref="T:System.TimeSpan"/> object.
@@ -3509,17 +4095,92 @@
             Gets the microsecond component of the time represented by the current <see cref="T:System.TimeSpan"/> object.
             </summary>
         </member>
-        <member name="M:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.FromDays(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.HoursPerDay">
+            <summary>
+            The number of hours in 1 day.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MicrosecondsPerDay">
+            <summary>
+            The number of microseconds in 1 day.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MicrosecondsPerHour">
+            <summary>
+            The number of microseconds in 1 hour.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MicrosecondsPerMillisecond">
+            <summary>
+            The number of microseconds in 1 millisecond.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MicrosecondsPerMinute">
+            <summary>
+            The number of microseconds in 1 minute.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MicrosecondsPerSecond">
+            <summary>
+            The number of microseconds in 1 second.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MillisecondsPerDay">
+            <summary>
+            The number of milliseconds in 1 day.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MillisecondsPerHour">
+            <summary>
+            The number of milliseconds in 1 hour.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MillisecondsPerMinute">
+            <summary>
+            The number of milliseconds in 1 minute.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MillisecondsPerSecond">
+            <summary>
+            The number of milliseconds in 1 second.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MinutesPerDay">
+            <summary>
+            The number of minutes in 1 day.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.MinutesPerHour">
+            <summary>
+            The number of minutes in 1 hour.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.SecondsPerDay">
+            <summary>
+            The number of seconds in 1 day.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.SecondsPerHour">
+            <summary>
+            The number of seconds in 1 hour.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.SecondsPerMinute">
+            <summary>
+            The number of seconds in 1 minute.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.FromDays(System.Int32,System.Int32,System.Int64,System.Int64,System.Int64,System.Int64)">
             <summary>
             Initializes a new instance of the <see cref="T:System.TimeSpan"/> structure to a specified number of days, hours, minutes, seconds, milliseconds, and microseconds.
             </summary>
         </member>
-        <member name="M:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.FromHours(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.FromHours(System.Int32,System.Int64,System.Int64,System.Int64,System.Int64)">
             <summary>
             Initializes a new instance of the <see cref="T:System.TimeSpan"/> structure to a specified number of hours, minutes, seconds, milliseconds, and microseconds.
             </summary>
         </member>
-        <member name="M:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.FromMinutes(System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$AEF4692409D6751FA6D278B69B50C9D0.FromMinutes(System.Int64,System.Int64,System.Int64,System.Int64)">
             <summary>
             Initializes a new instance of the <see cref="T:System.TimeSpan"/> structure to a specified number of minutes, seconds, milliseconds, and microseconds.
             </summary>
@@ -3542,6 +4203,30 @@
         <member name="P:Polyfills.Polyfill.&lt;G&gt;$6B6159A298CA62A8C577E514BE40E3DD.IsGenericMethodParameter">
             <summary>
             Gets a value that indicates whether the current Type represents a type parameter in the definition of a generic method.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$6B6159A298CA62A8C577E514BE40E3DD.GetNullableUnderlyingType">
+            <summary>
+            Returns the underlying type argument of the current nullable value type, or <c>null</c> if the current type is not a nullable value type.
+            </summary>
+        </member>
+        <member name="P:Polyfills.Polyfill.&lt;G&gt;$A2D159684F90C84BD35ED118E17F9ADC.UriSchemeData">
+            <summary>
+            Provides the scheme name for the <c>data</c> URI scheme (RFC 2397). This field is read-only.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$023899ECBC652B930B7ED200F94B364B.ReadBarrier">
+            <summary>
+            Synchronizes memory access as follows: the processor that executes the current thread cannot reorder
+            instructions in such a way that memory reads before the call to <c>ReadBarrier</c> execute after memory
+            accesses that follow the call to <c>ReadBarrier</c>.
+            </summary>
+        </member>
+        <member name="M:Polyfills.Polyfill.&lt;G&gt;$023899ECBC652B930B7ED200F94B364B.WriteBarrier">
+            <summary>
+            Synchronizes memory access as follows: the processor that executes the current thread cannot reorder
+            instructions in such a way that memory accesses before the call to <c>WriteBarrier</c> execute after
+            memory writes that follow the call to <c>WriteBarrier</c>.
             </summary>
         </member>
         <member name="T:Polyfills.DictionaryAlternateLookup`3">
@@ -3619,6 +4304,12 @@
         <member name="M:Polyfills.MD5Polyfill.&lt;G&gt;$306697C4D3B8334ACB19138F90E57C7C.HashData(System.IO.Stream)">
             <summary>
             Computes the hash of a stream using the MD5 algorithm.
+            </summary>
+        </member>
+        <member name="M:Polyfills.OperatingSystemCache.ParseVersion(System.String)">
+            <summary>
+            Parses the first version number found in <paramref name="input"/>, ignoring any surrounding text.
+            Components that are not present are set to 0, so the result can be compared to a four part version.
             </summary>
         </member>
         <member name="M:Polyfills.SHA1Polyfill.HashData(System.Byte[])">
